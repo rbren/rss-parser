@@ -1,14 +1,29 @@
 {
   "name": "rss-parser",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
-  "author": "",
+  "author": "Bobby Brennan",
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.4.1"
-  }
+  },
+  "dependencies": {
+    "entities": "^1.1.1",
+    "xml2js": "^0.4.15"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobby-brennan/rss-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bobby-brennan/rss-parser/issues"
+  },
+  "homepage": "https://github.com/bobby-brennan/rss-parser#readme",
+  "description": ""
 }

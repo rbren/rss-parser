@@ -9,11 +9,16 @@ var OUTPUT_FILE = __dirname + '/output/reddit.json';
 
 describe('Parser', function() {
   it('should parse Reddit', function(done) {
-    Parser.parse(INPUT_FILE, function(err, parsed) {
+    Parser.parseFile(INPUT_FILE, function(err, parsed) {
       Expect(err).to.equal(null);
-      var expected = FS.readFileSync(OUTPUT_FILE, 'utf8')
-      expected = JSON.parse(expected);
-      Expect(parsed).to.deep.equal(expected)
+      if (process.env.WRITE_GOLDEN) {
+        FS.writeFileSync(OUTPUT_FILE, JSON.stringify(parsed, null, 2));
+      } else {
+        var expected = FS.readFileSync(OUTPUT_FILE, 'utf8')
+        expected = JSON.parse(expected);
+        Expect(parsed).to.deep.equal(expected);
+      }
+      done();
     })
   })
 })
