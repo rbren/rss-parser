@@ -18,3 +18,4 @@ parser.parseURL('https://reddit.com/.rss', function(err, parsed) {
 
 rss-parser also exposes `parseString` and `parseFile` functions.
 
+Check out the output format in [test/output/reddit.json](test/output/reddit.json)
