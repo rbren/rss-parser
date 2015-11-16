@@ -19,7 +19,7 @@ var stripHtml = function(str) {
 Parser.parseString = function(xml, callback) {
   XML2JS.parseString(xml, function(err, result) {
     if (err) throw err;
-    var json = {feed: {}};
+    var json = {feed: {entries: []}};
     var channel = result.rss.channel[0];
     if (channel['atom:link']) json.feed.feedUrl = channel['atom:link'][0].href;
     TOP_FIELDS.forEach(function(f) {
@@ -39,8 +39,7 @@ Parser.parseString = function(xml, callback) {
         entry.guid = item.guid[0]._;
       }
       entry.categories = item.category;
-      json.entries = json.entries || [];
-      json.entries.push(entry);
+      json.feed.entries.push(entry);
     })
     callback(null, json);
   });
