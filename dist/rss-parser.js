@@ -1,4 +1,4 @@
-/*! rss-parser 1.0.1 */
+/*! rss-parser 1.1.0 */
 
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.RSSParser = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var Entities = require("entities");
@@ -11,7 +11,6 @@ var TOP_FIELDS = ['title', 'description', 'author', 'link'];
 var ITEM_FIELDS = [
   'title',
   'link',
-  'guid',
   'pubDate',
   'author',
 ]
@@ -21,7 +20,6 @@ var stripHtml = function(str) {
 }
 
 Parser.parseString = function(xml, callback) {
-  console.log('parse', xml);
   XML2JS.parseString(xml, function(err, result) {
     if (err) throw err;
     var json = {feed: {}};
@@ -39,6 +37,9 @@ Parser.parseString = function(xml, callback) {
       if (item.description) {
         entry.content = item.description[0];
         entry.contentSnippet = Entities.decode(stripHtml(entry.content));
+      }
+      if (item.guid) {
+        entry.guid = item.guid[0]._;
       }
       entry.categories = item.category;
       json.entries = json.entries || [];
