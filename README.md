@@ -13,6 +13,9 @@ bower install --save rss-parser
 ```
 
 ## Usage
+rss-parser exposes `parseURL()`, `parseString()`, and `parseFile()` functions.
+
+Check out the output format in [test/output/reddit.json](test/output/reddit.json)
 
 ### NodeJS
 ```js
@@ -39,6 +42,3 @@ RSSParser.parseURL('https://reddit.com/.rss', function(err, parsed) {
 </script>
 ```
 
-rss-parser also exposes `parseString` and `parseFile` functions.
-
-Check out the output format in [test/output/reddit.json](test/output/reddit.json)
