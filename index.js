@@ -38,7 +38,7 @@ Parser.parseString = function(xml, callback) {
       if (item.guid) {
         entry.guid = item.guid[0]._;
       }
-      entry.categories = item.category;
+      if (item.category) entry.categories = item.category;
       json.feed.entries.push(entry);
     })
     callback(null, json);
