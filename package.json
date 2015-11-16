@@ -8,7 +8,9 @@
   "author": "Bobby Brennan",
   "license": "MIT",
   "devDependencies": {
-    "chai": "^3.4.1"
+    "chai": "^3.4.1",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^4.0.1"
   },
   "dependencies": {
     "entities": "^1.1.1",
