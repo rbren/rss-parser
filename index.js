@@ -8,7 +8,6 @@ var TOP_FIELDS = ['title', 'description', 'author', 'link'];
 var ITEM_FIELDS = [
   'title',
   'link',
-  'guid',
   'pubDate',
   'author',
 ]
@@ -19,6 +18,7 @@ var stripHtml = function(str) {
 
 Parser.parseString = function(xml, callback) {
   XML2JS.parseString(xml, function(err, result) {
+    if (err) throw err;
     var json = {feed: {}};
     var channel = result.rss.channel[0];
     if (channel['atom:link']) json.feed.feedUrl = channel['atom:link'][0].href;
@@ -34,6 +34,9 @@ Parser.parseString = function(xml, callback) {
       if (item.description) {
         entry.content = item.description[0];
         entry.contentSnippet = Entities.decode(stripHtml(entry.content));
+      }
+      if (item.guid) {
+        entry.guid = item.guid[0]._;
       }
       entry.categories = item.category;
       json.entries = json.entries || [];
