@@ -29,12 +29,14 @@ parser.parseURL('https://reddit.com/.rss', function(err, parsed) {
 ### Web
 ```html
 <script src="/bower_components/rss-parser/dist/rss-parser.js"></script>
+<script>
 RSSParser.parseURL('https://reddit.com/.rss', function(err, parsed) {
   console.log(parsed.feed.title);
   parsed.feed.entries.forEach(function(entry) {
     console.log(entry.title + ':' + entry.link);
   })
 })
+</script>
 ```
 
 rss-parser also exposes `parseString` and `parseFile` functions.
