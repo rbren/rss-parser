@@ -21,7 +21,7 @@ Parser.parseString = function(xml, callback) {
   XML2JS.parseString(xml, function(err, result) {
     if (err) throw err;
     var json = {feed: {entries: []}};
-    var channel = result.rss.channel[0];
+    var channel = result.feed || result.rss.channel[0];
     if (channel['atom:link']) json.feed.feedUrl = channel['atom:link'][0].href;
     TOP_FIELDS.forEach(function(f) {
       if (channel[f]) json.feed[f] = channel[f][0];
