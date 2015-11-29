@@ -1,5 +1,6 @@
 var Entities = require("entities");
 var FS = require('fs');
+var request = require('request');
 var XML2JS = require('xml2js');
 
 var Parser = module.exports = {};
@@ -46,7 +47,15 @@ Parser.parseString = function(xml, callback) {
 }
 
 Parser.parseURL = function(url, callback) {
-  return Parser.parseString('', callback);
+  request(url, function(error, response, body) {
+    if (error) {
+      callback(error);
+    } else if (response.statusCode != 200) {
+      callback(new Error('Status code is: ' + response.statusCode));
+    } else {
+      Parser.parseString(body, callback);
+    }
+  });
 }
 
 Parser.parseFile = function(file, callback) {
