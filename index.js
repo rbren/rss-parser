@@ -2,6 +2,8 @@ var Entities = require("entities");
 var FS = require('fs');
 var XML2JS = require('xml2js');
 
+var Request = require('request');
+
 var Parser = module.exports = {};
 
 var TOP_FIELDS = ['title', 'description', 'author', 'link'];
@@ -46,7 +48,11 @@ Parser.parseString = function(xml, callback) {
 }
 
 Parser.parseURL = function(url, callback) {
-  return Parser.parseString('', callback);
+  Request(url, function(err, resp, body) {
+    if (err) return callback(err);
+    if (resp.statusCode !== 200) return callback(new Error('Status code is: ' + resp.statusCode))
+    return Parser.parseString(body, callback);
+  })
 }
 
 Parser.parseFile = function(file, callback) {
