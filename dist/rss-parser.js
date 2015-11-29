@@ -49,7 +49,31 @@ Parser.parseString = function(xml, callback) {
 }
 
 Parser.parseURL = function(url, callback) {
-  return Parser.parseString('', callback);
+  var requestTimeout,xhr;
+
+  try{ xhr = new XMLHttpRequest(); }catch(e){
+    try{ xhr = new ActiveXObject('Msxml2.XMLHTTP'); }catch (error){
+      if (console) console.log('RSSParser: XMLHttpRequest not supported');
+      return null;
+    }
+  }
+  requestTimeout = setTimeout(function() {
+    xhr.abort();
+    callback(new Error('RSSParser: aborted by a timeout'));
+  }, 10000);
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState != 4) return;
+    clearTimeout(requestTimeout);
+    if (xhr.status != 200) {
+        callback(new Error('RSSParser: server response status is ' + xhr.status));
+    } else {
+        Parser.parseString(xhr.responseText, callback);
+    }
+  };
+
+  xhr.open('GET', url, true);
+  xhr.send();
 }
 
 Parser.parseFile = function(file, callback) {
