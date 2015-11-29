@@ -53,8 +53,7 @@ Parser.parseURL = function(url, callback) {
 
   try{ xhr = new XMLHttpRequest(); }catch(e){
     try{ xhr = new ActiveXObject('Msxml2.XMLHTTP'); }catch (error){
-      if (console) console.log('RSSParser: XMLHttpRequest not supported');
-      return null;
+      callback(new Error('RSSParser: XMLHttpRequest not supported'));
     }
   }
   requestTimeout = setTimeout(function() {
@@ -72,8 +71,12 @@ Parser.parseURL = function(url, callback) {
     }
   };
 
-  xhr.open('GET', url, true);
-  xhr.send();
+  try {
+    xhr.open('GET', url, true);
+    xhr.send();
+  } catch (err) {
+    callback(new Error(err));
+  }
 }
 
 Parser.parseFile = function(file, callback) {
