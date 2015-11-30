@@ -2,7 +2,8 @@ var Entities = require("entities");
 var FS = require('fs');
 var XML2JS = require('xml2js');
 
-var Request = require('request');
+var HTTP = require('http');
+var HTTPS = require('https');
 
 var Parser = module.exports = {};
 
@@ -48,11 +49,19 @@ Parser.parseString = function(xml, callback) {
 }
 
 Parser.parseURL = function(url, callback) {
-  Request(url, function(err, resp, body) {
-    if (err) return callback(err);
-    if (resp.statusCode !== 200) return callback(new Error('Status code is: ' + resp.statusCode))
-    return Parser.parseString(body, callback);
+  var xml = '';
+  var get = url.indexOf('https') === 0 ? HTTPS.get : HTTP.get;
+  var req = get(url, function(res) {
+    if (res.statusCode >= 300) return callback(new Error("Status code " + res.statusCode))
+    res.setEncoding('utf8');
+    res.on('data', function(chunk) {
+      xml += chunk;
+    });
+    res.on('end', function() {
+      return Parser.parseString(xml, callback);
+    })
   })
+  req.on('error', callback);
 }
 
 Parser.parseFile = function(file, callback) {
