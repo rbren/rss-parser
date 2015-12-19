@@ -21,7 +21,7 @@ Check out the output format in [test/output/reddit.json](test/output/reddit.json
 ```js
 var parser = require('rss-parser');
 
-parser.parseURL('https://reddit.com/.rss', function(err, parsed) {
+parser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
   console.log(parsed.feed.title);
   parsed.feed.entries.forEach(function(entry) {
     console.log(entry.title + ':' + entry.link);
@@ -33,7 +33,7 @@ parser.parseURL('https://reddit.com/.rss', function(err, parsed) {
 ```html
 <script src="/bower_components/rss-parser/dist/rss-parser.js"></script>
 <script>
-RSSParser.parseURL('https://reddit.com/.rss', function(err, parsed) {
+RSSParser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
   console.log(parsed.feed.title);
   parsed.feed.entries.forEach(function(entry) {
     console.log(entry.title + ':' + entry.link);
