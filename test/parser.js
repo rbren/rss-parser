@@ -21,4 +21,11 @@ describe('Parser', function() {
       done();
     })
   })
+
+  it('should parse craigslist', function(done) {
+    Parser.parseURL('https://seattle.craigslist.org/search/act?format=rss', function(err, parsed) {
+      Expect(err).to.not.equal(null);
+      done();
+    })
+  })
 })
