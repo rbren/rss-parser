@@ -38,7 +38,11 @@ var parseRSS2 = function(xmlObj, callback) {
     })
     if (item.description) {
       entry.content = item.description[0];
-      entry.contentSnippet = Entities.decode(stripHtml(entry.content));
+      if (typeof entry.content === 'object') {
+        var builder = new XML2JS.Builder({rootName: 'foo'});
+        entry.content = builder.buildObject(entry.content);
+      }
+      entry.contentSnippet = Entities.decode(stripHtml(entry.content)).trim();
     }
     if (item.guid) {
       entry.guid = item.guid[0]._;
