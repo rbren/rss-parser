@@ -38,7 +38,8 @@ var parseRSS2 = function(xmlObj, callback) {
     })
     if (item.description) {
       entry.content = item.description[0];
-      entry.contentSnippet = Entities.decode(stripHtml(entry.content));
+      entry.contentSnippet = entry.content;
+      //entry.contentSnippet = Entities.decode(stripHtml(entry.content));
     }
     if (item.guid) {
       entry.guid = item.guid[0]._;
