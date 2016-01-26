@@ -19,9 +19,12 @@ var stripHtml = function(str) {
   return str.replace(/<(?:.|\n)*?>/gm, '');
 }
 
-var parseAtomFeed = function(xmlObj, callback) {
+var getSnippet = function(str) {
+  return Entities.decode(stripHtml(str)).trim();
+}
+
+var parseAtomFeed = function(feed, callback) {
   var json = {feed: {entries: []}};
-  var feed = xmlObj.feed;
   if (feed.link[0] && feed.link[0].$.href) {
     json.feed.link = feed.link[0].$.href;
   }
@@ -40,6 +43,7 @@ var parseAtomFeed = function(xmlObj, callback) {
     item.author = entry.author[0].name[0];
     if (entry.content) {
       item.content = entry.content[0]._;
+      item.contentSnippet = getSnippet(item.content)
     }
     if (entry.id) {
       item.id = entry.id[0];
@@ -72,7 +76,7 @@ var parseRSS2 = function(xmlObj, callback) {
         var builder = new XML2JS.Builder({headless: true});
         entry.content = builder.buildObject(entry.content);
       }
-      entry.contentSnippet = Entities.decode(stripHtml(entry.content)).trim();
+      entry.contentSnippet = getSnippet(entry.content);
     }
     if (item.guid) {
       entry.guid = item.guid[0]._;
@@ -86,9 +90,13 @@ var parseRSS2 = function(xmlObj, callback) {
 Parser.parseString = function(xml, callback) {
   XML2JS.parseString(xml, function(err, result) {
     if (err) throw err;
-    if (result.rss && result.rss.$.version && result.rss.$.version.indexOf('2') === 0) return parseRSS2(result, callback);
-    else if (result.feed) return parseAtomFeed(result, callback)
-    else return parseRSS1(result, callback);
+    if (result.feed) {
+      return parseAtomFeed(result.feed || result.rss.channel[0], callback)
+    } else if (result.rss && result.rss.$.version && result.rss.$.version.indexOf('2') === 0) {
+      return parseRSS2(result, callback);
+    } else {
+      return parseRSS1(result, callback);
+    }
   });
 }
 
