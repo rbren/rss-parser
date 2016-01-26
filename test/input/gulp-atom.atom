@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:https://github.com/gulpjs/gulp/releases</id>
+  <link type="text/html" rel="alternate" href="https://github.com/gulpjs/gulp/releases"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/gulpjs/gulp/releases.atom"/>
+  <title>Release notes from gulp</title>
+  <updated>2015-06-01T23:49:41+02:00</updated>
+  <entry>
+    <id>tag:github.com,2008:Repository/11167738/v3.9.0</id>
+    <updated>2015-06-01T23:49:41+02:00</updated>
+    <link rel="alternate" type="text/html" href="/gulpjs/gulp/releases/tag/v3.9.0"/>
+    <title>v3.9.0</title>
+    <content type="html">&lt;p&gt;3.9.0&lt;/p&gt;</content>
+    <author>
+      <name>contra</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/425716?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/11167738/v3.8.11</id>
+    <updated>2015-02-09T21:37:28+01:00</updated>
+    <link rel="alternate" type="text/html" href="/gulpjs/gulp/releases/tag/v3.8.11"/>
+    <title>v3.8.11</title>
+    <content type="html">&lt;p&gt;3.8.11&lt;/p&gt;</content>
+    <author>
+      <name>contra</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/425716?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/11167738/v3.8.10</id>
+    <updated>2014-11-04T01:11:30+01:00</updated>
+    <link rel="alternate" type="text/html" href="/gulpjs/gulp/releases/tag/v3.8.10"/>
+    <title>v3.8.10</title>
+    <content type="html">&lt;p&gt;3.8.10&lt;/p&gt;</content>
+    <author>
+      <name>contra</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/425716?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/11167738/v3.8.9</id>
+    <updated>2014-10-22T08:55:20+02:00</updated>
+    <link rel="alternate" type="text/html" href="/gulpjs/gulp/releases/tag/v3.8.9"/>
+    <title>v3.8.9</title>
+    <content type="html">&lt;p&gt;3.8.9&lt;/p&gt;</content>
+    <author>
+      <name>contra</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/425716?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/11167738/v3.8.8</id>
+    <updated>2014-09-07T22:20:11+02:00</updated>
+    <link rel="alternate" type="text/html" href="/gulpjs/gulp/releases/tag/v3.8.8"/>
+    <title>v3.8.8</title>
+    <content type="html">&lt;p&gt;3.8.8&lt;/p&gt;</content>
+    <author>
+      <name>contra</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/425716?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/11167738/v3.8.7</id>
+    <updated>2014-08-02T06:58:19+02:00</updated>
+    <link rel="alternate" type="text/html" href="/gulpjs/gulp/releases/tag/v3.8.7"/>
+    <title>v3.8.7</title>
+    <content type="html">&lt;p&gt;3.8.7&lt;/p&gt;</content>
+    <author>
+      <name>contra</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/425716?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/11167738/v3.8.6</id>
+    <updated>2014-07-10T00:06:50+02:00</updated>
+    <link rel="alternate" type="text/html" href="/gulpjs/gulp/releases/tag/v3.8.6"/>
+    <title>v3.8.6</title>
+    <content type="html">&lt;p&gt;3.8.6&lt;/p&gt;</content>
+    <author>
+      <name>contra</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/425716?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/11167738/v3.8.5</id>
+    <updated>2014-06-27T08:53:54+02:00</updated>
+    <link rel="alternate" type="text/html" href="/gulpjs/gulp/releases/tag/v3.8.5"/>
+    <title>v3.8.5</title>
+    <content type="html">&lt;p&gt;3.8.5&lt;/p&gt;</content>
+    <author>
+      <name>contra</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/425716?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/11167738/v3.8.4</id>
+    <updated>2014-06-27T08:38:43+02:00</updated>
+    <link rel="alternate" type="text/html" href="/gulpjs/gulp/releases/tag/v3.8.4"/>
+    <title>v3.8.4</title>
+    <content type="html">&lt;p&gt;3.8.4&lt;/p&gt;</content>
+    <author>
+      <name>contra</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/425716?v=3&amp;s=60"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/11167738/v3.8.3</id>
+    <updated>2014-06-26T23:17:51+02:00</updated>
+    <link rel="alternate" type="text/html" href="/gulpjs/gulp/releases/tag/v3.8.3"/>
+    <title>v3.8.3</title>
+    <content type="html">&lt;p&gt;3.8.3&lt;/p&gt;</content>
+    <author>
+      <name>contra</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/425716?v=3&amp;s=60"/>
+  </entry>
+</feed>
