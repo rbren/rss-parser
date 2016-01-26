@@ -23,7 +23,8 @@ var getSnippet = function(str) {
   return Entities.decode(stripHtml(str)).trim();
 }
 
-var parseAtomFeed = function(feed, callback) {
+var parseAtomFeed = function(xmlObj, callback) {
+  var feed = xmlObj.feed;
   var json = {feed: {entries: []}};
   if (feed.link[0] && feed.link[0].$.href) {
     json.feed.link = feed.link[0].$.href;
@@ -91,7 +92,7 @@ Parser.parseString = function(xml, callback) {
   XML2JS.parseString(xml, function(err, result) {
     if (err) throw err;
     if (result.feed) {
-      return parseAtomFeed(result.feed || result.rss.channel[0], callback)
+      return parseAtomFeed(result, callback)
     } else if (result.rss && result.rss.$.version && result.rss.$.version.indexOf('2') === 0) {
       return parseRSS2(result, callback);
     } else {
