@@ -11,8 +11,8 @@ var INPUT_FILE = __dirname + '/input/reddit.rss';
 var OUTPUT_FILE = __dirname + '/output/reddit.json';
 
 describe('Parser', function() {
-  var testParseForFile = function(name, done) {
-    Parser.parseFile(IN_DIR + '/' + name + '.rss', function(err, parsed) {
+  var testParseForFile = function(name, ext, done) {
+    Parser.parseFile(IN_DIR + '/' + name + '.' + ext, function(err, parsed) {
       Expect(err).to.equal(null);
       if (process.env.WRITE_GOLDEN) {
         FS.writeFileSync(OUT_DIR + '/' + name + '.json', JSON.stringify(parsed, null, 2));
@@ -26,7 +26,7 @@ describe('Parser', function() {
   }
 
   it('should parse Reddit', function(done) {
-    testParseForFile('reddit', done);
+    testParseForFile('reddit', 'rss', done);
   })
 
   it('should parse craigslist', function(done) {
@@ -37,6 +37,10 @@ describe('Parser', function() {
   })
 
   it('should parse atom', function(done) {
-    testParseForFile('reddit-atom', done);
+    testParseForFile('reddit-atom', 'rss', done);
+  })
+  
+  it('should parse atom feed', function(done) {
+    testParseForFile('gulp-atom', 'atom', done);
   })
 })

@@ -19,6 +19,36 @@ var stripHtml = function(str) {
   return str.replace(/<(?:.|\n)*?>/gm, '');
 }
 
+var parseAtomFeed = function(xmlObj, callback) {
+  var json = {feed: {entries: []}};
+  var feed = xmlObj.feed;
+  if (feed.link[0] && feed.link[0].$.href) {
+    json.feed.link = feed.link[0].$.href;
+  }
+  if (feed.link[1] && feed.link[1].$.href) {
+    json.feed.feedUrl = feed.link[1].$.href;
+  }
+  if (feed.title[0]) {
+    json.feed.title = feed.title[0];
+  }
+  var entries = feed.entry;
+  (entries || []).forEach(function (entry) {
+    var item = {};
+    item.title = entry.title[0];
+    item.link = entry.link[0].$.href;
+    item.pubDate = new Date(entry.updated[0]).toISOString();
+    item.author = entry.author[0].name[0];
+    if (entry.content) {
+      item.content = entry.content[0]._;
+    }
+    if (entry.id) {
+      item.id = entry.id[0];
+    }
+    json.feed.entries.push(item);
+  });
+  callback(null, json);
+}
+
 var parseRSS1 = function(xmlObj, callback) {
   callback("RSS 1.0 parsing not yet implemented.")
 }
@@ -57,6 +87,7 @@ Parser.parseString = function(xml, callback) {
   XML2JS.parseString(xml, function(err, result) {
     if (err) throw err;
     if (result.rss && result.rss.$.version && result.rss.$.version.indexOf('2') === 0) return parseRSS2(result, callback);
+    else if (result.feed) return parseAtomFeed(result, callback)
     else return parseRSS1(result, callback);
   });
 }
