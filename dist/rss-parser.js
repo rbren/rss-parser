@@ -1,4 +1,4 @@
-/*! rss-parser 2.1.1 */
+/*! rss-parser 2.2.1 */
 
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.RSSParser = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var Entities = require("entities");
@@ -20,6 +20,41 @@ var ITEM_FIELDS = [
 
 var stripHtml = function(str) {
   return str.replace(/<(?:.|\n)*?>/gm, '');
+}
+
+var getSnippet = function(str) {
+  return Entities.decode(stripHtml(str)).trim();
+}
+
+var parseAtomFeed = function(xmlObj, callback) {
+  var feed = xmlObj.feed;
+  var json = {feed: {entries: []}};
+  if (feed.link[0] && feed.link[0].$.href) {
+    json.feed.link = feed.link[0].$.href;
+  }
+  if (feed.link[1] && feed.link[1].$.href) {
+    json.feed.feedUrl = feed.link[1].$.href;
+  }
+  if (feed.title[0]) {
+    json.feed.title = feed.title[0];
+  }
+  var entries = feed.entry;
+  (entries || []).forEach(function (entry) {
+    var item = {};
+    item.title = entry.title[0];
+    item.link = entry.link[0].$.href;
+    item.pubDate = new Date(entry.updated[0]).toISOString();
+    item.author = entry.author[0].name[0];
+    if (entry.content) {
+      item.content = entry.content[0]._;
+      item.contentSnippet = getSnippet(item.content)
+    }
+    if (entry.id) {
+      item.id = entry.id[0];
+    }
+    json.feed.entries.push(item);
+  });
+  callback(null, json);
 }
 
 var parseRSS1 = function(xmlObj, callback) {
@@ -45,7 +80,7 @@ var parseRSS2 = function(xmlObj, callback) {
         var builder = new XML2JS.Builder({headless: true});
         entry.content = builder.buildObject(entry.content);
       }
-      entry.contentSnippet = Entities.decode(stripHtml(entry.content)).trim();
+      entry.contentSnippet = getSnippet(entry.content);
     }
     if (item.guid) {
       entry.guid = item.guid[0]._;
@@ -59,8 +94,13 @@ var parseRSS2 = function(xmlObj, callback) {
 Parser.parseString = function(xml, callback) {
   XML2JS.parseString(xml, function(err, result) {
     if (err) throw err;
-    if (result.rss && result.rss.$.version && result.rss.$.version.indexOf('2') === 0) return parseRSS2(result, callback);
-    else return parseRSS1(result, callback);
+    if (result.feed) {
+      return parseAtomFeed(result, callback)
+    } else if (result.rss && result.rss.$.version && result.rss.$.version.indexOf('2') === 0) {
+      return parseRSS2(result, callback);
+    } else {
+      return parseRSS1(result, callback);
+    }
   });
 }
 
