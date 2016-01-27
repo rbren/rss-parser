@@ -39,8 +39,12 @@ describe('Parser', function() {
   it('should parse atom', function(done) {
     testParseForFile('reddit-atom', 'rss', done);
   })
-  
+
   it('should parse atom feed', function(done) {
     testParseForFile('gulp-atom', 'atom', done);
+  })
+
+  it('should parse reddits new feed', function(done) {
+    testParseForFile('reddit-home', 'rss', done);
   })
 })

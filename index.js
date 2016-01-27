@@ -23,6 +23,17 @@ var getSnippet = function(str) {
   return Entities.decode(stripHtml(str)).trim();
 }
 
+var getContent = function(content) {
+  if (typeof content._ === 'string') {
+    return content._;
+  } else if (typeof content === 'object') {
+    var builder = new XML2JS.Builder({headless: true, explicitRoot: true, rootName: 'div', renderOpts: {pretty: false}});
+    return builder.buildObject(content);
+  } else {
+    return content;
+  }
+}
+
 var parseAtomFeed = function(xmlObj, callback) {
   var feed = xmlObj.feed;
   var json = {feed: {entries: []}};
@@ -38,12 +49,12 @@ var parseAtomFeed = function(xmlObj, callback) {
   var entries = feed.entry;
   (entries || []).forEach(function (entry) {
     var item = {};
-    item.title = entry.title[0];
-    item.link = entry.link[0].$.href;
-    item.pubDate = new Date(entry.updated[0]).toISOString();
-    item.author = entry.author[0].name[0];
+    if (entry.title) item.title = entry.title[0];
+    if (entry.link) item.link = entry.link[0].$.href;
+    if (entry.updated) item.pubDate = new Date(entry.updated[0]).toISOString();
+    if (entry.author) item.author = entry.author[0].name[0];
     if (entry.content) {
-      item.content = entry.content[0]._;
+      item.content = getContent(entry.content[0]);
       item.contentSnippet = getSnippet(item.content)
     }
     if (entry.id) {
@@ -72,11 +83,7 @@ var parseRSS2 = function(xmlObj, callback) {
       if (item[f]) entry[f] = item[f][0];
     })
     if (item.description) {
-      entry.content = item.description[0];
-      if (typeof entry.content === 'object') {
-        var builder = new XML2JS.Builder({headless: true});
-        entry.content = builder.buildObject(entry.content);
-      }
+      entry.content = getContent(item.description[0]);
       entry.contentSnippet = getSnippet(entry.content);
     }
     if (item.guid) {
