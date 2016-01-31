@@ -29,9 +29,9 @@ describe('Parser', function() {
     testParseForFile('reddit', 'rss', done);
   })
 
-  it('should parse craigslist', function(done) {
-    Parser.parseURL('https://seattle.craigslist.org/search/act?format=rss', function(err, parsed) {
-      Expect(err).to.not.equal(null);
+  it('should not parse craigslist (RSS 1.0)', function(done) {
+    Parser.parseFile(__dirname + '/input/craigslist.rss', function(err, parsed) {
+      Expect(err.indexOf('not yet implemented')).to.not.equal(-1);
       done();
     })
   })
