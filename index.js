@@ -37,23 +37,21 @@ var getContent = function(content) {
 var parseAtomFeed = function(xmlObj, callback) {
   var feed = xmlObj.feed;
   var json = {feed: {entries: []}};
-  if (feed.link[0] && feed.link[0].$.href) {
-    json.feed.link = feed.link[0].$.href;
+  if (feed.link) {
+    if (feed.link[0] && feed.link[0].$.href) json.feed.link = feed.link[0].$.href;
+    if (feed.link[1] && feed.link[1].$.href) json.feed.feedUrl = feed.link[1].$.href;
   }
-  if (feed.link[1] && feed.link[1].$.href) {
-    json.feed.feedUrl = feed.link[1].$.href;
-  }
-  if (feed.title[0]) {
-    json.feed.title = feed.title[0];
+  if (feed.title) {
+    if (feed.title[0]) json.feed.title = feed.title[0];
   }
   var entries = feed.entry;
   (entries || []).forEach(function (entry) {
     var item = {};
-    if (entry.title) item.title = entry.title[0];
-    if (entry.link) item.link = entry.link[0].$.href;
-    if (entry.updated) item.pubDate = new Date(entry.updated[0]).toISOString();
-    if (entry.author) item.author = entry.author[0].name[0];
-    if (entry.content) {
+    if (entry.title && entry.title.length) item.title = entry.title[0];
+    if (entry.link && entry.link.length) item.link = entry.link[0].$.href;
+    if (entry.updated && entry.updated.length) item.pubDate = new Date(entry.updated[0]).toISOString();
+    if (entry.author && entry.author.length) item.author = entry.author[0].name[0];
+    if (entry.content && entry.content.length) {
       item.content = getContent(entry.content[0]);
       item.contentSnippet = getSnippet(item.content)
     }

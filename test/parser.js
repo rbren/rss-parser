@@ -47,4 +47,8 @@ describe('Parser', function() {
   it('should parse reddits new feed', function(done) {
     testParseForFile('reddit-home', 'rss', done);
   })
+
+  it('should parse with missing fields', function(done) {
+    testParseForFile('missing-fields', 'atom', done)
+  })
 })
