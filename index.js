@@ -43,13 +43,16 @@ var parseAtomFeed = function(xmlObj, callback) {
   if (feed.link[1] && feed.link[1].$.href) {
     json.feed.feedUrl = feed.link[1].$.href;
   }
-  if (feed.title[0]) {
+  if (feed.title[0]._) {
+    json.feed.title = feed.title[0]._;
+  } else if (feed.title[0]) {
     json.feed.title = feed.title[0];
   }
   var entries = feed.entry;
   (entries || []).forEach(function (entry) {
     var item = {};
-    if (entry.title) item.title = entry.title[0];
+    if (entry.title && entry.title[0]._) item.title = entry.title[0]._;
+    else if (entry.title) item.title = entry.title[0];
     if (entry.link) item.link = entry.link[0].$.href;
     if (entry.updated) item.pubDate = new Date(entry.updated[0]).toISOString();
     if (entry.author) item.author = entry.author[0].name[0];
