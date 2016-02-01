@@ -42,12 +42,18 @@ var parseAtomFeed = function(xmlObj, callback) {
     if (feed.link[1] && feed.link[1].$.href) json.feed.feedUrl = feed.link[1].$.href;
   }
   if (feed.title) {
-    if (feed.title[0]) json.feed.title = feed.title[0];
+    var title = feed.title[0] || '';
+    if (title._) title = title._
+    if (title) json.feed.title = title;
   }
   var entries = feed.entry;
   (entries || []).forEach(function (entry) {
     var item = {};
-    if (entry.title && entry.title.length) item.title = entry.title[0];
+    if (entry.title) {
+      var title = entry.title[0] || '';
+      if (title._) title = title._;
+      if (title) item.title = title;
+    }
     if (entry.link && entry.link.length) item.link = entry.link[0].$.href;
     if (entry.updated && entry.updated.length) item.pubDate = new Date(entry.updated[0]).toISOString();
     if (entry.author && entry.author.length) item.author = entry.author[0].name[0];

@@ -51,4 +51,8 @@ describe('Parser', function() {
   it('should parse with missing fields', function(done) {
     testParseForFile('missing-fields', 'atom', done)
   })
+
+  it('should parse heise', function(done) {
+    testParseForFile('heise', 'atom', done);
+  })
 })
