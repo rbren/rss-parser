@@ -123,9 +123,7 @@ Parser.parseURL = function(url, callback) {
     res.on('end', function() {
       return Parser.parseString(xml, callback);
     })
-		res.on('error', function(){
-			callback;
-		})
+    res.on('error', callback);
   })
   req.on('error', callback);
 }
