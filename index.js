@@ -9,10 +9,11 @@ var Parser = module.exports = {};
 
 var TOP_FIELDS = ['title', 'description', 'author', 'link'];
 var ITEM_FIELDS = [
-  'title',
+  'author',
+  'content:encoded',
   'link',
   'pubDate',
-  'author',
+  'title'
 ]
 
 var stripHtml = function(str) {
