@@ -91,7 +91,7 @@ var parseRSS2 = function(xmlObj, callback) {
       entry.contentSnippet = getSnippet(entry.content);
     }
     if (item.guid) {
-      entry.guid = item.guid[0]._;
+      entry.guid = item.guid[0];
     }
     if (item.category) entry.categories = item.category;
     json.feed.entries.push(entry);
