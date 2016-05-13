@@ -12,10 +12,11 @@ var Parser = module.exports = {};
 
 var TOP_FIELDS = ['title', 'description', 'author', 'link'];
 var ITEM_FIELDS = [
-  'title',
+  'author',
+  'content:encoded',
   'link',
   'pubDate',
-  'author',
+  'title'
 ]
 
 var stripHtml = function(str) {
@@ -90,7 +91,7 @@ var parseRSS2 = function(xmlObj, callback) {
       entry.contentSnippet = getSnippet(entry.content);
     }
     if (item.guid) {
-      entry.guid = item.guid[0]._;
+      entry.guid = item.guid[0];
     }
     if (item.category) entry.categories = item.category;
     json.feed.entries.push(entry);
@@ -6016,7 +6017,7 @@ IncomingMessage.prototype._onXHRProgress = function () {
 				self.push(new Buffer(response))
 				break
 			}
-			// Falls through in IE8	
+			// Falls through in IE8
 		case 'text':
 			try { // This will fail when readyState = 3 in IE9. Switch mode and wait for readyState = 4
 				response = xhr.responseText
