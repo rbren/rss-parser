@@ -13,6 +13,7 @@ var ITEM_FIELDS = [
   'link',
   'pubDate',
   'author',
+  'content:encoded',
 ]
 
 var stripHtml = function(str) {
@@ -91,7 +92,8 @@ var parseRSS2 = function(xmlObj, callback) {
       entry.contentSnippet = getSnippet(entry.content);
     }
     if (item.guid) {
-      entry.guid = item.guid[0]._;
+      entry.guid = item.guid[0];
+      if (entry.guid._) entry.guid = entry.guid._;
     }
     if (item.category) entry.categories = item.category;
     json.feed.entries.push(entry);
