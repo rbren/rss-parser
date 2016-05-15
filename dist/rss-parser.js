@@ -1,4 +1,4 @@
-/*! rss-parser 2.2.2 */
+/*! rss-parser 2.2.4 */
 
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.RSSParser = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var Entities = require("entities");
@@ -16,6 +16,7 @@ var ITEM_FIELDS = [
   'link',
   'pubDate',
   'author',
+  'content:encoded',
 ]
 
 var stripHtml = function(str) {
@@ -40,23 +41,27 @@ var getContent = function(content) {
 var parseAtomFeed = function(xmlObj, callback) {
   var feed = xmlObj.feed;
   var json = {feed: {entries: []}};
-  if (feed.link[0] && feed.link[0].$.href) {
-    json.feed.link = feed.link[0].$.href;
+  if (feed.link) {
+    if (feed.link[0] && feed.link[0].$.href) json.feed.link = feed.link[0].$.href;
+    if (feed.link[1] && feed.link[1].$.href) json.feed.feedUrl = feed.link[1].$.href;
   }
-  if (feed.link[1] && feed.link[1].$.href) {
-    json.feed.feedUrl = feed.link[1].$.href;
-  }
-  if (feed.title[0]) {
-    json.feed.title = feed.title[0];
+  if (feed.title) {
+    var title = feed.title[0] || '';
+    if (title._) title = title._
+    if (title) json.feed.title = title;
   }
   var entries = feed.entry;
   (entries || []).forEach(function (entry) {
     var item = {};
-    if (entry.title) item.title = entry.title[0];
-    if (entry.link) item.link = entry.link[0].$.href;
-    if (entry.updated) item.pubDate = new Date(entry.updated[0]).toISOString();
-    if (entry.author) item.author = entry.author[0].name[0];
-    if (entry.content) {
+    if (entry.title) {
+      var title = entry.title[0] || '';
+      if (title._) title = title._;
+      if (title) item.title = title;
+    }
+    if (entry.link && entry.link.length) item.link = entry.link[0].$.href;
+    if (entry.updated && entry.updated.length) item.pubDate = new Date(entry.updated[0]).toISOString();
+    if (entry.author && entry.author.length) item.author = entry.author[0].name[0];
+    if (entry.content && entry.content.length) {
       item.content = getContent(entry.content[0]);
       item.contentSnippet = getSnippet(item.content)
     }
@@ -90,7 +95,8 @@ var parseRSS2 = function(xmlObj, callback) {
       entry.contentSnippet = getSnippet(entry.content);
     }
     if (item.guid) {
-      entry.guid = item.guid[0]._;
+      entry.guid = item.guid[0];
+      if (entry.guid._) entry.guid = entry.guid._;
     }
     if (item.category) entry.categories = item.category;
     json.feed.entries.push(entry);
@@ -123,7 +129,6 @@ Parser.parseURL = function(url, callback) {
     res.on('end', function() {
       return Parser.parseString(xml, callback);
     })
-    res.on('error', callback);
   })
   req.on('error', callback);
 }
