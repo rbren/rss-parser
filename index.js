@@ -9,10 +9,11 @@ var Parser = module.exports = {};
 
 var TOP_FIELDS = ['title', 'description', 'author', 'link'];
 var ITEM_FIELDS = [
-  'title',
+  'author',
+  'content:encoded',
   'link',
   'pubDate',
-  'author',
+  'title'
 ]
 
 var stripHtml = function(str) {
@@ -91,7 +92,7 @@ var parseRSS2 = function(xmlObj, callback) {
       entry.contentSnippet = getSnippet(entry.content);
     }
     if (item.guid) {
-      entry.guid = item.guid[0]._;
+      entry.guid = item.guid[0];
     }
     if (item.category) entry.categories = item.category;
     json.feed.entries.push(entry);
