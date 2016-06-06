@@ -103,7 +103,7 @@ var parseRSS2 = function(xmlObj, callback) {
 
 Parser.parseString = function(xml, callback) {
   XML2JS.parseString(xml, function(err, result) {
-    if (err) throw err;
+    if (err) return callback(err);
     if (result.feed) {
       return parseAtomFeed(result, callback)
     } else if (result.rss && result.rss.$.version && result.rss.$.version.indexOf('2') === 0) {
