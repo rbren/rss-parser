@@ -13,6 +13,7 @@ var OUTPUT_FILE = __dirname + '/output/reddit.json';
 describe('Parser', function() {
   var testParseForFile = function(name, ext, done) {
     Parser.parseFile(IN_DIR + '/' + name + '.' + ext, function(err, parsed) {
+      console.log('e', err, parsed);
       Expect(err).to.equal(null);
       if (process.env.WRITE_GOLDEN) {
         FS.writeFileSync(OUT_DIR + '/' + name + '.json', JSON.stringify(parsed, null, 2));
@@ -58,5 +59,9 @@ describe('Parser', function() {
 
   it('should parse Instant Article', function(done) {
     testParseForFile('instant-article', 'rss', done);
-  })
+  });
+
+  it('should parse Feedburner', function(done) {
+    testParseForFile('feedburner', 'atom', done);
+  });
 })
