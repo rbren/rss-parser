@@ -55,4 +55,8 @@ describe('Parser', function() {
   it('should parse heise', function(done) {
     testParseForFile('heise', 'atom', done);
   })
+
+  it('should parse Instant Article', function(done) {
+    testParseForFile('instant-article', 'rss', done);
+  })
 })
