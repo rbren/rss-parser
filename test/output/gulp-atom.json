@@ -1,0 +1,99 @@
+{
+  "feed": {
+    "entries": [
+      {
+        "title": "v3.9.0",
+        "link": "/gulpjs/gulp/releases/tag/v3.9.0",
+        "pubDate": "2015-06-01T21:49:41.000Z",
+        "author": "contra",
+        "content": "<p>3.9.0</p>",
+        "contentSnippet": "3.9.0",
+        "id": "tag:github.com,2008:Repository/11167738/v3.9.0"
+      },
+      {
+        "title": "v3.8.11",
+        "link": "/gulpjs/gulp/releases/tag/v3.8.11",
+        "pubDate": "2015-02-09T20:37:28.000Z",
+        "author": "contra",
+        "content": "<p>3.8.11</p>",
+        "contentSnippet": "3.8.11",
+        "id": "tag:github.com,2008:Repository/11167738/v3.8.11"
+      },
+      {
+        "title": "v3.8.10",
+        "link": "/gulpjs/gulp/releases/tag/v3.8.10",
+        "pubDate": "2014-11-04T00:11:30.000Z",
+        "author": "contra",
+        "content": "<p>3.8.10</p>",
+        "contentSnippet": "3.8.10",
+        "id": "tag:github.com,2008:Repository/11167738/v3.8.10"
+      },
+      {
+        "title": "v3.8.9",
+        "link": "/gulpjs/gulp/releases/tag/v3.8.9",
+        "pubDate": "2014-10-22T06:55:20.000Z",
+        "author": "contra",
+        "content": "<p>3.8.9</p>",
+        "contentSnippet": "3.8.9",
+        "id": "tag:github.com,2008:Repository/11167738/v3.8.9"
+      },
+      {
+        "title": "v3.8.8",
+        "link": "/gulpjs/gulp/releases/tag/v3.8.8",
+        "pubDate": "2014-09-07T20:20:11.000Z",
+        "author": "contra",
+        "content": "<p>3.8.8</p>",
+        "contentSnippet": "3.8.8",
+        "id": "tag:github.com,2008:Repository/11167738/v3.8.8"
+      },
+      {
+        "title": "v3.8.7",
+        "link": "/gulpjs/gulp/releases/tag/v3.8.7",
+        "pubDate": "2014-08-02T04:58:19.000Z",
+        "author": "contra",
+        "content": "<p>3.8.7</p>",
+        "contentSnippet": "3.8.7",
+        "id": "tag:github.com,2008:Repository/11167738/v3.8.7"
+      },
+      {
+        "title": "v3.8.6",
+        "link": "/gulpjs/gulp/releases/tag/v3.8.6",
+        "pubDate": "2014-07-09T22:06:50.000Z",
+        "author": "contra",
+        "content": "<p>3.8.6</p>",
+        "contentSnippet": "3.8.6",
+        "id": "tag:github.com,2008:Repository/11167738/v3.8.6"
+      },
+      {
+        "title": "v3.8.5",
+        "link": "/gulpjs/gulp/releases/tag/v3.8.5",
+        "pubDate": "2014-06-27T06:53:54.000Z",
+        "author": "contra",
+        "content": "<p>3.8.5</p>",
+        "contentSnippet": "3.8.5",
+        "id": "tag:github.com,2008:Repository/11167738/v3.8.5"
+      },
+      {
+        "title": "v3.8.4",
+        "link": "/gulpjs/gulp/releases/tag/v3.8.4",
+        "pubDate": "2014-06-27T06:38:43.000Z",
+        "author": "contra",
+        "content": "<p>3.8.4</p>",
+        "contentSnippet": "3.8.4",
+        "id": "tag:github.com,2008:Repository/11167738/v3.8.4"
+      },
+      {
+        "title": "v3.8.3",
+        "link": "/gulpjs/gulp/releases/tag/v3.8.3",
+        "pubDate": "2014-06-26T21:17:51.000Z",
+        "author": "contra",
+        "content": "<p>3.8.3</p>",
+        "contentSnippet": "3.8.3",
+        "id": "tag:github.com,2008:Repository/11167738/v3.8.3"
+      }
+    ],
+    "link": "https://github.com/gulpjs/gulp/releases",
+    "feedUrl": "https://github.com/gulpjs/gulp/releases.atom",
+    "title": "Release notes from gulp"
+  }
+}

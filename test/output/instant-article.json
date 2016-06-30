@@ -1,0 +1,18 @@
+{
+  "feed": {
+    "entries": [
+      {
+        "title": "My first Instant Article",
+        "link": "https://localhost:8000",
+        "pubDate": "Wed, 04 May 2016 06:53:45 GMT",
+        "content:encoded": "<b>Lorem</b> ipsum",
+        "content": "Lorem ipsum",
+        "contentSnippet": "Lorem ipsum",
+        "guid": "https://localhost:8000"
+      }
+    ],
+    "title": "Instant Article Test",
+    "description": "1, 2, 1, 2… check the mic!",
+    "link": "https://localhost:8000"
+  }
+}

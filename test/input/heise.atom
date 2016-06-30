@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title type="text">heise developer neueste Meldungen</title>
+    <subtitle type="html">Informationen für Entwickler</subtitle>
+    <updated>2016-02-01T17:54:50+01:00</updated>
+    <id>http://www.heise.de/developer/</id><logo>http://www.heise.de/developer/icons/heise_developer_logo_weiss.gif</logo>
+    <link rel="self" type="application/atom+xml" href="http://www.heise.de/developer/rss/news-atom.xml" />
+    <link rel="alternate" type="text/html" href="http://www.heise.de/developer/" />
+    <rights>Copyright (c) 2016 Heise Medien</rights>
+    <author>
+        <name>heise online</name>
+    </author>
+
+    <entry>
+        <title type="text">Java-Anwendungsserver: Red Hat gibt WildFly 10 frei</title>
+        <id>http://heise.de/-3088438</id>
+        <updated>2016-02-01T17:54:50+01:00</updated>
+        <published>2016-02-01T17:22:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/meldung/Java-Anwendungsserver-Red-Hat-gibt-WildFly-10-frei-3088438.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Die nun verfügbare Version 10 des Enterprise-Java-Servers stellt die Basis für Red Hats kommerzielle JBoss Enterprise Application Platform 7 ist zugleich das dritte größere Release seit dem Namenswechsel des Open-Source-Projekts.</summary>
+        <content type="html"><![CDATA[
+                <a href="http://www.heise.de/developer/meldung/Java-Anwendungsserver-Red-Hat-gibt-WildFly-10-frei-3088438.html?wt_mc=rss.developer.beitrag.atom" title="Java-Anwendungsserver: Red Hat gibt WildFly 10 frei">
+                    
+                        <img src="http://www.heise.de/scale/geometry/264/q80/imgs/18/1/7/3/9/9/2/1/wildfly-2bf4ffd2935e38b6-90200def80b152e9-5ba35d3770232d92.jpeg" alt="WildFly 10" />
+                    
+                </a>
+                <p>Die nun verfügbare Version 10 des Enterprise-Java-Servers stellt die Basis für Red Hats kommerzielle JBoss Enterprise Application Platform 7 ist zugleich das dritte größere Release seit dem Namenswechsel des Open-Source-Projekts.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">Scrum Day 2016: Bewerbungen für Vorträge und Workshops</title>
+        <id>http://heise.de/-3088627</id>
+        <updated>2016-02-01T14:29:00+01:00</updated>
+        <published>2016-02-01T14:29:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/meldung/Scrum-Day-2016-Bewerbungen-fuer-Vortraege-und-Workshops-3088627.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Über das Programm des zehnten Scrum Day stimmen die Teilnehmer selbst ab. Doch zuvor sind Scrum-Experten dran, sich bis Ende Februar mit einem Vortrag oder Workshop zu bewerben.</summary>
+        <content type="html"><![CDATA[
+                <a href="http://www.heise.de/developer/meldung/Scrum-Day-2016-Bewerbungen-fuer-Vortraege-und-Workshops-3088627.html?wt_mc=rss.developer.beitrag.atom" title="Scrum Day 2016: Bewerbungen für Vorträge und Workshops">
+                    
+                        <img src="http://www.heise.de/scale/geometry/264/q80/imgs/18/1/7/4/0/0/6/3/header_scrumday_01-e4ef3375d4c003c4.jpeg" alt="Vortragseinreichungen zum Scrum Day 2016 erwünscht" />
+                    
+                </a>
+                <p>Über das Programm des zehnten Scrum Day stimmen die Teilnehmer selbst ab. Doch zuvor sind Scrum-Experten dran, sich bis Ende Februar mit einem Vortrag oder Workshop zu bewerben.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">Microsoft veröffentlicht Cordova-Erweiterung für Visual Studio Code</title>
+        <id>http://heise.de/-3088372</id>
+        <updated>2016-02-01T12:12:11+01:00</updated>
+        <published>2016-02-01T12:12:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/meldung/Microsoft-veroeffentlicht-Cordova-Erweiterung-fuer-Visual-Studio-Code-3088372.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Mit dem für unterschiedliche Plattformen verfügbaren Code-Editor lassen sich nun auch hybride Apps für iOS, Android, Blackberry und Windows Phone auf Basis von HTML, CSS und JavaScript entwickeln.</summary>
+        <content type="html"><![CDATA[
+                <a href="http://www.heise.de/developer/meldung/Microsoft-veroeffentlicht-Cordova-Erweiterung-fuer-Visual-Studio-Code-3088372.html?wt_mc=rss.developer.beitrag.atom" title="Microsoft veröffentlicht Cordova-Erweiterung für Visual Studio Code">
+                    
+                        <img src="http://www.heise.de/scale/geometry/264/q80/imgs/18/1/7/3/9/8/6/8/mobile-e0c120027bcb28f0.jpeg" alt="Microsoft veröffentlicht Cordova-Erweiterung für Visual Studio Code" />
+                    
+                </a>
+                <p>Mit dem für unterschiedliche Plattformen verfügbaren Code-Editor lassen sich nun auch hybride Apps für iOS, Android, Blackberry und Windows Phone auf Basis von HTML, CSS und JavaScript entwickeln.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">Ungewisse Zukunft des MySQLDumper-Projekts</title>
+        <id>http://heise.de/-3088410</id>
+        <updated>2016-02-01T10:34:18+01:00</updated>
+        <published>2016-02-01T10:34:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/meldung/Ungewisse-Zukunft-des-MySQLDumper-Projekts-3088410.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Daniel Schlichtholz hat sich von der Entwicklung des PHP- beziehungsweise Perl-Skripts verabschiedet, mit dem sich MySQL-Daten sichern und gegebenenfalls wiederherstellen lassen. Fällige Anpassungen an das neue PHP 7 würden ihn zu viel Zeit kosten.</summary>
+        <content type="html"><![CDATA[
+                <a href="http://www.heise.de/developer/meldung/Ungewisse-Zukunft-des-MySQLDumper-Projekts-3088410.html?wt_mc=rss.developer.beitrag.atom" title="Ungewisse Zukunft des MySQLDumper-Projekts">
+                    
+                        <img src="http://www.heise.de/scale/geometry/264/q80/imgs/18/1/7/3/9/8/9/7/aufmacher_ajax-a0995782e064d11e.jpeg" alt="Ungewisse Zukunft des MySQLDumper-Projekts" />
+                    
+                </a>
+                <p>Daniel Schlichtholz hat sich von der Entwicklung des PHP- beziehungsweise Perl-Skripts verabschiedet, mit dem sich MySQL-Daten sichern und gegebenenfalls wiederherstellen lassen. Fällige Anpassungen an das neue PHP 7 würden ihn zu viel Zeit kosten.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">Änderungen bei der Authentifizierung in Microsofts v2.0 App Model</title>
+        <id>http://heise.de/-3088319</id>
+        <updated>2016-02-01T10:19:01+01:00</updated>
+        <published>2016-02-01T10:19:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/meldung/Aenderungen-bei-der-Authentifizierung-in-Microsofts-v2-0-App-Model-3088319.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Microsoft ändert das v2.0 Auth Protocol zur Anmeldung an die Cloud-Dienste Microsoft Account und Azure Active Directory. Entwickler müssen aufgrund der Neuerungen vermutlich vorhandenen Code anpassen.</summary>
+        <content type="html"><![CDATA[
+                <a href="http://www.heise.de/developer/meldung/Aenderungen-bei-der-Authentifizierung-in-Microsofts-v2-0-App-Model-3088319.html?wt_mc=rss.developer.beitrag.atom" title="Änderungen bei der Authentifizierung in Microsofts v2.0 App Model">
+                    
+                        <img src="http://www.heise.de/scale/geometry/264/q80/imgs/18/1/7/3/9/8/3/5/auth-b38ed34aab1cffa8.jpeg" alt="Änderungen in der Authentifizierung an Microsofts v2.0 App Model" />
+                    
+                </a>
+                <p>Microsoft ändert das v2.0 Auth Protocol zur Anmeldung an die Cloud-Dienste Microsoft Account und Azure Active Directory. Entwickler müssen aufgrund der Neuerungen vermutlich vorhandenen Code anpassen.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">Der Pragmatische Architekt: Ein gutes Szenario</title>
+        <id>http://heise.de/-3088146</id>
+        <updated>2016-02-01T08:24:19+01:00</updated>
+        <published>2016-02-01T08:24:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/artikel/Ein-gutes-Szenario-3088146.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Wie entwirft ein Softwarearchitekt am besten ein System? Dass es dafür kein einfaches Rezept gibt, ist der Komplexität und Heterogenität von Softwareprojekten geschuldet. Die Sache ist aber nicht hoffnungslos. Szenarien bieten für diesen Zweck ein sehr gutes Instrumentarium.</summary>
+        <content type="html"><![CDATA[
+                <p>Wie entwirft ein Softwarearchitekt am besten ein System? Dass es dafür kein einfaches Rezept gibt, ist der Komplexität und Heterogenität von Softwareprojekten geschuldet. Die Sache ist aber nicht hoffnungslos. Szenarien bieten für diesen Zweck ein sehr gutes Instrumentarium.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">Developer Snapshots: Programmierer-News in ein, zwei Sätzen</title>
+        <id>http://heise.de/-3087585</id>
+        <updated>2016-01-29T15:37:06+01:00</updated>
+        <published>2016-01-29T15:37:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/meldung/Developer-Snapshots-Programmierer-News-in-ein-zwei-Saetzen-3087585.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">heise Developer fasst jede Woche bisher vernachlässigte, aber doch wichtige Nachrichten zu Tools, Spezifikationen oder anderem zusammen – dieses Mal u.a. mit einem OCaml-Cross-Compiler für iOS, LLVM 3.8 und Cloud9-Integration in Googles Cloud-Plattform.</summary>
+        <content type="html"><![CDATA[
+                <a href="http://www.heise.de/developer/meldung/Developer-Snapshots-Programmierer-News-in-ein-zwei-Saetzen-3087585.html?wt_mc=rss.developer.beitrag.atom" title="Developer Snapshots: Programmierer-News in ein, zwei Sätzen">
+                    
+                        <img src="http://www.heise.de/scale/geometry/264/q80/imgs/18/1/7/3/9/4/0/4/snapshot-e74b5b984c4c2ec8-e74b5b984c4c2ec8-e74b5b984c4c2ec8.jpeg" alt="Developer Snapshots: Programmierer-News in ein, zwei Sätzen" />
+                    
+                </a>
+                <p>heise Developer fasst jede Woche bisher vernachlässigte, aber doch wichtige Nachrichten zu Tools, Spezifikationen oder anderem zusammen – dieses Mal u.a. mit einem OCaml-Cross-Compiler für iOS, LLVM 3.8 und Cloud9-Integration in Googles Cloud-Plattform.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">Der Dotnet-Doktor: Auslesen und Sortieren von GPX-Dateien </title>
+        <id>http://heise.de/-3087150</id>
+        <updated>2016-01-29T13:59:32+01:00</updated>
+        <published>2016-01-29T13:59:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/artikel/Auslesen-und-Sortieren-von-GPX-Dateien-3087150.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Die Windows PowerShell biete eine schnelle Lösung für die Aufgabe, eine größere Menge von XML-Dateien zu sortieren.</summary>
+        <content type="html"><![CDATA[
+                <p>Die Windows PowerShell biete eine schnelle Lösung für die Aufgabe, eine größere Menge von XML-Dateien zu sortieren.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">SourceForge und Slashdot wechseln erneut den Besitzer</title>
+        <id>http://heise.de/-3087034</id>
+        <updated>2016-01-29T14:24:17+01:00</updated>
+        <published>2016-01-29T13:02:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/meldung/SourceForge-und-Slashdot-wechseln-erneut-den-Besitzer-3087034.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Der neue Besitzer, ein US-amerikanisches Webmedia-Unternehmen, will offenbar den ramponierten Ruf der Hosting-Plattform für Open-Source-Projekte aufpolieren.</summary>
+        <content type="html"><![CDATA[
+                <a href="http://www.heise.de/developer/meldung/SourceForge-und-Slashdot-wechseln-erneut-den-Besitzer-3087034.html?wt_mc=rss.developer.beitrag.atom" title="SourceForge und Slashdot wechseln erneut den Besitzer">
+                    
+                        <img src="http://www.heise.de/scale/geometry/264/q80/imgs/18/1/7/3/9/0/8/8/sourceforge-2c6349cf25f67c35.jpeg" alt="SourceForge und Slashdot bekommen neuen Besitzer" />
+                    
+                </a>
+                <p>Der neue Besitzer, ein US-amerikanisches Webmedia-Unternehmen, will offenbar den ramponierten Ruf der Hosting-Plattform für Open-Source-Projekte aufpolieren.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">Tales from the Web side: Patterns und Best Practices in JavaScript: Typüberprüfungen continued</title>
+        <id>http://heise.de/-3086830</id>
+        <updated>2016-01-29T11:46:59+01:00</updated>
+        <published>2016-01-29T11:23:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/artikel/Patterns-und-Best-Practices-in-JavaScript-Typueberpruefungen-continued-3086830.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Der instanceof-Operator in JavaScript kann in einigen Fällen problematisch sein kann, nämlich immer dann, wenn man mit mehreren Versionen der gleichen &amp;quot;Klasse&amp;quot; arbeitet. Nun werden einige Lösungsansätze skizziert.</summary>
+        <content type="html"><![CDATA[
+                <p>Der instanceof-Operator in JavaScript kann in einigen Fällen problematisch sein kann, nämlich immer dann, wenn man mit mehreren Versionen der gleichen &quot;Klasse&quot; arbeitet. Nun werden einige Lösungsansätze skizziert.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">Facebook schließt Parse-Plattform</title>
+        <id>http://heise.de/-3086857</id>
+        <updated>2016-01-29T12:53:33+01:00</updated>
+        <published>2016-01-29T10:12:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/meldung/Facebook-schliesst-Parse-Plattform-3086857.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Ein Jahr bleibt Entwicklern, die den Mobile Backend as a Service nutzen, auf ein eigenes MongoDB-basiertes Angebot zu migrieren oder den nun als Open Source verfügbaren Parse-Server zu verwenden.</summary>
+        <content type="html"><![CDATA[
+                <a href="http://www.heise.de/developer/meldung/Facebook-schliesst-Parse-Plattform-3086857.html?wt_mc=rss.developer.beitrag.atom" title="Facebook schließt Parse-Plattform">
+                    
+                        <img src="http://www.heise.de/scale/geometry/264/q80/imgs/18/1/7/3/8/9/4/4/aufmacher_ajax__4_-809c9c50d2488b9c.jpeg" alt="Facebook kündigt Schließung der Parse-Plattform an" />
+                    
+                </a>
+                <p>Ein Jahr bleibt Entwicklern, die den Mobile Backend as a Service nutzen, auf ein eigenes MongoDB-basiertes Angebot zu migrieren oder den nun als Open Source verfügbaren Parse-Server zu verwenden.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">Continuous Lifecycle London: Programm online, Ticketverkauf gestartet</title>
+        <id>http://heise.de/-3086901</id>
+        <updated>2016-01-29T10:10:17+01:00</updated>
+        <published>2016-01-29T10:10:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/meldung/Continuous-Lifecycle-London-Programm-online-Ticketverkauf-gestartet-3086901.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Anfang Mai feiert die englische Version der Continuous-Lifecycle-Konferenz in London Premiere. Jez Humble und Dave Farley sind nur zwei der Sprecher aus dem nun bekannt gegebenen Programm, das Continuous Delivery, DevOps und Co. ins Zentrum stellt.</summary>
+        <content type="html"><![CDATA[
+                <a href="http://www.heise.de/developer/meldung/Continuous-Lifecycle-London-Programm-online-Ticketverkauf-gestartet-3086901.html?wt_mc=rss.developer.beitrag.atom" title="Continuous Lifecycle London: Programm online, Ticketverkauf gestartet">
+                    
+                        <img src="http://www.heise.de/scale/geometry/264/q80/imgs/18/1/7/3/8/9/7/9/cll-093e7b1c3851b5a0.jpeg" alt="Continuous Lifecycle London: Programm online, Ticketverkauf gestartet" />
+                    
+                </a>
+                <p>Anfang Mai feiert die englische Version der Continuous-Lifecycle-Konferenz in London Premiere. Jez Humble und Dave Farley sind nur zwei der Sprecher aus dem nun bekannt gegebenen Programm, das Continuous Delivery, DevOps und Co. ins Zentrum stellt.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">Java Runtime Zing verdoppelt die maximale Speichergröße auf 2 TB</title>
+        <id>http://heise.de/-3086807</id>
+        <updated>2016-01-29T09:58:31+01:00</updated>
+        <published>2016-01-29T09:58:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/meldung/Java-Runtime-Zing-verdoppelt-die-maximale-Speichergroesse-auf-2-TB-3086807.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Die Java Virtual Machine Zing ist speziell auf speicherhungrige Anwendungen ausgelegt. Mit Version 16.1 darf der dynamische Speicher auf 2 Terabyte steigen.</summary>
+        <content type="html"><![CDATA[
+                <a href="http://www.heise.de/developer/meldung/Java-Runtime-Zing-verdoppelt-die-maximale-Speichergroesse-auf-2-TB-3086807.html?wt_mc=rss.developer.beitrag.atom" title="Java Runtime Zing verdoppelt die maximale Speichergröße auf 2 TB">
+                    
+                        <img src="http://www.heise.de/scale/geometry/264/q80/imgs/18/1/7/3/8/9/0/7/aufmacher_ajax__3_-019d32d5c8efc5c0.jpeg" alt="Java Runtime Zing verdoppelt die maximale Speichergröße auf 2 TB" />
+                    
+                </a>
+                <p>Die Java Virtual Machine Zing ist speziell auf speicherhungrige Anwendungen ausgelegt. Mit Version 16.1 darf der dynamische Speicher auf 2 Terabyte steigen.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">C# 7 – Stand der Dinge und Ausblick</title>
+        <id>http://heise.de/-3086504</id>
+        <updated>2016-01-29T10:33:20+01:00</updated>
+        <published>2016-01-29T09:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/artikel/C-7-Stand-der-Dinge-und-Ausblick-3086504.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Ein Blick auf die möglichen Neuerungen für C# 7 zeigt, wie sich die Sprache Anregungen jenseits des Tellerands der objektorientierten Programmierung holt.</summary>
+        <content type="html"><![CDATA[
+                <a href="http://www.heise.de/developer/artikel/C-7-Stand-der-Dinge-und-Ausblick-3086504.html?wt_mc=rss.developer.beitrag.atom" title="C# 7 – Stand der Dinge und Ausblick">
+                    
+                        <img  src="http://www.heise.de/developer/imgs/06/1/7/3/8/7/4/4/cis_-_Anriss-ed7ebdc4112307ae.jpeg" width="100" height="55" alt="C# 7 - Stand der Dinge und Ausblick" title="C# 7 - Stand der Dinge und Ausblick" style="float: left; margin-right: 15px; margin-top: 3px;" />
+                    
+                </a>
+                <p>Ein Blick auf die möglichen Neuerungen für C# 7 zeigt, wie sich die Sprache Anregungen jenseits des Tellerands der objektorientierten Programmierung holt.</p>
+        ]]></content>
+    </entry>
+    <entry>
+        <title type="text">Apache Software Foundation bekommt ein neues Logo</title>
+        <id>http://heise.de/-3086458</id>
+        <updated>2016-01-28T17:07:04+01:00</updated>
+        <published>2016-01-28T17:07:00+01:00</published>
+        <link rel="alternate" type="text/html" href="http://www.heise.de/developer/meldung/Apache-Software-Foundation-bekommt-ein-neues-Logo-3086458.html?wt_mc=rss.developer.beitrag.atom" />
+        <summary type="html">Das neue Logos soll zugleich die bisherige Vergangenheit und den zukunftsorientierten energischen Wachstum der Open-Source-Organisation reflektieren.</summary>
+        <content type="html"><![CDATA[
+                <a href="http://www.heise.de/developer/meldung/Apache-Software-Foundation-bekommt-ein-neues-Logo-3086458.html?wt_mc=rss.developer.beitrag.atom" title="Apache Software Foundation bekommt ein neues Logo">
+                    
+                        <img src="http://www.heise.de/scale/geometry/264/q80/imgs/18/1/7/3/8/7/0/1/aufmacher_ajax-242d052f1ab3bed7.jpeg" alt="Apache bekommt ein neues Logo" />
+                    
+                </a>
+                <p>Das neue Logos soll zugleich die bisherige Vergangenheit und den zukunftsorientierten energischen Wachstum der Open-Source-Organisation reflektieren.</p>
+        ]]></content>
+    </entry>
+</feed>
+
