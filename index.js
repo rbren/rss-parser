@@ -11,7 +11,17 @@ var TOP_FIELDS = [
   'title',
   'description',
   'author',
+  'pubDate',
+  'webMaster',
+  'managingEditor',
+  'generator',
   'link'
+];
+var PODCAST_TOP_FIELDS = [
+  'author',
+  'subtitle',
+  'summary',
+  'explicit'
 ];
 var ITEM_FIELDS = [
   'title',
@@ -19,7 +29,16 @@ var ITEM_FIELDS = [
   'pubDate',
   'author',
   'content:encoded',
-]
+  'enclosure'
+];
+var PODCAST_ITEM_FIELDS = [
+  'author',
+  'subtitle',
+  'summary',
+  'explicit',
+  'duration'
+];
+
 
 var stripHtml = function(str) {
   return str.replace(/<(?:.|\n)*?>/gm, '');
@@ -86,11 +105,30 @@ var parseRSS2 = function(xmlObj, callback) {
   TOP_FIELDS.forEach(function(f) {
     if (channel[f]) json.feed[f] = channel[f][0];
   })
+  if (channel['itunes:owner']) {
+    json.feed.itunes = {
+      owner: {
+         name: channel['itunes:owner'][0]['itunes:name'],
+         email: channel['itunes:owner'][0]['itunes:email']
+      },
+      image: channel['itunes:image'][0].$.href
+    };
+  }
+  PODCAST_TOP_FIELDS.forEach(function(f) {
+    if (channel['itunes:' + f]) json.feed.itunes[f] = channel['itunes:' + f][0];
+  })
   var items = channel.item;
   (items || []).forEach(function(item) {
     var entry = {};
     ITEM_FIELDS.forEach(function(f) {
       if (item[f]) entry[f] = item[f][0];
+    })
+    if (item.enclosure) {
+        entry.enclosure = item.enclosure[0].$;
+        entry.itunes = {};
+    }
+    PODCAST_TOP_FIELDS.forEach(function(f) {
+      if (item['itunes:' + f]) entry.itunes[f] = item['itunes:' + f][0];
     })
     if (item.description) {
       entry.content = getContent(item.description[0]);
