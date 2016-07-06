@@ -1,6 +1,5 @@
 var Entities = require("entities");
 var FS = require('fs');
-var request = require('request');
 var XML2JS = require('xml2js');
 
 var HTTP = require('http');
