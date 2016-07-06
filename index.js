@@ -8,7 +8,12 @@ var HTTPS = require('https');
 
 var Parser = module.exports = {};
 
-var TOP_FIELDS = ['title', 'description', 'author', 'link'];
+var TOP_FIELDS = [
+  'title',
+  'description',
+  'author',
+  'link'
+];
 var ITEM_FIELDS = [
   'title',
   'link',
@@ -78,7 +83,7 @@ var parseRSS1 = function(xmlObj, callback) {
 var parseRSS2 = function(xmlObj, callback) {
   var json = {feed: {entries: []}};
   var channel = xmlObj.rss.channel[0];
-  if (channel['atom:link']) json.feed.feedUrl = channel['atom:link'][0].href;
+  if (channel['atom:link']) json.feed.feedUrl = channel['atom:link'][0].$.href;
   TOP_FIELDS.forEach(function(f) {
     if (channel[f]) json.feed[f] = channel[f][0];
   })
