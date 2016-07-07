@@ -108,8 +108,8 @@ var parseRSS2 = function(xmlObj, callback) {
   if (channel['itunes:owner']) {
     json.feed.itunes = {
       owner: {
-         name: channel['itunes:owner'][0]['itunes:name'],
-         email: channel['itunes:owner'][0]['itunes:email']
+         name: channel['itunes:owner'][0]['itunes:name'][0],
+         email: channel['itunes:owner'][0]['itunes:email'][0]
       },
       image: channel['itunes:image'][0].$.href
     };
