@@ -125,9 +125,9 @@ var parseRSS2 = function(xmlObj, callback) {
     })
     if (item.enclosure) {
         entry.enclosure = item.enclosure[0].$;
-        entry.itunes = {};
     }
-    PODCAST_TOP_FIELDS.forEach(function(f) {
+    PODCAST_ITEM_FIELDS.forEach(function(f) {
+      entry.itunes = entry.itunes || {};
       if (item['itunes:' + f]) entry.itunes[f] = item['itunes:' + f][0];
     })
     if (item.description) {
