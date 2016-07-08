@@ -153,15 +153,15 @@ var decorateItunes = function decorateItunes(json, channel) {
   }
   PODCAST_TOP_FIELDS.forEach(function(f) {
     if (channel['itunes:' + f]) json.feed.itunes[f] = channel['itunes:' + f][0];
-  })
+  });
   (items).forEach(function(item, index) {
     entry = json.feed.entries[index];
     PODCAST_ITEM_FIELDS.forEach(function(f) {
       entry.itunes = entry.itunes || {};
       if (item['itunes:' + f]) entry.itunes[f] = item['itunes:' + f][0];
-    })
+    });
     json.feed.entries[index] = entry;
-  })
+  });
 }
 
 Parser.parseString = function(xml, callback) {
