@@ -7,14 +7,38 @@ var HTTPS = require('https');
 
 var Parser = module.exports = {};
 
-var TOP_FIELDS = ['title', 'description', 'author', 'link'];
+var TOP_FIELDS = [
+  'title',
+  'description',
+  'author',
+  'pubDate',
+  'webMaster',
+  'managingEditor',
+  'generator',
+  'link'
+];
+var PODCAST_TOP_FIELDS = [
+  'author',
+  'subtitle',
+  'summary',
+  'explicit'
+];
 var ITEM_FIELDS = [
   'title',
   'link',
   'pubDate',
   'author',
   'content:encoded',
-]
+  'enclosure'
+];
+var PODCAST_ITEM_FIELDS = [
+  'author',
+  'subtitle',
+  'summary',
+  'explicit',
+  'duration'
+];
+
 
 var stripHtml = function(str) {
   return str.replace(/<(?:.|\n)*?>/gm, '');
@@ -77,7 +101,7 @@ var parseRSS1 = function(xmlObj, callback) {
 var parseRSS2 = function(xmlObj, callback) {
   var json = {feed: {entries: []}};
   var channel = xmlObj.rss.channel[0];
-  if (channel['atom:link']) json.feed.feedUrl = channel['atom:link'][0].href;
+  if (channel['atom:link']) json.feed.feedUrl = channel['atom:link'][0].$.href;
   TOP_FIELDS.forEach(function(f) {
     if (channel[f]) json.feed[f] = channel[f][0];
   })
@@ -87,6 +111,9 @@ var parseRSS2 = function(xmlObj, callback) {
     ITEM_FIELDS.forEach(function(f) {
       if (item[f]) entry[f] = item[f][0];
     })
+    if (item.enclosure) {
+        entry.enclosure = item.enclosure[0].$;
+    }
     if (item.description) {
       entry.content = getContent(item.description[0]);
       entry.contentSnippet = getSnippet(entry.content);
@@ -98,7 +125,43 @@ var parseRSS2 = function(xmlObj, callback) {
     if (item.category) entry.categories = item.category;
     json.feed.entries.push(entry);
   })
+  if (xmlObj.rss.$['xmlns:itunes']) {
+    decorateItunes(json, channel);
+  }
   callback(null, json);
+}
+
+/**
+ * Add iTunes specific fields from XML to extracted JSON
+ *
+ * @access public
+ * @param {object} json extracted
+ * @param {object} channel parsed XML
+ */
+var decorateItunes = function decorateItunes(json, channel) {
+  var items = channel.item || [],
+      entry = {};
+
+  if (channel['itunes:owner']) {
+    json.feed.itunes = {
+      owner: {
+         name: channel['itunes:owner'][0]['itunes:name'][0],
+         email: channel['itunes:owner'][0]['itunes:email'][0]
+      },
+      image: channel['itunes:image'][0].$.href
+    };
+  }
+  PODCAST_TOP_FIELDS.forEach(function(f) {
+    if (channel['itunes:' + f]) json.feed.itunes[f] = channel['itunes:' + f][0];
+  });
+  (items).forEach(function(item, index) {
+    entry = json.feed.entries[index];
+    PODCAST_ITEM_FIELDS.forEach(function(f) {
+      entry.itunes = entry.itunes || {};
+      if (item['itunes:' + f]) entry.itunes[f] = item['itunes:' + f][0];
+    });
+    json.feed.entries[index] = entry;
+  });
 }
 
 Parser.parseString = function(xml, callback) {

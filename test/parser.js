@@ -64,4 +64,7 @@ describe('Parser', function() {
   it('should parse Feedburner', function(done) {
     testParseForFile('feedburner', 'atom', done);
   });
+  it('should parse podcasts', function(done) {
+    testParseForFile('narro', 'rss', done);
+  });
 })

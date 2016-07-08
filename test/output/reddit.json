@@ -277,6 +277,7 @@
         ]
       }
     ],
+    "feedUrl": "https://www.reddit.com/.rss",
     "title": "reddit: the front page of the internet",
     "description": "",
     "link": "https://www.reddit.com/"
