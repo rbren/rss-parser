@@ -105,6 +105,43 @@ var parseRSS2 = function(xmlObj, callback) {
   TOP_FIELDS.forEach(function(f) {
     if (channel[f]) json.feed[f] = channel[f][0];
   })
+  var items = channel.item;
+  (items || []).forEach(function(item) {
+    var entry = {};
+    ITEM_FIELDS.forEach(function(f) {
+      if (item[f]) entry[f] = item[f][0];
+    })
+    if (item.enclosure) {
+        entry.enclosure = item.enclosure[0].$;
+    }
+    if (item.description) {
+      entry.content = getContent(item.description[0]);
+      entry.contentSnippet = getSnippet(entry.content);
+    }
+    if (item.guid) {
+      entry.guid = item.guid[0];
+      if (entry.guid._) entry.guid = entry.guid._;
+    }
+    if (item.category) entry.categories = item.category;
+    json.feed.entries.push(entry);
+  })
+  if (xmlObj.rss.$['xmlns:itunes']) {
+    decorateItunes(json, channel);
+  }
+  callback(null, json);
+}
+
+/**
+ * Add iTunes specific fields from XML to extracted JSON
+ *
+ * @access public
+ * @param {object} json extracted
+ * @param {object} channel parsed XML
+ */
+var decorateItunes = function decorateItunes(json, channel) {
+  var items = channel.item || [],
+      entry = {};
+
   if (channel['itunes:owner']) {
     json.feed.itunes = {
       owner: {
@@ -117,31 +154,14 @@ var parseRSS2 = function(xmlObj, callback) {
   PODCAST_TOP_FIELDS.forEach(function(f) {
     if (channel['itunes:' + f]) json.feed.itunes[f] = channel['itunes:' + f][0];
   })
-  var items = channel.item;
-  (items || []).forEach(function(item) {
-    var entry = {};
-    ITEM_FIELDS.forEach(function(f) {
-      if (item[f]) entry[f] = item[f][0];
-    })
-    if (item.enclosure) {
-        entry.enclosure = item.enclosure[0].$;
-    }
+  (items).forEach(function(item, index) {
+    entry = json.feed.entries[index];
     PODCAST_ITEM_FIELDS.forEach(function(f) {
       entry.itunes = entry.itunes || {};
       if (item['itunes:' + f]) entry.itunes[f] = item['itunes:' + f][0];
     })
-    if (item.description) {
-      entry.content = getContent(item.description[0]);
-      entry.contentSnippet = getSnippet(entry.content);
-    }
-    if (item.guid) {
-      entry.guid = item.guid[0];
-      if (entry.guid._) entry.guid = entry.guid._;
-    }
-    if (item.category) entry.categories = item.category;
-    json.feed.entries.push(entry);
+    json.feed.entries[index] = entry;
   })
-  callback(null, json);
 }
 
 Parser.parseString = function(xml, callback) {
