@@ -1,0 +1,46 @@
+{
+  "feed": {
+    "entries": [
+      {
+        "title": "FAQ for Narro",
+        "link": "https://www.narro.co/article/54e703933058540300000069",
+        "pubDate": "Fri, 20 Feb 2015 09:51:15 UTC",
+        "author": "foobar@gmail.com",
+        "enclosure": {
+          "url": "https://s3.amazonaws.com/nareta-articles/audio/54d046c293f79c0300000003/7e2d2b00-a945-441a-f49b-063786a319a4.mp3",
+          "length": "74",
+          "type": "audio/mpeg"
+        },
+        "content": "Listen to your reading list anywhere. Narro will take your bookmarked articles and read them back to you as a podcast.<br/> http://www.narro.co/faq<br/> <ul class=\"linkList\"></ul>",
+        "contentSnippet": "Listen to your reading list anywhere. Narro will take your bookmarked articles and read them back to you as a podcast. http://www.narro.co/faq",
+        "guid": "https://www.narro.co/article/54e703933058540300000069",
+        "itunes": {
+          "author": "foobar@gmail.com",
+          "subtitle": "FAQ for Narro",
+          "summary": "Listen to your reading list anywhere. Narro will take your bookmarked articles and read them back to you as a podcast. ... http://www.narro.co/faq ... <ul class=\"linkList\"></ul>",
+          "explicit": "no",
+          "duration": "74"
+        }
+      }
+    ],
+    "feedUrl": "http://on.narro.co/f",
+    "title": "foobar on Narro",
+    "description": "foobar uses Narro to create a podcast of articles transcribed to audio.",
+    "pubDate": "Fri, 08 Jul 2016 13:40:00 UTC",
+    "webMaster": "josh@narro.co",
+    "managingEditor": "foobar@gmail.com",
+    "generator": "gopod - http://github.com/jbckmn/gopod",
+    "link": "http://on.narro.co/f",
+    "itunes": {
+      "owner": {
+        "name": "foobar",
+        "email": "foobar@gmail.com"
+      },
+      "image": "https://www.narro.co/images/narro-icon-lg.png",
+      "author": "foobar@gmail.com",
+      "subtitle": "foobar uses Narro to create a podcast of articles transcribed to audio.",
+      "summary": "foobar uses Narro to create a podcast of articles transcribed to audio.",
+      "explicit": "no"
+    }
+  }
+}
