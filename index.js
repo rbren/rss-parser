@@ -1,5 +1,6 @@
 var Entities = require("entities");
 var FS = require('fs');
+var url = require('url');
 var XML2JS = require('xml2js');
 
 var HTTP = require('http');
@@ -177,10 +178,15 @@ Parser.parseString = function(xml, callback) {
   });
 }
 
-Parser.parseURL = function(url, callback) {
+Parser.parseURL = function(feedUrl, callback) {
   var xml = '';
-  var get = url.indexOf('https') === 0 ? HTTPS.get : HTTP.get;
-  var req = get(url, function(res) {
+  var get = feedUrl.indexOf('https') === 0 ? HTTPS.get : HTTP.get;
+  var parsedUrl = url.parse(feedUrl);
+  var req = get({
+    hostname: parsedUrl.hostname,
+    path: parsedUrl.path,
+    headers: {'User-Agent': 'rss-parser'}
+  }, function(res) {
     if (res.statusCode >= 300) return callback(new Error("Status code " + res.statusCode))
     res.setEncoding('utf8');
     res.on('data', function(chunk) {
