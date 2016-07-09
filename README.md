@@ -42,3 +42,15 @@ RSSParser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
 </script>
 ```
 
+### Running Tests
+The tests run the RSS parser for several sample RSS feeds in `test/input` and outputs the resulting JSON into `test/output`. If there are any changes to the output files the tests will fail.
+
+To check if your changes affect the output of any test cases, run
+
+`npm test`
+
+To update the output files with your changes, run
+
+`WRITE_GOLDEN=true npm test`
+
+
