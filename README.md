@@ -53,4 +53,10 @@ To update the output files with your changes, run
 
 `WRITE_GOLDEN=true npm test`
 
+### Publishing Releases
+```bash
+npm version minor # or major/patch
+npm publish
+git push --follow-tags
+```
 
