@@ -57,6 +57,7 @@ To update the output files with your changes, run
 
 ### Publishing Releases
 ```bash
+grunt browserify
 npm version minor # or major/patch
 npm publish
 git push --follow-tags
