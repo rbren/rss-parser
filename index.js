@@ -183,6 +183,7 @@ Parser.parseURL = function(feedUrl, callback) {
   var get = feedUrl.indexOf('https') === 0 ? HTTPS.get : HTTP.get;
   var parsedUrl = url.parse(feedUrl);
   var req = get({
+    protocol: parsedUrl.protocol,
     hostname: parsedUrl.hostname,
     path: parsedUrl.path,
     headers: {'User-Agent': 'rss-parser'}
