@@ -1,11 +1,10 @@
 {
   "name": "rss-parser",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
-
   "author": "Bobby Brennan",
   "license": "MIT",
   "devDependencies": {
