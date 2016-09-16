@@ -151,6 +151,8 @@ var decorateItunes = function decorateItunes(json, channel) {
       },
       image: channel['itunes:image'][0].$.href
     };
+  } else {
+    json.feed.itunes = {}
   }
   PODCAST_TOP_FIELDS.forEach(function(f) {
     if (channel['itunes:' + f]) json.feed.itunes[f] = channel['itunes:' + f][0];
