@@ -142,18 +142,28 @@ var parseRSS2 = function(xmlObj, callback) {
 var decorateItunes = function decorateItunes(json, channel) {
   var items = channel.item || [],
       entry = {};
+  json.feed.itunes = {}
 
   if (channel['itunes:owner']) {
-    json.feed.itunes = {
-      owner: {
-         name: channel['itunes:owner'][0]['itunes:name'][0],
-         email: channel['itunes:owner'][0]['itunes:email'][0]
-      },
-      image: channel['itunes:image'][0].$.href
-    };
-  } else {
-    json.feed.itunes = {}
+    var owner = {},
+        image;
+
+    if(channel['itunes:owner'][0]['itunes:name']) {
+      owner.name = channel['itunes:owner'][0]['itunes:name'][0];
+    }
+    if(channel['itunes:owner'][0]['itunes:email']) {
+      owner.email = channel['itunes:owner'][0]['itunes:email'][0];
+    }
+    if(channel['itunes:image']) {
+      image = channel['itunes:image'][0].$.href
+    }
+
+    if(image) {
+      json.feed.itunes.image = image;
+    }
+    json.feed.itunes.owner = owner;
   }
+  
   PODCAST_TOP_FIELDS.forEach(function(f) {
     if (channel['itunes:' + f]) json.feed.itunes[f] = channel['itunes:' + f][0];
   });
