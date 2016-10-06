@@ -190,15 +190,9 @@ Parser.parseString = function(xml, callback) {
 
 Parser.parseURL = function(feedUrl, callback) {
   var xml = '';
-  var req = request(feedUrl, { headers: {'User-Agent': 'rss-parser'} }, function(err, res, body) {
-    if (res.statusCode >= 300) return callback(new Error("Status code " + res.statusCode));
-    res.setEncoding('utf8');
-    res.on('data', function(chunk) {
-      xml += chunk;
-    });
-    res.on('end', function() {
-      return Parser.parseString(xml, callback);
-    })
+  var req = request({uri: feedUrl, headers: {'User-Agent': 'rss-parser'}}, function(err, res, body) {
+    if (res.statusCode >= 400) return callback(new Error("Status code " + res.statusCode));
+    return Parser.parseString(body, callback);
   });
   req.on('error', callback);
 };
