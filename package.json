@@ -1,6 +1,6 @@
 {
   "name": "rss-parser",
-  "version": "2.5.2",
+  "version": "2.6.0",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
