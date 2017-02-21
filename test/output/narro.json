@@ -32,11 +32,11 @@
     "generator": "gopod - http://github.com/jbckmn/gopod",
     "link": "http://on.narro.co/f",
     "itunes": {
+      "image": "https://www.narro.co/images/narro-icon-lg.png",
       "owner": {
         "name": "foobar",
         "email": "foobar@gmail.com"
       },
-      "image": "https://www.narro.co/images/narro-icon-lg.png",
       "author": "foobar@gmail.com",
       "subtitle": "foobar uses Narro to create a podcast of articles transcribed to audio.",
       "summary": "foobar uses Narro to create a podcast of articles transcribed to audio.",

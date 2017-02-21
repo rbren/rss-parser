@@ -163,7 +163,7 @@ var decorateItunes = function decorateItunes(json, channel) {
     }
     json.feed.itunes.owner = owner;
   }
-  
+
   PODCAST_TOP_FIELDS.forEach(function(f) {
     if (channel['itunes:' + f]) json.feed.itunes[f] = channel['itunes:' + f][0];
   });
@@ -190,7 +190,15 @@ Parser.parseString = function(xml, callback) {
   });
 }
 
-Parser.parseURL = function(feedUrl, callback) {
+Parser.parseURL = function(feedUrl, settings, callback) {
+  if (!callback) {
+    callback = settings;
+    settings = {
+      __redirectCount: 0,
+      maxRedirects: 1
+    };
+  }
+
   var xml = '';
   var get = feedUrl.indexOf('https') === 0 ? HTTPS.get : HTTP.get;
   var parsedUrl = url.parse(feedUrl);
@@ -200,7 +208,12 @@ Parser.parseURL = function(feedUrl, callback) {
     path: parsedUrl.path,
     headers: {'User-Agent': 'rss-parser'}
   }, function(res) {
-    if (res.statusCode >= 300) return callback(new Error("Status code " + res.statusCode))
+    if (res.statusCode >= 300 && res.statusCode < 400 && res.headers['location']) {
+      if (settings.maxRedirects === 0) return callback(new Error("Status code " + res.statusCode));
+      if (settings.__redirectCount === settings.maxRedirects) return callback(new Error("Too many redirects"));
+      settings.__redirectCount++;
+      return Parser.parseURL(res.headers['location'], settings, callback);
+    }
     res.setEncoding('utf8');
     res.on('data', function(chunk) {
       xml += chunk;
@@ -210,7 +223,7 @@ Parser.parseURL = function(feedUrl, callback) {
     })
   })
   req.on('error', callback);
-}
+};
 
 Parser.parseFile = function(file, callback) {
   FS.readFile(file, 'utf8', function(err, contents) {
