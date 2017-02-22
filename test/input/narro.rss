@@ -33,6 +33,7 @@
       <itunes:summary>Listen to your reading list anywhere. Narro will take your bookmarked articles and read them back to you as a podcast. ... http://www.narro.co/faq ... &lt;ul class=&#34;linkList&#34;&gt;&lt;/ul&gt;</itunes:summary>
       <itunes:explicit>no</itunes:explicit>
       <itunes:duration>74</itunes:duration>
+      <itunes:image href="http://example.com/someImage.jpg"/>
       <enclosure url="https://s3.amazonaws.com/nareta-articles/audio/54d046c293f79c0300000003/7e2d2b00-a945-441a-f49b-063786a319a4.mp3" length="74" type="audio/mpeg"></enclosure>
     </item>
   </channel>

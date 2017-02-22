@@ -37,7 +37,8 @@ var PODCAST_ITEM_FIELDS = [
   'subtitle',
   'summary',
   'explicit',
-  'duration'
+  'duration',
+  'image'
 ];
 
 
@@ -171,7 +172,13 @@ var decorateItunes = function decorateItunes(json, channel) {
     entry = json.feed.entries[index];
     PODCAST_ITEM_FIELDS.forEach(function(f) {
       entry.itunes = entry.itunes || {};
-      if (item['itunes:' + f]) entry.itunes[f] = item['itunes:' + f][0];
+      if (item['itunes:' + f]) {
+        if (f == 'image' && item['itunes:' + f][0].$ && item['itunes:' + f][0].$.href) {
+          entry.itunes[f] = item['itunes:' + f][0].$.href;
+        } else {
+          entry.itunes[f] = item['itunes:' + f][0];
+        }
+      }
     });
     json.feed.entries[index] = entry;
   });
