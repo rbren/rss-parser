@@ -19,7 +19,8 @@
           "subtitle": "FAQ for Narro",
           "summary": "Listen to your reading list anywhere. Narro will take your bookmarked articles and read them back to you as a podcast. ... http://www.narro.co/faq ... <ul class=\"linkList\"></ul>",
           "explicit": "no",
-          "duration": "74"
+          "duration": "74",
+          "image": "http://example.com/someImage.jpg"
         }
       }
     ],
