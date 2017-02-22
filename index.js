@@ -1,10 +1,8 @@
 var Entities = require("entities");
 var FS = require('fs');
-var url = require('url');
 var XML2JS = require('xml2js');
 
-var HTTP = require('http');
-var HTTPS = require('https');
+var request = require('request');
 
 var Parser = module.exports = {};
 
@@ -44,11 +42,11 @@ var PODCAST_ITEM_FIELDS = [
 
 var stripHtml = function(str) {
   return str.replace(/<(?:.|\n)*?>/gm, '');
-}
+};
 
 var getSnippet = function(str) {
   return Entities.decode(stripHtml(str)).trim();
-}
+};
 
 var getContent = function(content) {
   if (typeof content._ === 'string') {
@@ -59,7 +57,7 @@ var getContent = function(content) {
   } else {
     return content;
   }
-}
+};
 
 var parseAtomFeed = function(xmlObj, callback) {
   var feed = xmlObj.feed;
@@ -70,7 +68,7 @@ var parseAtomFeed = function(xmlObj, callback) {
   }
   if (feed.title) {
     var title = feed.title[0] || '';
-    if (title._) title = title._
+    if (title._) title = title._;
     if (title) json.feed.title = title;
   }
   var entries = feed.entry;
@@ -94,11 +92,11 @@ var parseAtomFeed = function(xmlObj, callback) {
     json.feed.entries.push(item);
   });
   callback(null, json);
-}
+};
 
 var parseRSS1 = function(xmlObj, callback) {
   callback("RSS 1.0 parsing not yet implemented.")
-}
+};
 
 var parseRSS2 = function(xmlObj, callback) {
   var json = {feed: {entries: []}};
@@ -106,13 +104,13 @@ var parseRSS2 = function(xmlObj, callback) {
   if (channel['atom:link']) json.feed.feedUrl = channel['atom:link'][0].$.href;
   TOP_FIELDS.forEach(function(f) {
     if (channel[f]) json.feed[f] = channel[f][0];
-  })
+  });
   var items = channel.item;
   (items || []).forEach(function(item) {
     var entry = {};
     ITEM_FIELDS.forEach(function(f) {
       if (item[f]) entry[f] = item[f][0];
-    })
+    });
     if (item.enclosure) {
         entry.enclosure = item.enclosure[0].$;
     }
@@ -126,12 +124,12 @@ var parseRSS2 = function(xmlObj, callback) {
     }
     if (item.category) entry.categories = item.category;
     json.feed.entries.push(entry);
-  })
+  });
   if (xmlObj.rss.$['xmlns:itunes']) {
     decorateItunes(json, channel);
   }
   callback(null, json);
-}
+};
 
 /**
  * Add iTunes specific fields from XML to extracted JSON
@@ -182,7 +180,7 @@ var decorateItunes = function decorateItunes(json, channel) {
     });
     json.feed.entries[index] = entry;
   });
-}
+};
 
 Parser.parseString = function(xml, callback) {
   XML2JS.parseString(xml, function(err, result) {
@@ -195,32 +193,19 @@ Parser.parseString = function(xml, callback) {
       return parseRSS1(result, callback);
     }
   });
-}
+};
 
 Parser.parseURL = function(feedUrl, callback) {
   var xml = '';
-  var get = feedUrl.indexOf('https') === 0 ? HTTPS.get : HTTP.get;
-  var parsedUrl = url.parse(feedUrl);
-  var req = get({
-    protocol: parsedUrl.protocol,
-    hostname: parsedUrl.hostname,
-    path: parsedUrl.path,
-    headers: {'User-Agent': 'rss-parser'}
-  }, function(res) {
-    if (res.statusCode >= 300) return callback(new Error("Status code " + res.statusCode))
-    res.setEncoding('utf8');
-    res.on('data', function(chunk) {
-      xml += chunk;
-    });
-    res.on('end', function() {
-      return Parser.parseString(xml, callback);
-    })
-  })
+  var req = request({uri: feedUrl, headers: {'User-Agent': 'rss-parser'}}, function(err, res, body) {
+    if (res.statusCode >= 400) return callback(new Error("Status code " + res.statusCode));
+    return Parser.parseString(body, callback);
+  });
   req.on('error', callback);
-}
+};
 
 Parser.parseFile = function(file, callback) {
   FS.readFile(file, 'utf8', function(err, contents) {
     return Parser.parseString(contents, callback);
   })
-}
+};
