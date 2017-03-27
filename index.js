@@ -193,11 +193,10 @@ Parser.parseString = function(xml, callback) {
 Parser.parseURL = function(feedUrl, settings, callback) {
   if (!callback) {
     callback = settings;
-    settings = {
-      __redirectCount: 0,
-      maxRedirects: 1
-    };
+    settings = {};
   }
+  settings.__redirectCount = settings.__redirectCount || 0;
+  if (settings.maxRedirects === undefined) settings.maxRedirects = 1;
 
   var xml = '';
   var get = feedUrl.indexOf('https') === 0 ? HTTPS.get : HTTP.get;
@@ -223,7 +222,7 @@ Parser.parseURL = function(feedUrl, settings, callback) {
     })
   })
   req.on('error', callback);
-};
+}
 
 Parser.parseFile = function(file, callback) {
   FS.readFile(file, 'utf8', function(err, contents) {
