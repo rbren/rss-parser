@@ -34,7 +34,7 @@ parser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
 
 ### Web
 ```html
-<script src="/bower_components/rss-parser/dist/rss-parser.js"></script>
+<script src="/bower_components/rss-parser/dist/rss-parser.min.js"></script>
 <script>
 RSSParser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
   console.log(parsed.feed.title);
@@ -70,7 +70,7 @@ To update the output files with your changes, run
 
 ### Publishing Releases
 ```bash
-grunt browserify
+grunt build
 git commit -a -m "browserify"
 npm version minor # or major/patch
 npm publish

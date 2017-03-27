@@ -11,7 +11,16 @@ module.exports = function (grunt) {
                     banner: '/*! <%= pkg.name %> <%= pkg.version %> */\n',
                 },
             }
-        }
+        },
+        uglify: {
+            dist: {
+                files: {
+                  './dist/rss-parser.min.js': ['./dist/rss-parser.js']
+                }
+            }
+        },
     });
     grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.registerTask('build', ['browserify', 'uglify:dist']);
 }
