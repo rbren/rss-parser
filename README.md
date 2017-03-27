@@ -13,7 +13,10 @@ bower install --save rss-parser
 ```
 
 ## Usage
-rss-parser exposes `parseURL()`, `parseString()`, and `parseFile()` functions.
+You can parse RSS from a URL, local file (NodeJS only), or a string.
+* `parseString(xml, callback)`
+* `parseFile(filename, callback)`
+* `parseURL(url, [options,] callback)`
 
 Check out the output format in [test/output/reddit.json](test/output/reddit.json)
 
@@ -40,6 +43,16 @@ RSSParser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
   })
 })
 </script>
+```
+
+### Redirects
+By default, `parseURL` will follow up to one redirect. You can change this
+with `options.maxRedirects`.
+
+```js
+parser.parseURL('https://reddit.com/.rss', {maxRedirects: 3}, function(err, parsed) {
+  console.log(parsed.feed.title);
+});
 ```
 
 ## Contributing
