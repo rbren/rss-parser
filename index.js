@@ -30,7 +30,9 @@ var ITEM_FIELDS = [
   'pubDate',
   'author',
   'content:encoded',
-  'enclosure'
+  'enclosure',
+  'dc:creator',
+  'dc:date'
 ];
 var PODCAST_ITEM_FIELDS = [
   'author',

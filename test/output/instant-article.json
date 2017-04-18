@@ -6,6 +6,8 @@
         "link": "https://localhost:8000",
         "pubDate": "Wed, 04 May 2016 06:53:45 GMT",
         "content:encoded": "<b>Lorem</b> ipsum",
+        "dc:creator": "tobi",
+        "dc:date": "2016-05-04T06:53:45Z",
         "content": "Lorem ipsum",
         "contentSnippet": "Lorem ipsum",
         "guid": "https://localhost:8000"
