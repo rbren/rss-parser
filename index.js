@@ -211,6 +211,7 @@ Parser.parseURL = function(feedUrl, settings, callback) {
   var get = feedUrl.indexOf('https') === 0 ? HTTPS.get : HTTP.get;
   var parsedUrl = url.parse(feedUrl);
   var req = get({
+    auth: parsedUrl.auth,
     protocol: parsedUrl.protocol,
     hostname: parsedUrl.hostname,
     path: parsedUrl.path,
