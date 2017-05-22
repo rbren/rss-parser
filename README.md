@@ -67,9 +67,10 @@ To update the output files with your changes, run
 
 ### Publishing Releases
 ```bash
-npm version minor # or major/patch
+# change version in package.json
 grunt build
-git commit -a -m "browserify"
+git commit -a -m "vX.X.X"
+git tag vX.X.X
 npm publish
 git push --follow-tags
 ```
