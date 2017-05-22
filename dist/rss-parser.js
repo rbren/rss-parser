@@ -1,4 +1,4 @@
-/*! rss-parser 2.7.0 */
+/*! rss-parser 2.8.0 */
 
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.RSSParser = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var Entities = require("entities");
@@ -214,6 +214,7 @@ Parser.parseURL = function(feedUrl, settings, callback) {
   var get = feedUrl.indexOf('https') === 0 ? HTTPS.get : HTTP.get;
   var parsedUrl = url.parse(feedUrl);
   var req = get({
+    auth: parsedUrl.auth,
     protocol: parsedUrl.protocol,
     hostname: parsedUrl.hostname,
     path: parsedUrl.path,
@@ -242,7 +243,7 @@ Parser.parseFile = function(file, callback) {
   })
 }
 
-},{"entities":10,"fs":4,"http":187,"https":20,"url":193,"xml2js":197}],2:[function(require,module,exports){
+},{"entities":10,"fs":4,"http":190,"https":20,"url":196,"xml2js":200}],2:[function(require,module,exports){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 ;(function (exports) {
@@ -2778,7 +2779,7 @@ https.request = function (params, cb) {
     return http.request.call(this, params, cb);
 }
 
-},{"http":187}],21:[function(require,module,exports){
+},{"http":190}],21:[function(require,module,exports){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = nBytes * 8 - mLen - 1
@@ -7352,6 +7353,10 @@ process.off = noop;
 process.removeListener = noop;
 process.removeAllListeners = noop;
 process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
@@ -8080,7 +8085,7 @@ exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
 },{"./decode":170,"./encode":171}],173:[function(require,module,exports){
-module.exports = require("./lib/_stream_duplex.js")
+module.exports = require('./lib/_stream_duplex.js');
 
 },{"./lib/_stream_duplex.js":174}],174:[function(require,module,exports){
 // a duplex stream is just a stream that is both readable and writable.
@@ -8214,14 +8219,7 @@ var EElistenerCount = function (emitter, type) {
 /*</replacement>*/
 
 /*<replacement>*/
-var Stream;
-(function () {
-  try {
-    Stream = require('st' + 'ream');
-  } catch (_) {} finally {
-    if (!Stream) Stream = require('events').EventEmitter;
-  }
-})();
+var Stream = require('./internal/streams/stream');
 /*</replacement>*/
 
 var Buffer = require('buffer').Buffer;
@@ -8248,6 +8246,8 @@ var BufferList = require('./internal/streams/BufferList');
 var StringDecoder;
 
 util.inherits(Readable, Stream);
+
+var kProxyEvents = ['error', 'close', 'destroy', 'pause', 'resume'];
 
 function prependListener(emitter, event, fn) {
   // Sadly this is not cacheable as some libraries bundle their own
@@ -8973,10 +8973,9 @@ Readable.prototype.wrap = function (stream) {
   }
 
   // proxy certain important events.
-  var events = ['error', 'close', 'destroy', 'pause', 'resume'];
-  forEach(events, function (ev) {
-    stream.on(ev, self.emit.bind(self, ev));
-  });
+  for (var n = 0; n < kProxyEvents.length; n++) {
+    stream.on(kProxyEvents[n], self.emit.bind(self, kProxyEvents[n]));
+  }
 
   // when we try to consume some more bytes, simply unpause the
   // underlying stream.
@@ -9129,7 +9128,7 @@ function indexOf(xs, x) {
   return -1;
 }
 }).call(this,require('_process'))
-},{"./_stream_duplex":174,"./internal/streams/BufferList":179,"_process":168,"buffer":6,"buffer-shims":5,"core-util-is":9,"events":18,"inherits":23,"isarray":180,"process-nextick-args":167,"string_decoder/":191,"util":3}],177:[function(require,module,exports){
+},{"./_stream_duplex":174,"./internal/streams/BufferList":179,"./internal/streams/stream":180,"_process":168,"buffer":6,"buffer-shims":5,"core-util-is":9,"events":18,"inherits":23,"isarray":181,"process-nextick-args":167,"string_decoder/":182,"util":3}],177:[function(require,module,exports){
 // a transform stream is a readable/writable stream where you do
 // something with the data.  Sometimes it's called a "filter",
 // but that's not a great name for it, since that implies a thing where
@@ -9348,14 +9347,7 @@ var internalUtil = {
 /*</replacement>*/
 
 /*<replacement>*/
-var Stream;
-(function () {
-  try {
-    Stream = require('st' + 'ream');
-  } catch (_) {} finally {
-    if (!Stream) Stream = require('events').EventEmitter;
-  }
-})();
+var Stream = require('./internal/streams/stream');
 /*</replacement>*/
 
 var Buffer = require('buffer').Buffer;
@@ -9866,7 +9858,7 @@ function CorkedRequest(state) {
   };
 }
 }).call(this,require('_process'))
-},{"./_stream_duplex":174,"_process":168,"buffer":6,"buffer-shims":5,"core-util-is":9,"events":18,"inherits":23,"process-nextick-args":167,"util-deprecate":194}],179:[function(require,module,exports){
+},{"./_stream_duplex":174,"./internal/streams/stream":180,"_process":168,"buffer":6,"buffer-shims":5,"core-util-is":9,"inherits":23,"process-nextick-args":167,"util-deprecate":197}],179:[function(require,module,exports){
 'use strict';
 
 var Buffer = require('buffer').Buffer;
@@ -9932,37 +9924,305 @@ BufferList.prototype.concat = function (n) {
   return ret;
 };
 },{"buffer":6,"buffer-shims":5}],180:[function(require,module,exports){
-arguments[4][7][0].apply(exports,arguments)
-},{"dup":7}],181:[function(require,module,exports){
-module.exports = require("./lib/_stream_passthrough.js")
+module.exports = require('events').EventEmitter;
 
-},{"./lib/_stream_passthrough.js":175}],182:[function(require,module,exports){
-(function (process){
-var Stream = (function (){
-  try {
-    return require('st' + 'ream'); // hack to fix a circular dependency issue when used with browserify
-  } catch(_){}
-}());
+},{"events":18}],181:[function(require,module,exports){
+arguments[4][7][0].apply(exports,arguments)
+},{"dup":7}],182:[function(require,module,exports){
+'use strict';
+
+var Buffer = require('safe-buffer').Buffer;
+
+var isEncoding = Buffer.isEncoding || function (encoding) {
+  encoding = '' + encoding;
+  switch (encoding && encoding.toLowerCase()) {
+    case 'hex':case 'utf8':case 'utf-8':case 'ascii':case 'binary':case 'base64':case 'ucs2':case 'ucs-2':case 'utf16le':case 'utf-16le':case 'raw':
+      return true;
+    default:
+      return false;
+  }
+};
+
+function _normalizeEncoding(enc) {
+  if (!enc) return 'utf8';
+  var retried;
+  while (true) {
+    switch (enc) {
+      case 'utf8':
+      case 'utf-8':
+        return 'utf8';
+      case 'ucs2':
+      case 'ucs-2':
+      case 'utf16le':
+      case 'utf-16le':
+        return 'utf16le';
+      case 'latin1':
+      case 'binary':
+        return 'latin1';
+      case 'base64':
+      case 'ascii':
+      case 'hex':
+        return enc;
+      default:
+        if (retried) return; // undefined
+        enc = ('' + enc).toLowerCase();
+        retried = true;
+    }
+  }
+};
+
+// Do not cache `Buffer.isEncoding` when checking encoding names as some
+// modules monkey-patch it to support additional encodings
+function normalizeEncoding(enc) {
+  var nenc = _normalizeEncoding(enc);
+  if (typeof nenc !== 'string' && (Buffer.isEncoding === isEncoding || !isEncoding(enc))) throw new Error('Unknown encoding: ' + enc);
+  return nenc || enc;
+}
+
+// StringDecoder provides an interface for efficiently splitting a series of
+// buffers into a series of JS strings without breaking apart multi-byte
+// characters.
+exports.StringDecoder = StringDecoder;
+function StringDecoder(encoding) {
+  this.encoding = normalizeEncoding(encoding);
+  var nb;
+  switch (this.encoding) {
+    case 'utf16le':
+      this.text = utf16Text;
+      this.end = utf16End;
+      nb = 4;
+      break;
+    case 'utf8':
+      this.fillLast = utf8FillLast;
+      nb = 4;
+      break;
+    case 'base64':
+      this.text = base64Text;
+      this.end = base64End;
+      nb = 3;
+      break;
+    default:
+      this.write = simpleWrite;
+      this.end = simpleEnd;
+      return;
+  }
+  this.lastNeed = 0;
+  this.lastTotal = 0;
+  this.lastChar = Buffer.allocUnsafe(nb);
+}
+
+StringDecoder.prototype.write = function (buf) {
+  if (buf.length === 0) return '';
+  var r;
+  var i;
+  if (this.lastNeed) {
+    r = this.fillLast(buf);
+    if (r === undefined) return '';
+    i = this.lastNeed;
+    this.lastNeed = 0;
+  } else {
+    i = 0;
+  }
+  if (i < buf.length) return r ? r + this.text(buf, i) : this.text(buf, i);
+  return r || '';
+};
+
+StringDecoder.prototype.end = utf8End;
+
+// Returns only complete characters in a Buffer
+StringDecoder.prototype.text = utf8Text;
+
+// Attempts to complete a partial non-UTF-8 character using bytes from a Buffer
+StringDecoder.prototype.fillLast = function (buf) {
+  if (this.lastNeed <= buf.length) {
+    buf.copy(this.lastChar, this.lastTotal - this.lastNeed, 0, this.lastNeed);
+    return this.lastChar.toString(this.encoding, 0, this.lastTotal);
+  }
+  buf.copy(this.lastChar, this.lastTotal - this.lastNeed, 0, buf.length);
+  this.lastNeed -= buf.length;
+};
+
+// Checks the type of a UTF-8 byte, whether it's ASCII, a leading byte, or a
+// continuation byte.
+function utf8CheckByte(byte) {
+  if (byte <= 0x7F) return 0;else if (byte >> 5 === 0x06) return 2;else if (byte >> 4 === 0x0E) return 3;else if (byte >> 3 === 0x1E) return 4;
+  return -1;
+}
+
+// Checks at most 3 bytes at the end of a Buffer in order to detect an
+// incomplete multi-byte UTF-8 character. The total number of bytes (2, 3, or 4)
+// needed to complete the UTF-8 character (if applicable) are returned.
+function utf8CheckIncomplete(self, buf, i) {
+  var j = buf.length - 1;
+  if (j < i) return 0;
+  var nb = utf8CheckByte(buf[j]);
+  if (nb >= 0) {
+    if (nb > 0) self.lastNeed = nb - 1;
+    return nb;
+  }
+  if (--j < i) return 0;
+  nb = utf8CheckByte(buf[j]);
+  if (nb >= 0) {
+    if (nb > 0) self.lastNeed = nb - 2;
+    return nb;
+  }
+  if (--j < i) return 0;
+  nb = utf8CheckByte(buf[j]);
+  if (nb >= 0) {
+    if (nb > 0) {
+      if (nb === 2) nb = 0;else self.lastNeed = nb - 3;
+    }
+    return nb;
+  }
+  return 0;
+}
+
+// Validates as many continuation bytes for a multi-byte UTF-8 character as
+// needed or are available. If we see a non-continuation byte where we expect
+// one, we "replace" the validated continuation bytes we've seen so far with
+// UTF-8 replacement characters ('\ufffd'), to match v8's UTF-8 decoding
+// behavior. The continuation byte check is included three times in the case
+// where all of the continuation bytes for a character exist in the same buffer.
+// It is also done this way as a slight performance increase instead of using a
+// loop.
+function utf8CheckExtraBytes(self, buf, p) {
+  if ((buf[0] & 0xC0) !== 0x80) {
+    self.lastNeed = 0;
+    return '\ufffd'.repeat(p);
+  }
+  if (self.lastNeed > 1 && buf.length > 1) {
+    if ((buf[1] & 0xC0) !== 0x80) {
+      self.lastNeed = 1;
+      return '\ufffd'.repeat(p + 1);
+    }
+    if (self.lastNeed > 2 && buf.length > 2) {
+      if ((buf[2] & 0xC0) !== 0x80) {
+        self.lastNeed = 2;
+        return '\ufffd'.repeat(p + 2);
+      }
+    }
+  }
+}
+
+// Attempts to complete a multi-byte UTF-8 character using bytes from a Buffer.
+function utf8FillLast(buf) {
+  var p = this.lastTotal - this.lastNeed;
+  var r = utf8CheckExtraBytes(this, buf, p);
+  if (r !== undefined) return r;
+  if (this.lastNeed <= buf.length) {
+    buf.copy(this.lastChar, p, 0, this.lastNeed);
+    return this.lastChar.toString(this.encoding, 0, this.lastTotal);
+  }
+  buf.copy(this.lastChar, p, 0, buf.length);
+  this.lastNeed -= buf.length;
+}
+
+// Returns all complete UTF-8 characters in a Buffer. If the Buffer ended on a
+// partial character, the character's bytes are buffered until the required
+// number of bytes are available.
+function utf8Text(buf, i) {
+  var total = utf8CheckIncomplete(this, buf, i);
+  if (!this.lastNeed) return buf.toString('utf8', i);
+  this.lastTotal = total;
+  var end = buf.length - (total - this.lastNeed);
+  buf.copy(this.lastChar, 0, end);
+  return buf.toString('utf8', i, end);
+}
+
+// For UTF-8, a replacement character for each buffered byte of a (partial)
+// character needs to be added to the output.
+function utf8End(buf) {
+  var r = buf && buf.length ? this.write(buf) : '';
+  if (this.lastNeed) return r + '\ufffd'.repeat(this.lastTotal - this.lastNeed);
+  return r;
+}
+
+// UTF-16LE typically needs two bytes per character, but even if we have an even
+// number of bytes available, we need to check if we end on a leading/high
+// surrogate. In that case, we need to wait for the next two bytes in order to
+// decode the last character properly.
+function utf16Text(buf, i) {
+  if ((buf.length - i) % 2 === 0) {
+    var r = buf.toString('utf16le', i);
+    if (r) {
+      var c = r.charCodeAt(r.length - 1);
+      if (c >= 0xD800 && c <= 0xDBFF) {
+        this.lastNeed = 2;
+        this.lastTotal = 4;
+        this.lastChar[0] = buf[buf.length - 2];
+        this.lastChar[1] = buf[buf.length - 1];
+        return r.slice(0, -1);
+      }
+    }
+    return r;
+  }
+  this.lastNeed = 1;
+  this.lastTotal = 2;
+  this.lastChar[0] = buf[buf.length - 1];
+  return buf.toString('utf16le', i, buf.length - 1);
+}
+
+// For UTF-16LE we do not explicitly append special replacement characters if we
+// end on a partial character, we simply let v8 handle that.
+function utf16End(buf) {
+  var r = buf && buf.length ? this.write(buf) : '';
+  if (this.lastNeed) {
+    var end = this.lastTotal - this.lastNeed;
+    return r + this.lastChar.toString('utf16le', 0, end);
+  }
+  return r;
+}
+
+function base64Text(buf, i) {
+  var n = (buf.length - i) % 3;
+  if (n === 0) return buf.toString('base64', i);
+  this.lastNeed = 3 - n;
+  this.lastTotal = 3;
+  if (n === 1) {
+    this.lastChar[0] = buf[buf.length - 1];
+  } else {
+    this.lastChar[0] = buf[buf.length - 2];
+    this.lastChar[1] = buf[buf.length - 1];
+  }
+  return buf.toString('base64', i, buf.length - n);
+}
+
+function base64End(buf) {
+  var r = buf && buf.length ? this.write(buf) : '';
+  if (this.lastNeed) return r + this.lastChar.toString('base64', 0, 3 - this.lastNeed);
+  return r;
+}
+
+// Pass bytes on through for single-byte encodings (e.g. ascii, latin1, hex)
+function simpleWrite(buf) {
+  return buf.toString(this.encoding);
+}
+
+function simpleEnd(buf) {
+  return buf && buf.length ? this.write(buf) : '';
+}
+},{"safe-buffer":187}],183:[function(require,module,exports){
+module.exports = require('./readable').PassThrough
+
+},{"./readable":184}],184:[function(require,module,exports){
 exports = module.exports = require('./lib/_stream_readable.js');
-exports.Stream = Stream || exports;
+exports.Stream = exports;
 exports.Readable = exports;
 exports.Writable = require('./lib/_stream_writable.js');
 exports.Duplex = require('./lib/_stream_duplex.js');
 exports.Transform = require('./lib/_stream_transform.js');
 exports.PassThrough = require('./lib/_stream_passthrough.js');
 
-if (!process.browser && process.env.READABLE_STREAM === 'disable' && Stream) {
-  module.exports = Stream;
-}
+},{"./lib/_stream_duplex.js":174,"./lib/_stream_passthrough.js":175,"./lib/_stream_readable.js":176,"./lib/_stream_transform.js":177,"./lib/_stream_writable.js":178}],185:[function(require,module,exports){
+module.exports = require('./readable').Transform
 
-}).call(this,require('_process'))
-},{"./lib/_stream_duplex.js":174,"./lib/_stream_passthrough.js":175,"./lib/_stream_readable.js":176,"./lib/_stream_transform.js":177,"./lib/_stream_writable.js":178,"_process":168}],183:[function(require,module,exports){
-module.exports = require("./lib/_stream_transform.js")
+},{"./readable":184}],186:[function(require,module,exports){
+module.exports = require('./lib/_stream_writable.js');
 
-},{"./lib/_stream_transform.js":177}],184:[function(require,module,exports){
-module.exports = require("./lib/_stream_writable.js")
+},{"./lib/_stream_writable.js":178}],187:[function(require,module,exports){
+module.exports = require('buffer')
 
-},{"./lib/_stream_writable.js":178}],185:[function(require,module,exports){
+},{"buffer":6}],188:[function(require,module,exports){
 (function (Buffer){
 ;(function (sax) { // wrapper for non-node envs
   sax.parser = function (strict, opt) { return new SAXParser(strict, opt) }
@@ -11547,7 +11807,7 @@ module.exports = require("./lib/_stream_writable.js")
 })(typeof exports === 'undefined' ? this.sax = {} : exports)
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":6,"stream":186,"string_decoder":191}],186:[function(require,module,exports){
+},{"buffer":6,"stream":189,"string_decoder":194}],189:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -11676,7 +11936,7 @@ Stream.prototype.pipe = function(dest, options) {
   return dest;
 };
 
-},{"events":18,"inherits":23,"readable-stream/duplex.js":173,"readable-stream/passthrough.js":181,"readable-stream/readable.js":182,"readable-stream/transform.js":183,"readable-stream/writable.js":184}],187:[function(require,module,exports){
+},{"events":18,"inherits":23,"readable-stream/duplex.js":173,"readable-stream/passthrough.js":183,"readable-stream/readable.js":184,"readable-stream/transform.js":185,"readable-stream/writable.js":186}],190:[function(require,module,exports){
 var ClientRequest = require('./lib/request')
 var extend = require('xtend')
 var statusCodes = require('builtin-status-codes')
@@ -11751,7 +12011,7 @@ http.METHODS = [
 	'UNLOCK',
 	'UNSUBSCRIBE'
 ]
-},{"./lib/request":189,"builtin-status-codes":8,"url":193,"xtend":215}],188:[function(require,module,exports){
+},{"./lib/request":192,"builtin-status-codes":8,"url":196,"xtend":218}],191:[function(require,module,exports){
 (function (global){
 exports.fetch = isFunction(global.fetch) && isFunction(global.ReadableByteStream)
 
@@ -11795,7 +12055,7 @@ function isFunction (value) {
 xhr = null // Help gc
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],189:[function(require,module,exports){
+},{}],192:[function(require,module,exports){
 (function (process,global,Buffer){
 // var Base64 = require('Base64')
 var capability = require('./capability')
@@ -12077,7 +12337,7 @@ var unsafeHeaders = [
 ]
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer)
-},{"./capability":188,"./response":190,"_process":168,"buffer":6,"foreach":19,"indexof":22,"inherits":23,"object-keys":165,"stream":186}],190:[function(require,module,exports){
+},{"./capability":191,"./response":193,"_process":168,"buffer":6,"foreach":19,"indexof":22,"inherits":23,"object-keys":165,"stream":189}],193:[function(require,module,exports){
 (function (process,global,Buffer){
 var capability = require('./capability')
 var foreach = require('foreach')
@@ -12254,7 +12514,7 @@ IncomingMessage.prototype._onXHRProgress = function () {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer)
-},{"./capability":188,"_process":168,"buffer":6,"foreach":19,"inherits":23,"stream":186}],191:[function(require,module,exports){
+},{"./capability":191,"_process":168,"buffer":6,"foreach":19,"inherits":23,"stream":189}],194:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -12477,7 +12737,7 @@ function base64DetectIncompleteChar(buffer) {
   this.charLength = this.charReceived ? 3 : 0;
 }
 
-},{"buffer":6}],192:[function(require,module,exports){
+},{"buffer":6}],195:[function(require,module,exports){
 var nextTick = require('process/browser.js').nextTick;
 var apply = Function.prototype.apply;
 var slice = Array.prototype.slice;
@@ -12554,7 +12814,7 @@ exports.setImmediate = typeof setImmediate === "function" ? setImmediate : funct
 exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
   delete immediateIds[id];
 };
-},{"process/browser.js":168}],193:[function(require,module,exports){
+},{"process/browser.js":168}],196:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -13263,7 +13523,7 @@ function isNullOrUndefined(arg) {
   return  arg == null;
 }
 
-},{"punycode":169,"querystring":172}],194:[function(require,module,exports){
+},{"punycode":169,"querystring":172}],197:[function(require,module,exports){
 (function (global){
 
 /**
@@ -13334,7 +13594,7 @@ function config (name) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],195:[function(require,module,exports){
+},{}],198:[function(require,module,exports){
 // Generated by CoffeeScript 1.10.0
 (function() {
   "use strict";
@@ -13348,7 +13608,7 @@ function config (name) {
 
 }).call(this);
 
-},{}],196:[function(require,module,exports){
+},{}],199:[function(require,module,exports){
 // Generated by CoffeeScript 1.10.0
 (function() {
   "use strict";
@@ -13384,7 +13644,7 @@ function config (name) {
 
 }).call(this);
 
-},{}],197:[function(require,module,exports){
+},{}],200:[function(require,module,exports){
 // Generated by CoffeeScript 1.10.0
 (function() {
   "use strict";
@@ -13929,7 +14189,7 @@ function config (name) {
 
 }).call(this);
 
-},{"./bom":195,"./processors":196,"events":18,"sax":185,"timers":192,"xmlbuilder":214}],198:[function(require,module,exports){
+},{"./bom":198,"./processors":199,"events":18,"sax":188,"timers":195,"xmlbuilder":217}],201:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLAttribute, create;
@@ -13963,7 +14223,7 @@ function config (name) {
 
 }).call(this);
 
-},{"lodash/create":142}],199:[function(require,module,exports){
+},{"lodash/create":142}],202:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLBuilder, XMLDeclaration, XMLDocType, XMLElement, XMLStringifier;
@@ -14034,7 +14294,7 @@ function config (name) {
 
 }).call(this);
 
-},{"./XMLDeclaration":206,"./XMLDocType":207,"./XMLElement":208,"./XMLStringifier":212}],200:[function(require,module,exports){
+},{"./XMLDeclaration":209,"./XMLDocType":210,"./XMLElement":211,"./XMLStringifier":215}],203:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLCData, XMLNode, create,
@@ -14085,7 +14345,7 @@ function config (name) {
 
 }).call(this);
 
-},{"./XMLNode":209,"lodash/create":142}],201:[function(require,module,exports){
+},{"./XMLNode":212,"lodash/create":142}],204:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLComment, XMLNode, create,
@@ -14136,7 +14396,7 @@ function config (name) {
 
 }).call(this);
 
-},{"./XMLNode":209,"lodash/create":142}],202:[function(require,module,exports){
+},{"./XMLNode":212,"lodash/create":142}],205:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLDTDAttList, create;
@@ -14206,7 +14466,7 @@ function config (name) {
 
 }).call(this);
 
-},{"lodash/create":142}],203:[function(require,module,exports){
+},{"lodash/create":142}],206:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLDTDElement, create;
@@ -14254,7 +14514,7 @@ function config (name) {
 
 }).call(this);
 
-},{"lodash/create":142}],204:[function(require,module,exports){
+},{"lodash/create":142}],207:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLDTDEntity, create, isObject;
@@ -14340,7 +14600,7 @@ function config (name) {
 
 }).call(this);
 
-},{"lodash/create":142,"lodash/isObject":155}],205:[function(require,module,exports){
+},{"lodash/create":142,"lodash/isObject":155}],208:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLDTDNotation, create;
@@ -14398,7 +14658,7 @@ function config (name) {
 
 }).call(this);
 
-},{"lodash/create":142}],206:[function(require,module,exports){
+},{"lodash/create":142}],209:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLDeclaration, XMLNode, create, isObject,
@@ -14465,7 +14725,7 @@ function config (name) {
 
 }).call(this);
 
-},{"./XMLNode":209,"lodash/create":142,"lodash/isObject":155}],207:[function(require,module,exports){
+},{"./XMLNode":212,"lodash/create":142,"lodash/isObject":155}],210:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLCData, XMLComment, XMLDTDAttList, XMLDTDElement, XMLDTDEntity, XMLDTDNotation, XMLDocType, XMLProcessingInstruction, create, isObject;
@@ -14655,7 +14915,7 @@ function config (name) {
 
 }).call(this);
 
-},{"./XMLCData":200,"./XMLComment":201,"./XMLDTDAttList":202,"./XMLDTDElement":203,"./XMLDTDEntity":204,"./XMLDTDNotation":205,"./XMLProcessingInstruction":210,"lodash/create":142,"lodash/isObject":155}],208:[function(require,module,exports){
+},{"./XMLCData":203,"./XMLComment":204,"./XMLDTDAttList":205,"./XMLDTDElement":206,"./XMLDTDEntity":207,"./XMLDTDNotation":208,"./XMLProcessingInstruction":213,"lodash/create":142,"lodash/isObject":155}],211:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLAttribute, XMLElement, XMLNode, XMLProcessingInstruction, create, every, isFunction, isObject,
@@ -14869,7 +15129,7 @@ function config (name) {
 
 }).call(this);
 
-},{"./XMLAttribute":198,"./XMLNode":209,"./XMLProcessingInstruction":210,"lodash/create":142,"lodash/every":144,"lodash/isFunction":153,"lodash/isObject":155}],209:[function(require,module,exports){
+},{"./XMLAttribute":201,"./XMLNode":212,"./XMLProcessingInstruction":213,"lodash/create":142,"lodash/every":144,"lodash/isFunction":153,"lodash/isObject":155}],212:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLCData, XMLComment, XMLDeclaration, XMLDocType, XMLElement, XMLNode, XMLRaw, XMLText, isEmpty, isFunction, isObject,
@@ -15202,7 +15462,7 @@ function config (name) {
 
 }).call(this);
 
-},{"./XMLCData":200,"./XMLComment":201,"./XMLDeclaration":206,"./XMLDocType":207,"./XMLElement":208,"./XMLRaw":211,"./XMLText":213,"lodash/isEmpty":152,"lodash/isFunction":153,"lodash/isObject":155}],210:[function(require,module,exports){
+},{"./XMLCData":203,"./XMLComment":204,"./XMLDeclaration":209,"./XMLDocType":210,"./XMLElement":211,"./XMLRaw":214,"./XMLText":216,"lodash/isEmpty":152,"lodash/isFunction":153,"lodash/isObject":155}],213:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLProcessingInstruction, create;
@@ -15255,7 +15515,7 @@ function config (name) {
 
 }).call(this);
 
-},{"lodash/create":142}],211:[function(require,module,exports){
+},{"lodash/create":142}],214:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLNode, XMLRaw, create,
@@ -15306,7 +15566,7 @@ function config (name) {
 
 }).call(this);
 
-},{"./XMLNode":209,"lodash/create":142}],212:[function(require,module,exports){
+},{"./XMLNode":212,"lodash/create":142}],215:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLStringifier,
@@ -15478,7 +15738,7 @@ function config (name) {
 
 }).call(this);
 
-},{}],213:[function(require,module,exports){
+},{}],216:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLNode, XMLText, create,
@@ -15529,7 +15789,7 @@ function config (name) {
 
 }).call(this);
 
-},{"./XMLNode":209,"lodash/create":142}],214:[function(require,module,exports){
+},{"./XMLNode":212,"lodash/create":142}],217:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLBuilder, assign;
@@ -15545,7 +15805,7 @@ function config (name) {
 
 }).call(this);
 
-},{"./XMLBuilder":199,"lodash/assign":140}],215:[function(require,module,exports){
+},{"./XMLBuilder":202,"lodash/assign":140}],218:[function(require,module,exports){
 module.exports = extend
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;
