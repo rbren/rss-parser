@@ -102,7 +102,19 @@ var parseRSS1 = function(xmlObj, callback) {
   callback("RSS 1.0 parsing not yet implemented.")
 }
 
-var parseRSS2 = function(xmlObj, callback) {
+var parseRSS2 = function(xmlObj, settings, callback) {
+
+  if (!callback) {
+    callback = settings;
+    settings = {};
+  }
+
+  if(settings && typeof settings.customFields!=='undefined')
+      ITEM_FIELDS = ITEM_FIELDS.concat(settings.customFields.items);
+
+  if(settings && typeof settings.customFields!=='undefined')
+      TOP_FIELDS = TOP_FIELDS.concat(settings.customFields.feed);
+
   var json = {feed: {entries: []}};
   var channel = xmlObj.rss.channel[0];
   if (channel['atom:link']) json.feed.feedUrl = channel['atom:link'][0].$.href;
@@ -132,7 +144,7 @@ var parseRSS2 = function(xmlObj, callback) {
   if (xmlObj.rss.$['xmlns:itunes']) {
     decorateItunes(json, channel);
   }
-  callback(null, json);
+  callback(null,json);  //check before calling it.
 }
 
 /**
@@ -186,13 +198,18 @@ var decorateItunes = function decorateItunes(json, channel) {
   });
 }
 
-Parser.parseString = function(xml, callback) {
+Parser.parseString = function(xml, settings, callback) {
+  if (!callback) {
+    callback = settings;
+    settings = {};
+  }
+
   XML2JS.parseString(xml, function(err, result) {
     if (err) return callback(err);
     if (result.feed) {
       return parseAtomFeed(result, callback)
     } else if (result.rss && result.rss.$.version && result.rss.$.version.indexOf('2') === 0) {
-      return parseRSS2(result, callback);
+      return parseRSS2(result, settings, callback);
     } else {
       return parseRSS1(result, callback);
     }
@@ -227,14 +244,20 @@ Parser.parseURL = function(feedUrl, settings, callback) {
       xml += chunk;
     });
     res.on('end', function() {
-      return Parser.parseString(xml, callback);
+      return Parser.parseString(xml, settings, callback);
     })
   })
   req.on('error', callback);
 }
 
-Parser.parseFile = function(file, callback) {
+Parser.parseFile = function(file,settings,callback) {
+
+  if (!callback) {
+    callback = settings;
+    settings = {};
+  }
+
   FS.readFile(file, 'utf8', function(err, contents) {
-    return Parser.parseString(contents, callback);
+    return Parser.parseString(contents, settings, callback);
   })
 }

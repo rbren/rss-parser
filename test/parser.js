@@ -66,4 +66,20 @@ describe('Parser', function() {
   it('should parse podcasts', function(done) {
     testParseForFile('narro', 'rss', done);
   });
+
+  it('should parse custom fields', function(done) {
+    var settings = {
+      customFields: {
+        feed: ['language', 'copyright'],
+        items: ['subtitle']
+      }
+    };
+    Parser.parseFile(__dirname + '/input/customfields.rss',settings, function(err, parsed) {
+      Expect(err).to.equal(null);
+      if (process.env.WRITE_GOLDEN) {
+        FS.writeFileSync(OUT_DIR + '/customfields.json', JSON.stringify(parsed, null, 2));
+      }
+      done();
+    });
+  });
 })
