@@ -71,7 +71,7 @@ describe('Parser', function() {
     var settings = {
       customFields: {
         feed: ['language', 'copyright'],
-        items: ['subtitle']
+        item: ['subtitle']
       }
     };
     Parser.parseFile(__dirname + '/input/customfields.rss',settings, function(err, parsed) {

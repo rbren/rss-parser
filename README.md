@@ -10,8 +10,8 @@ bower install --save rss-parser
 
 ## Usage
 You can parse RSS from a URL, local file (NodeJS only), or a string.
-* `parseString(xml, [settings,],  callback)`
-* `parseFile(filename, [settings,], callback)`
+* `parseString(xml, [options,],  callback)`
+* `parseFile(filename, [options,], callback)`
 * `parseURL(url, [options,] callback)`
 
 Check out the output format in [test/output/reddit.json](test/output/reddit.json)
