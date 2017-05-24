@@ -68,13 +68,13 @@ describe('Parser', function() {
   });
 
   it('should parse custom fields', function(done) {
-    var settings = {
+    var options = {
       customFields: {
         feed: ['language', 'copyright'],
         item: ['subtitle']
       }
     };
-    Parser.parseFile(__dirname + '/input/customfields.rss',settings, function(err, parsed) {
+    Parser.parseFile(__dirname + '/input/customfields.rss',options, function(err, parsed) {
       Expect(err).to.equal(null);
       if (process.env.WRITE_GOLDEN) {
         FS.writeFileSync(OUT_DIR + '/customfields.json', JSON.stringify(parsed, null, 2));
