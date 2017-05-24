@@ -14,6 +14,18 @@ You can parse RSS from a URL, local file (NodeJS only), or a string.
 * `parseFile(filename, [options,], callback)`
 * `parseURL(url, [options,] callback)`
 
+```js
+var options = {
+  customFields: {
+    feed: ['otherTitle', 'extendedDescription'],
+    item: ['coAuthor'],
+  }
+}
+parser.parseURL('https://www.reddit.com/.rss', settings, function(err, parsed) {
+  console.log(parsed.feed.extendedDescription);
+})
+```
+
 Check out the output format in [test/output/reddit.json](test/output/reddit.json)
 
 ### NodeJS
