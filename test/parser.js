@@ -76,8 +76,13 @@ describe('Parser', function() {
     };
     Parser.parseFile(__dirname + '/input/customfields.rss',options, function(err, parsed) {
       Expect(err).to.equal(null);
+      let str = JSON.stringify(parsed, null, 2);
+      let outfile = OUT_DIR + '/customfields.json';
       if (process.env.WRITE_GOLDEN) {
-        FS.writeFileSync(OUT_DIR + '/customfields.json', JSON.stringify(parsed, null, 2));
+        FS.writeFileSync(outfile, str);
+      } else {
+        var expected = FS.readFileSync(outfile, 'utf8');
+        Expect(str).to.equal(expected);
       }
       done();
     });
