@@ -138,7 +138,7 @@ var parseRSS2 = function(xmlObj, options, callback) {
   if (xmlObj.rss.$['xmlns:itunes']) {
     decorateItunes(json, channel);
   }
-  callback(null,json);  //check before calling it.
+  callback(null, json);
 }
 
 /**
