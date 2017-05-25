@@ -1,4 +1,4 @@
-/*! rss-parser 2.8.0 */
+/*! rss-parser 2.9.0 */
 
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.RSSParser = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var Entities = require("entities");
@@ -11,7 +11,7 @@ var HTTPS = require('https');
 
 var Parser = module.exports = {};
 
-var TOP_FIELDS = [
+var FEED_FIELDS = [
   'title',
   'description',
   'author',
@@ -105,17 +105,23 @@ var parseRSS1 = function(xmlObj, callback) {
   callback("RSS 1.0 parsing not yet implemented.")
 }
 
-var parseRSS2 = function(xmlObj, callback) {
+var parseRSS2 = function(xmlObj, options, callback) {
+
+  options.customFields = options.customFields || {};
+  var itemFields = ITEM_FIELDS.concat(options.customFields.item || []);
+  var feedFields = FEED_FIELDS.concat(options.customFields.feed || []);
+
   var json = {feed: {entries: []}};
   var channel = xmlObj.rss.channel[0];
   if (channel['atom:link']) json.feed.feedUrl = channel['atom:link'][0].$.href;
-  TOP_FIELDS.forEach(function(f) {
+
+  feedFields.forEach(function(f) {
     if (channel[f]) json.feed[f] = channel[f][0];
   })
   var items = channel.item;
   (items || []).forEach(function(item) {
     var entry = {};
-    ITEM_FIELDS.forEach(function(f) {
+    itemFields.forEach(function(f) {
       if (item[f]) entry[f] = item[f][0];
     })
     if (item.enclosure) {
@@ -189,26 +195,31 @@ var decorateItunes = function decorateItunes(json, channel) {
   });
 }
 
-Parser.parseString = function(xml, callback) {
+Parser.parseString = function(xml, settings, callback) {
+  if (!callback) {
+    callback = settings;
+    settings = {};
+  }
+
   XML2JS.parseString(xml, function(err, result) {
     if (err) return callback(err);
     if (result.feed) {
       return parseAtomFeed(result, callback)
     } else if (result.rss && result.rss.$.version && result.rss.$.version.indexOf('2') === 0) {
-      return parseRSS2(result, callback);
+      return parseRSS2(result, settings, callback);
     } else {
       return parseRSS1(result, callback);
     }
   });
 }
 
-Parser.parseURL = function(feedUrl, settings, callback) {
+Parser.parseURL = function(feedUrl, options, callback) {
   if (!callback) {
-    callback = settings;
-    settings = {};
+    callback = options;
+    options = {};
   }
-  settings.__redirectCount = settings.__redirectCount || 0;
-  if (settings.maxRedirects === undefined) settings.maxRedirects = 1;
+  options.__redirectCount = options.__redirectCount || 0;
+  if (options.maxRedirects === undefined) options.maxRedirects = 1;
 
   var xml = '';
   var get = feedUrl.indexOf('https') === 0 ? HTTPS.get : HTTP.get;
@@ -221,25 +232,25 @@ Parser.parseURL = function(feedUrl, settings, callback) {
     headers: {'User-Agent': 'rss-parser'}
   }, function(res) {
     if (res.statusCode >= 300 && res.statusCode < 400 && res.headers['location']) {
-      if (settings.maxRedirects === 0) return callback(new Error("Status code " + res.statusCode));
-      if (settings.__redirectCount === settings.maxRedirects) return callback(new Error("Too many redirects"));
-      settings.__redirectCount++;
-      return Parser.parseURL(res.headers['location'], settings, callback);
+      if (options.maxRedirects === 0) return callback(new Error("Status code " + res.statusCode));
+      if (options.__redirectCount === options.maxRedirects) return callback(new Error("Too many redirects"));
+      options.__redirectCount++;
+      return Parser.parseURL(res.headers['location'], options, callback);
     }
     res.setEncoding('utf8');
     res.on('data', function(chunk) {
       xml += chunk;
     });
     res.on('end', function() {
-      return Parser.parseString(xml, callback);
+      return Parser.parseString(xml, options, callback);
     })
   })
   req.on('error', callback);
 }
 
-Parser.parseFile = function(file, callback) {
+Parser.parseFile = function(file,options,callback) {
   FS.readFile(file, 'utf8', function(err, contents) {
-    return Parser.parseString(contents, callback);
+    return Parser.parseString(contents, options, callback);
   })
 }
 
