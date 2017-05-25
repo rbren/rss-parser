@@ -10,9 +10,10 @@ bower install --save rss-parser
 
 ## Usage
 You can parse RSS from a URL, local file (NodeJS only), or a string.
-* `parseString(xml, callback)`
-* `parseFile(filename, callback)`
+* `parseString(xml, [options,],  callback)`
+* `parseFile(filename, [options,], callback)`
 * `parseURL(url, [options,] callback)`
+
 
 Check out the output format in [test/output/reddit.json](test/output/reddit.json)
 
@@ -27,7 +28,6 @@ parser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
   })
 })
 ```
-
 ### Web
 ```html
 <script src="/bower_components/rss-parser/dist/rss-parser.min.js"></script>
@@ -49,6 +49,23 @@ with `options.maxRedirects`.
 parser.parseURL('https://reddit.com/.rss', {maxRedirects: 3}, function(err, parsed) {
   console.log(parsed.feed.title);
 });
+```
+
+### Custom Fields
+```js
+var options = {
+  customFields: {
+    feed: ['otherTitle', 'extendedDescription'],
+    item: ['coAuthor','subtitle'],
+  }
+}
+parser.parseURL('https://www.reddit.com/.rss', options, function(err, parsed) {
+  console.log(parsed.feed.extendedDescription);
+
+  parsed.feed.entries.forEach(function(entry) {
+    console.log(entry.coAuthor + ':' + entry.subtitle);
+  })
+})
 ```
 
 ## Contributing
@@ -74,4 +91,3 @@ git tag vX.X.X
 npm publish
 git push --follow-tags
 ```
-
