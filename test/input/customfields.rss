@@ -10,6 +10,12 @@
     <copyright>
      Copyright © 2017 Varthabharathi. All rights reserved.
     </copyright>
+    <nested-field>
+      <nest1>foo</nest1>
+      <nest2>
+        <nest3>bar</nest3>
+      </nest2>
+    </nested-field>
     <description>
       <![CDATA[
          Varthabharathi - A Kannada news portal brings latest news, headlines in kannada from India, world, business, politics, sports and entertainment!

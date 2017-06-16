@@ -70,7 +70,7 @@ describe('Parser', function() {
   it('should parse custom fields', function(done) {
     var options = {
       customFields: {
-        feed: ['language', 'copyright'],
+        feed: ['language', 'copyright', 'nested-field'],
         item: ['subtitle']
       }
     };

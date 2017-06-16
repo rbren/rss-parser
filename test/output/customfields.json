@@ -171,6 +171,18 @@
     "description": "\n      \n         Varthabharathi - A Kannada news portal brings latest news, headlines in kannada from India, world, business, politics, sports and entertainment!\n      \n    ",
     "link": "http://www.varthabahrati.in",
     "language": "kn",
-    "copyright": "\n     Copyright © 2017 Varthabharathi. All rights reserved.\n    "
+    "copyright": "\n     Copyright © 2017 Varthabharathi. All rights reserved.\n    ",
+    "nested-field": {
+      "nest1": [
+        "foo"
+      ],
+      "nest2": [
+        {
+          "nest3": [
+            "bar"
+          ]
+        }
+      ]
+    }
   }
 }
