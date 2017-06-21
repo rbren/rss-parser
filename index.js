@@ -9,6 +9,7 @@ var HTTPS = require('https');
 var Parser = module.exports = {};
 
 var FEED_FIELDS = [
+  ['author', 'creator'],
   ['dc:publisher', 'publisher'],
   ['dc:creator', 'creator'],
   ['dc:source', 'source'],
@@ -32,8 +33,8 @@ var PODCAST_FEED_FIELDS = ([
 ]).map(f => ['itunes:' + f, f]);
 
 var ITEM_FIELDS = [
+  ['author', 'creator'],
   ['dc:creator', 'creator'],
-  ['dc:creator', 'author'],
   ['dc:date', 'date'],
   ['dc:language', 'language'],
   ['dc:rights', 'rights'],

@@ -2,6 +2,7 @@
   "feed": {
     "entries": [
       {
+        "creator": "foobar@gmail.com",
         "title": "FAQ for Narro",
         "link": "https://www.narro.co/article/54e703933058540300000069",
         "pubDate": "Fri, 20 Feb 2015 09:51:15 UTC",
