@@ -1,3 +1,5 @@
+"use strict";
+
 var FS = require('fs');
 
 var Parser = require('../index.js');
