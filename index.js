@@ -9,6 +9,12 @@ var HTTPS = require('https');
 var Parser = module.exports = {};
 
 var FEED_FIELDS = [
+  ['author', 'creator'],
+  ['dc:publisher', 'publisher'],
+  ['dc:creator', 'creator'],
+  ['dc:source', 'source'],
+  ['dc:title', 'title'],
+  ['dc:type', 'type'],
   'title',
   'description',
   'author',
@@ -16,15 +22,24 @@ var FEED_FIELDS = [
   'webMaster',
   'managingEditor',
   'generator',
-  'link'
+  'link',
 ];
-var PODCAST_TOP_FIELDS = [
+
+var PODCAST_FEED_FIELDS = ([
   'author',
   'subtitle',
   'summary',
   'explicit'
-];
+]).map(f => ['itunes:' + f, f]);
+
 var ITEM_FIELDS = [
+  ['author', 'creator'],
+  ['dc:creator', 'creator'],
+  ['dc:date', 'date'],
+  ['dc:language', 'language'],
+  ['dc:rights', 'rights'],
+  ['dc:source', 'source'],
+  ['dc:title', 'title'],
   'title',
   'link',
   'pubDate',
@@ -32,16 +47,16 @@ var ITEM_FIELDS = [
   'content:encoded',
   'enclosure',
   'dc:creator',
-  'dc:date'
+  'dc:date',
 ];
-var PODCAST_ITEM_FIELDS = [
+var PODCAST_ITEM_FIELDS = ([
   'author',
   'subtitle',
   'summary',
   'explicit',
   'duration',
   'image'
-];
+]).map(f => ['itunes:' + f, f]);
 
 
 var stripHtml = function(str) {
@@ -63,7 +78,7 @@ var getContent = function(content) {
   }
 }
 
-var parseAtomFeed = function(xmlObj, callback) {
+var parseAtomFeed = function(xmlObj, options, callback) {
   var feed = xmlObj.feed;
   var json = {feed: {entries: []}};
   if (feed.link) {
@@ -98,29 +113,38 @@ var parseAtomFeed = function(xmlObj, callback) {
   callback(null, json);
 }
 
-var parseRSS1 = function(xmlObj, callback) {
-  callback("RSS 1.0 parsing not yet implemented.")
+var parseRSS1 = function(xmlObj, options, callback) {
+  xmlObj = xmlObj['rdf:RDF'];
+  var channel = xmlObj.channel[0];
+  var items = xmlObj.item;
+  return parseRSS(channel, items, options, callback);
 }
 
 var parseRSS2 = function(xmlObj, options, callback) {
+  var channel = xmlObj.rss.channel[0];
+  var items = channel.item;
+  return parseRSS(channel, items, options, (err, data) => {
+    if (err) return callback(err);
+    if (xmlObj.rss.$['xmlns:itunes']) {
+      decorateItunes(data, channel);
+    }
+    callback(null, data);
+  });
+}
 
+var parseRSS = function(channel, items, options, callback) {
+  items = items || [];
   options.customFields = options.customFields || {};
   var itemFields = ITEM_FIELDS.concat(options.customFields.item || []);
   var feedFields = FEED_FIELDS.concat(options.customFields.feed || []);
 
   var json = {feed: {entries: []}};
-  var channel = xmlObj.rss.channel[0];
-  if (channel['atom:link']) json.feed.feedUrl = channel['atom:link'][0].$.href;
 
-  feedFields.forEach(function(f) {
-    if (channel[f]) json.feed[f] = channel[f][0];
-  })
-  var items = channel.item;
-  (items || []).forEach(function(item) {
+  if (channel['atom:link']) json.feed.feedUrl = channel['atom:link'][0].$.href;
+  copyFromXML(channel, json.feed, feedFields);
+  items.forEach(function(item) {
     var entry = {};
-    itemFields.forEach(function(f) {
-      if (item[f]) entry[f] = item[f][0];
-    })
+    copyFromXML(item, entry, itemFields);
     if (item.enclosure) {
         entry.enclosure = item.enclosure[0].$;
     }
@@ -133,12 +157,28 @@ var parseRSS2 = function(xmlObj, options, callback) {
       if (entry.guid._) entry.guid = entry.guid._;
     }
     if (item.category) entry.categories = item.category;
+    let date = entry.pubDate || entry.date;
+    if (date) {
+      try {
+        entry.isoDate = new Date(date.trim()).toISOString();
+      } catch (e) {
+        // Ignore bad date format
+      }
+    }
     json.feed.entries.push(entry);
   })
-  if (xmlObj.rss.$['xmlns:itunes']) {
-    decorateItunes(json, channel);
-  }
   callback(null, json);
+}
+
+var copyFromXML = function(xml, dest, fields) {
+  fields.forEach(f => {
+    let from = to = f;
+    if (Array.isArray(f)) {
+      from = f[0];
+      to = f[1];
+    }
+    if (xml[from] !== undefined) dest[to] = xml[from][0];
+  })
 }
 
 /**
@@ -173,39 +213,31 @@ var decorateItunes = function decorateItunes(json, channel) {
     json.feed.itunes.owner = owner;
   }
 
-  PODCAST_TOP_FIELDS.forEach(function(f) {
-    if (channel['itunes:' + f]) json.feed.itunes[f] = channel['itunes:' + f][0];
-  });
-  (items).forEach(function(item, index) {
-    entry = json.feed.entries[index];
-    PODCAST_ITEM_FIELDS.forEach(function(f) {
-      entry.itunes = entry.itunes || {};
-      if (item['itunes:' + f]) {
-        if (f == 'image' && item['itunes:' + f][0].$ && item['itunes:' + f][0].$.href) {
-          entry.itunes[f] = item['itunes:' + f][0].$.href;
-        } else {
-          entry.itunes[f] = item['itunes:' + f][0];
-        }
-      }
-    });
-    json.feed.entries[index] = entry;
+  copyFromXML(channel, json.feed.itunes, PODCAST_FEED_FIELDS);
+  items.forEach(function(item, index) {
+    var entry = json.feed.entries[index];
+    entry.itunes = {};
+    copyFromXML(item, entry.itunes, PODCAST_ITEM_FIELDS);
+    var image = item['itunes:image'];
+    if (image && image[0] && image[0].$ && image[0].$.href) {
+      entry.itunes.image = image[0].$.href;
+    }
   });
 }
 
-Parser.parseString = function(xml, settings, callback) {
+Parser.parseString = function(xml, options, callback) {
   if (!callback) {
-    callback = settings;
-    settings = {};
+    callback = options;
+    options = {};
   }
-
   XML2JS.parseString(xml, function(err, result) {
     if (err) return callback(err);
     if (result.feed) {
-      return parseAtomFeed(result, callback)
+      return parseAtomFeed(result, options, callback)
     } else if (result.rss && result.rss.$.version && result.rss.$.version.indexOf('2') === 0) {
-      return parseRSS2(result, settings, callback);
+      return parseRSS2(result, options, callback);
     } else {
-      return parseRSS1(result, callback);
+      return parseRSS1(result, options, callback);
     }
   });
 }
@@ -245,7 +277,7 @@ Parser.parseURL = function(feedUrl, options, callback) {
   req.on('error', callback);
 }
 
-Parser.parseFile = function(file,options,callback) {
+Parser.parseFile = function(file, options, callback) {
   FS.readFile(file, 'utf8', function(err, contents) {
     return Parser.parseString(contents, options, callback);
   })

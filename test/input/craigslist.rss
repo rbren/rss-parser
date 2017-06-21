@@ -13,397 +13,469 @@
  xmlns:admin="http://webns.net/mvcb/"
 >
 
-<channel rdf:about="https://seattle.craigslist.org/search/act?format=rss">
-<title>craigslist seattle | activity partners search </title>
-<link>https://seattle.craigslist.org/search/act</link>
+<channel rdf:about="https://sfbay.craigslist.org/search/apa?format=rss">
+<title>craigslist SF bay area | apts/housing for rent search </title>
+<link>https://sfbay.craigslist.org/search/apa</link>
 <description></description>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:rights>copyright 2017 craiglist</dc:rights>
 <dc:publisher>robot@craigslist.org</dc:publisher>
 <dc:creator>robot@craigslist.org</dc:creator>
-<dc:source>https://seattle.craigslist.org/search/act?format=rss</dc:source>
-<dc:title>craigslist seattle | activity partners search </dc:title>
+<dc:source>https://sfbay.craigslist.org/search/apa?format=rss</dc:source>
+<dc:title>craigslist SF bay area | apts/housing for rent search </dc:title>
 <dc:type>Collection</dc:type>
-<syn:updateBase>2015-12-19T07:58:14-08:00</syn:updateBase>
-<syn:updateFrequency>1</syn:updateFrequency>
+<syn:updateBase>2017-06-21T11:33:12-07:00</syn:updateBase>
+<syn:updateFrequency>6</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
-  <rdf:li rdf:resource="http://seattle.craigslist.org/see/act/5366924388.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/sno/act/5366822733.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/tac/act/5332800255.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/see/act/5363753999.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/sno/act/5366708017.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/est/act/5334232828.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/see/act/5366509096.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/see/act/5366135353.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/see/act/5338817397.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/tac/act/5340578400.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/est/act/5349142230.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/tac/act/5357874750.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/skc/act/5365321961.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/skc/act/5365247865.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/see/act/5355098771.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/sno/act/5346047727.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/see/act/5346047013.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/tac/act/5346047529.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/see/act/5346046881.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/see/act/5346047617.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/see/act/5346047101.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/see/act/5364760400.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/see/act/5364383823.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/see/act/5348815072.html" />
-  <rdf:li rdf:resource="http://seattle.craigslist.org/oly/act/5355137642.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6186664607.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/sfc/apa/6156068288.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6186664268.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/pen/apa/6178016537.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/pen/apa/6186664134.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6186643068.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6186663734.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/sby/apa/6186663427.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6181466671.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/pen/apa/6151867421.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6175713069.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/sby/apa/6186662875.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6175706074.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6179687565.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/sby/apa/6176525357.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6181392861.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6170765620.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6170826005.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6186661838.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6170826650.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6170829613.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/pen/apa/6177358587.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6174129422.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6173868358.html" />
+  <rdf:li rdf:resource="http://sfbay.craigslist.org/eby/apa/6170845890.html" />
  </rdf:Seq>
 </items>
 </channel>
-<item rdf:about="http://seattle.craigslist.org/see/act/5366924388.html">
-<title><![CDATA[Nude art photography]]></title>
-<link>http://seattle.craigslist.org/see/act/5366924388.html</link>
-<description><![CDATA[Hi, 
-I am a photographer and clicking nudes is one of my interests. Please dont consider this as a business ad, but I am looking for someone who is fine to get naked and I can click her pictures. As the thing goes, I am open for other activities too, [...]]]></description>
-<dc:date>2015-12-19T06:01:00-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6186664607.html">
+<title><![CDATA[Bright, Spacious Beautiful Victorian (oakland north / temescal) &#x0024;4300 3bd 1930ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6186664607.html</link>
+<description><![CDATA[Updated 3+ Bedroom, 2.5 Bath, Victorian home. Beautiful original oak hardwoods, high ceilings with crown molding, stainless steel appliances, large sunny deck directly next to the kitchen for grilling and entertaining. Radiant floor heating throughou [...]]]></description>
+<dc:date>2017-06-21T10:33:10-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/see/act/5366924388.html</dc:source>
-<dc:title><![CDATA[Nude art photography]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6186664607.html</dc:source>
+<dc:title><![CDATA[Bright, Spacious Beautiful Victorian (oakland north / temescal) &#x0024;4300 3bd 1930ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<dcterms:issued>2015-12-19T06:01:00-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00l0l_fbVZikCjEKO_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:33:10-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/sno/act/5366822733.html">
-<title><![CDATA[New girlfriends in Everett area (Everett)]]></title>
-<link>http://seattle.craigslist.org/sno/act/5366822733.html</link>
-<description><![CDATA[27 y.o. professional female looking to make new girl friends to hangout with in the Everett area. Looking for a workout buddy, walks, coffee, drinks, beginner hiking, ect. Looking for quality friendships. If interested email me some information about [...]]]></description>
-<dc:date>2015-12-19T02:11:33-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/sfc/apa/6156068288.html">
+<title><![CDATA[Beautifully Remodeled 1 BR with Garage Parking (Pacific Heights) &#x0024;3449]]></title>
+<link>http://sfbay.craigslist.org/sfc/apa/6156068288.html</link>
+<description><![CDATA[100 Terra Vista #2, San Francisco, CA 94115 This Spacious beautifully remodeled 1 Br unit in 4 Plex - Unit is vacant and available for Immediate Occupancy 
+Apartment Features 
+1 Bedroom, 1 Bath 
+Loads of Natural Light and Large Windows 
+Modern kitche [...]]]></description>
+<dc:date>2017-06-21T10:33:00-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/sno/act/5366822733.html</dc:source>
-<dc:title><![CDATA[New girlfriends in Everett area (Everett)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/sfc/apa/6156068288.html</dc:source>
+<dc:title><![CDATA[Beautifully Remodeled 1 BR with Garage Parking (Pacific Heights) &#x0024;3449]]></dc:title>
 <dc:type>text</dc:type>
-<dcterms:issued>2015-12-19T02:11:33-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00K0K_fdZ3XvQwsbo_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:33:00-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/tac/act/5332800255.html">
-<title><![CDATA[Wing Chun Kung Fu (Tacoma)]]></title>
-<link>http://seattle.craigslist.org/tac/act/5332800255.html</link>
-<description><![CDATA[I am accepting new students for private lesson at the students residence. Hill Wing Chun is a close quarters combat art of self defense, where being the smaller person is not a bad thing! Excellent self defense for women. Cost is $25.00 an hour. All  [...]]]></description>
-<dc:date>2015-12-19T01:52:40-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6186664268.html">
+<title><![CDATA[CALL FALI Z~ MOVE NOW ~ GREAT PLACE TO CALL HOME!!! (vallejo / benicia) &#x0024;1413 1bd 643ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6186664268.html</link>
+<description><![CDATA[CONTACT ME~ ASK FOR FALIZ!!! 
+Inquire about other units available as well. 
+We are a 560 apartment complex located in a residential are in Vallejo/Benicia area. We are located near Blue Rock Springs park and Blue Rock Golf course. 
+-Washer/Dryer in u [...]]]></description>
+<dc:date>2017-06-21T10:32:59-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/tac/act/5332800255.html</dc:source>
-<dc:title><![CDATA[Wing Chun Kung Fu (Tacoma)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6186664268.html</dc:source>
+<dc:title><![CDATA[CALL FALI Z~ MOVE NOW ~ GREAT PLACE TO CALL HOME!!! (vallejo / benicia) &#x0024;1413 1bd 643ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00r0r_7EYzNDucOQn_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-19T01:52:40-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00O0O_6P3oH1IAn9b_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:32:59-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/see/act/5363753999.html">
-<title><![CDATA[PERSONAL SOCCER (FOOTBALL) TRAINER/COACH (seattle, everett, lynnwood, edmonds)]]></title>
-<link>http://seattle.craigslist.org/see/act/5363753999.html</link>
-<description><![CDATA[Hello busy parents, 
-On Fridays and Saturdays after shool I take a few kids to local indoor soccer fields and embark on couple hours of fun and athletism and fundamental and advanced soccer training -- where kids get to be out of the house, make frie [...]]]></description>
-<dc:date>2015-12-19T00:51:34-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/pen/apa/6178016537.html">
+<title><![CDATA[New 1Bed 1Bath ($2095) Arbors (mountain view) &#x0024;2095 1bd 560ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/pen/apa/6178016537.html</link>
+<description><![CDATA[CONTACT INFO Mtn. View Rental Center 
+ <a href="/fb/sfo/apa/6178016537" class="showcontact" title="click to show contact info">show contact info</a>
+Remodeled 1Bedroom 1Bath Apartment Home at The Arbors $2095 - $2,095 per month 2220 California Street, Mtn. View, CA 94040 FEATURES Bedrooms:&nbsp; 1 Bathrooms:&nbsp; 1 Located on Floor #:&nbsp; 2 Flo [...]]]></description>
+<dc:date>2017-06-21T10:32:58-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/see/act/5363753999.html</dc:source>
-<dc:title><![CDATA[PERSONAL SOCCER (FOOTBALL) TRAINER/COACH (seattle, everett, lynnwood, edmonds)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/pen/apa/6178016537.html</dc:source>
+<dc:title><![CDATA[New 1Bed 1Bath ($2095) Arbors (mountain view) &#x0024;2095 1bd 560ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00F0F_f0U4wbmuAJ3_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-19T00:51:34-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00O0O_lyDsL0JrZQJ_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:32:58-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/sno/act/5366708017.html">
-<title><![CDATA[Flag Football Saturday 12-19-15 at 10 am (Mill creek)]]></title>
-<link>http://seattle.craigslist.org/sno/act/5366708017.html</link>
-<description><![CDATA[Some friends and family of mine are playing flag football tomorrow morning(Saturday 12-19) at 10 am. We have about a five on five game lined up but ideally I would like to do a seven on seven. So if you would like to play hit me up and I will give yo [...]]]></description>
-<dc:date>2015-12-18T21:12:00-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/pen/apa/6186664134.html">
+<title><![CDATA[Top Floor / Downtown/Granite  / Big Balcony/ Gas Appliances (san mateo) &#x0024;2495 1bd 720ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/pen/apa/6186664134.html</link>
+<description><![CDATA[
+ <a href="/fb/sfo/apa/6186664134" class="showcontact" title="click to show contact info">show contact info</a>
+
+123 N. El Camino Real 
+Our community has been recently renovated as have many of our apartment interiors. Including custom paint, new appliances, carpet, and lighting. We have convenient parking and additional guest parking, on-site lau [...]]]></description>
+<dc:date>2017-06-21T10:32:54-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/sno/act/5366708017.html</dc:source>
-<dc:title><![CDATA[Flag Football Saturday 12-19-15 at 10 am (Mill creek)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/pen/apa/6186664134.html</dc:source>
+<dc:title><![CDATA[Top Floor / Downtown/Granite  / Big Balcony/ Gas Appliances (san mateo) &#x0024;2495 1bd 720ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<dcterms:issued>2015-12-18T21:12:00-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00G0G_fDOPD6Zd5Sc_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:32:54-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/est/act/5334232828.html">
-<title><![CDATA[The very best in sports nutrition, weight loss and wellness products (renton)]]></title>
-<link>http://seattle.craigslist.org/est/act/5334232828.html</link>
-<description><![CDATA[Buy the very best products made. If your an athlete, into fitness or want to lose weight the right way, then check my online store for the best in sports nutrition and wellness products. 
-Our products are tested and proven by top athletes and have no [...]]]></description>
-<dc:date>2015-12-18T19:11:31-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6186643068.html">
+<title><![CDATA[West Side Dublin- can be furnished (dublin / pleasanton / livermore) &#x0024;4000]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6186643068.html</link>
+<description><![CDATA[Home is available for showing. Please reply by email to schedule an appointment. 
+single family 4bedroom 2 bathroom home in Dublin. single story, available for immediate rent. Upgraded kitchen with Granite counters, Stainless Steel Appliances, Gas co [...]]]></description>
+<dc:date>2017-06-21T10:32:48-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/est/act/5334232828.html</dc:source>
-<dc:title><![CDATA[The very best in sports nutrition, weight loss and wellness products (renton)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6186643068.html</dc:source>
+<dc:title><![CDATA[West Side Dublin- can be furnished (dublin / pleasanton / livermore) &#x0024;4000]]></dc:title>
 <dc:type>text</dc:type>
-<dcterms:issued>2015-12-18T19:11:31-08:00</dcterms:issued>
+<dcterms:issued>2017-06-21T10:32:48-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/see/act/5366509096.html">
-<title><![CDATA[Looking for someone to read my poem at am open mic (Seattle)]]></title>
-<link>http://seattle.craigslist.org/see/act/5366509096.html</link>
-<description><![CDATA[Greetings! 
-Looking for someone interested in reading my poetry / lyrtic at an open mic in Seattle. 
-I have a few I'm looking to get read, or just one... I don't want to read them myself cuz I'm feeling too emotional about it and probably will make a [...]]]></description>
-<dc:date>2015-12-18T17:09:17-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6186663734.html">
+<title><![CDATA[Cozy Senior Living in Livermore! (dublin / pleasanton / livermore) &#x0024;1962 1bd 538ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6186663734.html</link>
+<description><![CDATA[Beautiful floor plan; Large walk-in closet and more. 
+We are located close to the 580 freeway; Springtown golf course; library and not very far from local shopping. Visit the local restaurants and get a variety to please the palate. Bingo; billiards; [...]]]></description>
+<dc:date>2017-06-21T10:32:41-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/see/act/5366509096.html</dc:source>
-<dc:title><![CDATA[Looking for someone to read my poem at am open mic (Seattle)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6186663734.html</dc:source>
+<dc:title><![CDATA[Cozy Senior Living in Livermore! (dublin / pleasanton / livermore) &#x0024;1962 1bd 538ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<dcterms:issued>2015-12-18T17:09:17-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00Q0Q_4pDCuNrDFpY_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:32:41-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/see/act/5366135353.html">
-<title><![CDATA[New Years Resolutions]]></title>
-<link>http://seattle.craigslist.org/see/act/5366135353.html</link>
-<description><![CDATA[I am looking for 10 people who are serious about getting health results Do you want to lose weight? Do you want to gain muscle? Do you want more energy? If you answered YES to any of these questions and you want to take your body and health to the ne [...]]]></description>
-<dc:date>2015-12-18T13:04:36-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/sby/apa/6186663427.html">
+<title><![CDATA[1BR/1BA detached House (not Apartment) Near San Carlos & Meridian (san jose west) &#x0024;2000 1bd 750ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/sby/apa/6186663427.html</link>
+<description><![CDATA[Available for July 1st occupancy is a cute 1 bedroom, 1 bathroom detached house/cottage located at 368 Page Street in San Jose. This is the middle house on a large parcel of land with two other detached houses. 
+The Cottage features: 
+- A large bedro [...]]]></description>
+<dc:date>2017-06-21T10:32:32-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/see/act/5366135353.html</dc:source>
-<dc:title><![CDATA[New Years Resolutions]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/sby/apa/6186663427.html</dc:source>
+<dc:title><![CDATA[1BR/1BA detached House (not Apartment) Near San Carlos & Meridian (san jose west) &#x0024;2000 1bd 750ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00707_1Q1DFCwhJq8_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-18T13:04:36-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00202_4l7V0GqxBm2_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:32:32-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/see/act/5338817397.html">
-<title><![CDATA[Christmas light night horse rides (Auburn)]]></title>
-<link>http://seattle.craigslist.org/see/act/5338817397.html</link>
-<description><![CDATA[This ride is done every year only the Month of December (it is not groupon eligible ) . 
-The cost of this ride is $45 per person. 
-It is at night . The horses have Christmas lights on them and we go out thur the woods and up into a neighborhood and b [...]]]></description>
-<dc:date>2015-12-18T12:02:29-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6181466671.html">
+<title><![CDATA[2 bed 1 bath near Fruitvale BART (oakland east) &#x0024;2150 2bd]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6181466671.html</link>
+<description><![CDATA[We are looking for renters for the lower level of our home. It's a newly remodeled, completely separate, 2 bedroom apartment. 
+We are only an 8-10 minute walk from Fruitvale BART in the lovely Fruitvale district and blocks away from great restaurants [...]]]></description>
+<dc:date>2017-06-21T10:32:28-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/see/act/5338817397.html</dc:source>
-<dc:title><![CDATA[Christmas light night horse rides (Auburn)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6181466671.html</dc:source>
+<dc:title><![CDATA[2 bed 1 bath near Fruitvale BART (oakland east) &#x0024;2150 2bd]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00000_bXHPiHlV6Je_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-18T12:02:29-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/01717_emjbMzVBnyp_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:32:28-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/tac/act/5340578400.html">
-<title><![CDATA['Self Defense' classes for individuals & groups (University Place)]]></title>
-<link>http://seattle.craigslist.org/tac/act/5340578400.html</link>
-<description><![CDATA[Weekly classes are available for individuals, groups & businesses wanting to learn reality based, serious defensive tactics designed to help keep you safe at home and at work. Learn direct effective techniques that increase self esteem and equip you  [...]]]></description>
-<dc:date>2015-12-18T10:32:50-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/pen/apa/6151867421.html">
+<title><![CDATA[Arch St Apts (redwood city) &#x0024;1725 525ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/pen/apa/6151867421.html</link>
+<description><![CDATA[For Lease:Large Studio Apt,Full size Kitchen,Walk-in Closet,2-Room Bath Area.(Water,Garbage and Gas is Paid)Laundry rooms on site,Underground Parking,Elevators,Heated Pool.We are located near Shopping and Transportation also near Edgewood Park.By App [...]]]></description>
+<dc:date>2017-06-21T10:32:27-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/tac/act/5340578400.html</dc:source>
-<dc:title><![CDATA['Self Defense' classes for individuals & groups (University Place)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/pen/apa/6151867421.html</dc:source>
+<dc:title><![CDATA[Arch St Apts (redwood city) &#x0024;1725 525ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00Y0Y_e8C3LVCbGQO_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-18T10:32:50-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00r0r_cOsPbH9nptQ_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:32:27-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/est/act/5349142230.html">
-<title><![CDATA[Do you like hair, makeup, etc???]]></title>
-<link>http://seattle.craigslist.org/est/act/5349142230.html</link>
-<description><![CDATA[I love all things girly so looking for friends that like makeup, hair, etc. I am not a brand snob or anything like that I like thrifting just as much as malls :) I also enjoy art, crafts, movies, etc. I am 34, single, Christian, no kids, am a nanny i [...]]]></description>
-<dc:date>2015-12-18T06:33:38-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6175713069.html">
+<title><![CDATA[Beautiful apartment in Fremont! (fremont / union city / newark) &#x0024;2150 1bd 737ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6175713069.html</link>
+<description><![CDATA[Contact info: Nancy Barrera | 
+ <a href="/fb/sfo/apa/6175713069" class="showcontact" title="click to show contact info">show contact info</a>
+| 
+ <a href="/fb/sfo/apa/6175713069" class="showcontact" title="click to show contact info">show contact info</a>
+ Carriage House Apartments 38725 Lexington St , Fremont, CA 94536 KEY FEATURES Year Built: 1972 Sq Footage: 828 sqft. Bedrooms: 1 Bed Bathrooms: 1 Bath Parking: 1 Carport Leas [...]]]></description>
+<dc:date>2017-06-21T10:32:17-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/est/act/5349142230.html</dc:source>
-<dc:title><![CDATA[Do you like hair, makeup, etc???]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6175713069.html</dc:source>
+<dc:title><![CDATA[Beautiful apartment in Fremont! (fremont / union city / newark) &#x0024;2150 1bd 737ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<dcterms:issued>2015-12-18T06:33:38-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00Y0Y_4RHbmsUwR2l_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:32:17-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/tac/act/5357874750.html">
-<title><![CDATA[Are you Highly Sensitive/Empath? (Tacoma)]]></title>
-<link>http://seattle.craigslist.org/tac/act/5357874750.html</link>
-<description><![CDATA[We are starting a monthly get together for people who live in the Tacoma area. Maybe you have a hard time making friends? Maybe you don't have any friends in the area? Are you an Empath? 
-Are you Highly Sensitive? an &#8234;&#8206;HSP&#8236;? Do you  [...]]]></description>
-<dc:date>2015-12-17T22:30:28-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/sby/apa/6186662875.html">
+<title><![CDATA[SPECIAL AVAIL Jun 30th  1bd Unit W/ Walk In Closet, A/C & MORE! (san jose west) &#x0024;1850 1bd 625ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/sby/apa/6186662875.html</link>
+<description><![CDATA[$1,850 per month 1 bedrooms, 1 full baths,
+0 half baths, 625 square feet
+Alma Blazevic | NAS Property Group | 
+ <a href="/fb/sfo/apa/6186662875" class="showcontact" title="click to show contact info">show contact info</a>
+1125 Ranchero Way, San Jose, CA This Spacious, 1 Bd Unit with A/C Available Ju 30th to Move In!! This Unit Features spacious  [...]]]></description>
+<dc:date>2017-06-21T10:32:09-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/tac/act/5357874750.html</dc:source>
-<dc:title><![CDATA[Are you Highly Sensitive/Empath? (Tacoma)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/sby/apa/6186662875.html</dc:source>
+<dc:title><![CDATA[SPECIAL AVAIL Jun 30th  1bd Unit W/ Walk In Closet, A/C & MORE! (san jose west) &#x0024;1850 1bd 625ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<dcterms:issued>2015-12-17T22:30:28-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00x0x_kdTl7dzd3wn_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:32:09-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/skc/act/5365321961.html">
-<title><![CDATA[Do you want to practice your Ukranian or Russian Language? (Maple Valley, Renton)]]></title>
-<link>http://seattle.craigslist.org/skc/act/5365321961.html</link>
-<description><![CDATA[Hi there! 
-I would be happy to help you improve your speaking in Russian or Ukranian language. We will meet in the pablic area. If you have any questions please ask me. Any ages are welcome! 
-Thanks you for reading this and I look forward to hear fro [...]]]></description>
-<dc:date>2015-12-17T22:21:26-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6175706074.html">
+<title><![CDATA[Great price,Great location!! (fremont / union city / newark) &#x0024;2150 1bd 737ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6175706074.html</link>
+<description><![CDATA[Welcome to lovely Carriage House Apartments. Our community currently has different floor plans available. All of our units are equipped with a long list of features, including wall to wall carpet, fully equipped kitchens with dishwasher, stove and re [...]]]></description>
+<dc:date>2017-06-21T10:32:07-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/skc/act/5365321961.html</dc:source>
-<dc:title><![CDATA[Do you want to practice your Ukranian or Russian Language? (Maple Valley, Renton)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6175706074.html</dc:source>
+<dc:title><![CDATA[Great price,Great location!! (fremont / union city / newark) &#x0024;2150 1bd 737ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00M0M_41b73whwLZz_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-17T22:21:26-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00h0h_bd1e1SGWmhx_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:32:07-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/skc/act/5365247865.html">
-<title><![CDATA[Join the fun on our boardgame night! (Burien)]]></title>
-<link>http://seattle.craigslist.org/skc/act/5365247865.html</link>
-<description><![CDATA[Our group, called 'Southend gamers', has been active over eleven years. 
-With 277 games to choose from - primarily Eurogames of all strategy levels but with plenty of party games, classics, abstract, dice and word games. 
-Game sessions are held on Sa [...]]]></description>
-<dc:date>2015-12-17T20:17:55-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6179687565.html">
+<title><![CDATA[Coming  Soon! (fremont / union city / newark) &#x0024;2550 2bd 1121ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6179687565.html</link>
+<description><![CDATA[Contact info: Nancy Barrera | 
+ <a href="/fb/sfo/apa/6179687565" class="showcontact" title="click to show contact info">show contact info</a>
+| 
+ <a href="/fb/sfo/apa/6179687565" class="showcontact" title="click to show contact info">show contact info</a>
+ Carriage House Apartments 38725 Lexington St, Fremont, CA 94536 $2,550/mo KEY FEATURES Bedrooms: 2 Beds Bathrooms: 2 Baths Lease Duration: 1 Year Deposit: $800 Pets Policy: C [...]]]></description>
+<dc:date>2017-06-21T10:31:58-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/skc/act/5365247865.html</dc:source>
-<dc:title><![CDATA[Join the fun on our boardgame night! (Burien)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6179687565.html</dc:source>
+<dc:title><![CDATA[Coming  Soon! (fremont / union city / newark) &#x0024;2550 2bd 1121ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00505_4N3n58O4ah9_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-17T20:17:55-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00F0F_9ZcC20uP2je_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:31:58-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/see/act/5355098771.html">
-<title><![CDATA[Seahawk Talk (seattle)]]></title>
-<link>http://seattle.craigslist.org/see/act/5355098771.html</link>
-<description><![CDATA[Join Passionate Seahawk fans online. 
-Read articles. State Opinions. And Root for the Home Team. 
-Facebook 
-https://www.facebook.com/Seahawkblueforum?skip_nax_wizard=true&ref_type=page_profile_button 
-Hawk Fans 
-Join us and have some fun.]]></description>
-<dc:date>2015-12-17T17:54:47-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/sby/apa/6176525357.html">
+<title><![CDATA[WD and 2 private balconies & Courtyard Views. Look&Lease Special! (san jose west) &#x0024;3295 2bd 1055ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/sby/apa/6176525357.html</link>
+<description><![CDATA[The Brookdale Apartments, managed by On-site Team 
+4400 Albany Dr. 
+San Jose, CA 95129 
+
+ <a href="/fb/sfo/apa/6176525357" class="showcontact" title="click to show contact info">show contact info</a>
+
+Ideally located in San Jose on the Cupertino border and in the excellent Cupertino school district, Easy access to 280, 880 and Hwy 17. 
+Two large b [...]]]></description>
+<dc:date>2017-06-21T10:31:47-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/see/act/5355098771.html</dc:source>
-<dc:title><![CDATA[Seahawk Talk (seattle)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/sby/apa/6176525357.html</dc:source>
+<dc:title><![CDATA[WD and 2 private balconies & Courtyard Views. Look&Lease Special! (san jose west) &#x0024;3295 2bd 1055ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00F0F_ad5wlpi9fbw_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-17T17:54:47-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00f0f_9cgdeoYWaEs_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:31:47-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/sno/act/5346047727.html">
-<title><![CDATA[Don't Dine alone in Seattle (Seattle, WA)]]></title>
-<link>http://seattle.craigslist.org/sno/act/5346047727.html</link>
-<description><![CDATA[Meet People Interested in Dining Out in Seattle! Discover new restaurants, enjoy delicious meals and make conversation with friendly dinner companions. It's a big dinner table and all are welcome! 
-Meetup group...The Seattle True Foodies 
-Come and jo [...]]]></description>
-<dc:date>2015-12-17T17:54:17-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6181392861.html">
+<title><![CDATA[2BD/2BA,Ground Floor,Patio,Fireplace,Dishwasher,Hardwood,PetOK (hercules, pinole, san pablo, el sob) &#x0024;2100 2bd 974ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6181392861.html</link>
+<description><![CDATA[Please contact Ma Properties at 
+ <a href="/fb/sfo/apa/6181392861" class="showcontact" title="click to show contact info">show contact info</a>
+if you wish to schedule a viewing appointment. 
+Located in a quiet community with beautiful foliage. Complex includes swimming pool for tenants' enjoyment. 
+2 Bedroom / 2 Bathroom 
+1003 Bay View Farm Rd.,  [...]]]></description>
+<dc:date>2017-06-21T10:31:44-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/sno/act/5346047727.html</dc:source>
-<dc:title><![CDATA[Don't Dine alone in Seattle (Seattle, WA)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6181392861.html</dc:source>
+<dc:title><![CDATA[2BD/2BA,Ground Floor,Patio,Fireplace,Dishwasher,Hardwood,PetOK (hercules, pinole, san pablo, el sob) &#x0024;2100 2bd 974ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00S0S_hBLtB5l68Tu_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-17T17:54:17-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00707_fIGr5U1dR35_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:31:44-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/see/act/5346047013.html">
-<title><![CDATA[Come join Us for Amazing Fun !! (Seattle)]]></title>
-<link>http://seattle.craigslist.org/see/act/5346047013.html</link>
-<description><![CDATA[Targeting, but not limited to, those who are new in town and mainly in their 20's or 30's, here is a group designed for getting together to enjoy events/shows in the Seattle area. Events include sporting, concerts, happy hour, and whatever else that  [...]]]></description>
-<dc:date>2015-12-17T17:54:06-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6170765620.html">
+<title><![CDATA[Studio,Upper flr in 1940s 6-plex,Hardwood, Backyard,Gas stove,Cat OK (oakland north / temescal) &#x0024;1750 480ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6170765620.html</link>
+<description><![CDATA[Please contact Ma Properties at 
+ <a href="/fb/sfo/apa/6170765620" class="showcontact" title="click to show contact info">show contact info</a>
+if you wish to schedule a viewing appointment. 
+Studio Apartment 
+418- 41st Street, Oakland 94609 
+Available June 22, 2017 
+Terms: 
+$1750 rent 
+$1950 fully refundable security deposit 
+Parking: $130/month  [...]]]></description>
+<dc:date>2017-06-21T10:31:40-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/see/act/5346047013.html</dc:source>
-<dc:title><![CDATA[Come join Us for Amazing Fun !! (Seattle)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6170765620.html</dc:source>
+<dc:title><![CDATA[Studio,Upper flr in 1940s 6-plex,Hardwood, Backyard,Gas stove,Cat OK (oakland north / temescal) &#x0024;1750 480ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00707_eRaogwx1uiA_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-17T17:54:06-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00V0V_a2TwLSZSVWz_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:31:40-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/tac/act/5346047529.html">
-<title><![CDATA[Don't Dine Alone in Tacoma (Tacoma)]]></title>
-<link>http://seattle.craigslist.org/tac/act/5346047529.html</link>
-<description><![CDATA[Meet People Interested in Dining Out in Tacoma and surrounding neighborhoods! Discover new restaurants, enjoy delicious meals and make conversation with friendly dinner companions. It's a big dinner table and all are welcome! 
-Meetup group...The Sout [...]]]></description>
-<dc:date>2015-12-17T17:53:21-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6170826005.html">
+<title><![CDATA[STUDIO, Adams Point, Hardwood, Gas stove, Lg closet, Cat OK (oakland lake merritt / grand) &#x0024;1700 425ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6170826005.html</link>
+<description><![CDATA[Please contact Ma Properties at 
+ <a href="/fb/sfo/apa/6170826005" class="showcontact" title="click to show contact info">show contact info</a>
+if you wish to schedule a viewing appointment. 
+Studio / 1 Bathroom Apartment 
+353 Euclid Ave., Oakland, 94610 
+Available June 22, 2017 
+Terms: 
+$1700 rent 
+$1900 fully refundable security deposit 
+Parking [...]]]></description>
+<dc:date>2017-06-21T10:31:36-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/tac/act/5346047529.html</dc:source>
-<dc:title><![CDATA[Don't Dine Alone in Tacoma (Tacoma)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6170826005.html</dc:source>
+<dc:title><![CDATA[STUDIO, Adams Point, Hardwood, Gas stove, Lg closet, Cat OK (oakland lake merritt / grand) &#x0024;1700 425ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00h0h_lRkcGK5HAG7_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-17T17:53:21-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00a0a_akYsz3NZE1X_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:31:36-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/see/act/5346046881.html">
-<title><![CDATA[Need Females for Softball Under dog League (Seattle)]]></title>
-<link>http://seattle.craigslist.org/see/act/5346046881.html</link>
-<description><![CDATA[If you want to play with some fun people. This is a Underdog Beer league in Seattle astro turf fields. We are an established team that plays on Sunday Nights 6 or 7pm games. If you have the skills to play and some hitting skills. You would fit in wit [...]]]></description>
-<dc:date>2015-12-17T17:06:48-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6186661838.html">
+<title><![CDATA[Rare Private Alamo In-law for rent. Utility, TV, & internet included (walnut creek) &#x0024;2250 1bd 1250ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6186661838.html</link>
+<description><![CDATA[Alamo is a very private and peaceful area between Danville and Walnut Creek if you don't know it. 
+The house is located within 5-10 minutes of walking distance to Round Hill Country Club, a peaceful neighborhood with a beautiful environment for weeke [...]]]></description>
+<dc:date>2017-06-21T10:31:34-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/see/act/5346046881.html</dc:source>
-<dc:title><![CDATA[Need Females for Softball Under dog League (Seattle)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6186661838.html</dc:source>
+<dc:title><![CDATA[Rare Private Alamo In-law for rent. Utility, TV, & internet included (walnut creek) &#x0024;2250 1bd 1250ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00q0q_27EOZ7f1GXT_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-17T17:06:48-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00808_509lSWRjRpl_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:31:34-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/see/act/5346047617.html">
-<title><![CDATA[Come Join Seattle Surfers to hit the Beach (Seattle)]]></title>
-<link>http://seattle.craigslist.org/see/act/5346047617.html</link>
-<description><![CDATA[As awesome as Seattle is, a surfer's paradise it is not. 
-In fact, surfing is pretty much the *only* outdoor activity you CAN'T do within an hour's drive from the city. Consequently, it's not that easy to connect with other surfers (or surfing-curiou [...]]]></description>
-<dc:date>2015-12-17T17:06:38-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6170826650.html">
+<title><![CDATA[Studio,Upper flr in 1940s 6-plex,Hardwood, Backyard,Gas stove,Cat OK (oakland north / temescal) &#x0024;1750 480ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6170826650.html</link>
+<description><![CDATA[Please contact Ma Properties at 
+ <a href="/fb/sfo/apa/6170826650" class="showcontact" title="click to show contact info">show contact info</a>
+if you wish to schedule a viewing appointment. 
+Studio Apartment 
+418- 41st Street, Oakland 94609 
+Available June 14, 2017 
+Terms: 
+$1750 rent 
+$1950 fully refundable security deposit 
+Parking: $130/month  [...]]]></description>
+<dc:date>2017-06-21T10:31:32-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/see/act/5346047617.html</dc:source>
-<dc:title><![CDATA[Come Join Seattle Surfers to hit the Beach (Seattle)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6170826650.html</dc:source>
+<dc:title><![CDATA[Studio,Upper flr in 1940s 6-plex,Hardwood, Backyard,Gas stove,Cat OK (oakland north / temescal) &#x0024;1750 480ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/01717_f0hOvoo9vEq_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-17T17:06:38-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00V0V_a2TwLSZSVWz_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:31:32-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/see/act/5346047101.html">
-<title><![CDATA[Join us for pick up Softball Games (Seattle)]]></title>
-<link>http://seattle.craigslist.org/see/act/5346047101.html</link>
-<description><![CDATA[Come join us for fun pick up softball. 
-Relieve Stress, Make New Friends, Exercise. 
-Once the sun comes out. 
-Bring a case of Beer if your NEW !! 
-Sign up today.. Google it. 
-meetup group...Sandlot Co-Ed-Softball Seattle 
-http://www.meetup.com/Seattl [...]]]></description>
-<dc:date>2015-12-17T17:06:24-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6170829613.html">
+<title><![CDATA[1BR/1BA, Top Floor, Lakefront,Hardwood,Gas Stove,BART,Parking (oakland lake merritt / grand) &#x0024;2800 1bd 1200ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6170829613.html</link>
+<description><![CDATA[Please contact Ma Properties at 
+ <a href="/fb/sfo/apa/6170829613" class="showcontact" title="click to show contact info">show contact info</a>
+if you wish to make a viewing appointment. 
+Bright, spacious unit in an AMAZING lakefront location. Easy access to BART and local amenities. 
+1 Bedroom / 1 Bathroom Apartment 
+1445 Lakeside Dr. 
+Oakland, C [...]]]></description>
+<dc:date>2017-06-21T10:31:27-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/see/act/5346047101.html</dc:source>
-<dc:title><![CDATA[Join us for pick up Softball Games (Seattle)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6170829613.html</dc:source>
+<dc:title><![CDATA[1BR/1BA, Top Floor, Lakefront,Hardwood,Gas Stove,BART,Parking (oakland lake merritt / grand) &#x0024;2800 1bd 1200ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00U0U_8GVbNIhTX0_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-17T17:06:24-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00404_5FIc9ESNXHt_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:31:27-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/see/act/5364760400.html">
-<title><![CDATA[Free Zumba Fitness Classes! (Seattle)]]></title>
-<link>http://seattle.craigslist.org/see/act/5364760400.html</link>
-<description><![CDATA[Free Zumba Fitness Classes is a group that sponsors free Zumba classes around the city. We have various guest Zumba professionals leading the free events in parks, fitness studios and just about anywhere you want to have one. Come play with us as we  [...]]]></description>
-<dc:date>2015-12-17T13:22:46-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/pen/apa/6177358587.html">
+<title><![CDATA[Beautiful with natural lighting 2 br 1 ba w/ parking (san mateo) &#x0024;2888 2bd]]></title>
+<link>http://sfbay.craigslist.org/pen/apa/6177358587.html</link>
+<description><![CDATA[Beautiful Natural Lighting 2 br 1 ba with 1 parking space
+501 S Fremont #3, San Mateo 
+This Spacious 2-bedroom 1 bath is ideally located in the west hills of San Mateo near Crystal Springs between highway 92 and 280. Beautiful running, walking and bi [...]]]></description>
+<dc:date>2017-06-21T10:31:27-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/see/act/5364760400.html</dc:source>
-<dc:title><![CDATA[Free Zumba Fitness Classes! (Seattle)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/pen/apa/6177358587.html</dc:source>
+<dc:title><![CDATA[Beautiful with natural lighting 2 br 1 ba w/ parking (san mateo) &#x0024;2888 2bd]]></dc:title>
 <dc:type>text</dc:type>
-<dcterms:issued>2015-12-17T13:22:46-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00O0O_iBHHKAVVEXq_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:31:27-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/see/act/5364383823.html">
-<title><![CDATA[Artistic mature woman looking for women friends! (Seattle)]]></title>
-<link>http://seattle.craigslist.org/see/act/5364383823.html</link>
-<description><![CDATA[Hello, 
-My women friends have run off with their new loves so I am 
-looking to meet other Seattle area women to share art 
-events, indie films, walks, coffee and other activities 
-with. I am single with no kids and have a very free 
-schedule, now sem [...]]]></description>
-<dc:date>2015-12-17T09:54:58-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6174129422.html">
+<title><![CDATA[Two Bedroom with Washer/Dryer! Close to Lab/Sandia (dublin / pleasanton / livermore) &#x0024;2112 2bd 796ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6174129422.html</link>
+<description><![CDATA[Ironwood http://liveatironwoodapts.com/su/pq5p Surrounded by rolling green hills and vineyards, Ironwood Apartments is a great place to call home. This 2Bd/1Ba apartment home has a washer/dryer in the home and two spacious bedrooms. Relax after a lon [...]]]></description>
+<dc:date>2017-06-21T10:31:26-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/see/act/5364383823.html</dc:source>
-<dc:title><![CDATA[Artistic mature woman looking for women friends! (Seattle)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6174129422.html</dc:source>
+<dc:title><![CDATA[Two Bedroom with Washer/Dryer! Close to Lab/Sandia (dublin / pleasanton / livermore) &#x0024;2112 2bd 796ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<dcterms:issued>2015-12-17T09:54:58-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00S0S_2hBopbOCpN0_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:31:26-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/see/act/5348815072.html">
-<title><![CDATA[The Peace and Justice Collective (Seattle)]]></title>
-<link>http://seattle.craigslist.org/see/act/5348815072.html</link>
-<description><![CDATA[We are street artists, social activists, radical reform writers, with our populist paws on the dying pulses of the archaic institutions of the privileged classes. We commune over matters of inequality, human and civil rights, locally and globally. We [...]]]></description>
-<dc:date>2015-12-17T07:15:42-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6173868358.html">
+<title><![CDATA[1BD/1BA, Hardwood, Pvt balcony, Dishwasher, Near BART, Parking avail (oakland lake merritt / grand) &#x0024;2100 1bd 650ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6173868358.html</link>
+<description><![CDATA[Please contact Ma Properties at 
+ <a href="/fb/sfo/apa/6173868358" class="showcontact" title="click to show contact info">show contact info</a>
+if you wish to schedule a viewing appointment. 
+1 Bedroom / 1 Bathroom Apartment 
+1514 Jackson St., Oakland, 94612 
+Available July 8, 2017 
+Terms: 
+$2100/month 
+$2300 fully refundable security deposit 
+Par [...]]]></description>
+<dc:date>2017-06-21T10:31:23-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/see/act/5348815072.html</dc:source>
-<dc:title><![CDATA[The Peace and Justice Collective (Seattle)]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6173868358.html</dc:source>
+<dc:title><![CDATA[1BD/1BA, Hardwood, Pvt balcony, Dishwasher, Near BART, Parking avail (oakland lake merritt / grand) &#x0024;2100 1bd 650ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<dcterms:issued>2015-12-17T07:15:42-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00e0e_llhOPdUgrMk_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:31:23-07:00</dcterms:issued>
 </item>
-<item rdf:about="http://seattle.craigslist.org/oly/act/5355137642.html">
-<title><![CDATA[Self Defense Classes]]></title>
-<link>http://seattle.craigslist.org/oly/act/5355137642.html</link>
-<description><![CDATA[Learn how to protect yourself from mugging, bullying and sex offenders. 
-We offer self defense classes for men and women. Monday to thursday evenings 16 years old and above. We incorporate fitness exercises with our classes as well. 
-email me for mor [...]]]></description>
-<dc:date>2015-12-17T04:29:02-08:00</dc:date>
+<item rdf:about="http://sfbay.craigslist.org/eby/apa/6170845890.html">
+<title><![CDATA[1BD/1BA, Top floor,Private Bal.,Hardwood,Dishwasher,Parking,Laundry (oakland lake merritt / grand) &#x0024;1950 1bd 625ft<sup>2</sup>]]></title>
+<link>http://sfbay.craigslist.org/eby/apa/6170845890.html</link>
+<description><![CDATA[If you are interested in scheduling a viewing appointment, please contact Ma Properties at 
+ <a href="/fb/sfo/apa/6170845890" class="showcontact" title="click to show contact info">show contact info</a>
+ 
+1 Bedroom/1Bathroom 
+601 Brooklyn Ave. 
+Oakland, California 94606 
+Available Now 
+Terms: 
+$1950 rent 
+$2150 fully refundable security deposit 
+P [...]]]></description>
+<dc:date>2017-06-21T10:31:19-07:00</dc:date>
 <dc:language>en-us</dc:language>
-<dc:rights>&#x26;copy; 2015 &#x3C;span class="desktop"&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class="mobile"&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
-<dc:source>http://seattle.craigslist.org/oly/act/5355137642.html</dc:source>
-<dc:title><![CDATA[Self Defense Classes]]></dc:title>
+<dc:rights>copyright 2017 craiglist</dc:rights>
+<dc:source>http://sfbay.craigslist.org/eby/apa/6170845890.html</dc:source>
+<dc:title><![CDATA[1BD/1BA, Top floor,Private Bal.,Hardwood,Dishwasher,Parking,Laundry (oakland lake merritt / grand) &#x0024;1950 1bd 625ft<sup>2</sup>]]></dc:title>
 <dc:type>text</dc:type>
-<enc:enclosure resource="http://images.craigslist.org/00808_l1wfEjMe8JZ_300x300.jpg" type="image/jpeg"/>
-<dcterms:issued>2015-12-17T04:29:02-08:00</dcterms:issued>
+<enc:enclosure resource="https://images.craigslist.org/00z0z_jvngNj0M1el_300x300.jpg" type="image/jpeg"/>
+<dcterms:issued>2017-06-21T10:31:19-07:00</dcterms:issued>
 </item>
 </rdf:RDF>

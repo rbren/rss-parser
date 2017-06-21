@@ -15,7 +15,13 @@ You can parse RSS from a URL, local file (NodeJS only), or a string.
 * `parseURL(url, [options,] callback)`
 
 
-Check out the output format in [test/output/reddit.json](test/output/reddit.json)
+## Output
+Check out the full output format in [test/output/reddit.json](test/output/reddit.json)
+
+##### Notes:
+* The `dc:` prefix will be removed from all fields
+* Both `dc:date` and `pubDate` will be available in ISO 8601 format as `isoDate`
+* If `author` is specified, but not `dc:creator`, `creator` will be set to `author` ([see article](http://www.lowter.com/blogs/2008/2/9/rss-dccreator-author))
 
 ### NodeJS
 ```js
@@ -52,6 +58,8 @@ parser.parseURL('https://reddit.com/.rss', {maxRedirects: 3}, function(err, pars
 ```
 
 ### Custom Fields
+If your RSS feed contains fields that aren't currently returned, you can access them using the `customFields` option.
+
 ```js
 var options = {
   customFields: {
@@ -66,6 +74,18 @@ parser.parseURL('https://www.reddit.com/.rss', options, function(err, parsed) {
     console.log(entry.coAuthor + ':' + entry.subtitle);
   })
 })
+```
+
+To rename fields, you can pass in an array with two items, in the format `[fromField, toField]`:
+
+```js
+var options = {
+  customFields: {
+    item: [
+      ['dc:coAuthor', 'coAuthor'],
+    ]
+  }
+}
 ```
 
 ## Contributing

@@ -2,6 +2,8 @@
   "feed": {
     "entries": [
       {
+        "creator": "tobi",
+        "date": "2016-05-04T06:53:45Z",
         "title": "My first Instant Article",
         "link": "https://localhost:8000",
         "pubDate": "Wed, 04 May 2016 06:53:45 GMT",
@@ -10,7 +12,8 @@
         "dc:date": "2016-05-04T06:53:45Z",
         "content": "Lorem ipsum",
         "contentSnippet": "Lorem ipsum",
-        "guid": "https://localhost:8000"
+        "guid": "https://localhost:8000",
+        "isoDate": "2016-05-04T06:53:45.000Z"
       }
     ],
     "title": "Instant Article Test",
