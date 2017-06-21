@@ -21,7 +21,7 @@ Check out the full output format in [test/output/reddit.json](test/output/reddit
 ##### Notes:
 * The `dc:` prefix will be removed from all fields
 * Both `dc:date` and `pubDate` will be available in ISO 8601 format as `isoDate`
-* If `author` is specified, but not `dc:creator`, `creator` will be set to `author`
+* If `author` is specified, but not `dc:creator`, `creator` will be set to `author` ([see article](http://www.lowter.com/blogs/2008/2/9/rss-dccreator-author))
 
 ### NodeJS
 ```js
