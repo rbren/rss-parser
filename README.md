@@ -15,7 +15,12 @@ You can parse RSS from a URL, local file (NodeJS only), or a string.
 * `parseURL(url, [options,] callback)`
 
 
-Check out the output format in [test/output/reddit.json](test/output/reddit.json)
+## Output
+Check out the full output format in [test/output/reddit.json](test/output/reddit.json)
+
+##### Notes:
+* The `dc:` prefix will be removed from all fields
+* Both `dc:date` and `pubDate` will be available in ISO 8601 format as `isoDate`
 
 ### NodeJS
 ```js

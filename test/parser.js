@@ -29,11 +29,12 @@ describe('Parser', function() {
     testParseForFile('reddit', 'rss', done);
   })
 
-  it('should not parse craigslist (RSS 1.0)', function(done) {
-    Parser.parseFile(__dirname + '/input/craigslist.rss', function(err, parsed) {
-      Expect(err.indexOf('not yet implemented')).to.not.equal(-1);
-      done();
-    })
+  it('should parse sciencemag.org (RSS 1.0)', function(done) {
+    testParseForFile('rss-1', 'rss', done);
+  })
+
+  it('should parse craigslist (RSS 1.0)', function(done) {
+    testParseForFile('craigslist', 'rss', done);
   })
 
   it('should parse atom', function(done) {
