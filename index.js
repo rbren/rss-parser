@@ -1,3 +1,5 @@
+'use strict';
+
 var Entities = require("entities");
 var FS = require('fs');
 var url = require('url');
@@ -25,13 +27,6 @@ var FEED_FIELDS = [
   'link',
 ];
 
-var PODCAST_FEED_FIELDS = ([
-  'author',
-  'subtitle',
-  'summary',
-  'explicit'
-]).map(f => ['itunes:' + f, f]);
-
 var ITEM_FIELDS = [
   ['author', 'creator'],
   ['dc:creator', 'creator'],
@@ -49,6 +44,18 @@ var ITEM_FIELDS = [
   'dc:creator',
   'dc:date',
 ];
+
+var mapItunesField = function(f) {
+  return ['itunes:' + f, f];
+}
+
+var PODCAST_FEED_FIELDS = ([
+  'author',
+  'subtitle',
+  'summary',
+  'explicit'
+]).map(mapItunesField);
+
 var PODCAST_ITEM_FIELDS = ([
   'author',
   'subtitle',
@@ -56,7 +63,7 @@ var PODCAST_ITEM_FIELDS = ([
   'explicit',
   'duration',
   'image'
-]).map(f => ['itunes:' + f, f]);
+]).map(mapItunesField);
 
 
 var stripHtml = function(str) {
@@ -123,7 +130,7 @@ var parseRSS1 = function(xmlObj, options, callback) {
 var parseRSS2 = function(xmlObj, options, callback) {
   var channel = xmlObj.rss.channel[0];
   var items = channel.item;
-  return parseRSS(channel, items, options, (err, data) => {
+  return parseRSS(channel, items, options, function(err, data) {
     if (err) return callback(err);
     if (xmlObj.rss.$['xmlns:itunes']) {
       decorateItunes(data, channel);
@@ -157,7 +164,7 @@ var parseRSS = function(channel, items, options, callback) {
       if (entry.guid._) entry.guid = entry.guid._;
     }
     if (item.category) entry.categories = item.category;
-    let date = entry.pubDate || entry.date;
+    var date = entry.pubDate || entry.date;
     if (date) {
       try {
         entry.isoDate = new Date(date.trim()).toISOString();
@@ -171,8 +178,9 @@ var parseRSS = function(channel, items, options, callback) {
 }
 
 var copyFromXML = function(xml, dest, fields) {
-  fields.forEach(f => {
-    let from = to = f;
+  fields.forEach(function(f) {
+    var from = f;
+    var to = f;
     if (Array.isArray(f)) {
       from = f[0];
       to = f[1];
