@@ -1,5 +1,7 @@
 # rss-parser
 
+[![Build Status](https://travis-ci.org/bobby-brennan/rss-parser.svg?branch=master)](https://travis-ci.org/bobby-brennan/rss-parser)
+
 ## Installation
 You can install via npm or bower:
 ```bash
