@@ -132,6 +132,8 @@ var parseRSS2 = function(xmlObj, options, callback) {
 }
 
 var parseRSS = function(channel, items, options, callback) {
+  items = items || [];
+  options.customFields = options.customFields || {};
   var itemFields = ITEM_FIELDS.concat(options.customFields.item || []);
   var feedFields = FEED_FIELDS.concat(options.customFields.feed || []);
 
@@ -139,7 +141,7 @@ var parseRSS = function(channel, items, options, callback) {
 
   if (channel['atom:link']) json.feed.feedUrl = channel['atom:link'][0].$.href;
   copyFromXML(channel, json.feed, feedFields);
-  (items || []).forEach(function(item) {
+  items.forEach(function(item) {
     var entry = {};
     copyFromXML(item, entry, itemFields);
     if (item.enclosure) {
@@ -211,7 +213,7 @@ var decorateItunes = function decorateItunes(json, channel) {
   }
 
   copyFromXML(channel, json.feed.itunes, PODCAST_FEED_FIELDS);
-  (items).forEach(function(item, index) {
+  items.forEach(function(item, index) {
     var entry = json.feed.entries[index];
     entry.itunes = {};
     copyFromXML(item, entry.itunes, PODCAST_ITEM_FIELDS);
@@ -227,10 +229,6 @@ Parser.parseString = function(xml, options, callback) {
     callback = options;
     options = {};
   }
-  options.customFields = options.customFields || {};
-  var itemFields = ITEM_FIELDS.concat(options.customFields.item || []);
-  var feedFields = FEED_FIELDS.concat(options.customFields.feed || []);
-
   XML2JS.parseString(xml, function(err, result) {
     if (err) return callback(err);
     if (result.feed) {
@@ -278,7 +276,7 @@ Parser.parseURL = function(feedUrl, options, callback) {
   req.on('error', callback);
 }
 
-Parser.parseFile = function(file,options,callback) {
+Parser.parseFile = function(file, options, callback) {
   FS.readFile(file, 'utf8', function(err, contents) {
     return Parser.parseString(contents, options, callback);
   })
