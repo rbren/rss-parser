@@ -58,6 +58,8 @@ parser.parseURL('https://reddit.com/.rss', {maxRedirects: 3}, function(err, pars
 ```
 
 ### Custom Fields
+If your RSS feed contains fields that aren't currently returned, you can access them using the `customFields` option.
+
 ```js
 var options = {
   customFields: {
@@ -72,6 +74,18 @@ parser.parseURL('https://www.reddit.com/.rss', options, function(err, parsed) {
     console.log(entry.coAuthor + ':' + entry.subtitle);
   })
 })
+```
+
+To rename fields, you can pass in an array with two items, in the format `[fromField, toField]`:
+
+```js
+var options = {
+  customFields: {
+    item: [
+      ['dc:coAuthor', 'coAuthor'],
+    ]
+  }
+}
 ```
 
 ## Contributing
