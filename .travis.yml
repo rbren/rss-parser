@@ -1,4 +1,4 @@
-language: node
+language: node_js
 before_script:
   - npm install -g mocha
 script: npm test
