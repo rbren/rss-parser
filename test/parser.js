@@ -71,7 +71,7 @@ describe('Parser', function() {
   });
 
   it('should throw error for unrecognized', function(done) {
-    Parser.parseFile(__dirname + '/input/unrecognized.rss', (err, parsed) => {
+    Parser.parseFile(__dirname + '/input/unrecognized.rss', function(err, parsed) {
       Expect(err.message).to.contain('Feed not recognized as RSS');
       done();
     })
