@@ -16,15 +16,6 @@ You can parse RSS from a URL, local file (NodeJS only), or a string.
 * `parseFile(filename, [options,], callback)`
 * `parseURL(url, [options,] callback)`
 
-
-## Output
-Check out the full output format in [test/output/reddit.json](test/output/reddit.json)
-
-##### Notes:
-* The `dc:` prefix will be removed from all fields
-* Both `dc:date` and `pubDate` will be available in ISO 8601 format as `isoDate`
-* If `author` is specified, but not `dc:creator`, `creator` will be set to `author` ([see article](http://www.lowter.com/blogs/2008/2/9/rss-dccreator-author))
-
 ### NodeJS
 ```js
 var parser = require('rss-parser');
@@ -48,6 +39,36 @@ RSSParser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
 })
 </script>
 ```
+
+## Output
+Check out the full output format in [test/output/reddit.json](test/output/reddit.json)
+
+```yaml
+feed:
+    feedUrl: 'https://www.reddit.com/.rss'
+    title: 'reddit: the front page of the internet'
+    description: ""
+    link: 'https://www.reddit.com/'
+    entries:
+        - title: 'The water is too deep, so he improvises'
+          link: 'https://www.reddit.com/r/funny/comments/3skxqc/the_water_is_too_deep_so_he_improvises/'
+          pubDate: 'Thu, 12 Nov 2015 21:16:39 +0000'
+          creator: "John Doe"
+          content: '<a href="http://example.com">this is a link</a> - <b>this is bold text</b>'
+          contentSnippet: 'this is a link - this is bold text'
+          guid: 'https://www.reddit.com/r/funny/comments/3skxqc/the_water_is_too_deep_so_he_improvises/'
+          categories:
+              - funny
+          isoDate: '2015-11-12T21:16:39.000Z'
+```
+
+##### Notes:
+* The `contentSnippet` field strips out HTML tags and unescapes HTML entities
+* The `dc:` prefix will be removed from all fields
+* Both `dc:date` and `pubDate` will be available in ISO 8601 format as `isoDate`
+* If `author` is specified, but not `dc:creator`, `creator` will be set to `author` ([see article](http://www.lowter.com/blogs/2008/2/9/rss-dccreator-author))
+
+## Options
 
 ### Redirects
 By default, `parseURL` will follow up to one redirect. You can change this
