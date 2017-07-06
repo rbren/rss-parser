@@ -70,6 +70,13 @@ describe('Parser', function() {
     testParseForFile('narro', 'rss', done);
   });
 
+  it('should throw error for unrecognized', function(done) {
+    Parser.parseFile(__dirname + '/input/unrecognized.rss', (err, parsed) => {
+      Expect(err.message).to.contain('Feed not recognized as RSS');
+      done();
+    })
+  })
+
   it('should parse custom fields', function(done) {
     var options = {
       customFields: {

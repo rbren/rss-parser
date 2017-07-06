@@ -244,8 +244,10 @@ Parser.parseString = function(xml, options, callback) {
       return parseAtomFeed(result, options, callback)
     } else if (result.rss && result.rss.$.version && result.rss.$.version.indexOf('2') === 0) {
       return parseRSS2(result, options, callback);
-    } else {
+    } else if (result['rdf:RDF']) {
       return parseRSS1(result, options, callback);
+    } else {
+      return callback(new Error("Feed not recognized as RSS 1 or 2."))
     }
   });
 }
