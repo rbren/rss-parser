@@ -240,6 +240,9 @@ Parser.parseString = function(xml, options, callback) {
   }
   XML2JS.parseString(xml, function(err, result) {
     if (err) return callback(err);
+    if (!result) {
+      return callback(new Error('Unable to parse XML.'));
+    }
     if (result.feed) {
       return parseAtomFeed(result, options, callback)
     } else if (result.rss && result.rss.$.version && result.rss.$.version.indexOf('2') === 0) {
