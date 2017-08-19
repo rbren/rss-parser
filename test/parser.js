@@ -1,6 +1,7 @@
 "use strict";
 
 var FS = require('fs');
+var HTTP = require('http');
 
 var Parser = require('../index.js');
 
@@ -96,5 +97,26 @@ describe('Parser', function() {
       }
       done();
     });
+  });
+
+  it('should parse URL', function(done) {
+    var server = HTTP.createServer(function(req, res) {
+      var file = FS.createReadStream(INPUT_FILE, 'utf8');
+
+      file.pipe(res);
+    });
+    server.listen(function() {
+      var port = server.address().port;
+      var url = 'http://localhost:' + port;
+
+      Parser.parseURL(url, function(err, parsed) {
+        Expect(err).to.equal(null);
+        var str = JSON.stringify(parsed, null, 2);
+        var expected = FS.readFileSync(OUTPUT_FILE, 'utf8');
+        Expect(str).to.equal(expected);
+        done();
+      });
+    });
+
   });
 })

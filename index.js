@@ -270,6 +270,7 @@ Parser.parseURL = function(feedUrl, options, callback) {
     auth: parsedUrl.auth,
     protocol: parsedUrl.protocol,
     hostname: parsedUrl.hostname,
+    port: parsedUrl.port,
     path: parsedUrl.path,
     headers: {'User-Agent': 'rss-parser'}
   }, function(res) {
