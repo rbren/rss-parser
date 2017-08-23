@@ -128,7 +128,7 @@ To update the output files with your changes, run
 ### Publishing Releases
 ```bash
 # change version in package.json
-grunt build
+npm run build
 git commit -a -m "vX.X.X"
 git tag vX.X.X
 npm publish

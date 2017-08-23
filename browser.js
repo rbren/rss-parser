@@ -1,0 +1,1 @@
+window.RSSParser = require('./index');

@@ -3,15 +3,19 @@
   "version": "2.10.2",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "./scripts/build.sh"
   },
   "author": "Bobby Brennan",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
     "chai": "^3.4.1",
-    "grunt": "^0.4.5",
-    "grunt-browserify": "^4.0.1",
-    "grunt-contrib-uglify": "^2.2.0"
+    "express": "^4.15.4",
+    "puppeteer": "^0.9.0",
+    "webpack": "^3.5.5"
   },
   "dependencies": {
     "entities": "^1.1.1",
