@@ -127,10 +127,9 @@ To update the output files with your changes, run
 
 ### Publishing Releases
 ```bash
-# change version in package.json
 npm run build
-git commit -a -m "vX.X.X"
-git tag vX.X.X
+git commit -a -m "Build distribution"
+npm version minor # or major/patch
 npm publish
 git push --follow-tags
 ```
