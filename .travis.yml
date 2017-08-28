@@ -5,3 +5,7 @@ sudo: required
 before_script:
   - ./scripts/travis-setup.sh
 script: npm test
+addons:
+  apt:
+    packages:
+      - libnss3
