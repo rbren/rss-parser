@@ -1,10 +1,13 @@
+dist: trusty
+
 language: node_js
 node_js:
   - "8"
-sudo: required
+
 before_script:
-  - ./scripts/travis-setup.sh
+  - npm install -g mocha
 script: npm test
+
 addons:
   apt:
     packages:
