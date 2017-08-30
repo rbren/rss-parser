@@ -8150,7 +8150,8 @@ var decorateItunes = function decorateItunes(json, channel) {
       owner.email = channel['itunes:owner'][0]['itunes:email'][0];
     }
     if (channel['itunes:image']) {
-      image = channel['itunes:image'][0].$.href;
+      var hasImageHref = channel['itunes:image'][0] && channel['itunes:image'][0].$ && channel['itunes:image'][0].$.href;
+      image = hasImageHref ? channel['itunes:image'][0].$.href : null;
     }
 
     if (image) {
