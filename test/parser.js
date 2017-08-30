@@ -75,8 +75,17 @@ describe('Parser', function() {
     Parser.parseFile(__dirname + '/input/unrecognized.rss', function(err, parsed) {
       Expect(err.message).to.contain('Feed not recognized as RSS');
       done();
-    })
-  })
+    });
+  });
+
+  it('should omit iTunes image if none available during decoration', function(done) {
+    const rssFeedWithMissingImage = __dirname + '/input/itunes-missing-image.rss';
+    Parser.parseFile(rssFeedWithMissingImage, {}, function(err, parsed) {
+      Expect(err).to.be.null;
+      Expect(parsed).to.not.have.deep.property('feed.itunes.image');
+      done();
+    });
+  });
 
   it('should parse custom fields', function(done) {
     var options = {
