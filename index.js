@@ -100,6 +100,9 @@ var parseAtomFeed = function(xmlObj, options, callback) {
   var entries = feed.entry;
   (entries || []).forEach(function (entry) {
     var item = {};
+    if(options && options.customFields && options.customFields.item){
+      copyFromXML(entry, item, options.customFields.item);
+    }
     if (entry.title) {
       var title = entry.title[0] || '';
       if (title._) title = title._;
