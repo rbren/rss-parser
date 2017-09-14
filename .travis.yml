@@ -3,11 +3,6 @@ dist: trusty
 language: node_js
 node_js:
   - "8"
-  - "4"
-matrix:
-  include:
-    - node_js: "4"
-      env: SKIP_BROWSER_TESTS=true
 
 before_script:
   - npm install -g mocha
