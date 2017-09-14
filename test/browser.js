@@ -11,6 +11,11 @@ const PORT = 3333;
 const PARSE_TIMEOUT = 1000;
 
 describe('Browser', function() {
+  if (process.env.SKIP_BROWSER_TESTS) {
+    console.log('skipping browser tests');
+    return;
+  }
+
   before(done => {
     let app = express();
     app.use(express.static(__dirname));
