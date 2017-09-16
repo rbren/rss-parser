@@ -88,6 +88,9 @@ var getContent = function(content) {
 var parseAtomFeed = function(xmlObj, options, callback) {
   var feed = xmlObj.feed;
   var json = {feed: {entries: []}};
+  if(options && options.customFields && options.customFields.feed){
+    copyFromXML(feed, json.feed, options.customFields.feed);
+  }
   if (feed.link) {
     if (feed.link[0] && feed.link[0].$.href) json.feed.link = feed.link[0].$.href;
     if (feed.link[1] && feed.link[1].$.href) json.feed.feedUrl = feed.link[1].$.href;
