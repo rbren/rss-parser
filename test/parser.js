@@ -108,6 +108,27 @@ describe('Parser', function() {
     });
   });
 
+  it('should parse Atom feed custom fields', function(done) {
+    var options = {
+      customFields: {
+        feed: ['totalViews'],
+        item: ['media:group']
+      }
+    };
+    Parser.parseFile(__dirname + '/input/atom-customfields.atom',options, function(err, parsed) {
+      Expect(err).to.equal(null);
+      var str = JSON.stringify(parsed, null, 2);
+      var outfile = OUT_DIR + '/atom-customfields.json';
+      if (process.env.WRITE_GOLDEN) {
+        FS.writeFileSync(outfile, str);
+      } else {
+        var expected = FS.readFileSync(outfile, 'utf8');
+        Expect(str).to.equal(expected);
+      }
+      done();
+    });
+  });
+
   it('should parse URL', function(done) {
     var server = HTTP.createServer(function(req, res) {
       var file = FS.createReadStream(INPUT_FILE, 'utf8');
