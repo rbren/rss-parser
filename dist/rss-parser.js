@@ -8026,6 +8026,9 @@ var getContent = function getContent(content) {
 var parseAtomFeed = function parseAtomFeed(xmlObj, options, callback) {
   var feed = xmlObj.feed;
   var json = { feed: { entries: [] } };
+  if (options && options.customFields && options.customFields.feed) {
+    copyFromXML(feed, json.feed, options.customFields.feed);
+  }
   if (feed.link) {
     if (feed.link[0] && feed.link[0].$.href) json.feed.link = feed.link[0].$.href;
     if (feed.link[1] && feed.link[1].$.href) json.feed.feedUrl = feed.link[1].$.href;
@@ -8038,6 +8041,9 @@ var parseAtomFeed = function parseAtomFeed(xmlObj, options, callback) {
   var entries = feed.entry;
   (entries || []).forEach(function (entry) {
     var item = {};
+    if (options && options.customFields && options.customFields.item) {
+      copyFromXML(entry, item, options.customFields.item);
+    }
     if (entry.title) {
       var title = entry.title[0] || '';
       if (title._) title = title._;
