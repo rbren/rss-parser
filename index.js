@@ -74,6 +74,14 @@ var getSnippet = function(str) {
   return Entities.decode(stripHtml(str)).trim();
 }
 
+var getLink = function(links, rel, fallbackIdx) {
+  if (!links) return;
+  for (var i = 0; i < links.length; ++i) {
+    if (links[i].$.rel === rel) return links[i].$.href;
+  }
+  if (links[fallbackIdx]) return links[fallbackIdx].$.href;
+}
+
 var getContent = function(content) {
   if (typeof content._ === 'string') {
     return content._;
@@ -92,8 +100,8 @@ var parseAtomFeed = function(xmlObj, options, callback) {
     copyFromXML(feed, json.feed, options.customFields.feed);
   }
   if (feed.link) {
-    if (feed.link[0] && feed.link[0].$.href) json.feed.link = feed.link[0].$.href;
-    if (feed.link[1] && feed.link[1].$.href) json.feed.feedUrl = feed.link[1].$.href;
+    json.feed.link = getLink(feed.link, 'alternate', 0);
+    json.feed.feedUrl = getLink(feed.link, 'self', 1);
   }
   if (feed.title) {
     var title = feed.title[0] || '';
@@ -111,7 +119,9 @@ var parseAtomFeed = function(xmlObj, options, callback) {
       if (title._) title = title._;
       if (title) item.title = title;
     }
-    if (entry.link && entry.link.length) item.link = entry.link[0].$.href;
+    if (entry.link && entry.link.length) {
+      item.link = getLink(entry.link, 'alternate', 0);
+    }
     if (entry.updated && entry.updated.length) item.pubDate = new Date(entry.updated[0]).toISOString();
     if (entry.author && entry.author.length) item.author = entry.author[0].name[0];
     if (entry.content && entry.content.length) {

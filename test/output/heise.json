@@ -122,8 +122,8 @@
         "id": "http://heise.de/-3086458"
       }
     ],
-    "link": "http://www.heise.de/developer/rss/news-atom.xml",
-    "feedUrl": "http://www.heise.de/developer/",
+    "link": "http://www.heise.de/developer/",
+    "feedUrl": "http://www.heise.de/developer/rss/news-atom.xml",
     "title": "heise developer neueste Meldungen"
   }
 }

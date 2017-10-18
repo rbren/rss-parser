@@ -67,8 +67,13 @@ describe('Parser', function() {
   it('should parse Feedburner', function(done) {
     testParseForFile('feedburner', 'atom', done);
   });
+
   it('should parse podcasts', function(done) {
     testParseForFile('narro', 'rss', done);
+  });
+
+  it('should parse multiple links', function(done) {
+    testParseForFile('many-links', 'rss', done);
   });
 
   it('should throw error for unrecognized', function(done) {
