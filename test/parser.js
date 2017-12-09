@@ -14,8 +14,13 @@ var INPUT_FILE = __dirname + '/input/reddit.rss';
 var OUTPUT_FILE = __dirname + '/output/reddit.json';
 
 describe('Parser', function() {
-  var testParseForFile = function(name, ext, done) {
-    Parser.parseFile(IN_DIR + '/' + name + '.' + ext, function(err, parsed) {
+  var testParseForFile = function(name, ext, options, done) {
+    if (typeof done === 'undefined') {
+      done = options;
+      options = {};
+    }
+    Parser.parseFile(IN_DIR + '/' + name + '.' + ext, options, function(err, parsed) {
+      if (err) console.log(err);
       Expect(err).to.equal(null);
       if (process.env.WRITE_GOLDEN) {
         FS.writeFileSync(OUT_DIR + '/' + name + '.json', JSON.stringify(parsed, null, 2));
@@ -74,6 +79,10 @@ describe('Parser', function() {
 
   it('should parse multiple links', function(done) {
     testParseForFile('many-links', 'rss', done);
+  });
+
+  it('should pass xml2js options', function(done) {
+    testParseForFile('xml2js-options', 'rss', {xml2js: {emptyTag: 'EMPTY'}}, done);
   });
 
   it('should throw error for unrecognized', function(done) {

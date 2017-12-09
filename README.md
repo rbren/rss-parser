@@ -111,6 +111,22 @@ var options = {
 }
 ```
 
+### xml2js passthrough
+`rss-parser` uses [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
+to parse XML. You can pass [these options](https://github.com/Leonidas-from-XIV/node-xml2js#options)
+to `new xml2js.Parser()` by specifying `options.xml2js`:
+
+```js
+let options = {
+  xml2js: {
+    emptyTag: '--EMPTY--',
+  }
+}
+parser.parseURL('https://www.reddit.com/.rss', options, function(err, parsed) {
+  console.log(err, parsed);
+})
+```
+
 ## Contributing
 Contributions welcome!
 
