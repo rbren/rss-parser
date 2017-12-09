@@ -8193,7 +8193,9 @@ Parser.parseString = function (xml, options, callback) {
     callback = options;
     options = {};
   }
-  XML2JS.parseString(xml, function (err, result) {
+  options.xml2js = options.xml2js || {};
+  var parser = new XML2JS.Parser(options.xml2js);
+  parser.parseString(xml, function (err, result) {
     if (err) return callback(err);
     if (!result) {
       return callback(new Error('Unable to parse XML.'));
