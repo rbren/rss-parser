@@ -1,6 +1,6 @@
 "use strict";
 
-var FS = require('fs');
+var fs = require('fs');
 var HTTP = require('http');
 
 var Parser = require('../index.js');
@@ -10,24 +10,23 @@ var Expect = require('chai').expect;
 var IN_DIR = __dirname + '/input';
 var OUT_DIR = __dirname + '/output';
 
-var INPUT_FILE = __dirname + '/input/reddit.rss';
-var OUTPUT_FILE = __dirname + '/output/reddit.json';
-
 describe('Parser', function() {
   var testParseForFile = function(name, ext, options, done) {
     if (typeof done === 'undefined') {
       done = options;
       options = {};
     }
-    Parser.parseFile(IN_DIR + '/' + name + '.' + ext, options, function(err, parsed) {
+    let parser = new Parser(options);
+    let xml = fs.readFileSync(IN_DIR + '/' + name + '.' + ext, 'utf8');
+    parser.parseString(xml, function(err, parsed) {
       if (err) console.log(err);
       Expect(err).to.equal(null);
       if (process.env.WRITE_GOLDEN) {
-        FS.writeFileSync(OUT_DIR + '/' + name + '.json', JSON.stringify(parsed, null, 2));
+        fs.writeFileSync(OUT_DIR + '/' + name + '.json', JSON.stringify({feed: parsed}, null, 2));
       } else {
-        var expected = FS.readFileSync(OUT_DIR + '/' + name + '.json', 'utf8')
+        var expected = fs.readFileSync(OUT_DIR + '/' + name + '.json', 'utf8')
         expected = JSON.parse(expected);
-        Expect(parsed).to.deep.equal(expected);
+        Expect({feed: parsed}).to.deep.equal(expected);
       }
       done();
     })
@@ -90,7 +89,9 @@ describe('Parser', function() {
   });
 
   it('should throw error for unrecognized', function(done) {
-    Parser.parseFile(__dirname + '/input/unrecognized.rss', function(err, parsed) {
+    let parser = new Parser();
+    let xml = fs.readFileSync(__dirname + '/input/unrecognized.rss', 'utf8');
+    parser.parseString(xml, function(err, parsed) {
       Expect(err.message).to.contain('Feed not recognized as RSS');
       done();
     });
@@ -98,7 +99,9 @@ describe('Parser', function() {
 
   it('should omit iTunes image if none available during decoration', function(done) {
     const rssFeedWithMissingImage = __dirname + '/input/itunes-missing-image.rss';
-    Parser.parseFile(rssFeedWithMissingImage, {}, function(err, parsed) {
+    const xml = fs.readFileSync(rssFeedWithMissingImage, 'utf8');
+    let parser = new Parser();
+    parser.parseString(xml, function(err, parsed) {
       Expect(err).to.be.null;
       Expect(parsed).to.not.have.deep.property('feed.itunes.image');
       done();
@@ -112,18 +115,7 @@ describe('Parser', function() {
         item: ['subtitle']
       }
     };
-    Parser.parseFile(__dirname + '/input/customfields.rss',options, function(err, parsed) {
-      Expect(err).to.equal(null);
-      var str = JSON.stringify(parsed, null, 2);
-      var outfile = OUT_DIR + '/customfields.json';
-      if (process.env.WRITE_GOLDEN) {
-        FS.writeFileSync(outfile, str);
-      } else {
-        var expected = FS.readFileSync(outfile, 'utf8');
-        Expect(str).to.equal(expected);
-      }
-      done();
-    });
+    testParseForFile('customfields', 'rss', options, done);
   });
 
   it('should parse Atom feed custom fields', function(done) {
@@ -133,38 +125,30 @@ describe('Parser', function() {
         item: ['media:group']
       }
     };
-    Parser.parseFile(__dirname + '/input/atom-customfields.atom',options, function(err, parsed) {
-      Expect(err).to.equal(null);
-      var str = JSON.stringify(parsed, null, 2);
-      var outfile = OUT_DIR + '/atom-customfields.json';
-      if (process.env.WRITE_GOLDEN) {
-        FS.writeFileSync(outfile, str);
-      } else {
-        var expected = FS.readFileSync(outfile, 'utf8');
-        Expect(str).to.equal(expected);
-      }
-      done();
-    });
+    testParseForFile('atom-customfields', 'atom', options, done);
   });
 
   it('should parse URL', function(done) {
+    var INPUT_FILE = __dirname + '/input/reddit.rss';
+    var OUTPUT_FILE = __dirname + '/output/reddit.json';
     var server = HTTP.createServer(function(req, res) {
-      var file = FS.createReadStream(INPUT_FILE, 'utf8');
-
+      var file = fs.createReadStream(INPUT_FILE, 'utf8');
       file.pipe(res);
     });
     server.listen(function() {
       var port = server.address().port;
       var url = 'http://localhost:' + port;
-
-      Parser.parseURL(url, function(err, parsed) {
+      let parser = new Parser();
+      parser.parseURL(url, function(err, parsed) {
         Expect(err).to.equal(null);
-        var str = JSON.stringify(parsed, null, 2);
-        var expected = FS.readFileSync(OUTPUT_FILE, 'utf8');
-        Expect(str).to.equal(expected);
+        if (process.env.WRITE_GOLDEN) {
+          fs.writeFileSync(OUTPUT_FILE, JSON.stringify({feed: parsed}, null, 2));
+        } else {
+          var expected = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8'));
+          Expect({feed: parsed}).to.deep.equal(expected);
+        }
         done();
       });
     });
-
   });
 })
