@@ -11,55 +11,76 @@ bower install --save rss-parser
 ```
 
 ## Usage
-You can parse RSS from a URL, local file (NodeJS only), or a string.
-* `parseString(xml, [options,],  callback)`
-* `parseFile(filename, [options,], callback)`
-* `parseURL(url, [options,] callback)`
+You can parse RSS from a URL (`parser.parseURL`) or a string (`parser.parseString`).
+
+Both callbacks and Promises are supported.
 
 ### NodeJS
-```js
-var parser = require('rss-parser');
+Here's an example in NodeJS using Promises with async/await:
 
+```js
+var Parser = require('rss-parser');
+var parser = new Parser();
+
+(async () => {
+
+  let feed = await parser.parseURL('https://www.reddit.com/.rss');
+  console.log(feed.title);
+
+  feed.items.forEach(item => {
+    console.log(item.title + ':' + item.link)
+  });
+
+})();
+```
+
+### Web
+Here's an example in the browser using callbacks:
+
+```html
+<script src="/bower_components/rss-parser/dist/rss-parser.min.js"></script>
+<script>
+
+var parser = new RSSParser();
 parser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
   console.log(parsed.feed.title);
   parsed.feed.entries.forEach(function(entry) {
     console.log(entry.title + ':' + entry.link);
   })
 })
-```
-### Web
-```html
-<script src="/bower_components/rss-parser/dist/rss-parser.min.js"></script>
-<script>
-RSSParser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
-  console.log(parsed.feed.title);
-  parsed.feed.entries.forEach(function(entry) {
-    console.log(entry.title + ':' + entry.link);
-  })
-})
+
 </script>
 ```
+
+## Upgrading from v2 to v3
+A few minor breaking changes were made in v3. Here's what you need to know:
+
+* You need to construct a `new Parser()` before calling `parseString` or `parseURL`
+* `parseFile` is no longer available (for better browser support)
+* `options` are now passed to the Parser constructor
+* `feed.entries` is now `feed.items` (to better match RSS XML)
+* `parsed.feed` is now just `feed` (top-level object removed)
+
 
 ## Output
 Check out the full output format in [test/output/reddit.json](test/output/reddit.json)
 
 ```yaml
-feed:
-    feedUrl: 'https://www.reddit.com/.rss'
-    title: 'reddit: the front page of the internet'
-    description: ""
-    link: 'https://www.reddit.com/'
-    entries:
-        - title: 'The water is too deep, so he improvises'
-          link: 'https://www.reddit.com/r/funny/comments/3skxqc/the_water_is_too_deep_so_he_improvises/'
-          pubDate: 'Thu, 12 Nov 2015 21:16:39 +0000'
-          creator: "John Doe"
-          content: '<a href="http://example.com">this is a link</a> - <b>this is bold text</b>'
-          contentSnippet: 'this is a link - this is bold text'
-          guid: 'https://www.reddit.com/r/funny/comments/3skxqc/the_water_is_too_deep_so_he_improvises/'
-          categories:
-              - funny
-          isoDate: '2015-11-12T21:16:39.000Z'
+feedUrl: 'https://www.reddit.com/.rss'
+title: 'reddit: the front page of the internet'
+description: ""
+link: 'https://www.reddit.com/'
+items:
+    - title: 'The water is too deep, so he improvises'
+      link: 'https://www.reddit.com/r/funny/comments/3skxqc/the_water_is_too_deep_so_he_improvises/'
+      pubDate: 'Thu, 12 Nov 2015 21:16:39 +0000'
+      creator: "John Doe"
+      content: '<a href="http://example.com">this is a link</a> - <b>this is bold text</b>'
+      contentSnippet: 'this is a link - this is bold text'
+      guid: 'https://www.reddit.com/r/funny/comments/3skxqc/the_water_is_too_deep_so_he_improvises/'
+      categories:
+          - funny
+      isoDate: '2015-11-12T21:16:39.000Z'
 ```
 
 ##### Notes:
@@ -71,11 +92,12 @@ feed:
 ## Options
 
 ### Redirects
-By default, `parseURL` will follow up to one redirect. You can change this
+By default, `parseURL` will follow up to five redirects. You can change this
 with `options.maxRedirects`.
 
 ```js
-parser.parseURL('https://reddit.com/.rss', {maxRedirects: 3}, function(err, parsed) {
+let parser = new Parser({maxRedirects: 100});
+parser.parseURL('https://reddit.com/.rss', function(err, parsed) {
   console.log(parsed.feed.title);
 });
 ```
@@ -90,7 +112,8 @@ var options = {
     item: ['coAuthor','subtitle'],
   }
 }
-parser.parseURL('https://www.reddit.com/.rss', options, function(err, parsed) {
+let parser = new Parser(options);
+parser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
   console.log(parsed.feed.extendedDescription);
 
   parsed.feed.entries.forEach(function(entry) {
@@ -122,7 +145,8 @@ let options = {
     emptyTag: '--EMPTY--',
   }
 }
-parser.parseURL('https://www.reddit.com/.rss', options, function(err, parsed) {
+var parser = new Parser(options);
+parser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
   console.log(err, parsed);
 })
 ```
