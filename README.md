@@ -3,15 +3,12 @@
 [![Build Status](https://travis-ci.org/bobby-brennan/rss-parser.svg?branch=master)](https://travis-ci.org/bobby-brennan/rss-parser)
 
 ## Installation
-You can install via npm or bower:
 ```bash
 npm install --save rss-parser
-# or
-bower install --save rss-parser
 ```
 
 ## Usage
-You can parse RSS from a URL (`parser.parseURL`) or a string (`parser.parseString`).
+You can parse RSS from a URL (`parser.parseURL`) or an XML string (`parser.parseString`).
 
 Both callbacks and Promises are supported.
 
@@ -19,8 +16,8 @@ Both callbacks and Promises are supported.
 Here's an example in NodeJS using Promises with async/await:
 
 ```js
-var Parser = require('rss-parser');
-var parser = new Parser();
+let Parser = require('rss-parser');
+let parser = new Parser();
 
 (async () => {
 
@@ -41,7 +38,7 @@ Here's an example in the browser using callbacks:
 <script src="/bower_components/rss-parser/dist/rss-parser.min.js"></script>
 <script>
 
-var parser = new RSSParser();
+let parser = new RSSParser();
 parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
   console.log(feed.title);
   feed.entries.forEach(function(entry) {
@@ -91,28 +88,17 @@ items:
 
 ## Options
 
-### Redirects
-By default, `parseURL` will follow up to five redirects. You can change this
-with `options.maxRedirects`.
-
-```js
-let parser = new Parser({maxRedirects: 100});
-parser.parseURL('https://reddit.com/.rss', function(err, feed) {
-  console.log(feed.title);
-});
-```
-
 ### Custom Fields
 If your RSS feed contains fields that aren't currently returned, you can access them using the `customFields` option.
 
 ```js
-var options = {
+let parser = new Parser({
   customFields: {
     feed: ['otherTitle', 'extendedDescription'],
     item: ['coAuthor','subtitle'],
   }
-}
-let parser = new Parser(options);
+});
+
 parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
   console.log(feed.extendedDescription);
 
@@ -125,13 +111,13 @@ parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
 To rename fields, you can pass in an array with two items, in the format `[fromField, toField]`:
 
 ```js
-var options = {
+let parser = new Parser({
   customFields: {
     item: [
       ['dc:coAuthor', 'coAuthor'],
     ]
   }
-}
+})
 ```
 
 ### xml2js passthrough
@@ -140,16 +126,29 @@ to parse XML. You can pass [these options](https://github.com/Leonidas-from-XIV/
 to `new xml2js.Parser()` by specifying `options.xml2js`:
 
 ```js
-let options = {
+let parser = new Parser({
   xml2js: {
     emptyTag: '--EMPTY--',
   }
-}
-var parser = new Parser(options);
-parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
-  console.log(err, feed);
-})
+});
 ```
+
+### Headers
+You can pass headers to the HTTP request:
+```js
+let parser = new Parser({
+  headers: {'User-Agent': 'something different'},
+});
+```
+
+### Redirects
+By default, `parseURL` will follow up to five redirects. You can change this
+with `options.maxRedirects`.
+
+```js
+let parser = new Parser({maxRedirects: 100});
+```
+
 
 ## Contributing
 Contributions welcome!
