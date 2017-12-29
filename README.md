@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/bobby-brennan/rss-parser.svg?branch=master)](https://travis-ci.org/bobby-brennan/rss-parser)
 
+A small library for turning RSS XML feeds into JavaScript objects.
+
 ## Installation
 ```bash
 npm install --save rss-parser
@@ -32,6 +34,8 @@ let parser = new Parser();
 ```
 
 ### Web
+> You'll need a [polyfill](https://github.com/taylorhakes/promise-polyfill) for Promise support.
+
 Here's an example in the browser using callbacks:
 
 ```html
