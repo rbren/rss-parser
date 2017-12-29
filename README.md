@@ -49,7 +49,7 @@ parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
 </script>
 ```
 
-## Upgrading from v2 to v3
+### Upgrading from v2 to v3
 A few minor breaking changes were made in v3. Here's what you need to know:
 
 * You need to construct a `new Parser()` before calling `parseString` or `parseURL`
