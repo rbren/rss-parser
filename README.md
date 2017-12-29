@@ -42,9 +42,9 @@ Here's an example in the browser using callbacks:
 <script>
 
 var parser = new RSSParser();
-parser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
-  console.log(parsed.feed.title);
-  parsed.feed.entries.forEach(function(entry) {
+parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
+  console.log(feed.title);
+  feed.entries.forEach(function(entry) {
     console.log(entry.title + ':' + entry.link);
   })
 })
@@ -58,8 +58,8 @@ A few minor breaking changes were made in v3. Here's what you need to know:
 * You need to construct a `new Parser()` before calling `parseString` or `parseURL`
 * `parseFile` is no longer available (for better browser support)
 * `options` are now passed to the Parser constructor
-* `feed.entries` is now `feed.items` (to better match RSS XML)
 * `parsed.feed` is now just `feed` (top-level object removed)
+* `feed.entries` is now `feed.items` (to better match RSS XML)
 
 
 ## Output
@@ -97,8 +97,8 @@ with `options.maxRedirects`.
 
 ```js
 let parser = new Parser({maxRedirects: 100});
-parser.parseURL('https://reddit.com/.rss', function(err, parsed) {
-  console.log(parsed.feed.title);
+parser.parseURL('https://reddit.com/.rss', function(err, feed) {
+  console.log(feed.title);
 });
 ```
 
@@ -113,10 +113,10 @@ var options = {
   }
 }
 let parser = new Parser(options);
-parser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
-  console.log(parsed.feed.extendedDescription);
+parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
+  console.log(feed.extendedDescription);
 
-  parsed.feed.entries.forEach(function(entry) {
+  feed.entries.forEach(function(entry) {
     console.log(entry.coAuthor + ':' + entry.subtitle);
   })
 })
@@ -146,8 +146,8 @@ let options = {
   }
 }
 var parser = new Parser(options);
-parser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
-  console.log(err, parsed);
+parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
+  console.log(err, feed);
 })
 ```
 
