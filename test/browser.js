@@ -40,14 +40,15 @@ describe('Browser', function() {
     return page.evaluate(() => {
       return typeof window.RSSParser;
     }).then(type => {
-      expect(type).to.equal('object');
+      expect(type).to.equal('function');
     })
   });
 
   it('should parse reddit', function() {
     this.timeout(PARSE_TIMEOUT + 1000);
     return page.evaluate(() => {
-      RSSParser.parseURL('http://localhost:3333/input/reddit.rss', function(err, data) {
+      var parser = new RSSParser();
+      parser.parseURL('http://localhost:3333/input/reddit.rss', function(err, data) {
         window.error = err;
         window.reddit = data;
       })
@@ -62,7 +63,7 @@ describe('Browser', function() {
       expect(err).to.equal(null);
     })
     .then(_ => page.evaluate(() => {
-      return window.reddit.feed.title;
+      return window.reddit.title;
     }))
     .then(title => {
       expect(title).to.equal('reddit: the front page of the internet');
