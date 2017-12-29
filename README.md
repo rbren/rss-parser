@@ -35,7 +35,7 @@ let parser = new Parser();
 Here's an example in the browser using callbacks:
 
 ```html
-<script src="/bower_components/rss-parser/dist/rss-parser.min.js"></script>
+<script src="/node_modules/rss-parser/dist/rss-parser.min.js"></script>
 <script>
 
 let parser = new RSSParser();
