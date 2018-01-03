@@ -151,4 +151,30 @@ describe('Parser', function() {
       });
     });
   });
+
+  it('should use proper encoding', function(done) {
+    var INPUT_FILE = __dirname + '/input/encoding.rss';
+    var OUTPUT_FILE = __dirname + '/output/encoding.json';
+    var ENCODING = 'latin1';
+    var server = HTTP.createServer(function(req, res) {
+      res.setHeader('Content-Type', 'text/xml; charset=' + ENCODING)
+      var file = fs.readFileSync(INPUT_FILE, ENCODING);
+      res.end(file, ENCODING);
+    });
+    server.listen(function() {
+      var port = server.address().port;
+      var url = 'http://localhost:' + port;
+      var parser = new Parser();
+      parser.parseURL(url, function(err, parsed) {
+        Expect(err).to.equal(null);
+        if (process.env.WRITE_GOLDEN) {
+          fs.writeFileSync(OUTPUT_FILE, JSON.stringify({feed: parsed}, null, 2), {encoding: ENCODING});
+        } else {
+          var expected = JSON.parse(fs.readFileSync(OUTPUT_FILE, ENCODING));
+          Expect({feed: parsed}).to.deep.equal(expected);
+        }
+        done();
+      })
+    })
+  })
 })
