@@ -65,6 +65,10 @@ describe('Parser', function() {
     testParseForFile('heise', 'atom', done);
   })
 
+  it('should parse heraldsun', function(done) {
+    testParseForFile('heraldsun', 'rss', done);
+  })
+
   it('should parse Instant Article', function(done) {
     testParseForFile('instant-article', 'rss', done);
   });
