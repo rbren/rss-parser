@@ -276,7 +276,7 @@ Parser.parseString = function(xml, options, callback) {
       return parseRSS2(result, options, callback);
     } else if (result['rdf:RDF']) {
       return parseRSS1(result, options, callback);
-    } else if (result.rss && result.rss.$.version && result.rss.$.version.indexOf('9') === 2) {
+    } else if (result.rss && result.rss.$.version && result.rss.$.version.match(/0\.9/)) {
       return parseRSS_9(result, options, callback);
     } else {
       return callback(new Error("Feed not recognized as RSS 1 or 2."))
