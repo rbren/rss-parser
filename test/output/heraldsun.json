@@ -1,61 +1,50 @@
 {
-	"feed": {
-		"entries": [{
-				"title": "The First Item",
-				"link": "http://www.oreilly.com/example/001.html",
-				"source": {
-          "$": {
-            "url": "http://www.anothersite.com/index.xml"
-          },
-					"_": "Another Site"
-				},
-				"enclosure": {
-					"url": "http://www.oreilly.com/001.mp3",
-					"length": "54321",
-					"type": "audio/mpeg"
-				},
-				"categories": [
-          {
-            "$": {
-              "domain": "http://www.dmoz.org"
-            },
-            "_": "Business/Industries/Publishing/Publishers/Nonfiction/"
-          }
-        ],
+  "feed": {
+    "entries": [
+      {
+        "title": "The First Item",
+        "link": "http://www.oreilly.com/example/001.html",
+        "enclosure": {
+          "url": "http://www.oreilly.com/001.mp3",
+          "length": "54321",
+          "type": "audio/mpeg"
+        },
         "content": "This is the first item.",
-        "contentSnippet": "This is the first item."
-			},
-			{
-				"title": "The Second Item",
-				"link": "http://www.oreilly.com/example/002.html",
-        "source": {
-          "$": {
-            "url": "http://www.anothersite.com/index.xml"
-          },
-					"_": "Another Site"
-				},
-				"enclosure": {
-					"url": "http://www.oreilly.com/002.mp3",
-					"length": "54321",
-					"type": "audio/mpeg"
-				},
+        "contentSnippet": "This is the first item.",
         "categories": [
           {
+            "_": "Business/Industries/Publishing/Publishers/Nonfiction/",
             "$": {
               "domain": "http://www.dmoz.org"
-            },
-            "_": "Business/Industries/Publishing/Publishers/Nonfiction/"
+            }
           }
-        ],
+        ]
+      },
+      {
+        "title": "The Second Item",
+        "link": "http://www.oreilly.com/example/002.html",
+        "enclosure": {
+          "url": "http://www.oreilly.com/002.mp3",
+          "length": "54321",
+          "type": "audio/mpeg"
+        },
         "content": "This is the second item.",
-        "contentSnippet": "This is the second item."
-			}
-		],
-		"title": "RSS0.92 Example",
-		"link": "http://www.oreilly.com/example/index.html",
-		"description": "This is an example RSS0.91 feed",
-		"managingEditor": "editor@oreilly.com",
-		"webMaster": "webmaster@oreilly.com",
-		"pubDate": "03 Apr 02 1500 GMT"
-	}
+        "contentSnippet": "This is the second item.",
+        "categories": [
+          {
+            "_": "Business/Industries/Publishing/Publishers/Nonfiction/",
+            "$": {
+              "domain": "http://www.dmoz.org"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "RSS0.92 Example",
+    "description": "This is an example RSS0.91 feed",
+    "pubDate": "03 Apr 02 1500 GMT",
+    "webMaster": "webmaster@oreilly.com",
+    "managingEditor": "editor@oreilly.com",
+    "link": "http://www.oreilly.com/example/index.html"
+  }
 }
