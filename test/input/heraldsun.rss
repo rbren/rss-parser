@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="0.92">
+<channel>
+  <title>RSS0.92 Example</title>
+  <link>http://www.oreilly.com/example/index.html</link>
+  <description>This is an example RSS0.91 feed</description>
+  <language>en-gb</language>
+  <copyright>Copyright 2002, Oreilly and Associates.</copyright>
+  <managingEditor>editor@oreilly.com</managingEditor>
+  <webMaster>webmaster@oreilly.com</webMaster>
+	<rating>5</rating>
+  <pubDate>03 Apr 02 1500 GMT</pubDate>
+  <lastBuildDate>03 Apr 02 1500 GMT</lastBuildDate>
+  <item>
+    <title>The First Item</title>
+    <link>http://www.oreilly.com/example/001.html</link>
+    <description>This is the first item.</description>
+    <source url="http://www.anothersite.com/index.xml">Another Site</source>
+    <enclosure url="http://www.oreilly.com/001.mp3" length="54321" type="audio/mpeg"/>
+    <category domain="http://www.dmoz.org">Business/Industries/Publishing/Publishers/Nonfiction/</category>
+  </item>
+  <item>
+    <title>The Second Item</title>
+    <link>http://www.oreilly.com/example/002.html</link>
+    <description>This is the second item.</description>
+		<source url="http://www.anothersite.com/index.xml">Another Site</source>
+    <enclosure url="http://www.oreilly.com/002.mp3" length="54321" type="audio/mpeg"/>
+		<category domain="http://www.dmoz.org">Business/Industries/Publishing/Publishers/Nonfiction/</category>
+  </item>
+</channel>
+</rss>

@@ -1,0 +1,50 @@
+{
+  "feed": {
+    "entries": [
+      {
+        "title": "The First Item",
+        "link": "http://www.oreilly.com/example/001.html",
+        "enclosure": {
+          "url": "http://www.oreilly.com/001.mp3",
+          "length": "54321",
+          "type": "audio/mpeg"
+        },
+        "content": "This is the first item.",
+        "contentSnippet": "This is the first item.",
+        "categories": [
+          {
+            "_": "Business/Industries/Publishing/Publishers/Nonfiction/",
+            "$": {
+              "domain": "http://www.dmoz.org"
+            }
+          }
+        ]
+      },
+      {
+        "title": "The Second Item",
+        "link": "http://www.oreilly.com/example/002.html",
+        "enclosure": {
+          "url": "http://www.oreilly.com/002.mp3",
+          "length": "54321",
+          "type": "audio/mpeg"
+        },
+        "content": "This is the second item.",
+        "contentSnippet": "This is the second item.",
+        "categories": [
+          {
+            "_": "Business/Industries/Publishing/Publishers/Nonfiction/",
+            "$": {
+              "domain": "http://www.dmoz.org"
+            }
+          }
+        ]
+      }
+    ],
+    "title": "RSS0.92 Example",
+    "description": "This is an example RSS0.91 feed",
+    "pubDate": "03 Apr 02 1500 GMT",
+    "webMaster": "webmaster@oreilly.com",
+    "managingEditor": "editor@oreilly.com",
+    "link": "http://www.oreilly.com/example/index.html"
+  }
+}
