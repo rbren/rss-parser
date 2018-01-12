@@ -136,6 +136,12 @@ var parseAtomFeed = function(xmlObj, options, callback) {
   callback(null, json);
 }
 
+var parseRSS_9 = function(xmlObj, options, callback) {
+  var channel = xmlObj.rss.channel[0];
+  var items = channel.item;
+  return parseRSS(channel, items, options, callback);
+}
+
 var parseRSS1 = function(xmlObj, options, callback) {
   xmlObj = xmlObj['rdf:RDF'];
   var channel = xmlObj.channel[0];
@@ -270,6 +276,8 @@ Parser.parseString = function(xml, options, callback) {
       return parseRSS2(result, options, callback);
     } else if (result['rdf:RDF']) {
       return parseRSS1(result, options, callback);
+    } else if (result.rss && result.rss.$.version && result.rss.$.version.match(/0\.9/)) {
+      return parseRSS_9(result, options, callback);
     } else {
       return callback(new Error("Feed not recognized as RSS 1 or 2."))
     }
