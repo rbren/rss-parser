@@ -62,7 +62,9 @@ var PODCAST_ITEM_FIELDS = ([
   'summary',
   'explicit',
   'duration',
-  'image'
+  'image',
+  'episode',
+  'season'
 ]).map(mapItunesField);
 
 
