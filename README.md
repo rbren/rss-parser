@@ -34,7 +34,9 @@ let parser = new Parser();
 ```
 
 ### Web
-> You'll need a [polyfill](https://github.com/taylorhakes/promise-polyfill) for Promise support.
+> We recommend using a bundler like [webpack](https://webpack.js.org/), but we also provide
+> pre-built browser distributions in the `dist/` folder. If you use the pre-built distribution,
+> you'll need a [polyfill](https://github.com/taylorhakes/promise-polyfill) for Promise support.
 
 Here's an example in the browser using callbacks:
 
