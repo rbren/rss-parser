@@ -8002,7 +8002,7 @@ var mapItunesField = function mapItunesField(f) {
 
 var PODCAST_FEED_FIELDS = ['author', 'subtitle', 'summary', 'explicit'].map(mapItunesField);
 
-var PODCAST_ITEM_FIELDS = ['author', 'subtitle', 'summary', 'explicit', 'duration', 'image'].map(mapItunesField);
+var PODCAST_ITEM_FIELDS = ['author', 'subtitle', 'summary', 'explicit', 'duration', 'image', 'episode', 'season'].map(mapItunesField);
 
 var stripHtml = function stripHtml(str) {
   return str.replace(/<(?:.|\n)*?>/gm, '');
