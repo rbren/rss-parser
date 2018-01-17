@@ -2,64 +2,86 @@
 
 [![Build Status](https://travis-ci.org/bobby-brennan/rss-parser.svg?branch=master)](https://travis-ci.org/bobby-brennan/rss-parser)
 
+A small library for turning RSS XML feeds into JavaScript objects.
+
 ## Installation
-You can install via npm or bower:
 ```bash
 npm install --save rss-parser
-# or
-bower install --save rss-parser
 ```
 
 ## Usage
-You can parse RSS from a URL, local file (NodeJS only), or a string.
-* `parseString(xml, [options,],  callback)`
-* `parseFile(filename, [options,], callback)`
-* `parseURL(url, [options,] callback)`
+You can parse RSS from a URL (`parser.parseURL`) or an XML string (`parser.parseString`).
+
+Both callbacks and Promises are supported.
 
 ### NodeJS
-```js
-var parser = require('rss-parser');
+Here's an example in NodeJS using Promises with async/await:
 
-parser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
-  console.log(parsed.feed.title);
-  parsed.feed.entries.forEach(function(entry) {
-    console.log(entry.title + ':' + entry.link);
-  })
-})
+```js
+let Parser = require('rss-parser');
+let parser = new Parser();
+
+(async () => {
+
+  let feed = await parser.parseURL('https://www.reddit.com/.rss');
+  console.log(feed.title);
+
+  feed.items.forEach(item => {
+    console.log(item.title + ':' + item.link)
+  });
+
+})();
 ```
+
 ### Web
+> You'll need a [polyfill](https://github.com/taylorhakes/promise-polyfill) for Promise support.
+
+Here's an example in the browser using callbacks:
+
 ```html
-<script src="/bower_components/rss-parser/dist/rss-parser.min.js"></script>
+<script src="/node_modules/rss-parser/dist/rss-parser.min.js"></script>
 <script>
-RSSParser.parseURL('https://www.reddit.com/.rss', function(err, parsed) {
-  console.log(parsed.feed.title);
-  parsed.feed.entries.forEach(function(entry) {
+
+let parser = new RSSParser();
+parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
+  console.log(feed.title);
+  feed.entries.forEach(function(entry) {
     console.log(entry.title + ':' + entry.link);
   })
 })
+
 </script>
 ```
+
+### Upgrading from v2 to v3
+A few minor breaking changes were made in v3. Here's what you need to know:
+
+* You need to construct a `new Parser()` before calling `parseString` or `parseURL`
+* `parseFile` is no longer available (for better browser support)
+* `options` are now passed to the Parser constructor
+* `parsed.feed` is now just `feed` (top-level object removed)
+* `feed.entries` is now `feed.items` (to better match RSS XML)
+
 
 ## Output
 Check out the full output format in [test/output/reddit.json](test/output/reddit.json)
 
 ```yaml
-feed:
-    feedUrl: 'https://www.reddit.com/.rss'
-    title: 'reddit: the front page of the internet'
-    description: ""
-    link: 'https://www.reddit.com/'
-    entries:
-        - title: 'The water is too deep, so he improvises'
-          link: 'https://www.reddit.com/r/funny/comments/3skxqc/the_water_is_too_deep_so_he_improvises/'
-          pubDate: 'Thu, 12 Nov 2015 21:16:39 +0000'
-          creator: "John Doe"
-          content: '<a href="http://example.com">this is a link</a> - <b>this is bold text</b>'
-          contentSnippet: 'this is a link - this is bold text'
-          guid: 'https://www.reddit.com/r/funny/comments/3skxqc/the_water_is_too_deep_so_he_improvises/'
-          categories:
-              - funny
-          isoDate: '2015-11-12T21:16:39.000Z'
+feedUrl: 'https://www.reddit.com/.rss'
+title: 'reddit: the front page of the internet'
+description: ""
+link: 'https://www.reddit.com/'
+items:
+    - title: 'The water is too deep, so he improvises'
+      link: 'https://www.reddit.com/r/funny/comments/3skxqc/the_water_is_too_deep_so_he_improvises/'
+      pubDate: 'Thu, 12 Nov 2015 21:16:39 +0000'
+      creator: "John Doe"
+      content: '<a href="http://example.com">this is a link</a> - <b>this is bold text</b>'
+      contentSnippet: 'this is a link - this is bold text'
+      guid: 'https://www.reddit.com/r/funny/comments/3skxqc/the_water_is_too_deep_so_he_improvises/'
+      categories:
+          - funny
+      isoDate: '2015-11-12T21:16:39.000Z'
 ```
 
 ##### Notes:
@@ -70,30 +92,21 @@ feed:
 
 ## Options
 
-### Redirects
-By default, `parseURL` will follow up to one redirect. You can change this
-with `options.maxRedirects`.
-
-```js
-parser.parseURL('https://reddit.com/.rss', {maxRedirects: 3}, function(err, parsed) {
-  console.log(parsed.feed.title);
-});
-```
-
 ### Custom Fields
 If your RSS feed contains fields that aren't currently returned, you can access them using the `customFields` option.
 
 ```js
-var options = {
+let parser = new Parser({
   customFields: {
     feed: ['otherTitle', 'extendedDescription'],
     item: ['coAuthor','subtitle'],
   }
-}
-parser.parseURL('https://www.reddit.com/.rss', options, function(err, parsed) {
-  console.log(parsed.feed.extendedDescription);
+});
 
-  parsed.feed.entries.forEach(function(entry) {
+parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
+  console.log(feed.extendedDescription);
+
+  feed.entries.forEach(function(entry) {
     console.log(entry.coAuthor + ':' + entry.subtitle);
   })
 })
@@ -102,13 +115,13 @@ parser.parseURL('https://www.reddit.com/.rss', options, function(err, parsed) {
 To rename fields, you can pass in an array with two items, in the format `[fromField, toField]`:
 
 ```js
-var options = {
+let parser = new Parser({
   customFields: {
     item: [
       ['dc:coAuthor', 'coAuthor'],
     ]
   }
-}
+})
 ```
 
 ### xml2js passthrough
@@ -117,15 +130,29 @@ to parse XML. You can pass [these options](https://github.com/Leonidas-from-XIV/
 to `new xml2js.Parser()` by specifying `options.xml2js`:
 
 ```js
-let options = {
+let parser = new Parser({
   xml2js: {
     emptyTag: '--EMPTY--',
   }
-}
-parser.parseURL('https://www.reddit.com/.rss', options, function(err, parsed) {
-  console.log(err, parsed);
-})
+});
 ```
+
+### Headers
+You can pass headers to the HTTP request:
+```js
+let parser = new Parser({
+  headers: {'User-Agent': 'something different'},
+});
+```
+
+### Redirects
+By default, `parseURL` will follow up to five redirects. You can change this
+with `options.maxRedirects`.
+
+```js
+let parser = new Parser({maxRedirects: 100});
+```
+
 
 ## Contributing
 Contributions welcome!
