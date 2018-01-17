@@ -13470,7 +13470,7 @@ var mapItunesField = function mapItunesField(f) {
 
 fields.podcastFeed = ['author', 'subtitle', 'summary', 'explicit'].map(mapItunesField);
 
-fields.podcastItem = ['author', 'subtitle', 'summary', 'explicit', 'duration', 'image'].map(mapItunesField);
+fields.podcastItem = ['author', 'subtitle', 'summary', 'explicit', 'duration', 'image', 'episode', 'image', 'season'].map(mapItunesField);
 
 /***/ }),
 /* 81 */

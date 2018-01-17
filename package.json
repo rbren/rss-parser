@@ -3,7 +3,7 @@
   "version": "2.12.1",
   "main": "index.js",
   "scripts": {
-    "test": "npm run build && mocha",
+    "test": "mocha",
     "build": "./scripts/build.sh"
   },
   "author": "Bobby Brennan",
