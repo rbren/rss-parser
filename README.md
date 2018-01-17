@@ -45,7 +45,7 @@ Here's an example in the browser using callbacks:
 let parser = new RSSParser();
 parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
   console.log(feed.title);
-  feed.entries.forEach(function(entry) {
+  feed.items.forEach(function(entry) {
     console.log(entry.title + ':' + entry.link);
   })
 })
@@ -106,7 +106,7 @@ let parser = new Parser({
 parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
   console.log(feed.extendedDescription);
 
-  feed.entries.forEach(function(entry) {
+  feed.items.forEach(function(entry) {
     console.log(entry.coAuthor + ':' + entry.subtitle);
   })
 })
