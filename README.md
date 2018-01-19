@@ -44,8 +44,12 @@ Here's an example in the browser using callbacks:
 <script src="/node_modules/rss-parser/dist/rss-parser.min.js"></script>
 <script>
 
+// Note: some RSS feeds can't be loaded in the browser due to CORS security.
+// To get around this, you can use a proxy.
+const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
+
 let parser = new RSSParser();
-parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
+parser.parseURL(CORS_PROXY + 'https://www.reddit.com/.rss', function(err, feed) {
   console.log(feed.title);
   feed.items.forEach(function(entry) {
     console.log(entry.title + ':' + entry.link);
