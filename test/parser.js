@@ -128,6 +128,15 @@ describe('Parser', function() {
     testParseForFile('atom-customfields', 'atom', options, done);
   });
 
+  it('should parse sibling custom fields', function(done) {
+    var options = {
+      customFields: {
+        item: [['media:content', 'media:content', {keepArray: true}]]
+      }
+    };
+    testParseForFile('guardian', 'rss', options, done);
+  });
+
   it('should parse URL', function(done) {
     var INPUT_FILE = __dirname + '/input/reddit.rss';
     var OUTPUT_FILE = __dirname + '/output/reddit.json';
