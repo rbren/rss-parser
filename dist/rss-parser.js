@@ -13516,11 +13516,18 @@ utils.copyFromXML = function (xml, dest, fields) {
   fields.forEach(function (f) {
     var from = f;
     var to = f;
+    var options = {};
     if (Array.isArray(f)) {
       from = f[0];
       to = f[1];
+      if (f.length > 2) {
+        options = f[2];
+      }
     }
-    if (xml[from] !== undefined) dest[to] = xml[from][0];
+    var _options = options,
+        keepArray = _options.keepArray;
+
+    if (xml[from] !== undefined) dest[to] = keepArray ? xml[from] : xml[from][0];
   });
 };
 
