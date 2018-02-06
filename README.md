@@ -1,6 +1,14 @@
 # rss-parser
 
-[![Build Status](https://travis-ci.org/bobby-brennan/rss-parser.svg?branch=master)](https://travis-ci.org/bobby-brennan/rss-parser)
+[![Version][npm-image]][npm-link]
+[![Build Status][build-image]][build-link]
+[![Downloads][downloads-image]][npm-link]
+
+[downloads-image]: https://img.shields.io/npm/dm/rss-parser.svg
+[npm-image]: https://img.shields.io/npm/v/rss-parser.svg
+[npm-link]: https://npmjs.org/package/rss-parser
+[build-image]: https://travis-ci.org/bobby-brennan/rss-parser.svg?branch=master
+[build-link]: https://travis-ci.org/bobby-brennan/rss-parser
 
 A small library for turning RSS XML feeds into JavaScript objects.
 
