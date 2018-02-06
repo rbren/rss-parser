@@ -130,6 +130,20 @@ let parser = new Parser({
 })
 ```
 
+To pass additional flags, provide an object as the third array item. Currently there is one such flag:
+
+* `keepArray`: `true` to return *all* values for fields that can have multiple entries. Default: return the first item only.
+
+```js
+let parser = new Parser({
+  customFields: {
+    item: [
+      ['media:content', 'media:content', {keepArray: true}],
+    ]
+  }
+})
+```
+
 ### xml2js passthrough
 `rss-parser` uses [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
 to parse XML. You can pass [these options](https://github.com/Leonidas-from-XIV/node-xml2js#options)
