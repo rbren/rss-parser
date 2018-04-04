@@ -33,7 +33,7 @@
     "url": "https://github.com/bobby-brennan/rss-parser/issues"
   },
   "homepage": "https://github.com/bobby-brennan/rss-parser#readme",
-  "description": "A simple, light-weight RSS parser. Parse strings, URLs, or files and get a JS object back",
+  "description": "A lightweight RSS parser, for Node and the browser",
   "keywords": [
     "RSS",
     "RSS to JSON",
