@@ -90,8 +90,8 @@ items:
       link: 'https://www.reddit.com/r/funny/comments/3skxqc/the_water_is_too_deep_so_he_improvises/'
       pubDate: 'Thu, 12 Nov 2015 21:16:39 +0000'
       creator: "John Doe"
-      content: '<a href="http://example.com">this is a link</a> - <b>this is bold text</b>'
-      contentSnippet: 'this is a link - this is bold text'
+      content: '<a href="http://example.com">this is a link</a> &amp; <b>this is bold text</b>'
+      contentSnippet: 'this is a link & this is bold text'
       guid: 'https://www.reddit.com/r/funny/comments/3skxqc/the_water_is_too_deep_so_he_improvises/'
       categories:
           - funny
