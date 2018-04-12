@@ -166,7 +166,7 @@ describe('Parser', function () {
     var options = {
       "xmlHeader": true,
     };
-    testParseForFile('rss091', 'rss', options, done);
+    testParseForFile('rss091', 'rss', options, done, 'latin1');
   });
 
   it('should enable xmlHeader (HTTP)', function (done) {
