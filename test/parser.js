@@ -12,20 +12,20 @@ var IN_DIR = __dirname + '/input';
 var OUT_DIR = __dirname + '/output';
 
 describe('Parser', function () {
-  var testParseForFile = function (name, ext, options, done) {
+  var testParseForFile = function (name, ext, options, done, encoding = 'utf8') {
     if (typeof done === 'undefined') {
       done = options;
       options = {};
     }
     let parser = new Parser(options);
-    let xml = fs.readFileSync(IN_DIR + '/' + name + '.' + ext, 'utf8');
+    let xml = fs.readFileSync(IN_DIR + '/' + name + '.' + ext, encoding);
     parser.parseString(xml, function (err, parsed) {
       if (err) console.log(err);
       Expect(err).to.equal(null);
       if (process.env.WRITE_GOLDEN) {
         fs.writeFileSync(OUT_DIR + '/' + name + '.json', JSON.stringify({ feed: parsed }, null, 2));
       } else {
-        var expected = fs.readFileSync(OUT_DIR + '/' + name + '.json', 'utf8')
+        var expected = fs.readFileSync(OUT_DIR + '/' + name + '.json', encoding)
         expected = JSON.parse(expected);
         Expect({ feed: parsed }).to.deep.equal(expected);
       }
@@ -162,29 +162,14 @@ describe('Parser', function () {
     });
   });
 
-  it('should enable httpHeader', function (done) {
-    var INPUT_FILE = __dirname + '/input/encoding.rss';
-    var OUTPUT_FILE = __dirname + '/output/encoding.json';
-    var ENCODING = 'utf8';
-    var file = fs.readFileSync(INPUT_FILE, ENCODING);
-    var parser = new Parser({
+  it('should read rss091', function (done) {
+    var options = {
       "xmlHeader": true,
-    });
-    parser.parseString(file, function (err, parsed) {
-      Expect(err).to.equal(null);
-      if (process.env.WRITE_GOLDEN) {
-        fs.writeFileSync(OUTPUT_FILE, JSON.stringify({ feed: parsed }, null, 2), { encoding: ENCODING });
-      } else {
-        let xml = fs.readFileSync(OUTPUT_FILE, ENCODING);
-        xml = iconv.decode(new Buffer(xml), "latin1").toString("utf8")
-        var expected = JSON.parse(xml);
-        Expect({ feed: parsed }).to.deep.equal(expected);
-      }
-      done();
-    });
+    };
+    testParseForFile('rss091', 'rss', options, done);
   });
 
-  it('should enable httpHeader (HTTP)', function (done) {
+  it('should enable xmlHeader (HTTP)', function (done) {
     var INPUT_FILE = __dirname + '/input/encoding.rss';
     var OUTPUT_FILE = __dirname + '/output/encoding.json';
     var ENCODING = 'utf8';
