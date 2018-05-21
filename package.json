@@ -15,7 +15,7 @@
     "chai": "^3.4.1",
     "express": "^4.15.4",
     "mocha": "^3.5.3",
-    "puppeteer": "^0.9.0",
+    "puppeteer": "^1.4.0",
     "webpack": "^3.5.5"
   },
   "dependencies": {
