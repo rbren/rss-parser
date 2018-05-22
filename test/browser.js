@@ -16,7 +16,8 @@ describe('Browser', function() {
     return;
   }
 
-  before(done => {
+  before(function(done) {
+    this.timeout(5000);
     let app = express();
     app.use(express.static(__dirname));
     app.use('/dist', express.static(__dirname + '/../dist'));
@@ -32,7 +33,7 @@ describe('Browser', function() {
         .then(_ => done())
         .catch(e => done(e));
     });
-  })
+  });
 
   after(() => browser.close());
 
