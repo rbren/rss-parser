@@ -156,6 +156,7 @@ describe('Parser', function() {
           var expected = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8'));
           Expect({feed: parsed}).to.deep.equal(expected);
         }
+        server.close();
         done();
       });
     });
@@ -182,6 +183,7 @@ describe('Parser', function() {
           var expected = JSON.parse(fs.readFileSync(OUTPUT_FILE, ENCODING));
           Expect({feed: parsed}).to.deep.equal(expected);
         }
+        server.close();
         done();
       })
     })
