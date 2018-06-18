@@ -3,7 +3,7 @@
   "version": "3.3.0",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha --exit",
     "build": "./scripts/build.sh"
   },
   "author": "Bobby Brennan",
@@ -14,7 +14,7 @@
     "babel-preset-env": "^1.6.1",
     "chai": "^3.4.1",
     "express": "^4.15.4",
-    "mocha": "^3.5.3",
+    "mocha": "^5.2.0",
     "puppeteer": "^1.4.0",
     "webpack": "^3.5.5"
   },
