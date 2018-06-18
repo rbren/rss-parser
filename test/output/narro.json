@@ -34,6 +34,9 @@
     "managingEditor": "foobar@gmail.com",
     "generator": "gopod - http://github.com/jbckmn/gopod",
     "link": "http://on.narro.co/f",
+    "language": "en",
+    "copyright": "All article content copyright of respective source authors.",
+    "ttl": "20",
     "itunes": {
       "image": "https://www.narro.co/images/narro-icon-lg.png",
       "owner": {

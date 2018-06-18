@@ -124,6 +124,7 @@
     ],
     "link": "http://www.heise.de/developer/",
     "feedUrl": "http://www.heise.de/developer/rss/news-atom.xml",
-    "title": "heise developer neueste Meldungen"
+    "title": "heise developer neueste Meldungen",
+    "lastBuildDate": "2016-02-01T17:54:50+01:00"
   }
 }

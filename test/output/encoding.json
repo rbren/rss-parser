@@ -442,8 +442,15 @@
         "isoDate": "2018-01-03T00:25:00.000Z"
       }
     ],
+    "image": {
+      "link": "http://www.jn.pt",
+      "url": "http://www.jn.pt/favicon.ico",
+      "title": "Jornal de Notícias"
+    },
     "title": "Jornal de Notícias - Últimas Notícias",
     "description": "JN. Rede de Informação.",
-    "link": "http://www.jn.pt"
+    "link": "http://www.jn.pt",
+    "language": "pt-pt",
+    "lastBuildDate": "Wed, 03 Jan 2018 14:11:52 GMT\r\n      "
   }
 }

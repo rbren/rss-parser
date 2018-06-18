@@ -94,6 +94,7 @@
     ],
     "link": "https://github.com/gulpjs/gulp/releases",
     "feedUrl": "https://github.com/gulpjs/gulp/releases.atom",
-    "title": "Release notes from gulp"
+    "title": "Release notes from gulp",
+    "lastBuildDate": "2015-06-01T23:49:41+02:00"
   }
 }

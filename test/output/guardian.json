@@ -4439,9 +4439,16 @@
         "isoDate": "2018-01-31T07:00:20.000Z"
       }
     ],
+    "image": {
+      "link": "https://www.theguardian.com",
+      "url": "https://assets.guim.co.uk/images/guardian-logo-rss.c45beb1bafa34b347ac333af2e6fe23f.png",
+      "title": "The Guardian"
+    },
     "title": "The Guardian",
     "description": "Latest US news, world news, sports, business, opinion, analysis and reviews from the Guardian, the world's leading liberal voice",
     "pubDate": "Wed, 31 Jan 2018 20:15:15 GMT",
-    "link": "https://www.theguardian.com/us"
+    "link": "https://www.theguardian.com/us",
+    "language": "en-gb",
+    "copyright": "Guardian News and Media Limited or its affiliated companies. All rights reserved. 2018"
   }
 }

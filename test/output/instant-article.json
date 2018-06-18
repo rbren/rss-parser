@@ -19,6 +19,7 @@
     "title": "Instant Article Test",
     "description": "1, 2, 1, 2… check the mic!",
     "pubDate": "Fri, 13 May 2016 15:14:05 GMT",
-    "link": "https://localhost:8000"
+    "link": "https://localhost:8000",
+    "language": "en"
   }
 }

@@ -303,6 +303,11 @@
       }
     ],
     "feedUrl": "https://www.reddit.com/.rss",
+    "image": {
+      "link": "https://www.reddit.com/",
+      "url": "https://www.redditstatic.com/reddit.com.header.png",
+      "title": "reddit: the front page of the internet"
+    },
     "title": "reddit: the front page of the internet",
     "description": "",
     "link": "https://www.reddit.com/"

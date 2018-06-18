@@ -45,6 +45,10 @@
     "pubDate": "03 Apr 02 1500 GMT",
     "webMaster": "webmaster@oreilly.com",
     "managingEditor": "editor@oreilly.com",
-    "link": "http://www.oreilly.com/example/index.html"
+    "link": "http://www.oreilly.com/example/index.html",
+    "language": "en-gb",
+    "copyright": "Copyright 2002, Oreilly and Associates.",
+    "lastBuildDate": "03 Apr 02 1500 GMT",
+    "rating": "5"
   }
 }
