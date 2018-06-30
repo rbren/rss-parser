@@ -1,6 +1,6 @@
 {
-  "name": "rss-parser",
-  "version": "3.4.2",
+  "name": "rss-parser-fork",
+  "version": "3.4.3",
   "main": "index.js",
   "scripts": {
     "test": "mocha --exit",
@@ -27,12 +27,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bobby-brennan/rss-parser.git"
+    "url": "git+https://github.com/ricardoekm/rss-parser.git"
   },
   "bugs": {
-    "url": "https://github.com/bobby-brennan/rss-parser/issues"
+    "url": "https://github.com/ricardoekm/rss-parser/issues"
   },
-  "homepage": "https://github.com/bobby-brennan/rss-parser#readme",
+  "homepage": "https://github.com/ricardoekm/rss-parser#readme",
   "description": "A lightweight RSS parser, for Node and the browser",
   "keywords": [
     "RSS",
