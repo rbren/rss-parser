@@ -8217,6 +8217,9 @@ var Parser = function () {
         if (title._) title = title._;
         if (title) feed.title = title;
       }
+      if (xmlObj.feed.updated) {
+        feed.lastBuildDate = xmlObj.feed.updated[0];
+      }
       (xmlObj.feed.entry || []).forEach(function (entry) {
         var item = {};
         utils.copyFromXML(entry, item, _this3.options.customFields.item);
@@ -8228,7 +8231,8 @@ var Parser = function () {
         if (entry.link && entry.link.length) {
           item.link = utils.getLink(entry.link, 'alternate', 0);
         }
-        if (entry.updated && entry.updated.length && entry.updated[0].length) item.pubDate = new Date(entry.updated[0]).toISOString();
+        if (entry.published && entry.published.length && entry.published[0].length) item.pubDate = new Date(entry.published[0]).toISOString();
+        if (!item.pubDate && entry.updated && entry.updated.length && entry.updated[0].length) item.pubDate = new Date(entry.updated[0]).toISOString();
         if (entry.author && entry.author.length) item.author = entry.author[0].name[0];
         if (entry.content && entry.content.length) {
           item.content = utils.getContent(entry.content[0]);
@@ -8237,6 +8241,7 @@ var Parser = function () {
         if (entry.id) {
           item.id = entry.id[0];
         }
+        _this3.setISODate(item);
         feed.items.push(item);
       });
       return feed;
@@ -8270,11 +8275,22 @@ var Parser = function () {
   }, {
     key: 'buildRSS',
     value: function buildRSS(channel, items) {
+      var _this4 = this;
+
       items = items || [];
       var feed = { items: [] };
       var feedFields = fields.feed.concat(this.options.customFields.feed);
       var itemFields = fields.item.concat(this.options.customFields.item);
       if (channel['atom:link']) feed.feedUrl = channel['atom:link'][0].$.href;
+      if (channel.image && channel.image[0] && channel.image[0].url) {
+        feed.image = {};
+        var image = channel.image[0];
+        if (image.link) feed.image.link = image.link[0];
+        if (image.url) feed.image.url = image.url[0];
+        if (image.title) feed.image.title = image.title[0];
+        if (image.width) feed.image.width = image.width[0];
+        if (image.height) feed.image.height = image.height[0];
+      }
       utils.copyFromXML(channel, feed, feedFields);
       items.forEach(function (xmlItem) {
         var item = {};
@@ -8291,14 +8307,7 @@ var Parser = function () {
           if (item.guid._) item.guid = item.guid._;
         }
         if (xmlItem.category) item.categories = xmlItem.category;
-        var date = item.pubDate || item.date;
-        if (date) {
-          try {
-            item.isoDate = new Date(date.trim()).toISOString();
-          } catch (e) {
-            // Ignore bad date format
-          }
-        }
+        _this4.setISODate(item);
         feed.items.push(item);
       });
       return feed;
@@ -8350,6 +8359,18 @@ var Parser = function () {
           entry.itunes.image = image[0].$.href;
         }
       });
+    }
+  }, {
+    key: 'setISODate',
+    value: function setISODate(item) {
+      var date = item.pubDate || item.date;
+      if (date) {
+        try {
+          item.isoDate = new Date(date.trim()).toISOString();
+        } catch (e) {
+          // Ignore bad date format
+        }
+      }
     }
   }]);
 
@@ -13530,9 +13551,9 @@ module.exports = __webpack_require__(7).PassThrough;
 
 var fields = module.exports = {};
 
-fields.feed = [['author', 'creator'], ['dc:publisher', 'publisher'], ['dc:creator', 'creator'], ['dc:source', 'source'], ['dc:title', 'title'], ['dc:type', 'type'], 'title', 'description', 'author', 'pubDate', 'webMaster', 'managingEditor', 'generator', 'link'];
+fields.feed = [['author', 'creator'], ['dc:publisher', 'publisher'], ['dc:creator', 'creator'], ['dc:source', 'source'], ['dc:title', 'title'], ['dc:type', 'type'], 'title', 'description', 'author', 'pubDate', 'webMaster', 'managingEditor', 'generator', 'link', 'language', 'copyright', 'lastBuildDate', 'docs', 'generator', 'ttl', 'rating', 'skipHours', 'skipDays'];
 
-fields.item = [['author', 'creator'], ['dc:creator', 'creator'], ['dc:date', 'date'], ['dc:language', 'language'], ['dc:rights', 'rights'], ['dc:source', 'source'], ['dc:title', 'title'], 'title', 'link', 'pubDate', 'author', 'content:encoded', 'enclosure', 'dc:creator', 'dc:date'];
+fields.item = [['author', 'creator'], ['dc:creator', 'creator'], ['dc:date', 'date'], ['dc:language', 'language'], ['dc:rights', 'rights'], ['dc:source', 'source'], ['dc:title', 'title'], 'title', 'link', 'pubDate', 'author', 'content:encoded', 'enclosure', 'dc:creator', 'dc:date', 'comments'];
 
 var mapItunesField = function mapItunesField(f) {
   return ['itunes:' + f, f];
