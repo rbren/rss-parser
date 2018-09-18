@@ -188,4 +188,32 @@ describe('Parser', function() {
       })
     })
   })
+
+  it('should decode GB2312', function(done) {
+    var INPUT_FILE = __dirname + '/input/encoding-gb2312.xml';
+    var OUTPUT_FILE = __dirname + '/output/encoding-gb2312.json';
+    var ENCODING = 'gb2312';
+    var server = HTTP.createServer(function(req, res) {
+      res.setHeader('Content-Type', 'text/xml; charset=' + ENCODING)
+      var file = fs.readFileSync(INPUT_FILE);
+      res.end(file, ENCODING);
+    });
+    server.listen(function() {
+      var port = server.address().port;
+      var url = 'http://localhost:' + port;
+      var parser = new Parser();
+      debugger;
+      parser.parseURL(url, function(err, parsed) {
+        Expect(err).to.equal(null);
+        if (process.env.WRITE_GOLDEN) {
+          fs.writeFileSync(OUTPUT_FILE, JSON.stringify({feed: parsed}, null, 2), {encoding: ENCODING});
+        } else {
+          var expected = JSON.parse(fs.readFileSync(OUTPUT_FILE));
+          Expect({feed: parsed}).to.deep.equal(expected);
+        }
+        server.close();
+        done();
+      })
+    })
+  })
 })
