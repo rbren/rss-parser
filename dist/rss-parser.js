@@ -8292,25 +8292,30 @@ var Parser = function () {
           } else if (res.statusCode >= 300) {
             return reject(new Error("Status code " + res.statusCode));
           }
-          var encoding = void 0;
-          var originEncoding = utils.getEncodingFromContentType(res.headers['content-type']);
-          var needDecode = utils.needDecodeEncoding(originEncoding);
+          var encoding = utils.getEncodingFromContentType(res.headers['content-type']);
+          var needDecode = utils.needDecodeEncoding(encoding);
           if (needDecode) {
-            encoding = utils.decodeTransferEncodeing;
+            var chunks = [];
+            res.on('data', function (chunk) {
+              chunks.push(chunk);
+            });
+            res.on('end', function () {
+              xml = iconv.decode(Buffer.concat(chunks), encoding);
+              return _this2.parseString(xml).then(resolve, reject);
+            });
           } else {
-            encoding = utils.getDefaullEncoding(originEncoding);
+            encoding = utils.getSupportedEncoding(encoding);
+            res.setEncoding(encoding);
+            res.on('data', function (chunk) {
+              xml += chunk;
+            });
+            res.on('end', function () {
+              if (needDecode) {
+                xml = iconv.decode(xml, originEncoding);
+              }
+              return _this2.parseString(xml).then(resolve, reject);
+            });
           }
-
-          res.setEncoding(encoding);
-          res.on('data', function (chunk) {
-            xml += chunk;
-          });
-          res.on('end', function () {
-            if (needDecode) {
-              xml = iconv.decode(new Buffer(xml, utils.decodeTransferEncodeing), originEncoding);
-            }
-            return _this2.parseString(xml).then(resolve, reject);
-          });
         });
         req.on('error', reject);
       });
@@ -16122,7 +16127,7 @@ utils.maybePromisify = function (callback, promise) {
 var DEFAULT_ENCODING = 'utf8';
 var ENCODING_REGEX = /(encoding|charset)\s*=\s*(\S+)/;
 var SUPPORTED_ENCODINGS = ['ascii', 'utf8', 'utf16le', 'ucs2', 'base64', 'latin1', 'binary', 'hex'];
-var DECODE_ENCODINGS = ['gb2312', 'gbk'];
+var NEED_DECODE_ENCODINGS = ['gb2312', 'gbk'];
 var ENCODING_ALIASES = {
   'utf-8': 'utf8',
   'iso-8859-1': 'latin1'
@@ -16137,7 +16142,7 @@ utils.getEncodingFromContentType = function (contentType) {
   return encoding;
 };
 
-utils.getDefaullEncoding = function (encoding) {
+utils.getSupportedEncoding = function (encoding) {
   if (!encoding || SUPPORTED_ENCODINGS.indexOf(encoding) === -1) {
     encoding = DEFAULT_ENCODING;
   }
@@ -16145,10 +16150,8 @@ utils.getDefaullEncoding = function (encoding) {
 };
 
 utils.needDecodeEncoding = function (encoding) {
-  return DECODE_ENCODINGS.indexOf(encoding) > -1;
+  return NEED_DECODE_ENCODINGS.indexOf(encoding) > -1;
 };
-
-utils.decodeTransferEncodeing = 'binary';
 
 /***/ }),
 /* 104 */

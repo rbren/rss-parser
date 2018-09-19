@@ -4,7 +4,6 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --exit",
-    "debug": "mocha --inspect-brk",
     "build": "./scripts/build.sh"
   },
   "author": "Bobby Brennan",
