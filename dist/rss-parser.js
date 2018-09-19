@@ -8310,9 +8310,6 @@ var Parser = function () {
               xml += chunk;
             });
             res.on('end', function () {
-              if (needDecode) {
-                xml = iconv.decode(xml, originEncoding);
-              }
               return _this2.parseString(xml).then(resolve, reject);
             });
           }
