@@ -66,7 +66,11 @@ describe('Parser', function() {
 
   it('should parse heraldsun', function(done) {
     testParseForFile('heraldsun', 'rss', done);
-  })
+  });
+  
+  it('should parse UOL Noticias', function(done) {
+    testParseForFile('uolNoticias', 'rss', done);
+  });
 
   it('should parse Instant Article', function(done) {
     testParseForFile('instant-article', 'rss', done);
