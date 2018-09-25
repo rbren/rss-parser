@@ -67,9 +67,17 @@ describe('Parser', function() {
   it('should parse heraldsun', function(done) {
     testParseForFile('heraldsun', 'rss', done);
   });
-  
+
   it('should parse UOL Noticias', function(done) {
-    testParseForFile('uolNoticias', 'rss', done);
+    testParseForFile('uolNoticias', 'rss', { defaultRSS: 2.0 }, done);
+  });
+
+  it('should NOT parse UOL Noticias, if no default RSS is provided', function(done) {
+    function willFail() {
+      testParseForFile('uolNoticias', 'rss', done);
+    }
+    Expect(willFail).to.throw;
+    done();
   });
 
   it('should parse Instant Article', function(done) {
