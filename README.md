@@ -153,6 +153,16 @@ let parser = new Parser({
 })
 ```
 
+### Default RSS version
+If your RSS Feed doesn't contain a `<rss>` tag with a `version` attribute,
+you can pass a `defaultRSS` option for the Parser to use:
+```js
+let parser = new Parser({
+  defaultRSS: 2.0
+});
+```
+
+
 ### xml2js passthrough
 `rss-parser` uses [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
 to parse XML. You can pass [these options](https://github.com/Leonidas-from-XIV/node-xml2js#options)
