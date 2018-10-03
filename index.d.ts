@@ -56,7 +56,7 @@ declare module 'rss-parser' {
          * @param callback Traditional callback.
          * @returns Promise that has the same Output as the callback.
          */
-        parseString(xml: string, callback?: (err: Error, feed: Output) => void): Promise<Output>;
+        public parseString(xml: string, callback?: (err: Error, feed: Output) => void): Promise<Output>;
 
         /**
          * Parse URL content to JSON.
@@ -66,6 +66,14 @@ declare module 'rss-parser' {
          * @param redirectCount Max of redirects, default is set to five.
          * @returns Promise that has the same Output as the callback.
          */
-        parseURL(feedUrl: string, callback?: (err: Error, feed: Output) => void, redirectCount?: number): Promise<Output>;
+        public parseURL(feedUrl: string, callback?: (err: Error, feed: Output) => void, redirectCount?: number): Promise<Output>;
+
+        /**
+         * Add iTunes specific fields from XML to extracted JSON
+         * 
+         * @param feed extracted
+         * @param channel parsed XML
+         */
+        public decorateItunes(feed: Output, channel: Output);
     }
 }
