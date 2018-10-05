@@ -67,13 +67,5 @@ declare module 'rss-parser' {
          * @returns Promise that has the same Output as the callback.
          */
         public parseURL(feedUrl: string, callback?: (err: Error, feed: Output) => void, redirectCount?: number): Promise<Output>;
-
-        /**
-         * Add iTunes specific fields from XML to extracted JSON
-         * 
-         * @param feed extracted
-         * @param channel parsed XML
-         */
-        public decorateItunes(feed: Output, channel: Output);
     }
 }
