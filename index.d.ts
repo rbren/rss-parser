@@ -1,71 +1,80 @@
-declare module 'rss-parser' {
-    import { Options } from 'xml2js';
+import { Options } from 'xml2js';
 
-    export interface Headers {
-        readonly Accept: string;
-        readonly 'User-Agent': string;
-    }
+interface Headers
+{
+    readonly Accept: string;
+    readonly 'User-Agent': string;
+}
 
-    export interface CustomFields {
-        readonly feed?: string[];
-        readonly item?: string[] | string[][];
-    }
+interface CustomFields
+{
+    readonly feed?: string[];
+    readonly item?: string[] | string[][];
+}
 
-    export interface ParserOptions {
-        readonly xml2js?: Options;
-        readonly headers?: Headers;
-        readonly defaultRSS?: number;
-        readonly maxRedirects?: number;
-        readonly customFields?: CustomFields;
-    }
+interface ParserOptions
+{
+    readonly xml2js?: Options;
+    readonly headers?: Headers;
+    readonly defaultRSS?: number;
+    readonly maxRedirects?: number;
+    readonly customFields?: CustomFields;
+}
 
-    export interface Items {
-        readonly link: string;
-        readonly guid: string;
-        readonly title: string;
-        readonly pubDate: string;
-        readonly creator: string;
-        readonly content: string;
-        readonly isoDate: string;
-        readonly categories: string[];
-        readonly contentSnippet: string;
-    }
+interface Items
+{
+    readonly link: string;
+    readonly guid: string;
+    readonly title: string;
+    readonly pubDate: string;
+    readonly creator: string;
+    readonly content: string;
+    readonly isoDate: string;
+    readonly categories: string[];
+    readonly contentSnippet: string;
+}
 
-    export interface Output {
-        readonly link: string;
-        readonly title: string;
-        readonly items: Items[];
-        readonly feedUrl: string;
-        readonly description: string;
-    }
+interface Output
+{
+    readonly link: string;
+    readonly title: string;
+    readonly items: Items[];
+    readonly feedUrl: string;
+    readonly description: string;
+}
 
+/**
+ * Class that handles all parsing or URL, or even XML, RSS feed to JSON.
+ */
+declare const Parser: {
     /**
-     * Class that handles all parsing or URL, or even XML, RSS feed to JSON.
+     * @param options - Parser options.
      */
-    export default class Parser {
+    new(options?: ParserOptions): {
         /**
-         * @param options Parser options;
-         * @returns Parser;
-         */
-        constructor(options?: ParserOptions);
-
-        /**
-         * Parse XML content to JSON.
-         * 
-         * @param xml The xml to be parsed.
-         * @param callback Traditional callback.
-         * @returns Promise that has the same Output as the callback.
-         */
-        public parseString(xml: string, callback?: (err: Error, feed: Output) => void): Promise<Output>;
+       * Parse XML content to JSON.
+       * 
+       * @param xml - The xml to be parsed.
+       * @param callback - Traditional callback.
+       * 
+       * @returns Promise that has the same Output as the callback.
+       */
+        parseString(xml: string, callback?: (err: Error, feed: Output) => void): Promise<Output>;
 
         /**
          * Parse URL content to JSON.
          *
-         * @param feedUrl The url that needs to be parsed to JSON.
-         * @param callback Traditional callback.
-         * @param redirectCount Max of redirects, default is set to five.
+         * @param feedUrl - The url that needs to be parsed to JSON.
+         * @param callback - Traditional callback.
+         * @param redirectCount - Max of redirects, default is set to five.
+         *
+         * @example
+         * await parseURL('https://www.reddit.com/.rss');
+         * parseURL('https://www.reddit.com/.rss', (err, feed) => { ... });
+         *
          * @returns Promise that has the same Output as the callback.
          */
-        public parseURL(feedUrl: string, callback?: (err: Error, feed: Output) => void, redirectCount?: number): Promise<Output>;
-    }
+        parseURL(feedUrl: string, callback?: (err: Error, feed: Output) => void, redirectCount?: number): Promise<Output>;
+    };
 }
+export = Parser
