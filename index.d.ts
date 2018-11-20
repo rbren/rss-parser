@@ -41,6 +41,16 @@ interface Output
     readonly items: Items[];
     readonly feedUrl: string;
     readonly description: string;
+    readonly itunes: {
+        image: string;
+        owner: {
+            name: string;
+            email: string;
+        };
+        author: string;
+        summary: string;
+        explicit: string;
+    };
 }
 
 /**
