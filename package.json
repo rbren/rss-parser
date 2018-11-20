@@ -1,6 +1,6 @@
 {
   "name": "rss-parser",
-  "version": "3.5.3",
+  "version": "3.5.4",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
