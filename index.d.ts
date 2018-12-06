@@ -87,3 +87,5 @@ export declare const Parser: {
         parseURL(feedUrl: string, callback?: (err: Error, feed: Output) => void, redirectCount?: number): Promise<Output>;
     };
 }
+
+export default Parser
