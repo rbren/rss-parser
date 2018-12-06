@@ -1,18 +1,18 @@
 import { Options } from 'xml2js';
 
-interface Headers
+export interface Headers
 {
     readonly Accept: string;
     readonly 'User-Agent': string;
 }
 
-interface CustomFields
+export interface CustomFields
 {
     readonly feed?: string[];
     readonly item?: string[] | string[][];
 }
 
-interface ParserOptions
+export interface ParserOptions
 {
     readonly xml2js?: Options;
     readonly headers?: Headers;
@@ -21,7 +21,7 @@ interface ParserOptions
     readonly customFields?: CustomFields;
 }
 
-interface Items
+export interface Items
 {
     readonly link: string;
     readonly guid: string;
@@ -34,7 +34,7 @@ interface Items
     readonly contentSnippet: string;
 }
 
-interface Output
+export interface Output
 {
     readonly link: string;
     readonly title: string;
@@ -56,7 +56,7 @@ interface Output
 /**
  * Class that handles all parsing or URL, or even XML, RSS feed to JSON.
  */
-declare const Parser: {
+export declare const Parser: {
     /**
      * @param options - Parser options.
      */
@@ -87,4 +87,3 @@ declare const Parser: {
         parseURL(feedUrl: string, callback?: (err: Error, feed: Output) => void, redirectCount?: number): Promise<Output>;
     };
 }
-export = Parser
