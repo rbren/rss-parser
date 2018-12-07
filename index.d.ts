@@ -21,35 +21,36 @@ interface ParserOptions
     readonly customFields?: CustomFields;
 }
 
-interface Items
-{
-    readonly link: string;
-    readonly guid: string;
-    readonly title: string;
-    readonly pubDate: string;
-    readonly creator: string;
-    readonly content: string;
-    readonly isoDate: string;
-    readonly categories: string[];
-    readonly contentSnippet: string;
+interface Items {
+    [key: string]: any;
+    link?: string;
+    guid?: string;
+    title?: string;
+    pubDate?: string;
+    creator?: string;
+    content?: string;
+    isoDate?: string;
+    categories?: string[];
+    contentSnippet?: string;
 }
 
-interface Output
-{
-    readonly link: string;
-    readonly title: string;
-    readonly items: Items[];
-    readonly feedUrl: string;
-    readonly description: string;
-    readonly itunes: {
-        image: string;
-        owner: {
-            name: string;
-            email: string;
+interface Output {
+    [key: string]: any;
+    link?: string;
+    title?: string;
+    items?: Items[];
+    feedUrl?: string;
+    description?: string;
+    itunes?: {
+        [key: string]: any;
+        image?: string;
+        owner?: {
+            name?: string;
+            email?: string;
         };
-        author: string;
-        summary: string;
-        explicit: string;
+        author?: string;
+        summary?: string;
+        explicit?: string;
     };
 }
 
@@ -61,14 +62,14 @@ declare const Parser: {
      * @param options - Parser options.
      */
     new(options?: ParserOptions): {
-        /**
-       * Parse XML content to JSON.
-       * 
-       * @param xml - The xml to be parsed.
-       * @param callback - Traditional callback.
-       * 
-       * @returns Promise that has the same Output as the callback.
-       */
+       /**
+        * Parse XML content to JSON.
+        *
+        * @param xml - The xml to be parsed.
+        * @param callback - Traditional callback.
+        *
+        * @returns Promise that has the same Output as the callback.
+        */
         parseString(xml: string, callback?: (err: Error, feed: Output) => void): Promise<Output>;
 
         /**
