@@ -105,7 +105,7 @@ items:
 * If `author` is specified, but not `dc:creator`, `creator` will be set to `author` ([see article](http://www.lowter.com/blogs/2008/2/9/rss-dccreator-author))
 * Atom's `updated` becomes `lastBuildDate` for consistency
 
-## Options
+## XML Options
 
 ### Custom Fields
 If your RSS feed contains fields that aren't currently returned, you can access them using the `customFields` option.
@@ -173,6 +173,17 @@ let parser = new Parser({
   xml2js: {
     emptyTag: '--EMPTY--',
   }
+});
+```
+
+## HTTP Options
+
+### Timeout
+You can set the amount of time (in milliseconds) to wait before the HTTP request times out (default 60 seconds):
+
+```js
+let parser = new Parser({
+  timeout: 1000,
 });
 ```
 

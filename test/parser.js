@@ -199,5 +199,22 @@ describe('Parser', function() {
         done();
       })
     })
-  })
+  });
+
+  it('should respect timeout option', function(done) {
+    var INPUT_FILE = __dirname + '/input/encoding.rss';
+    var OUTPUT_FILE = __dirname + '/output/encoding.json';
+    var ENCODING = 'latin1';
+    var server = HTTP.createServer(function(req, res) {});
+    server.listen(function() {
+      var port = server.address().port;
+      var url = 'http://localhost:' + port;
+      var parser = new Parser({timeout: 1});
+      parser.parseURL(url, function(err, parsed) {
+        Expect(err).to.not.equal(null);
+        Expect(err.message).to.equal("Request timed out after 1ms");
+        done();
+      });
+    });
+  });
 })
