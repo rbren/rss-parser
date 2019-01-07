@@ -96,6 +96,10 @@ describe('Parser', function() {
     testParseForFile('many-links', 'rss', done);
   });
 
+  it('should parse itunes with empty href', function(done) {
+    testParseForFile('itunes-href', 'rss', done);
+  });
+
   it('should pass xml2js options', function(done) {
     testParseForFile('xml2js-options', 'rss', {xml2js: {emptyTag: 'EMPTY'}}, done);
   });
