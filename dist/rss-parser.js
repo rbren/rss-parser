@@ -8422,6 +8422,7 @@ var DEFAULT_HEADERS = {
   'Accept': 'application/rss+xml'
 };
 var DEFAULT_MAX_REDIRECTS = 5;
+var DEFAULT_TIMEOUT = 60000;
 
 var Parser = function () {
   function Parser() {
@@ -8435,6 +8436,7 @@ var Parser = function () {
     options.customFields.item = options.customFields.item || [];
     options.customFields.feed = options.customFields.feed || [];
     if (!options.maxRedirects) options.maxRedirects = DEFAULT_MAX_REDIRECTS;
+    if (!options.timeout) options.timeout = DEFAULT_TIMEOUT;
     this.options = options;
     this.xmlParser = new xml2js.Parser(this.options.xml2js);
   }
@@ -8519,6 +8521,9 @@ var Parser = function () {
           res.on('end', function () {
             return _this2.parseString(xml).then(resolve, reject);
           });
+        });
+        req.setTimeout(_this2.options.timeout, function () {
+          return reject(new Error("Request timed out after " + _this2.options.timeout + "ms"));
         });
         req.on('error', reject);
       });
@@ -8605,7 +8610,9 @@ var Parser = function () {
       var feed = { items: [] };
       var feedFields = fields.feed.concat(this.options.customFields.feed);
       var itemFields = fields.item.concat(this.options.customFields.item);
-      if (channel['atom:link']) feed.feedUrl = channel['atom:link'][0].$.href;
+      if (channel['atom:link'] && channel['atom:link'][0] && channel['atom:link'][0].$) {
+        feed.feedUrl = channel['atom:link'][0].$.href;
+      }
       if (channel.image && channel.image[0] && channel.image[0].url) {
         feed.image = {};
         var image = channel.image[0];
