@@ -1,18 +1,18 @@
 import { Options } from 'xml2js';
 
-export interface Headers
+interface Headers
 {
     readonly Accept: string;
     readonly 'User-Agent': string;
 }
 
-export interface CustomFields
+interface CustomFields
 {
     readonly feed?: string[];
     readonly item?: string[] | string[][];
 }
 
-export interface ParserOptions
+interface ParserOptions
 {
     readonly xml2js?: Options;
     readonly headers?: Headers;
@@ -21,7 +21,7 @@ export interface ParserOptions
     readonly customFields?: CustomFields;
 }
 
-export interface Items {
+interface Items {
     [key: string]: any;
     link?: string;
     guid?: string;
@@ -34,7 +34,7 @@ export interface Items {
     contentSnippet?: string;
 }
 
-export interface Output {
+interface Output {
     [key: string]: any;
     link?: string;
     title?: string;
@@ -88,4 +88,4 @@ declare const Parser: {
         parseURL(feedUrl: string, callback?: (err: Error, feed: Output) => void, redirectCount?: number): Promise<Output>;
     };
 }
-export default Parser
+export = Parser
