@@ -19,7 +19,7 @@ declare namespace Parser {
     readonly customFields?: CustomFields;
   }
 
-  export interface Items {
+  export interface Item {
     [key: string]: any;
     link?: string;
     guid?: string;
@@ -36,7 +36,7 @@ declare namespace Parser {
     [key: string]: any;
     link?: string;
     title?: string;
-    items?: Items[];
+    items?: Item[];
     feedUrl?: string;
     description?: string;
     itunes?: {
