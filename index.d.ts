@@ -49,6 +49,8 @@ declare namespace Parser {
       author?: string;
       summary?: string;
       explicit?: string;
+      categories?: string[];
+      keywords?: string[];
     };
   }
 }
