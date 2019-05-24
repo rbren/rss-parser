@@ -221,4 +221,12 @@ describe('Parser', function() {
       });
     });
   });
+
+  it('should parse itunes categories', function(done) {
+    testParseForFile('itunes-category', 'rss', done);
+  });
+
+  it('should parse itunes keywords', function(done) {
+    testParseForFile('itunes-keywords', 'rss', done);
+  });
 })
