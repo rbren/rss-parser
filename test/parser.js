@@ -178,6 +178,36 @@ describe('Parser', function() {
     });
   });
 
+  it('should parse URL with relative redirect', function(done) {
+    var INPUT_FILE = __dirname + '/input/reddit.rss';
+    var OUTPUT_FILE = __dirname + '/output/reddit.json';
+    var server = HTTP.createServer(function(req, res) {
+      if (req.url !== '/new-location') {
+        res.writeHead(301, { 'Location': '/new-location'});
+        res.end();
+      } else {
+        var file = fs.createReadStream(INPUT_FILE, 'utf8');
+        file.pipe(res);
+      }
+    });
+    server.listen(function() {
+      var port = server.address().port;
+      var url = 'http://localhost:' + port;
+      let parser = new Parser();
+      parser.parseURL(url, function(err, parsed) {
+        Expect(err).to.equal(null);
+        if (process.env.WRITE_GOLDEN) {
+          fs.writeFileSync(OUTPUT_FILE, JSON.stringify({feed: parsed}, null, 2));
+        } else {
+          var expected = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8'));
+          Expect({feed: parsed}).to.deep.equal(expected);
+        }
+        server.close();
+        done();
+      });
+    });
+  });
+
   it('should use proper encoding', function(done) {
     var INPUT_FILE = __dirname + '/input/encoding.rss';
     var OUTPUT_FILE = __dirname + '/output/encoding.json';
