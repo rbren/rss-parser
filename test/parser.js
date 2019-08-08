@@ -236,9 +236,6 @@ describe('Parser', function() {
   });
 
   it('should respect timeout option', function(done) {
-    var INPUT_FILE = __dirname + '/input/encoding.rss';
-    var OUTPUT_FILE = __dirname + '/output/encoding.json';
-    var ENCODING = 'latin1';
     var server = HTTP.createServer(function(req, res) {});
     server.listen(function() {
       var port = server.address().port;
