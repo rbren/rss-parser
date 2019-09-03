@@ -2,8 +2,8 @@ import { Options } from 'xml2js';
 
 declare namespace Parser {
   export interface Headers {
-    readonly Accept: string;
-    readonly 'User-Agent': string;
+    readonly Accept?: string;
+    readonly 'User-Agent'?: string;
   }
 
   export interface CustomFields {
@@ -17,6 +17,7 @@ declare namespace Parser {
     readonly defaultRSS?: number;
     readonly maxRedirects?: number;
     readonly customFields?: CustomFields;
+    readonly timeout?: number;
   }
 
   export interface Item {
