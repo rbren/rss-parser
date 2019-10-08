@@ -397,14 +397,12 @@ var Parser = function () {
   }, {
     key: 'decorateItunes',
     value: function decorateItunes(feed, channel) {
-      var items = channel.item || [],
-          entry = {};
+      var items = channel.item || [];
       var categories = [];
       feed.itunes = {};
 
       if (channel['itunes:owner']) {
-        var owner = {},
-            image = void 0;
+        var owner = {};
 
         if (channel['itunes:owner'][0]['itunes:name']) {
           owner.name = channel['itunes:owner'][0]['itunes:name'][0];
@@ -412,15 +410,16 @@ var Parser = function () {
         if (channel['itunes:owner'][0]['itunes:email']) {
           owner.email = channel['itunes:owner'][0]['itunes:email'][0];
         }
-        if (channel['itunes:image']) {
-          var hasImageHref = channel['itunes:image'][0] && channel['itunes:image'][0].$ && channel['itunes:image'][0].$.href;
-          image = hasImageHref ? channel['itunes:image'][0].$.href : null;
-        }
+        feed.itunes.owner = owner;
+      }
 
+      if (channel['itunes:image']) {
+        var image = void 0;
+        var hasImageHref = channel['itunes:image'][0] && channel['itunes:image'][0].$ && channel['itunes:image'][0].$.href;
+        image = hasImageHref ? channel['itunes:image'][0].$.href : null;
         if (image) {
           feed.itunes.image = image;
         }
-        feed.itunes.owner = owner;
       }
 
       if (channel['itunes:category']) {
@@ -430,7 +429,11 @@ var Parser = function () {
         feed.itunes.categories = categories;
       }
       if (channel['itunes:keywords']) {
-        feed.itunes.keywords = channel['itunes:keywords'][0].split(",");
+        var keywords = channel['itunes:keywords'][0];
+        if (keywords && typeof keywords._ === 'string') {
+          keywords = keywords._;
+        }
+        if (keywords) feed.itunes.keywords = keywords.split(",");
       }
       utils.copyFromXML(channel, feed.itunes, fields.podcastFeed);
       items.forEach(function (item, index) {
@@ -522,7 +525,12 @@ utils.copyFromXML = function (xml, dest, fields) {
     var _options = options,
         keepArray = _options.keepArray;
 
-    if (xml[from] !== undefined) dest[to] = keepArray ? xml[from] : xml[from][0];
+    if (xml[from] !== undefined) {
+      dest[to] = keepArray ? xml[from] : xml[from][0];
+    }
+    if (dest[to] && typeof dest[to]._ === 'string') {
+      dest[to] = dest[to]._;
+    }
   });
 };
 
