@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>EXAMPLE.pl</title>
+<link>http://www.example.pl</link>
+<copyright>WTFPL License</copyright>
+<description>Przykładowe newsy z polski, w latin-2</description>
+<image>
+<url>http://www.example.com/images/logo.png</url>
+<title>Newsy w latin-2</title>
+<link>http://example.pl</link>
+</image>
+<language>pl</language>
+<ttl>1800</ttl>
+<item>
+<title>ZAŻÓŁĆ GĘSLĄ JAŹŃ</title>
+<enclosure url="http://www.example.pl/image.jpg" length="1648" type="image/jpeg"/>
+<description>Szedł sasza suchą szosą</description>
+<link>http://www.example.pl/news/1</link>
+<pubDate>Fri, 18 Oct 2019 17:27:37 +0200</pubDate>
+<dc:creator><![CDATA[Adam Gżegżółka]]></dc:creator>
+</item>
+</channel>
+</rss>

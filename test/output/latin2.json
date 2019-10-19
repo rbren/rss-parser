@@ -1,0 +1,32 @@
+{
+  "feed": {
+    "items": [
+      {
+        "creator": "Adam Gżegżółka",
+        "title": "ZAŻÓŁĆ GĘSLĄ JAŹŃ",
+        "link": "http://www.example.pl/news/1",
+        "pubDate": "Fri, 18 Oct 2019 17:27:37 +0200",
+        "enclosure": {
+          "url": "http://www.example.pl/image.jpg",
+          "length": "1648",
+          "type": "image/jpeg"
+        },
+        "dc:creator": "Adam Gżegżółka",
+        "content": "Szedł sasza suchą szosą",
+        "contentSnippet": "Szedł sasza suchą szosą",
+        "isoDate": "2019-10-18T15:27:37.000Z"
+      }
+    ],
+    "image": {
+      "link": "http://example.pl",
+      "url": "http://www.example.com/images/logo.png",
+      "title": "Newsy w latin-2"
+    },
+    "title": "EXAMPLE.pl",
+    "description": "Przykładowe newsy z polski, w latin-2",
+    "link": "http://www.example.pl",
+    "language": "pl",
+    "copyright": "WTFPL License",
+    "ttl": "1800"
+  }
+}

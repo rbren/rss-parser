@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "entities": "^1.1.1",
+    "iso-8859-2": "^1.0.0",
     "xml2js": "^0.4.19"
   },
   "directories": {

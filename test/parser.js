@@ -2,6 +2,7 @@
 
 var fs = require('fs');
 var HTTP = require('http');
+var path = require("path");
 
 var Parser = require('../index.js');
 
@@ -260,4 +261,24 @@ describe('Parser', function() {
   it('should parse giantbomb-podcast', function(done) {
     testParseForFile('giantbomb-podcast', 'rss', done);
   });
-})
+
+  it('should parse a feed encoded with iso-8859-2', function(done) {
+      var server = HTTP.createServer(function(req, res){
+		  var data = fs.readFileSync(path.resolve(IN_DIR,  "./latin2.rss"));
+		  res.setHeader('Content-type', "application/xml; charset=iso-8859-2");
+          res.end(data);
+	  });
+	  server.listen(function(){
+		  var port = server.address().port;
+		  var url = 'http://localhost:' + port;
+		  var parser = new Parser();
+		  parser.parseURL(url, function(err, parsed){
+			  var expected = fs.readFileSync(path.resolve(OUT_DIR,  "./latin2.json"), 'utf8');
+			  expected = JSON.parse(expected).feed;
+			  Expect(err).to.equal(null);
+			  Expect(parsed).to.deep.equal(expected);
+			  done();
+		  });
+	  });
+  });
+});
