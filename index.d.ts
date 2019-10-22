@@ -20,6 +20,12 @@ declare namespace Parser {
     readonly timeout?: number;
   }
 
+  export interface Enclosure {
+    url: string;
+    length?: number;
+    type?: string;
+  }
+
   export interface Item {
     [key: string]: any;
     link?: string;
@@ -31,6 +37,7 @@ declare namespace Parser {
     isoDate?: string;
     categories?: string[];
     contentSnippet?: string;
+    enclosure?: Enclosure;
   }
 
   export interface Output {
