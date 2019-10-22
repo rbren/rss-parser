@@ -42,6 +42,11 @@ declare namespace Parser {
 
   export interface Output {
     [key: string]: any;
+    image?: {
+      link?: string;
+      url: string;
+      title?: string;
+    },
     link?: string;
     title?: string;
     items?: Item[];
