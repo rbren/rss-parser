@@ -60,6 +60,10 @@ describe('Parser', function() {
     testParseForFile('missing-fields', 'atom', done)
   })
 
+  it('should parse with incomplete fields', function(done) {
+    testParseForFile('incomplete-fields', 'atom', done)
+  })
+
   it('should parse heise', function(done) {
     testParseForFile('heise', 'atom', done);
   })
