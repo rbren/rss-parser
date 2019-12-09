@@ -253,6 +253,20 @@ describe('Parser', function() {
     });
   });
 
+  it('should respect timeout option if the socket does not connect', function(done) {
+    var server = HTTP.createServer(function(req, res) {});
+    server.listen(function() {
+      var port = server.address().port;
+      var url = 'http://localhost:80';
+      var parser = new Parser({timeout: 1});
+      parser.parseURL(url, function(err, parsed) {
+        Expect(err).to.not.equal(null);
+        Expect(err.message).to.equal("Request timed out after 1ms. The connection may have been refused.");
+        done();
+      });
+    });
+  });
+
   it('should parse itunes categories', function(done) {
     testParseForFile('itunes-category', 'rss', done);
   });
