@@ -6,9 +6,11 @@ declare namespace Parser {
     readonly 'User-Agent'?: string;
   }
 
+  type CustomFieldItem = string | { keepArray: boolean }
+    
   export interface CustomFields {
     readonly feed?: string[];
-    readonly item?: string[] | string[][];
+    readonly item?: CustomFieldItem[] | CustomFieldItem[][];
   }
 
   export interface ParserOptions {
