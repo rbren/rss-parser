@@ -261,6 +261,10 @@ describe('Parser', function() {
     testParseForFile('itunes-keywords', 'rss', done);
   });
 
+  it('should parse itunes keywords as array', function(done) {
+    testParseForFile('itunes-keywords-array', 'rss', done);
+  });
+
   it('should parse giantbomb-podcast', function(done) {
     testParseForFile('giantbomb-podcast', 'rss', done);
   });

@@ -1,0 +1,55 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
+    xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>SWR2 Impuls - Wissen aktuell</title>
+    <link>https://www.swr.de/swr2/programm/SWR2-Wissen-Impuls-Podcast,swr2-impuls-podcast-100.html</link>
+    <atom:link href="https://www.swr.de/~podcast/swr2/programm/SWR2-Wissen-Impuls-Podcast,swr2-impuls-podcast-100.xml" rel="self" type="application/rss+xml"/>
+    <description>Neues aus Wissenschaft, Medizin, Umwelt und Bildung. </description>
+    <googleplay:description>Neues aus Wissenschaft, Medizin, Umwelt und Bildung. </googleplay:description>
+    <language>de</language>
+    <copyright>Copyright © Südwestrundfunk</copyright>
+    <image>
+      <url>https://www.swr.de/swr2/programm/Podcastbild-SWR2-Impuls,1564741489275,swr2-impuls-podcast-104~_v-16x9@2dS_-6be50a9c75559ca1aaf1d0b25bae287afdcd877a.jpg</url>
+      <title>SWR2 Impuls - Wissen aktuell</title>
+      <link>https://www.swr.de/swr2/programm/SWR2-Wissen-Impuls-Podcast,swr2-impuls-podcast-100.html</link>
+    </image>
+    <pubDate>Wed, 9 Oct 2019 16:39:00 +0200</pubDate>
+    <itunes:subtitle>Neues aus Wissenschaft, Medizin, Umwelt und Bildung. Dazu Musik, die sich vom Mainstream abhebt. Montags bis freitags um 16:05. </itunes:subtitle>
+    <itunes:author>SWR</itunes:author>
+    <itunes:summary>Neues aus Wissenschaft, Medizin, Umwelt und Bildung. </itunes:summary>
+    <itunes:owner>
+      <itunes:name>Südwestrundfunk</itunes:name>
+      <itunes:email>podcast@swr.de</itunes:email>
+    </itunes:owner>
+    <googleplay:author>Südwestrundfunk</googleplay:author>
+    <itunes:image href="https://www.swr.de/swr2/programm/Podcastbild-SWR2-Impuls,1564741489275,swr2-impuls-podcast-104~_v-1x1@2dXL_-1f32c27c4978132dd0854e53b5ed30e10facc189.jpg"/>
+    <googleplay:image href="https://www.swr.de/swr2/programm/Podcastbild-SWR2-Impuls,1564741489275,swr2-impuls-podcast-104~_v-1x1@2dXL_-1f32c27c4978132dd0854e53b5ed30e10facc189.jpg"/>
+    <itunes:keywords text="Gesundheit und Mensch"/>
+    <itunes:keywords text="Wissenschaft und Forschung"/>
+    <itunes:keywords text="Wissen"/>
+    <itunes:keywords text="Wissenschaft"/>
+    <itunes:keywords text="Impuls"/>
+    <itunes:keywords text="Podcast"/>
+    <itunes:keywords text="Download"/>
+    <itunes:explicit>No</itunes:explicit>
+    <googleplay:explicit>No</googleplay:explicit>
+
+    <item>
+      <title>Ostafrika stellt sich auf die nächste Heuschreckenplage ein</title>
+      <link>https://www.swr.de/swr2/wissen/Hungersnot-Ostafrika-stellt-sich-auf-die-naechste-Heuschreckenplage-ein,ostafrika-stellt-sich-auf-naechste-heuschreckenplage-ein-100.html</link>
+      <description>Nach der jüngsten Heuschreckenplage droht Ostafrika neues Unheil. Es regnet mehr als sonst. Der feuchte Boden ist ein idealer Brutkasten für die nächste Generation Heuschrecken. Die ohnehin angespannte Ernährungslage könnte sich weiter verschlechtern.</description>
+      <googleplay:description>Nach der jüngsten Heuschreckenplage droht Ostafrika neues Unheil. Es regnet mehr als sonst. Der feuchte Boden ist ein idealer Brutkasten für die nächste Generation Heuschrecken. Die ohnehin angespannte Ernährungslage könnte sich weiter verschlechtern.</googleplay:description>
+      <category>Wissen,Heuschrecken,Heuschreckenschwärme,Heuschreckenplage,Ostafrika,Natur</category>
+      <pubDate>Tue, 10 Mar 2020 16:05:00 +0100</pubDate>
+      <guid isPermaLink="false">c88fbba9-c228-4724-bf41-8c193b72491c</guid>
+      <itunes:image href="https://www.swr.de/swr2/wissen/Heuschreckeninvasion-Hochland-von-Madagaskar-Afrika,1583836906080,swr2-impuls-heuschrecken-plage-afrika-100~_v-1x1@2dXL_-1f32c27c4978132dd0854e53b5ed30e10facc189.jpg"/>
+      <enclosure
+      length="4668354"
+      type="audio/mpeg" url="https://avdlswr-a.akamaihd.net/swr/swr2/wissen/impuls/beitraege/2020/03/ostafrika-droht-die-naechste-heuschreckenplage.m.mp3"/>
+      <itunes:duration>05:09</itunes:duration>
+    </item>
+  </channel>
+</rss>
