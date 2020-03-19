@@ -236,6 +236,7 @@ var Parser = function () {
       var get = feedUrl.indexOf('https') === 0 ? https.get : http.get;
       var urlParts = url.parse(feedUrl);
       var headers = Object.assign({}, DEFAULT_HEADERS, this.options.headers);
+      var timeout = null;
       var prom = new Promise(function (resolve, reject) {
         var req = get({
           headers: headers,
@@ -264,10 +265,16 @@ var Parser = function () {
             return _this2.parseString(xml).then(resolve, reject);
           });
         });
-        req.setTimeout(_this2.options.timeout, function () {
-          return reject(new Error("Request timed out after " + _this2.options.timeout + "ms"));
-        });
         req.on('error', reject);
+        timeout = setTimeout(function () {
+          return reject(new Error("Request timed out after " + _this2.options.timeout + "ms"));
+        }, _this2.options.timeout);
+      }).then(function (data) {
+        clearTimeout(timeout);
+        return Promise.resolve(data);
+      }, function (e) {
+        clearTimeout(timeout);
+        return Promise.reject(e);
       });
       prom = utils.maybePromisify(callback, prom);
       return prom;
@@ -304,7 +311,7 @@ var Parser = function () {
         }
         if (entry.published && entry.published.length && entry.published[0].length) item.pubDate = new Date(entry.published[0]).toISOString();
         if (!item.pubDate && entry.updated && entry.updated.length && entry.updated[0].length) item.pubDate = new Date(entry.updated[0]).toISOString();
-        if (entry.author && entry.author.length) item.author = entry.author[0].name[0];
+        if (entry.author && entry.author.length && entry.author[0].name && entry.author[0].name.length) item.author = entry.author[0].name[0];
         if (entry.content && entry.content.length) {
           item.content = utils.getContent(entry.content[0]);
           item.contentSnippet = utils.getSnippet(item.content);
@@ -428,13 +435,21 @@ var Parser = function () {
         });
         feed.itunes.categories = categories;
       }
+
       if (channel['itunes:keywords']) {
-        var keywords = channel['itunes:keywords'][0];
-        if (keywords && typeof keywords._ === 'string') {
-          keywords = keywords._;
+        if (channel['itunes:keywords'].length > 1) {
+          feed.itunes.keywords = channel['itunes:keywords'].map(function (keyword) {
+            return keyword.$.text;
+          });
+        } else {
+          var keywords = channel['itunes:keywords'][0];
+          if (keywords && typeof keywords._ === 'string') {
+            keywords = keywords._;
+          }
+          if (keywords) feed.itunes.keywords = keywords.split(',');
         }
-        if (keywords) feed.itunes.keywords = keywords.split(",");
       }
+
       utils.copyFromXML(channel, feed.itunes, fields.podcastFeed);
       items.forEach(function (item, index) {
         var entry = feed.items[index];
