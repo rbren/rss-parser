@@ -207,9 +207,9 @@ let parser = new Parser({maxRedirects: 100});
 ### Request passthrough
 `rss-parser` uses [http](https://nodejs.org/docs/latest/api/http.html#http_http_get_url_options_callback)/[https](https://nodejs.org/docs/latest/api/https.html#https_https_get_url_options_callback) module
 to do requests. You can pass [these options](https://nodejs.org/docs/latest/api/https.html#https_https_request_options_callback)
-to `https.get()` by specifying `options.requestOptions`:
+to `http.get()`/`https.get()` by specifying `options.requestOptions`:
 
-e.g. to allowing unauthorized certificate
+e.g. to allow unauthorized certificate
 ```js
 let parser = new Parser({
   requestOptions: {
