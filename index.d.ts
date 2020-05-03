@@ -1,4 +1,5 @@
 import { Options } from 'xml2js';
+import { RequestOptions } from 'https';
 
 declare namespace Parser {
   export interface Headers {
@@ -15,6 +16,7 @@ declare namespace Parser {
 
   export interface ParserOptions {
     readonly xml2js?: Options;
+    readonly requestOptions?: RequestOptions;
     readonly headers?: Headers;
     readonly defaultRSS?: number;
     readonly maxRedirects?: number;
