@@ -176,6 +176,7 @@ var Parser = function () {
     options.customFields = options.customFields || {};
     options.customFields.item = options.customFields.item || [];
     options.customFields.feed = options.customFields.feed || [];
+    options.requestOptions = options.requestOptions || {};
     if (!options.maxRedirects) options.maxRedirects = DEFAULT_MAX_REDIRECTS;
     if (!options.timeout) options.timeout = DEFAULT_TIMEOUT;
     this.options = options;
@@ -238,14 +239,8 @@ var Parser = function () {
       var headers = Object.assign({}, DEFAULT_HEADERS, this.options.headers);
       var timeout = null;
       var prom = new Promise(function (resolve, reject) {
-        var req = get({
-          headers: headers,
-          auth: urlParts.auth,
-          protocol: urlParts.protocol,
-          hostname: urlParts.hostname,
-          port: urlParts.port,
-          path: urlParts.path
-        }, function (res) {
+        var requestOpts = Object.assign({ headers: headers }, urlParts, _this2.options.requestOptions);
+        var req = get(requestOpts, function (res) {
           if (_this2.options.maxRedirects && res.statusCode >= 300 && res.statusCode < 400 && res.headers['location']) {
             if (redirectCount === _this2.options.maxRedirects) {
               return reject(new Error("Too many redirects"));
