@@ -1,21 +1,27 @@
 var webpack = require("webpack");
 module.exports = {
   entry: {
-    "rss-parser": "./browser.js"
+    "rss-parser": "./index.js"
   },
   output: {
     path: __dirname,
-    filename: "dist/[name].min.js"
+    filename: "dist/[name].js",
+    libraryTarget: 'umd',
+    globalObject: 'this',
+    library: 'RSSParser'
   },
   resolve: {
     extensions: ['.js']
   },
   devtool: 'source-map',
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
       loader: 'babel-loader?presets[]=env',
     }]
+  },
+  externals: {
+    xmlbuilder:'xmlbuilder'
   },
   node: {
     fs: "empty"
