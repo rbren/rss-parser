@@ -1,0 +1,65 @@
+{
+  "feed": {
+    "items": [
+      {
+        "creator": "Taverncast: www.taverncast.com",
+        "title": "Taverncast 62 - Temporal Anomaly",
+        "link": "http://taverncast.com/",
+        "pubDate": "07 Nov 2015 12:00:00 EST",
+        "author": "Taverncast",
+        "content:encoded": "Taverncast tosses around the age old topic: time travel!  Where would you go?  Why would you go? Also, Bryce has customer service issues, and Mike buys a dog.",
+        "enclosure": {
+          "url": "http://www.podtrac.com/pts/redirect.mp3?http://www.taverncast.com/shows/taverncast-62.mp3",
+          "length": "47160424",
+          "type": "audio/mpeg"
+        },
+        "dc:creator": "Taverncast: www.taverncast.com",
+        "comments": "http://www.taverncast.com",
+        "content": "Taverncast tosses around the age old topic: time travel!  Where would you go?  Why would you go? Also, Bryce has customer service issues, and Mike buys a dog.",
+        "contentSnippet": "Taverncast tosses around the age old topic: time travel!  Where would you go?  Why would you go? Also, Bryce has customer service issues, and Mike buys a dog.",
+        "guid": "http://taverncast.com/shows/taverncast-62.mp3",
+        "categories": [
+          "Society & Culture"
+        ],
+        "isoDate": "2015-11-07T17:00:00.000Z",
+        "itunes": {
+          "author": "Taverncast",
+          "subtitle": "Taverncast tosses around the age old topic: time travel!  Where would you go?  Why would you go? Also, Bryce has customer service issues, and Mike buys a dog.",
+          "summary": "Taverncast tosses around the age old topic: time travel!  Where would you go?  Why would you go? Also, Bryce has customer service issues, and Mike buys a dog.",
+          "explicit": "no",
+          "duration": "1:09:50",
+          "keywords": "Taverncast, beer, games, hobbies, gaming, computer, geek, party, movies, comics, pop-culture, weird, comedy, humor, funny,  talk, nerd, news, politics,  paranormal, conspiracy,  morning show, stone brewing company, time travel, back to the future, past, future, present, timeline, temporal, travel, time, dog, doodle, poodle, apple, laptop, computer, arrogant, bastard, arrogant bastard"
+        }
+      }
+    ],
+    "image": {
+      "link": "http://www.taverncast.com/",
+      "url": "http://www.taverncast.com/itunes-logo.png",
+      "title": "Taverncast - Happy Hour in Your Head - Since 2005",
+      "width": "144",
+      "height": "300"
+    },
+    "title": "Taverncast - Happy Hour in Your Head - Since 2005",
+    "description": "Order a beer, pull up a seat and join your friends at Taverncast for our patented un-scripted roundtable discussions, covering a wide range of topics with a unique wit and inviting style - all blended together, it's Happy Hour in Your Head!",
+    "pubDate": "Wed, 03 Aug 2005 18:00:00 GMT",
+    "managingEditor": "taverncast@taverncast.com",
+    "generator": "me mitts",
+    "link": "http://www.taverncast.com/",
+    "language": "en-us",
+    "copyright": "Taverncast, 2015",
+    "itunes": {
+      "owner": {
+        "name": "Taverncast",
+        "email": "taverncast@taverncast.com"
+      },
+      "categories": [
+        "Society & Culture",
+        "Games & Hobbies"
+      ],
+      "author": "Bryce Erwin, Bill Ticknor, Michelle O'Neill, Mike Monan, Aric Watson, Jennifer Albrecht, Lauren Hoban and Derek Chew",
+      "subtitle": "Beer - Talk - Fun.  It's Happy Hour in Your Head!",
+      "summary": "Order a beer, pull up a seat and join your friends at Taverncast for our patented un-scripted roundtable discussions, covering a wide range of topics with a unique wit and inviting style - all blended together, it's Happy Hour in Your Head!",
+      "explicit": "no"
+    }
+  }
+}

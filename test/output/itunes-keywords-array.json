@@ -1,0 +1,59 @@
+{
+  "feed": {
+    "items": [
+      {
+        "title": "Ostafrika stellt sich auf die nächste Heuschreckenplage ein",
+        "link": "https://www.swr.de/swr2/wissen/Hungersnot-Ostafrika-stellt-sich-auf-die-naechste-Heuschreckenplage-ein,ostafrika-stellt-sich-auf-naechste-heuschreckenplage-ein-100.html",
+        "pubDate": "Tue, 10 Mar 2020 16:05:00 +0100",
+        "enclosure": {
+          "length": "4668354",
+          "type": "audio/mpeg",
+          "url": "https://avdlswr-a.akamaihd.net/swr/swr2/wissen/impuls/beitraege/2020/03/ostafrika-droht-die-naechste-heuschreckenplage.m.mp3"
+        },
+        "content": "Nach der jüngsten Heuschreckenplage droht Ostafrika neues Unheil. Es regnet mehr als sonst. Der feuchte Boden ist ein idealer Brutkasten für die nächste Generation Heuschrecken. Die ohnehin angespannte Ernährungslage könnte sich weiter verschlechtern.",
+        "contentSnippet": "Nach der jüngsten Heuschreckenplage droht Ostafrika neues Unheil. Es regnet mehr als sonst. Der feuchte Boden ist ein idealer Brutkasten für die nächste Generation Heuschrecken. Die ohnehin angespannte Ernährungslage könnte sich weiter verschlechtern.",
+        "guid": "c88fbba9-c228-4724-bf41-8c193b72491c",
+        "categories": [
+          "Wissen,Heuschrecken,Heuschreckenschwärme,Heuschreckenplage,Ostafrika,Natur"
+        ],
+        "isoDate": "2020-03-10T15:05:00.000Z",
+        "itunes": {
+          "duration": "05:09",
+          "image": "https://www.swr.de/swr2/wissen/Heuschreckeninvasion-Hochland-von-Madagaskar-Afrika,1583836906080,swr2-impuls-heuschrecken-plage-afrika-100~_v-1x1@2dXL_-1f32c27c4978132dd0854e53b5ed30e10facc189.jpg"
+        }
+      }
+    ],
+    "feedUrl": "https://www.swr.de/~podcast/swr2/programm/SWR2-Wissen-Impuls-Podcast,swr2-impuls-podcast-100.xml",
+    "image": {
+      "link": "https://www.swr.de/swr2/programm/SWR2-Wissen-Impuls-Podcast,swr2-impuls-podcast-100.html",
+      "url": "https://www.swr.de/swr2/programm/Podcastbild-SWR2-Impuls,1564741489275,swr2-impuls-podcast-104~_v-16x9@2dS_-6be50a9c75559ca1aaf1d0b25bae287afdcd877a.jpg",
+      "title": "SWR2 Impuls - Wissen aktuell"
+    },
+    "title": "SWR2 Impuls - Wissen aktuell",
+    "description": "Neues aus Wissenschaft, Medizin, Umwelt und Bildung. ",
+    "pubDate": "Wed, 9 Oct 2019 16:39:00 +0200",
+    "link": "https://www.swr.de/swr2/programm/SWR2-Wissen-Impuls-Podcast,swr2-impuls-podcast-100.html",
+    "language": "de",
+    "copyright": "Copyright © Südwestrundfunk",
+    "itunes": {
+      "owner": {
+        "name": "Südwestrundfunk",
+        "email": "podcast@swr.de"
+      },
+      "image": "https://www.swr.de/swr2/programm/Podcastbild-SWR2-Impuls,1564741489275,swr2-impuls-podcast-104~_v-1x1@2dXL_-1f32c27c4978132dd0854e53b5ed30e10facc189.jpg",
+      "keywords": [
+        "Gesundheit und Mensch",
+        "Wissenschaft und Forschung",
+        "Wissen",
+        "Wissenschaft",
+        "Impuls",
+        "Podcast",
+        "Download"
+      ],
+      "author": "SWR",
+      "subtitle": "Neues aus Wissenschaft, Medizin, Umwelt und Bildung. Dazu Musik, die sich vom Mainstream abhebt. Montags bis freitags um 16:05. ",
+      "summary": "Neues aus Wissenschaft, Medizin, Umwelt und Bildung. ",
+      "explicit": "No"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content" xmlns:dc="http://purl.org/dc/elements/1.1" xmlns:itunes="http://www.itunes.com/DTDs/Podcast-1.0.dtd" version="2.0">
+   <channel>
+      <title>Taverncast - Happy Hour in Your Head - Since 2005</title>
+      <itunes:author>Bryce Erwin, Bill Ticknor, Michelle O'Neill, Mike Monan, Aric Watson, Jennifer Albrecht, Lauren Hoban and Derek Chew</itunes:author>
+      <link>http://www.taverncast.com/</link>
+      <description>Order a beer, pull up a seat and join your friends at Taverncast for our patented un-scripted roundtable discussions, covering a wide range of topics with a unique wit and inviting style - all blended together, it's Happy Hour in Your Head!</description>
+      <itunes:subtitle>Beer - Talk - Fun.  It's Happy Hour in Your Head!</itunes:subtitle>
+      <itunes:summary>Order a beer, pull up a seat and join your friends at Taverncast for our patented un-scripted roundtable discussions, covering a wide range of topics with a unique wit and inviting style - all blended together, it's Happy Hour in Your Head!</itunes:summary>
+      <language>en-us</language>
+      <copyright>Taverncast, 2015</copyright>
+      <managingEditor>taverncast@taverncast.com</managingEditor>
+      <pubDate>Wed, 03 Aug 2005 18:00:00 GMT</pubDate>
+      <generator>me mitts</generator>
+      <itunes:owner>
+         <itunes:name>Taverncast</itunes:name>
+         <itunes:email>taverncast@taverncast.com</itunes:email>
+      </itunes:owner>
+      <itunes:explicit>no</itunes:explicit>
+      <image>
+         <url>http://www.taverncast.com/itunes-logo.png</url>
+         <title>Taverncast - Happy Hour in Your Head - Since 2005</title>
+         <link>http://www.taverncast.com/</link>
+         <width>144</width>
+         <height>300</height>
+      </image>
+      <itunes:link rel="image" type="video/jpeg" href="http://www.taverncast.com/itunes-logo.png">Taverncast</itunes:link>
+      <itunes:image>href=http://www.taverncast.com/itunes-logo.png"&gt;</itunes:image>
+      <itunes:category text="Society &amp; Culture" />
+      <itunes:category text="Games &amp; Hobbies">
+         <itunes:category text="Hobbies" />
+      </itunes:category>
+      <item>
+         <title>Taverncast 62 - Temporal Anomaly</title>
+         <link>http://taverncast.com/</link>
+         <dc:creator>Taverncast: www.taverncast.com</dc:creator>
+         <content:encoded><![CDATA[Taverncast tosses around the age old topic: time travel!  Where would you go?  Why would you go? Also, Bryce has customer service issues, and Mike buys a dog.]]></content:encoded>
+         <comments>http://www.taverncast.com</comments>
+         <author>Taverncast</author>
+         <itunes:author>Taverncast</itunes:author>
+         <description>Taverncast tosses around the age old topic: time travel!  Where would you go?  Why would you go? Also, Bryce has customer service issues, and Mike buys a dog.</description>
+         <itunes:subtitle>Taverncast tosses around the age old topic: time travel!  Where would you go?  Why would you go? Also, Bryce has customer service issues, and Mike buys a dog.</itunes:subtitle>
+         <itunes:summary>Taverncast tosses around the age old topic: time travel!  Where would you go?  Why would you go? Also, Bryce has customer service issues, and Mike buys a dog.</itunes:summary>
+         <enclosure url="http://www.podtrac.com/pts/redirect.mp3?http://www.taverncast.com/shows/taverncast-62.mp3" length="47160424" type="audio/mpeg" />
+         <guid>http://taverncast.com/shows/taverncast-62.mp3</guid>
+         <pubDate>07 Nov 2015 12:00:00 EST</pubDate>
+         <category>Society &amp; Culture</category>
+         <itunes:explicit>no</itunes:explicit>
+         <itunes:duration>1:09:50</itunes:duration>
+         <itunes:keywords>Taverncast, beer, games, hobbies, gaming, computer, geek, party, movies, comics, pop-culture, weird, comedy, humor, funny,  talk, nerd, news, politics,  paranormal, conspiracy,  morning show, stone brewing company, time travel, back to the future, past, future, present, timeline, temporal, travel, time, dog, doodle, poodle, apple, laptop, computer, arrogant, bastard, arrogant bastard</itunes:keywords>
+      </item>
+   </channel>
+</rss>

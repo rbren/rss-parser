@@ -60,13 +60,29 @@ describe('Parser', function() {
     testParseForFile('missing-fields', 'atom', done)
   })
 
+  it('should parse with incomplete fields', function(done) {
+    testParseForFile('incomplete-fields', 'atom', done)
+  })
+
   it('should parse heise', function(done) {
     testParseForFile('heise', 'atom', done);
   })
 
   it('should parse heraldsun', function(done) {
     testParseForFile('heraldsun', 'rss', done);
-  })
+  });
+
+  it('should parse UOL Noticias', function(done) {
+    testParseForFile('uolNoticias', 'rss', { defaultRSS: 2.0 }, done);
+  });
+
+  it('should NOT parse UOL Noticias, if no default RSS is provided', function(done) {
+    function willFail() {
+      testParseForFile('uolNoticias', 'rss', done);
+    }
+    Expect(willFail).to.throw;
+    done();
+  });
 
   it('should parse Instant Article', function(done) {
     testParseForFile('instant-article', 'rss', done);
@@ -82,6 +98,10 @@ describe('Parser', function() {
 
   it('should parse multiple links', function(done) {
     testParseForFile('many-links', 'rss', done);
+  });
+
+  it('should parse itunes with empty href', function(done) {
+    testParseForFile('itunes-href', 'rss', done);
   });
 
   it('should pass xml2js options', function(done) {
@@ -162,6 +182,36 @@ describe('Parser', function() {
     });
   });
 
+  it('should parse URL with relative redirect', function(done) {
+    var INPUT_FILE = __dirname + '/input/reddit.rss';
+    var OUTPUT_FILE = __dirname + '/output/reddit.json';
+    var server = HTTP.createServer(function(req, res) {
+      if (req.url !== '/new-location') {
+        res.writeHead(301, { 'Location': '/new-location'});
+        res.end();
+      } else {
+        var file = fs.createReadStream(INPUT_FILE, 'utf8');
+        file.pipe(res);
+      }
+    });
+    server.listen(function() {
+      var port = server.address().port;
+      var url = 'http://localhost:' + port;
+      let parser = new Parser();
+      parser.parseURL(url, function(err, parsed) {
+        Expect(err).to.equal(null);
+        if (process.env.WRITE_GOLDEN) {
+          fs.writeFileSync(OUTPUT_FILE, JSON.stringify({feed: parsed}, null, 2));
+        } else {
+          var expected = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8'));
+          Expect({feed: parsed}).to.deep.equal(expected);
+        }
+        server.close();
+        done();
+      });
+    });
+  });
+
   it('should use proper encoding', function(done) {
     var INPUT_FILE = __dirname + '/input/encoding.rss';
     var OUTPUT_FILE = __dirname + '/output/encoding.json';
@@ -216,4 +266,34 @@ describe('Parser', function() {
       })
     })
   })
+
+  it('should respect timeout option', function(done) {
+    var server = HTTP.createServer(function(req, res) {});
+    server.listen(function() {
+      var port = server.address().port;
+      var url = 'http://localhost:' + port;
+      var parser = new Parser({timeout: 1});
+      parser.parseURL(url, function(err, parsed) {
+        Expect(err).to.not.equal(null);
+        Expect(err.message).to.equal("Request timed out after 1ms");
+        done();
+      });
+    });
+  });
+
+  it('should parse itunes categories', function(done) {
+    testParseForFile('itunes-category', 'rss', done);
+  });
+
+  it('should parse itunes keywords', function(done) {
+    testParseForFile('itunes-keywords', 'rss', done);
+  });
+
+  it('should parse itunes keywords as array', function(done) {
+    testParseForFile('itunes-keywords-array', 'rss', done);
+  });
+
+  it('should parse giantbomb-podcast', function(done) {
+    testParseForFile('giantbomb-podcast', 'rss', done);
+  });
 })

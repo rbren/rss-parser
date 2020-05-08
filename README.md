@@ -58,6 +58,7 @@ const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
 
 let parser = new RSSParser();
 parser.parseURL(CORS_PROXY + 'https://www.reddit.com/.rss', function(err, feed) {
+  if (err) throw err;
   console.log(feed.title);
   feed.items.forEach(function(entry) {
     console.log(entry.title + ':' + entry.link);
@@ -105,7 +106,7 @@ items:
 * If `author` is specified, but not `dc:creator`, `creator` will be set to `author` ([see article](http://www.lowter.com/blogs/2008/2/9/rss-dccreator-author))
 * Atom's `updated` becomes `lastBuildDate` for consistency
 
-## Options
+## XML Options
 
 ### Custom Fields
 If your RSS feed contains fields that aren't currently returned, you can access them using the `customFields` option.
@@ -153,6 +154,16 @@ let parser = new Parser({
 })
 ```
 
+### Default RSS version
+If your RSS Feed doesn't contain a `<rss>` tag with a `version` attribute,
+you can pass a `defaultRSS` option for the Parser to use:
+```js
+let parser = new Parser({
+  defaultRSS: 2.0
+});
+```
+
+
 ### xml2js passthrough
 `rss-parser` uses [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
 to parse XML. You can pass [these options](https://github.com/Leonidas-from-XIV/node-xml2js#options)
@@ -163,6 +174,17 @@ let parser = new Parser({
   xml2js: {
     emptyTag: '--EMPTY--',
   }
+});
+```
+
+## HTTP Options
+
+### Timeout
+You can set the amount of time (in milliseconds) to wait before the HTTP request times out (default 60 seconds):
+
+```js
+let parser = new Parser({
+  timeout: 1000,
 });
 ```
 
@@ -182,6 +204,19 @@ with `options.maxRedirects`.
 let parser = new Parser({maxRedirects: 100});
 ```
 
+### Request passthrough
+`rss-parser` uses [http](https://nodejs.org/docs/latest/api/http.html#http_http_get_url_options_callback)/[https](https://nodejs.org/docs/latest/api/https.html#https_https_get_url_options_callback) module
+to do requests. You can pass [these options](https://nodejs.org/docs/latest/api/https.html#https_https_request_options_callback)
+to `http.get()`/`https.get()` by specifying `options.requestOptions`:
+
+e.g. to allow unauthorized certificate
+```js
+let parser = new Parser({
+  requestOptions: {
+    rejectUnauthorized: false
+  }
+});
+```
 
 ## Contributing
 Contributions are welcome! If you are adding a feature or fixing a bug, please be sure to add a [test case](https://github.com/bobby-brennan/rss-parser/tree/master/test/input)

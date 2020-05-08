@@ -1,4 +1,4 @@
 set -e
-webpack
-cp dist/rss-parser.min.js dist/rss-parser.js
-webpack -p
+webpack-cli --mode=development --target=web
+webpack-cli --mode=production --target=web --output-filename=dist/[name].min.js --profile --json > dist/stats.json
+
