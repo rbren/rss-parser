@@ -142,7 +142,8 @@ let parser = new Parser({
 
 To pass additional flags, provide an object as the third array item. Currently there is one such flag:
 
-* `keepArray`: `true` to return *all* values for fields that can have multiple entries. Default: return the first item only.
+* `keepArray (false)` - set to `true` to return *all* values for fields that can have multiple entries.
+* `includeSnippet (false)` - set to `true` to add an additional field, `${toField}Snippet`, with HTML stripped out
 
 ```js
 let parser = new Parser({
