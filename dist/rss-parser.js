@@ -124,7 +124,7 @@ var fields = module.exports = {};
 
 fields.feed = [['author', 'creator'], ['dc:publisher', 'publisher'], ['dc:creator', 'creator'], ['dc:source', 'source'], ['dc:title', 'title'], ['dc:type', 'type'], 'title', 'description', 'author', 'pubDate', 'webMaster', 'managingEditor', 'generator', 'link', 'language', 'copyright', 'lastBuildDate', 'docs', 'generator', 'ttl', 'rating', 'skipHours', 'skipDays'];
 
-fields.item = [['author', 'creator'], ['dc:creator', 'creator'], ['dc:date', 'date'], ['dc:language', 'language'], ['dc:rights', 'rights'], ['dc:source', 'source'], ['dc:title', 'title'], 'title', 'link', 'pubDate', 'author', 'content:encoded', 'enclosure', 'dc:creator', 'dc:date', 'comments'];
+fields.item = [['author', 'creator'], ['dc:creator', 'creator'], ['dc:date', 'date'], ['dc:language', 'language'], ['dc:rights', 'rights'], ['dc:source', 'source'], ['dc:title', 'title'], 'title', 'link', 'pubDate', 'author', ['content:encoded', 'content:encoded', { includeSnippet: true }], 'enclosure', 'dc:creator', 'dc:date', 'comments'];
 
 var mapItunesField = function mapItunesField(f) {
   return ['itunes:' + f, f];
@@ -490,15 +490,17 @@ module.exports = Parser;
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var utils = module.exports = {};
-var entities = __webpack_require__(/*! entities */ "./node_modules/entities/index.js");
+var entities = __webpack_require__(/*! entities */ "./node_modules/entities/lib/index.js");
 var xml2js = __webpack_require__(/*! xml2js */ "./node_modules/xml2js/lib/xml2js.js");
 
 utils.stripHtml = function (str) {
-  return str.replace(/<(?:.|\n)*?>/gm, '');
+  str = str.replace(/([^\n])<\/?(h|br|p|ul|ol|li|blockquote|section|table|tr|div)(?:.|\n)*?>([^\n])/gm, '$1\n$3');
+  str = str.replace(/<(?:.|\n)*?>/gm, '');
+  return str;
 };
 
 utils.getSnippet = function (str) {
-  return entities.decode(utils.stripHtml(str)).trim();
+  return entities.decodeHTML(utils.stripHtml(str)).trim();
 };
 
 utils.getLink = function (links, rel, fallbackIdx) {
@@ -533,13 +535,17 @@ utils.copyFromXML = function (xml, dest, fields) {
       }
     }
     var _options = options,
-        keepArray = _options.keepArray;
+        keepArray = _options.keepArray,
+        includeSnippet = _options.includeSnippet;
 
     if (xml[from] !== undefined) {
       dest[to] = keepArray ? xml[from] : xml[from][0];
     }
     if (dest[to] && typeof dest[to]._ === 'string') {
       dest[to] = dest[to]._;
+    }
+    if (includeSnippet && dest[to] && typeof dest[to] === 'string') {
+      dest[to + 'Snippet'] = utils.getSnippet(dest[to]);
     }
   });
 };
@@ -2657,45 +2663,6 @@ function objectToString(o) {
 
 /***/ }),
 
-/***/ "./node_modules/entities/index.js":
-/*!****************************************!*\
-  !*** ./node_modules/entities/index.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var encode = __webpack_require__(/*! ./lib/encode.js */ "./node_modules/entities/lib/encode.js"),
-    decode = __webpack_require__(/*! ./lib/decode.js */ "./node_modules/entities/lib/decode.js");
-
-exports.decode = function (data, level) {
-	return (!level || level <= 0 ? decode.XML : decode.HTML)(data);
-};
-
-exports.decodeStrict = function (data, level) {
-	return (!level || level <= 0 ? decode.XML : decode.HTMLStrict)(data);
-};
-
-exports.encode = function (data, level) {
-	return (!level || level <= 0 ? encode.XML : encode.HTML)(data);
-};
-
-exports.encodeXML = encode.XML;
-
-exports.encodeHTML4 = exports.encodeHTML5 = exports.encodeHTML = encode.HTML;
-
-exports.decodeXML = exports.decodeXMLStrict = decode.XML;
-
-exports.decodeHTML4 = exports.decodeHTML5 = exports.decodeHTML = decode.HTML;
-
-exports.decodeHTML4Strict = exports.decodeHTML5Strict = exports.decodeHTMLStrict = decode.HTMLStrict;
-
-exports.escape = encode.escape;
-
-/***/ }),
-
 /***/ "./node_modules/entities/lib/decode.js":
 /*!*********************************************!*\
   !*** ./node_modules/entities/lib/decode.js ***!
@@ -2706,76 +2673,63 @@ exports.escape = encode.escape;
 "use strict";
 
 
-var entityMap = __webpack_require__(/*! ../maps/entities.json */ "./node_modules/entities/maps/entities.json"),
-    legacyMap = __webpack_require__(/*! ../maps/legacy.json */ "./node_modules/entities/maps/legacy.json"),
-    xmlMap = __webpack_require__(/*! ../maps/xml.json */ "./node_modules/entities/maps/xml.json"),
-    decodeCodePoint = __webpack_require__(/*! ./decode_codepoint.js */ "./node_modules/entities/lib/decode_codepoint.js");
-
-var decodeXMLStrict = getStrictDecoder(xmlMap),
-    decodeHTMLStrict = getStrictDecoder(entityMap);
-
-function getStrictDecoder(map) {
-	var keys = Object.keys(map).join("|"),
-	    replace = getReplacer(map);
-
-	keys += "|#[xX][\\da-fA-F]+|#\\d+";
-
-	var re = new RegExp("&(?:" + keys + ");", "g");
-
-	return function (str) {
-		return String(str).replace(re, replace);
-	};
-}
-
-var decodeHTML = function () {
-	var legacy = Object.keys(legacyMap).sort(sorter);
-
-	var keys = Object.keys(entityMap).sort(sorter);
-
-	for (var i = 0, j = 0; i < keys.length; i++) {
-		if (legacy[j] === keys[i]) {
-			keys[i] += ";?";
-			j++;
-		} else {
-			keys[i] += ";";
-		}
-	}
-
-	var re = new RegExp("&(?:" + keys.join("|") + "|#[xX][\\da-fA-F]+;?|#\\d+;?)", "g"),
-	    replace = getReplacer(entityMap);
-
-	function replacer(str) {
-		if (str.substr(-1) !== ";") str += ";";
-		return replace(str);
-	}
-
-	//TODO consider creating a merged map
-	return function (str) {
-		return String(str).replace(re, replacer);
-	};
-}();
-
-function sorter(a, b) {
-	return a < b ? 1 : -1;
-}
-
-function getReplacer(map) {
-	return function replace(str) {
-		if (str.charAt(1) === "#") {
-			if (str.charAt(2) === "X" || str.charAt(2) === "x") {
-				return decodeCodePoint(parseInt(str.substr(3), 16));
-			}
-			return decodeCodePoint(parseInt(str.substr(2), 10));
-		}
-		return map[str.slice(1, -1)];
-	};
-}
-
-module.exports = {
-	XML: decodeXMLStrict,
-	HTML: decodeHTML,
-	HTMLStrict: decodeHTMLStrict
+var __importDefault = undefined && undefined.__importDefault || function (mod) {
+    return mod && mod.__esModule ? mod : { "default": mod };
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.decodeHTML = exports.decodeHTMLStrict = exports.decodeXML = void 0;
+var entities_json_1 = __importDefault(__webpack_require__(/*! ./maps/entities.json */ "./node_modules/entities/lib/maps/entities.json"));
+var legacy_json_1 = __importDefault(__webpack_require__(/*! ./maps/legacy.json */ "./node_modules/entities/lib/maps/legacy.json"));
+var xml_json_1 = __importDefault(__webpack_require__(/*! ./maps/xml.json */ "./node_modules/entities/lib/maps/xml.json"));
+var decode_codepoint_1 = __importDefault(__webpack_require__(/*! ./decode_codepoint */ "./node_modules/entities/lib/decode_codepoint.js"));
+exports.decodeXML = getStrictDecoder(xml_json_1.default);
+exports.decodeHTMLStrict = getStrictDecoder(entities_json_1.default);
+function getStrictDecoder(map) {
+    var keys = Object.keys(map).join("|");
+    var replace = getReplacer(map);
+    keys += "|#[xX][\\da-fA-F]+|#\\d+";
+    var re = new RegExp("&(?:" + keys + ");", "g");
+    return function (str) {
+        return String(str).replace(re, replace);
+    };
+}
+var sorter = function sorter(a, b) {
+    return a < b ? 1 : -1;
+};
+exports.decodeHTML = function () {
+    var legacy = Object.keys(legacy_json_1.default).sort(sorter);
+    var keys = Object.keys(entities_json_1.default).sort(sorter);
+    for (var i = 0, j = 0; i < keys.length; i++) {
+        if (legacy[j] === keys[i]) {
+            keys[i] += ";?";
+            j++;
+        } else {
+            keys[i] += ";";
+        }
+    }
+    var re = new RegExp("&(?:" + keys.join("|") + "|#[xX][\\da-fA-F]+;?|#\\d+;?)", "g");
+    var replace = getReplacer(entities_json_1.default);
+    function replacer(str) {
+        if (str.substr(-1) !== ";") str += ";";
+        return replace(str);
+    }
+    //TODO consider creating a merged map
+    return function (str) {
+        return String(str).replace(re, replacer);
+    };
+}();
+function getReplacer(map) {
+    return function replace(str) {
+        if (str.charAt(1) === "#") {
+            var secondChar = str.charAt(2);
+            if (secondChar === "X" || secondChar === "x") {
+                return decode_codepoint_1.default(parseInt(str.substr(3), 16));
+            }
+            return decode_codepoint_1.default(parseInt(str.substr(2), 10));
+        }
+        return map[str.slice(1, -1)];
+    };
+}
 
 /***/ }),
 
@@ -2789,32 +2743,29 @@ module.exports = {
 "use strict";
 
 
-var decodeMap = __webpack_require__(/*! ../maps/decode.json */ "./node_modules/entities/maps/decode.json");
-
-module.exports = decodeCodePoint;
-
+var __importDefault = undefined && undefined.__importDefault || function (mod) {
+    return mod && mod.__esModule ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var decode_json_1 = __importDefault(__webpack_require__(/*! ./maps/decode.json */ "./node_modules/entities/lib/maps/decode.json"));
 // modified version of https://github.com/mathiasbynens/he/blob/master/src/he.js#L94-L119
 function decodeCodePoint(codePoint) {
-
-	if (codePoint >= 0xD800 && codePoint <= 0xDFFF || codePoint > 0x10FFFF) {
-		return "\uFFFD";
-	}
-
-	if (codePoint in decodeMap) {
-		codePoint = decodeMap[codePoint];
-	}
-
-	var output = "";
-
-	if (codePoint > 0xFFFF) {
-		codePoint -= 0x10000;
-		output += String.fromCharCode(codePoint >>> 10 & 0x3FF | 0xD800);
-		codePoint = 0xDC00 | codePoint & 0x3FF;
-	}
-
-	output += String.fromCharCode(codePoint);
-	return output;
+    if (codePoint >= 0xd800 && codePoint <= 0xdfff || codePoint > 0x10ffff) {
+        return "\uFFFD";
+    }
+    if (codePoint in decode_json_1.default) {
+        codePoint = decode_json_1.default[codePoint];
+    }
+    var output = "";
+    if (codePoint > 0xffff) {
+        codePoint -= 0x10000;
+        output += String.fromCharCode(codePoint >>> 10 & 0x3ff | 0xd800);
+        codePoint = 0xdc00 | codePoint & 0x3ff;
+    }
+    output += String.fromCharCode(codePoint);
+    return output;
 }
+exports.default = decodeCodePoint;
 
 /***/ }),
 
@@ -2828,80 +2779,168 @@ function decodeCodePoint(codePoint) {
 "use strict";
 
 
-var inverseXML = getInverseObj(__webpack_require__(/*! ../maps/xml.json */ "./node_modules/entities/maps/xml.json")),
-    xmlReplacer = getInverseReplacer(inverseXML);
-
-exports.XML = getInverse(inverseXML, xmlReplacer);
-
-var inverseHTML = getInverseObj(__webpack_require__(/*! ../maps/entities.json */ "./node_modules/entities/maps/entities.json")),
-    htmlReplacer = getInverseReplacer(inverseHTML);
-
-exports.HTML = getInverse(inverseHTML, htmlReplacer);
-
+var __importDefault = undefined && undefined.__importDefault || function (mod) {
+    return mod && mod.__esModule ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.escape = exports.encodeHTML = exports.encodeXML = void 0;
+var xml_json_1 = __importDefault(__webpack_require__(/*! ./maps/xml.json */ "./node_modules/entities/lib/maps/xml.json"));
+var inverseXML = getInverseObj(xml_json_1.default);
+var xmlReplacer = getInverseReplacer(inverseXML);
+exports.encodeXML = getInverse(inverseXML, xmlReplacer);
+var entities_json_1 = __importDefault(__webpack_require__(/*! ./maps/entities.json */ "./node_modules/entities/lib/maps/entities.json"));
+var inverseHTML = getInverseObj(entities_json_1.default);
+var htmlReplacer = getInverseReplacer(inverseHTML);
+exports.encodeHTML = getInverse(inverseHTML, htmlReplacer);
 function getInverseObj(obj) {
-	return Object.keys(obj).sort().reduce(function (inverse, name) {
-		inverse[obj[name]] = "&" + name + ";";
-		return inverse;
-	}, {});
+    return Object.keys(obj).sort().reduce(function (inverse, name) {
+        inverse[obj[name]] = "&" + name + ";";
+        return inverse;
+    }, {});
 }
-
 function getInverseReplacer(inverse) {
-	var single = [],
-	    multiple = [];
-
-	Object.keys(inverse).forEach(function (k) {
-		if (k.length === 1) {
-			single.push("\\" + k);
-		} else {
-			multiple.push(k);
-		}
-	});
-
-	//TODO add ranges
-	multiple.unshift("[" + single.join("") + "]");
-
-	return new RegExp(multiple.join("|"), "g");
+    var single = [];
+    var multiple = [];
+    for (var _i = 0, _a = Object.keys(inverse); _i < _a.length; _i++) {
+        var k = _a[_i];
+        if (k.length === 1) {
+            // Add value to single array
+            single.push("\\" + k);
+        } else {
+            // Add value to multiple array
+            multiple.push(k);
+        }
+    }
+    // Add ranges to single characters.
+    single.sort();
+    for (var start = 0; start < single.length - 1; start++) {
+        // Find the end of a run of characters
+        var end = start;
+        while (end < single.length - 1 && single[end].charCodeAt(1) + 1 === single[end + 1].charCodeAt(1)) {
+            end += 1;
+        }
+        var count = 1 + end - start;
+        // We want to replace at least three characters
+        if (count < 3) continue;
+        single.splice(start, count, single[start] + "-" + single[end]);
+    }
+    multiple.unshift("[" + single.join("") + "]");
+    return new RegExp(multiple.join("|"), "g");
 }
-
-var re_nonASCII = /[^\0-\x7F]/g,
-    re_astralSymbols = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
-
+var reNonASCII = /(?:[\x80-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])/g;
 function singleCharReplacer(c) {
-	return "&#x" + c.charCodeAt(0).toString(16).toUpperCase() + ";";
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    return "&#x" + c.codePointAt(0).toString(16).toUpperCase() + ";";
 }
-
-function astralReplacer(c) {
-	// http://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae
-	var high = c.charCodeAt(0);
-	var low = c.charCodeAt(1);
-	var codePoint = (high - 0xD800) * 0x400 + low - 0xDC00 + 0x10000;
-	return "&#x" + codePoint.toString(16).toUpperCase() + ";";
-}
-
 function getInverse(inverse, re) {
-	function func(name) {
-		return inverse[name];
-	}
-
-	return function (data) {
-		return data.replace(re, func).replace(re_astralSymbols, astralReplacer).replace(re_nonASCII, singleCharReplacer);
-	};
+    return function (data) {
+        return data.replace(re, function (name) {
+            return inverse[name];
+        }).replace(reNonASCII, singleCharReplacer);
+    };
 }
-
-var re_xmlChars = getInverseReplacer(inverseXML);
-
-function escapeXML(data) {
-	return data.replace(re_xmlChars, singleCharReplacer).replace(re_astralSymbols, astralReplacer).replace(re_nonASCII, singleCharReplacer);
+var reXmlChars = getInverseReplacer(inverseXML);
+function escape(data) {
+    return data.replace(reXmlChars, singleCharReplacer).replace(reNonASCII, singleCharReplacer);
 }
-
-exports.escape = escapeXML;
+exports.escape = escape;
 
 /***/ }),
 
-/***/ "./node_modules/entities/maps/decode.json":
-/*!************************************************!*\
-  !*** ./node_modules/entities/maps/decode.json ***!
-  \************************************************/
+/***/ "./node_modules/entities/lib/index.js":
+/*!********************************************!*\
+  !*** ./node_modules/entities/lib/index.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.encode = exports.decodeStrict = exports.decode = void 0;
+var decode_1 = __webpack_require__(/*! ./decode */ "./node_modules/entities/lib/decode.js");
+var encode_1 = __webpack_require__(/*! ./encode */ "./node_modules/entities/lib/encode.js");
+/**
+ * Decodes a string with entities.
+ *
+ * @param data String to decode.
+ * @param level Optional level to decode at. 0 = XML, 1 = HTML. Default is 0.
+ */
+function decode(data, level) {
+  return (!level || level <= 0 ? decode_1.decodeXML : decode_1.decodeHTML)(data);
+}
+exports.decode = decode;
+/**
+ * Decodes a string with entities. Does not allow missing trailing semicolons for entities.
+ *
+ * @param data String to decode.
+ * @param level Optional level to decode at. 0 = XML, 1 = HTML. Default is 0.
+ */
+function decodeStrict(data, level) {
+  return (!level || level <= 0 ? decode_1.decodeXML : decode_1.decodeHTMLStrict)(data);
+}
+exports.decodeStrict = decodeStrict;
+/**
+ * Encodes a string with entities.
+ *
+ * @param data String to encode.
+ * @param level Optional level to encode at. 0 = XML, 1 = HTML. Default is 0.
+ */
+function encode(data, level) {
+  return (!level || level <= 0 ? encode_1.encodeXML : encode_1.encodeHTML)(data);
+}
+exports.encode = encode;
+var encode_2 = __webpack_require__(/*! ./encode */ "./node_modules/entities/lib/encode.js");
+Object.defineProperty(exports, "encodeXML", { enumerable: true, get: function get() {
+    return encode_2.encodeXML;
+  } });
+Object.defineProperty(exports, "encodeHTML", { enumerable: true, get: function get() {
+    return encode_2.encodeHTML;
+  } });
+Object.defineProperty(exports, "escape", { enumerable: true, get: function get() {
+    return encode_2.escape;
+  } });
+// Legacy aliases
+Object.defineProperty(exports, "encodeHTML4", { enumerable: true, get: function get() {
+    return encode_2.encodeHTML;
+  } });
+Object.defineProperty(exports, "encodeHTML5", { enumerable: true, get: function get() {
+    return encode_2.encodeHTML;
+  } });
+var decode_2 = __webpack_require__(/*! ./decode */ "./node_modules/entities/lib/decode.js");
+Object.defineProperty(exports, "decodeXML", { enumerable: true, get: function get() {
+    return decode_2.decodeXML;
+  } });
+Object.defineProperty(exports, "decodeHTML", { enumerable: true, get: function get() {
+    return decode_2.decodeHTML;
+  } });
+Object.defineProperty(exports, "decodeHTMLStrict", { enumerable: true, get: function get() {
+    return decode_2.decodeHTMLStrict;
+  } });
+// Legacy aliases
+Object.defineProperty(exports, "decodeHTML4", { enumerable: true, get: function get() {
+    return decode_2.decodeHTML;
+  } });
+Object.defineProperty(exports, "decodeHTML5", { enumerable: true, get: function get() {
+    return decode_2.decodeHTML;
+  } });
+Object.defineProperty(exports, "decodeHTML4Strict", { enumerable: true, get: function get() {
+    return decode_2.decodeHTMLStrict;
+  } });
+Object.defineProperty(exports, "decodeHTML5Strict", { enumerable: true, get: function get() {
+    return decode_2.decodeHTMLStrict;
+  } });
+Object.defineProperty(exports, "decodeXMLStrict", { enumerable: true, get: function get() {
+    return decode_2.decodeXML;
+  } });
+
+/***/ }),
+
+/***/ "./node_modules/entities/lib/maps/decode.json":
+/*!****************************************************!*\
+  !*** ./node_modules/entities/lib/maps/decode.json ***!
+  \****************************************************/
 /*! exports provided: 0, 128, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 142, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 158, 159, default */
 /***/ (function(module) {
 
@@ -2909,10 +2948,10 @@ module.exports = JSON.parse("{\"0\":65533,\"128\":8364,\"130\":8218,\"131\":402,
 
 /***/ }),
 
-/***/ "./node_modules/entities/maps/entities.json":
-/*!**************************************************!*\
-  !*** ./node_modules/entities/maps/entities.json ***!
-  \**************************************************/
+/***/ "./node_modules/entities/lib/maps/entities.json":
+/*!******************************************************!*\
+  !*** ./node_modules/entities/lib/maps/entities.json ***!
+  \******************************************************/
 /*! exports provided: Aacute, aacute, Abreve, abreve, ac, acd, acE, Acirc, acirc, acute, Acy, acy, AElig, aelig, af, Afr, afr, Agrave, agrave, alefsym, aleph, Alpha, alpha, Amacr, amacr, amalg, amp, AMP, andand, And, and, andd, andslope, andv, ang, ange, angle, angmsdaa, angmsdab, angmsdac, angmsdad, angmsdae, angmsdaf, angmsdag, angmsdah, angmsd, angrt, angrtvb, angrtvbd, angsph, angst, angzarr, Aogon, aogon, Aopf, aopf, apacir, ap, apE, ape, apid, apos, ApplyFunction, approx, approxeq, Aring, aring, Ascr, ascr, Assign, ast, asymp, asympeq, Atilde, atilde, Auml, auml, awconint, awint, backcong, backepsilon, backprime, backsim, backsimeq, Backslash, Barv, barvee, barwed, Barwed, barwedge, bbrk, bbrktbrk, bcong, Bcy, bcy, bdquo, becaus, because, Because, bemptyv, bepsi, bernou, Bernoullis, Beta, beta, beth, between, Bfr, bfr, bigcap, bigcirc, bigcup, bigodot, bigoplus, bigotimes, bigsqcup, bigstar, bigtriangledown, bigtriangleup, biguplus, bigvee, bigwedge, bkarow, blacklozenge, blacksquare, blacktriangle, blacktriangledown, blacktriangleleft, blacktriangleright, blank, blk12, blk14, blk34, block, bne, bnequiv, bNot, bnot, Bopf, bopf, bot, bottom, bowtie, boxbox, boxdl, boxdL, boxDl, boxDL, boxdr, boxdR, boxDr, boxDR, boxh, boxH, boxhd, boxHd, boxhD, boxHD, boxhu, boxHu, boxhU, boxHU, boxminus, boxplus, boxtimes, boxul, boxuL, boxUl, boxUL, boxur, boxuR, boxUr, boxUR, boxv, boxV, boxvh, boxvH, boxVh, boxVH, boxvl, boxvL, boxVl, boxVL, boxvr, boxvR, boxVr, boxVR, bprime, breve, Breve, brvbar, bscr, Bscr, bsemi, bsim, bsime, bsolb, bsol, bsolhsub, bull, bullet, bump, bumpE, bumpe, Bumpeq, bumpeq, Cacute, cacute, capand, capbrcup, capcap, cap, Cap, capcup, capdot, CapitalDifferentialD, caps, caret, caron, Cayleys, ccaps, Ccaron, ccaron, Ccedil, ccedil, Ccirc, ccirc, Cconint, ccups, ccupssm, Cdot, cdot, cedil, Cedilla, cemptyv, cent, centerdot, CenterDot, cfr, Cfr, CHcy, chcy, check, checkmark, Chi, chi, circ, circeq, circlearrowleft, circlearrowright, circledast, circledcirc, circleddash, CircleDot, circledR, circledS, CircleMinus, CirclePlus, CircleTimes, cir, cirE, cire, cirfnint, cirmid, cirscir, ClockwiseContourIntegral, CloseCurlyDoubleQuote, CloseCurlyQuote, clubs, clubsuit, colon, Colon, Colone, colone, coloneq, comma, commat, comp, compfn, complement, complexes, cong, congdot, Congruent, conint, Conint, ContourIntegral, copf, Copf, coprod, Coproduct, copy, COPY, copysr, CounterClockwiseContourIntegral, crarr, cross, Cross, Cscr, cscr, csub, csube, csup, csupe, ctdot, cudarrl, cudarrr, cuepr, cuesc, cularr, cularrp, cupbrcap, cupcap, CupCap, cup, Cup, cupcup, cupdot, cupor, cups, curarr, curarrm, curlyeqprec, curlyeqsucc, curlyvee, curlywedge, curren, curvearrowleft, curvearrowright, cuvee, cuwed, cwconint, cwint, cylcty, dagger, Dagger, daleth, darr, Darr, dArr, dash, Dashv, dashv, dbkarow, dblac, Dcaron, dcaron, Dcy, dcy, ddagger, ddarr, DD, dd, DDotrahd, ddotseq, deg, Del, Delta, delta, demptyv, dfisht, Dfr, dfr, dHar, dharl, dharr, DiacriticalAcute, DiacriticalDot, DiacriticalDoubleAcute, DiacriticalGrave, DiacriticalTilde, diam, diamond, Diamond, diamondsuit, diams, die, DifferentialD, digamma, disin, div, divide, divideontimes, divonx, DJcy, djcy, dlcorn, dlcrop, dollar, Dopf, dopf, Dot, dot, DotDot, doteq, doteqdot, DotEqual, dotminus, dotplus, dotsquare, doublebarwedge, DoubleContourIntegral, DoubleDot, DoubleDownArrow, DoubleLeftArrow, DoubleLeftRightArrow, DoubleLeftTee, DoubleLongLeftArrow, DoubleLongLeftRightArrow, DoubleLongRightArrow, DoubleRightArrow, DoubleRightTee, DoubleUpArrow, DoubleUpDownArrow, DoubleVerticalBar, DownArrowBar, downarrow, DownArrow, Downarrow, DownArrowUpArrow, DownBreve, downdownarrows, downharpoonleft, downharpoonright, DownLeftRightVector, DownLeftTeeVector, DownLeftVectorBar, DownLeftVector, DownRightTeeVector, DownRightVectorBar, DownRightVector, DownTeeArrow, DownTee, drbkarow, drcorn, drcrop, Dscr, dscr, DScy, dscy, dsol, Dstrok, dstrok, dtdot, dtri, dtrif, duarr, duhar, dwangle, DZcy, dzcy, dzigrarr, Eacute, eacute, easter, Ecaron, ecaron, Ecirc, ecirc, ecir, ecolon, Ecy, ecy, eDDot, Edot, edot, eDot, ee, efDot, Efr, efr, eg, Egrave, egrave, egs, egsdot, el, Element, elinters, ell, els, elsdot, Emacr, emacr, empty, emptyset, EmptySmallSquare, emptyv, EmptyVerySmallSquare, emsp13, emsp14, emsp, ENG, eng, ensp, Eogon, eogon, Eopf, eopf, epar, eparsl, eplus, epsi, Epsilon, epsilon, epsiv, eqcirc, eqcolon, eqsim, eqslantgtr, eqslantless, Equal, equals, EqualTilde, equest, Equilibrium, equiv, equivDD, eqvparsl, erarr, erDot, escr, Escr, esdot, Esim, esim, Eta, eta, ETH, eth, Euml, euml, euro, excl, exist, Exists, expectation, exponentiale, ExponentialE, fallingdotseq, Fcy, fcy, female, ffilig, fflig, ffllig, Ffr, ffr, filig, FilledSmallSquare, FilledVerySmallSquare, fjlig, flat, fllig, fltns, fnof, Fopf, fopf, forall, ForAll, fork, forkv, Fouriertrf, fpartint, frac12, frac13, frac14, frac15, frac16, frac18, frac23, frac25, frac34, frac35, frac38, frac45, frac56, frac58, frac78, frasl, frown, fscr, Fscr, gacute, Gamma, gamma, Gammad, gammad, gap, Gbreve, gbreve, Gcedil, Gcirc, gcirc, Gcy, gcy, Gdot, gdot, ge, gE, gEl, gel, geq, geqq, geqslant, gescc, ges, gesdot, gesdoto, gesdotol, gesl, gesles, Gfr, gfr, gg, Gg, ggg, gimel, GJcy, gjcy, gla, gl, glE, glj, gnap, gnapprox, gne, gnE, gneq, gneqq, gnsim, Gopf, gopf, grave, GreaterEqual, GreaterEqualLess, GreaterFullEqual, GreaterGreater, GreaterLess, GreaterSlantEqual, GreaterTilde, Gscr, gscr, gsim, gsime, gsiml, gtcc, gtcir, gt, GT, Gt, gtdot, gtlPar, gtquest, gtrapprox, gtrarr, gtrdot, gtreqless, gtreqqless, gtrless, gtrsim, gvertneqq, gvnE, Hacek, hairsp, half, hamilt, HARDcy, hardcy, harrcir, harr, hArr, harrw, Hat, hbar, Hcirc, hcirc, hearts, heartsuit, hellip, hercon, hfr, Hfr, HilbertSpace, hksearow, hkswarow, hoarr, homtht, hookleftarrow, hookrightarrow, hopf, Hopf, horbar, HorizontalLine, hscr, Hscr, hslash, Hstrok, hstrok, HumpDownHump, HumpEqual, hybull, hyphen, Iacute, iacute, ic, Icirc, icirc, Icy, icy, Idot, IEcy, iecy, iexcl, iff, ifr, Ifr, Igrave, igrave, ii, iiiint, iiint, iinfin, iiota, IJlig, ijlig, Imacr, imacr, image, ImaginaryI, imagline, imagpart, imath, Im, imof, imped, Implies, incare, in, infin, infintie, inodot, intcal, int, Int, integers, Integral, intercal, Intersection, intlarhk, intprod, InvisibleComma, InvisibleTimes, IOcy, iocy, Iogon, iogon, Iopf, iopf, Iota, iota, iprod, iquest, iscr, Iscr, isin, isindot, isinE, isins, isinsv, isinv, it, Itilde, itilde, Iukcy, iukcy, Iuml, iuml, Jcirc, jcirc, Jcy, jcy, Jfr, jfr, jmath, Jopf, jopf, Jscr, jscr, Jsercy, jsercy, Jukcy, jukcy, Kappa, kappa, kappav, Kcedil, kcedil, Kcy, kcy, Kfr, kfr, kgreen, KHcy, khcy, KJcy, kjcy, Kopf, kopf, Kscr, kscr, lAarr, Lacute, lacute, laemptyv, lagran, Lambda, lambda, lang, Lang, langd, langle, lap, Laplacetrf, laquo, larrb, larrbfs, larr, Larr, lArr, larrfs, larrhk, larrlp, larrpl, larrsim, larrtl, latail, lAtail, lat, late, lates, lbarr, lBarr, lbbrk, lbrace, lbrack, lbrke, lbrksld, lbrkslu, Lcaron, lcaron, Lcedil, lcedil, lceil, lcub, Lcy, lcy, ldca, ldquo, ldquor, ldrdhar, ldrushar, ldsh, le, lE, LeftAngleBracket, LeftArrowBar, leftarrow, LeftArrow, Leftarrow, LeftArrowRightArrow, leftarrowtail, LeftCeiling, LeftDoubleBracket, LeftDownTeeVector, LeftDownVectorBar, LeftDownVector, LeftFloor, leftharpoondown, leftharpoonup, leftleftarrows, leftrightarrow, LeftRightArrow, Leftrightarrow, leftrightarrows, leftrightharpoons, leftrightsquigarrow, LeftRightVector, LeftTeeArrow, LeftTee, LeftTeeVector, leftthreetimes, LeftTriangleBar, LeftTriangle, LeftTriangleEqual, LeftUpDownVector, LeftUpTeeVector, LeftUpVectorBar, LeftUpVector, LeftVectorBar, LeftVector, lEg, leg, leq, leqq, leqslant, lescc, les, lesdot, lesdoto, lesdotor, lesg, lesges, lessapprox, lessdot, lesseqgtr, lesseqqgtr, LessEqualGreater, LessFullEqual, LessGreater, lessgtr, LessLess, lesssim, LessSlantEqual, LessTilde, lfisht, lfloor, Lfr, lfr, lg, lgE, lHar, lhard, lharu, lharul, lhblk, LJcy, ljcy, llarr, ll, Ll, llcorner, Lleftarrow, llhard, lltri, Lmidot, lmidot, lmoustache, lmoust, lnap, lnapprox, lne, lnE, lneq, lneqq, lnsim, loang, loarr, lobrk, longleftarrow, LongLeftArrow, Longleftarrow, longleftrightarrow, LongLeftRightArrow, Longleftrightarrow, longmapsto, longrightarrow, LongRightArrow, Longrightarrow, looparrowleft, looparrowright, lopar, Lopf, lopf, loplus, lotimes, lowast, lowbar, LowerLeftArrow, LowerRightArrow, loz, lozenge, lozf, lpar, lparlt, lrarr, lrcorner, lrhar, lrhard, lrm, lrtri, lsaquo, lscr, Lscr, lsh, Lsh, lsim, lsime, lsimg, lsqb, lsquo, lsquor, Lstrok, lstrok, ltcc, ltcir, lt, LT, Lt, ltdot, lthree, ltimes, ltlarr, ltquest, ltri, ltrie, ltrif, ltrPar, lurdshar, luruhar, lvertneqq, lvnE, macr, male, malt, maltese, Map, map, mapsto, mapstodown, mapstoleft, mapstoup, marker, mcomma, Mcy, mcy, mdash, mDDot, measuredangle, MediumSpace, Mellintrf, Mfr, mfr, mho, micro, midast, midcir, mid, middot, minusb, minus, minusd, minusdu, MinusPlus, mlcp, mldr, mnplus, models, Mopf, mopf, mp, mscr, Mscr, mstpos, Mu, mu, multimap, mumap, nabla, Nacute, nacute, nang, nap, napE, napid, napos, napprox, natural, naturals, natur, nbsp, nbump, nbumpe, ncap, Ncaron, ncaron, Ncedil, ncedil, ncong, ncongdot, ncup, Ncy, ncy, ndash, nearhk, nearr, neArr, nearrow, ne, nedot, NegativeMediumSpace, NegativeThickSpace, NegativeThinSpace, NegativeVeryThinSpace, nequiv, nesear, nesim, NestedGreaterGreater, NestedLessLess, NewLine, nexist, nexists, Nfr, nfr, ngE, nge, ngeq, ngeqq, ngeqslant, nges, nGg, ngsim, nGt, ngt, ngtr, nGtv, nharr, nhArr, nhpar, ni, nis, nisd, niv, NJcy, njcy, nlarr, nlArr, nldr, nlE, nle, nleftarrow, nLeftarrow, nleftrightarrow, nLeftrightarrow, nleq, nleqq, nleqslant, nles, nless, nLl, nlsim, nLt, nlt, nltri, nltrie, nLtv, nmid, NoBreak, NonBreakingSpace, nopf, Nopf, Not, not, NotCongruent, NotCupCap, NotDoubleVerticalBar, NotElement, NotEqual, NotEqualTilde, NotExists, NotGreater, NotGreaterEqual, NotGreaterFullEqual, NotGreaterGreater, NotGreaterLess, NotGreaterSlantEqual, NotGreaterTilde, NotHumpDownHump, NotHumpEqual, notin, notindot, notinE, notinva, notinvb, notinvc, NotLeftTriangleBar, NotLeftTriangle, NotLeftTriangleEqual, NotLess, NotLessEqual, NotLessGreater, NotLessLess, NotLessSlantEqual, NotLessTilde, NotNestedGreaterGreater, NotNestedLessLess, notni, notniva, notnivb, notnivc, NotPrecedes, NotPrecedesEqual, NotPrecedesSlantEqual, NotReverseElement, NotRightTriangleBar, NotRightTriangle, NotRightTriangleEqual, NotSquareSubset, NotSquareSubsetEqual, NotSquareSuperset, NotSquareSupersetEqual, NotSubset, NotSubsetEqual, NotSucceeds, NotSucceedsEqual, NotSucceedsSlantEqual, NotSucceedsTilde, NotSuperset, NotSupersetEqual, NotTilde, NotTildeEqual, NotTildeFullEqual, NotTildeTilde, NotVerticalBar, nparallel, npar, nparsl, npart, npolint, npr, nprcue, nprec, npreceq, npre, nrarrc, nrarr, nrArr, nrarrw, nrightarrow, nRightarrow, nrtri, nrtrie, nsc, nsccue, nsce, Nscr, nscr, nshortmid, nshortparallel, nsim, nsime, nsimeq, nsmid, nspar, nsqsube, nsqsupe, nsub, nsubE, nsube, nsubset, nsubseteq, nsubseteqq, nsucc, nsucceq, nsup, nsupE, nsupe, nsupset, nsupseteq, nsupseteqq, ntgl, Ntilde, ntilde, ntlg, ntriangleleft, ntrianglelefteq, ntriangleright, ntrianglerighteq, Nu, nu, num, numero, numsp, nvap, nvdash, nvDash, nVdash, nVDash, nvge, nvgt, nvHarr, nvinfin, nvlArr, nvle, nvlt, nvltrie, nvrArr, nvrtrie, nvsim, nwarhk, nwarr, nwArr, nwarrow, nwnear, Oacute, oacute, oast, Ocirc, ocirc, ocir, Ocy, ocy, odash, Odblac, odblac, odiv, odot, odsold, OElig, oelig, ofcir, Ofr, ofr, ogon, Ograve, ograve, ogt, ohbar, ohm, oint, olarr, olcir, olcross, oline, olt, Omacr, omacr, Omega, omega, Omicron, omicron, omid, ominus, Oopf, oopf, opar, OpenCurlyDoubleQuote, OpenCurlyQuote, operp, oplus, orarr, Or, or, ord, order, orderof, ordf, ordm, origof, oror, orslope, orv, oS, Oscr, oscr, Oslash, oslash, osol, Otilde, otilde, otimesas, Otimes, otimes, Ouml, ouml, ovbar, OverBar, OverBrace, OverBracket, OverParenthesis, para, parallel, par, parsim, parsl, part, PartialD, Pcy, pcy, percnt, period, permil, perp, pertenk, Pfr, pfr, Phi, phi, phiv, phmmat, phone, Pi, pi, pitchfork, piv, planck, planckh, plankv, plusacir, plusb, pluscir, plus, plusdo, plusdu, pluse, PlusMinus, plusmn, plussim, plustwo, pm, Poincareplane, pointint, popf, Popf, pound, prap, Pr, pr, prcue, precapprox, prec, preccurlyeq, Precedes, PrecedesEqual, PrecedesSlantEqual, PrecedesTilde, preceq, precnapprox, precneqq, precnsim, pre, prE, precsim, prime, Prime, primes, prnap, prnE, prnsim, prod, Product, profalar, profline, profsurf, prop, Proportional, Proportion, propto, prsim, prurel, Pscr, pscr, Psi, psi, puncsp, Qfr, qfr, qint, qopf, Qopf, qprime, Qscr, qscr, quaternions, quatint, quest, questeq, quot, QUOT, rAarr, race, Racute, racute, radic, raemptyv, rang, Rang, rangd, range, rangle, raquo, rarrap, rarrb, rarrbfs, rarrc, rarr, Rarr, rArr, rarrfs, rarrhk, rarrlp, rarrpl, rarrsim, Rarrtl, rarrtl, rarrw, ratail, rAtail, ratio, rationals, rbarr, rBarr, RBarr, rbbrk, rbrace, rbrack, rbrke, rbrksld, rbrkslu, Rcaron, rcaron, Rcedil, rcedil, rceil, rcub, Rcy, rcy, rdca, rdldhar, rdquo, rdquor, rdsh, real, realine, realpart, reals, Re, rect, reg, REG, ReverseElement, ReverseEquilibrium, ReverseUpEquilibrium, rfisht, rfloor, rfr, Rfr, rHar, rhard, rharu, rharul, Rho, rho, rhov, RightAngleBracket, RightArrowBar, rightarrow, RightArrow, Rightarrow, RightArrowLeftArrow, rightarrowtail, RightCeiling, RightDoubleBracket, RightDownTeeVector, RightDownVectorBar, RightDownVector, RightFloor, rightharpoondown, rightharpoonup, rightleftarrows, rightleftharpoons, rightrightarrows, rightsquigarrow, RightTeeArrow, RightTee, RightTeeVector, rightthreetimes, RightTriangleBar, RightTriangle, RightTriangleEqual, RightUpDownVector, RightUpTeeVector, RightUpVectorBar, RightUpVector, RightVectorBar, RightVector, ring, risingdotseq, rlarr, rlhar, rlm, rmoustache, rmoust, rnmid, roang, roarr, robrk, ropar, ropf, Ropf, roplus, rotimes, RoundImplies, rpar, rpargt, rppolint, rrarr, Rrightarrow, rsaquo, rscr, Rscr, rsh, Rsh, rsqb, rsquo, rsquor, rthree, rtimes, rtri, rtrie, rtrif, rtriltri, RuleDelayed, ruluhar, rx, Sacute, sacute, sbquo, scap, Scaron, scaron, Sc, sc, sccue, sce, scE, Scedil, scedil, Scirc, scirc, scnap, scnE, scnsim, scpolint, scsim, Scy, scy, sdotb, sdot, sdote, searhk, searr, seArr, searrow, sect, semi, seswar, setminus, setmn, sext, Sfr, sfr, sfrown, sharp, SHCHcy, shchcy, SHcy, shcy, ShortDownArrow, ShortLeftArrow, shortmid, shortparallel, ShortRightArrow, ShortUpArrow, shy, Sigma, sigma, sigmaf, sigmav, sim, simdot, sime, simeq, simg, simgE, siml, simlE, simne, simplus, simrarr, slarr, SmallCircle, smallsetminus, smashp, smeparsl, smid, smile, smt, smte, smtes, SOFTcy, softcy, solbar, solb, sol, Sopf, sopf, spades, spadesuit, spar, sqcap, sqcaps, sqcup, sqcups, Sqrt, sqsub, sqsube, sqsubset, sqsubseteq, sqsup, sqsupe, sqsupset, sqsupseteq, square, Square, SquareIntersection, SquareSubset, SquareSubsetEqual, SquareSuperset, SquareSupersetEqual, SquareUnion, squarf, squ, squf, srarr, Sscr, sscr, ssetmn, ssmile, sstarf, Star, star, starf, straightepsilon, straightphi, strns, sub, Sub, subdot, subE, sube, subedot, submult, subnE, subne, subplus, subrarr, subset, Subset, subseteq, subseteqq, SubsetEqual, subsetneq, subsetneqq, subsim, subsub, subsup, succapprox, succ, succcurlyeq, Succeeds, SucceedsEqual, SucceedsSlantEqual, SucceedsTilde, succeq, succnapprox, succneqq, succnsim, succsim, SuchThat, sum, Sum, sung, sup1, sup2, sup3, sup, Sup, supdot, supdsub, supE, supe, supedot, Superset, SupersetEqual, suphsol, suphsub, suplarr, supmult, supnE, supne, supplus, supset, Supset, supseteq, supseteqq, supsetneq, supsetneqq, supsim, supsub, supsup, swarhk, swarr, swArr, swarrow, swnwar, szlig, Tab, target, Tau, tau, tbrk, Tcaron, tcaron, Tcedil, tcedil, Tcy, tcy, tdot, telrec, Tfr, tfr, there4, therefore, Therefore, Theta, theta, thetasym, thetav, thickapprox, thicksim, ThickSpace, ThinSpace, thinsp, thkap, thksim, THORN, thorn, tilde, Tilde, TildeEqual, TildeFullEqual, TildeTilde, timesbar, timesb, times, timesd, tint, toea, topbot, topcir, top, Topf, topf, topfork, tosa, tprime, trade, TRADE, triangle, triangledown, triangleleft, trianglelefteq, triangleq, triangleright, trianglerighteq, tridot, trie, triminus, TripleDot, triplus, trisb, tritime, trpezium, Tscr, tscr, TScy, tscy, TSHcy, tshcy, Tstrok, tstrok, twixt, twoheadleftarrow, twoheadrightarrow, Uacute, uacute, uarr, Uarr, uArr, Uarrocir, Ubrcy, ubrcy, Ubreve, ubreve, Ucirc, ucirc, Ucy, ucy, udarr, Udblac, udblac, udhar, ufisht, Ufr, ufr, Ugrave, ugrave, uHar, uharl, uharr, uhblk, ulcorn, ulcorner, ulcrop, ultri, Umacr, umacr, uml, UnderBar, UnderBrace, UnderBracket, UnderParenthesis, Union, UnionPlus, Uogon, uogon, Uopf, uopf, UpArrowBar, uparrow, UpArrow, Uparrow, UpArrowDownArrow, updownarrow, UpDownArrow, Updownarrow, UpEquilibrium, upharpoonleft, upharpoonright, uplus, UpperLeftArrow, UpperRightArrow, upsi, Upsi, upsih, Upsilon, upsilon, UpTeeArrow, UpTee, upuparrows, urcorn, urcorner, urcrop, Uring, uring, urtri, Uscr, uscr, utdot, Utilde, utilde, utri, utrif, uuarr, Uuml, uuml, uwangle, vangrt, varepsilon, varkappa, varnothing, varphi, varpi, varpropto, varr, vArr, varrho, varsigma, varsubsetneq, varsubsetneqq, varsupsetneq, varsupsetneqq, vartheta, vartriangleleft, vartriangleright, vBar, Vbar, vBarv, Vcy, vcy, vdash, vDash, Vdash, VDash, Vdashl, veebar, vee, Vee, veeeq, vellip, verbar, Verbar, vert, Vert, VerticalBar, VerticalLine, VerticalSeparator, VerticalTilde, VeryThinSpace, Vfr, vfr, vltri, vnsub, vnsup, Vopf, vopf, vprop, vrtri, Vscr, vscr, vsubnE, vsubne, vsupnE, vsupne, Vvdash, vzigzag, Wcirc, wcirc, wedbar, wedge, Wedge, wedgeq, weierp, Wfr, wfr, Wopf, wopf, wp, wr, wreath, Wscr, wscr, xcap, xcirc, xcup, xdtri, Xfr, xfr, xharr, xhArr, Xi, xi, xlarr, xlArr, xmap, xnis, xodot, Xopf, xopf, xoplus, xotime, xrarr, xrArr, Xscr, xscr, xsqcup, xuplus, xutri, xvee, xwedge, Yacute, yacute, YAcy, yacy, Ycirc, ycirc, Ycy, ycy, yen, Yfr, yfr, YIcy, yicy, Yopf, yopf, Yscr, yscr, YUcy, yucy, yuml, Yuml, Zacute, zacute, Zcaron, zcaron, Zcy, zcy, Zdot, zdot, zeetrf, ZeroWidthSpace, Zeta, zeta, zfr, Zfr, ZHcy, zhcy, zigrarr, zopf, Zopf, Zscr, zscr, zwj, zwnj, default */
 /***/ (function(module) {
 
@@ -2920,10 +2959,10 @@ module.exports = JSON.parse("{\"Aacute\":\"Á\",\"aacute\":\"á\",\"Abreve\":\"�
 
 /***/ }),
 
-/***/ "./node_modules/entities/maps/legacy.json":
-/*!************************************************!*\
-  !*** ./node_modules/entities/maps/legacy.json ***!
-  \************************************************/
+/***/ "./node_modules/entities/lib/maps/legacy.json":
+/*!****************************************************!*\
+  !*** ./node_modules/entities/lib/maps/legacy.json ***!
+  \****************************************************/
 /*! exports provided: Aacute, aacute, Acirc, acirc, acute, AElig, aelig, Agrave, agrave, amp, AMP, Aring, aring, Atilde, atilde, Auml, auml, brvbar, Ccedil, ccedil, cedil, cent, copy, COPY, curren, deg, divide, Eacute, eacute, Ecirc, ecirc, Egrave, egrave, ETH, eth, Euml, euml, frac12, frac14, frac34, gt, GT, Iacute, iacute, Icirc, icirc, iexcl, Igrave, igrave, iquest, Iuml, iuml, laquo, lt, LT, macr, micro, middot, nbsp, not, Ntilde, ntilde, Oacute, oacute, Ocirc, ocirc, Ograve, ograve, ordf, ordm, Oslash, oslash, Otilde, otilde, Ouml, ouml, para, plusmn, pound, quot, QUOT, raquo, reg, REG, sect, shy, sup1, sup2, sup3, szlig, THORN, thorn, times, Uacute, uacute, Ucirc, ucirc, Ugrave, ugrave, uml, Uuml, uuml, Yacute, yacute, yen, yuml, default */
 /***/ (function(module) {
 
@@ -2931,10 +2970,10 @@ module.exports = JSON.parse("{\"Aacute\":\"Á\",\"aacute\":\"á\",\"Acirc\":\"Â
 
 /***/ }),
 
-/***/ "./node_modules/entities/maps/xml.json":
-/*!*********************************************!*\
-  !*** ./node_modules/entities/maps/xml.json ***!
-  \*********************************************/
+/***/ "./node_modules/entities/lib/maps/xml.json":
+/*!*************************************************!*\
+  !*** ./node_modules/entities/lib/maps/xml.json ***!
+  \*************************************************/
 /*! exports provided: amp, apos, gt, lt, quot, default */
 /***/ (function(module) {
 
