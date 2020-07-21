@@ -268,4 +268,8 @@ describe('Parser', function() {
   it('should parse giantbomb-podcast', function(done) {
     testParseForFile('giantbomb-podcast', 'rss', done);
   });
+
+  it('should parse content:encoded', function(done) {
+    testParseForFile('content-encoded', 'rss', done);
+  });
 })
