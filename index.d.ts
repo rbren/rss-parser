@@ -7,20 +7,20 @@ declare namespace Parser {
     readonly 'User-Agent'?: string;
   }
 
-  type CustomFieldItem = string | { keepArray: boolean }
+  type CustomFieldItem<U> = keyof U | { keepArray: boolean }
     
-  export interface CustomFields {
-    readonly feed?: string[];
-    readonly item?: CustomFieldItem[] | CustomFieldItem[][];
+  export interface CustomFields<T, U> {
+    readonly feed?: Array<keyof T>;
+    readonly item?: CustomFieldItem<U>[] | CustomFieldItem<U>[][];
   }
 
-  export interface ParserOptions {
+  export interface ParserOptions<T, U> {
     readonly xml2js?: Options;
     readonly requestOptions?: RequestOptions;
     readonly headers?: Headers;
     readonly defaultRSS?: number;
     readonly maxRedirects?: number;
-    readonly customFields?: CustomFields;
+    readonly customFields?: CustomFields<T, U>;
     readonly timeout?: number;
   }
 
@@ -31,7 +31,6 @@ declare namespace Parser {
   }
 
   export interface Item {
-    [key: string]: any;
     link?: string;
     guid?: string;
     title?: string;
@@ -44,8 +43,7 @@ declare namespace Parser {
     enclosure?: Enclosure;
   }
 
-  export interface Output {
-    [key: string]: any;
+  export interface Output<U> {
     image?: {
       link?: string;
       url: string;
@@ -53,7 +51,7 @@ declare namespace Parser {
     },
     link?: string;
     title?: string;
-    items?: Item[];
+    items?: (U & Item)[];
     feedUrl?: string;
     description?: string;
     itunes?: {
@@ -75,11 +73,11 @@ declare namespace Parser {
 /**
  * Class that handles all parsing or URL, or even XML, RSS feed to JSON.
  */
-declare class Parser {
+declare class Parser<T = {[key: string]: any}, U = {[key: string]: any}> {
   /**
    * @param options - Parser options.
    */
-  constructor(options?: Parser.ParserOptions);
+  constructor(options?: Parser.ParserOptions<T, U>);
   /**
    * Parse XML content to JSON.
    *
@@ -90,8 +88,8 @@ declare class Parser {
    */
   parseString(
     xml: string,
-    callback?: (err: Error, feed: Parser.Output) => void
-  ): Promise<Parser.Output>;
+    callback?: (err: Error, feed: Parser.Output<U>) => void
+  ): Promise<T & Parser.Output<U>>;
 
   /**
    * Parse URL content to JSON.
@@ -108,9 +106,9 @@ declare class Parser {
    */
   parseURL(
     feedUrl: string,
-    callback?: (err: Error, feed: Parser.Output) => void,
+    callback?: (err: Error, feed: Parser.Output<U>) => void,
     redirectCount?: number
-  ): Promise<Parser.Output>;
+  ): Promise<T & Parser.Output<U>>;
 }
 
 export = Parser;
