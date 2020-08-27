@@ -41,6 +41,34 @@ let parser = new Parser();
 })();
 ```
 
+### TypeScript
+When using TypeScript, you can set a type to control the custom fields:
+
+```typescript
+import Parser from 'rss-parser';
+
+type CustomFeed = {foo: string};
+type CustomItem = {bar: number};
+
+const parser: Parser<CustomFeed, CustomItem> = new Parser({
+  customFields: {
+    feed: ['foo', 'baz'],
+    //            ^ will error because `baz` is not a key of CustomFeed
+    item: ['bar']
+  }
+});
+
+(async () => {
+
+  const feed = await parser.parseUrl('https://www.reddit.com/.rss');
+  console.log(feed.title); // feed will have a `foo` property, type as a string
+
+  feed.items.forEach(item => {
+    console.log(item.title + ':' + item.link) // item will have a `bar` property type as a number
+  });
+})();
+```
+
 ### Web
 > We recommend using a bundler like [webpack](https://webpack.js.org/), but we also provide
 > pre-built browser distributions in the `dist/` folder. If you use the pre-built distribution,
