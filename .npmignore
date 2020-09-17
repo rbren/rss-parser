@@ -1,1 +1,5 @@
-/test
+node_modules/
+*.swp
+.idea/
+dist/stats.json
+test

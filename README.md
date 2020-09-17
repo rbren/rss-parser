@@ -7,8 +7,8 @@
 [downloads-image]: https://img.shields.io/npm/dm/rss-parser.svg
 [npm-image]: https://img.shields.io/npm/v/rss-parser.svg
 [npm-link]: https://npmjs.org/package/rss-parser
-[build-image]: https://travis-ci.org/bobby-brennan/rss-parser.svg?branch=master
-[build-link]: https://travis-ci.org/bobby-brennan/rss-parser
+[build-image]: https://github.com/rbren/rss-parser/workflows/tests/badge.svg
+[build-link]: https://github.com/rbren/rss-parser/actions
 
 A small library for turning RSS XML feeds into JavaScript objects.
 
@@ -38,6 +38,34 @@ let parser = new Parser();
     console.log(item.title + ':' + item.link)
   });
 
+})();
+```
+
+### TypeScript
+When using TypeScript, you can set a type to control the custom fields:
+
+```typescript
+import Parser from 'rss-parser';
+
+type CustomFeed = {foo: string};
+type CustomItem = {bar: number};
+
+const parser: Parser<CustomFeed, CustomItem> = new Parser({
+  customFields: {
+    feed: ['foo', 'baz'],
+    //            ^ will error because `baz` is not a key of CustomFeed
+    item: ['bar']
+  }
+});
+
+(async () => {
+
+  const feed = await parser.parseUrl('https://www.reddit.com/.rss');
+  console.log(feed.title); // feed will have a `foo` property, type as a string
+
+  feed.items.forEach(item => {
+    console.log(item.title + ':' + item.link) // item will have a `bar` property type as a number
+  });
 })();
 ```
 
@@ -142,7 +170,8 @@ let parser = new Parser({
 
 To pass additional flags, provide an object as the third array item. Currently there is one such flag:
 
-* `keepArray`: `true` to return *all* values for fields that can have multiple entries. Default: return the first item only.
+* `keepArray (false)` - set to `true` to return *all* values for fields that can have multiple entries.
+* `includeSnippet (false)` - set to `true` to add an additional field, `${toField}Snippet`, with HTML stripped out
 
 ```js
 let parser = new Parser({
