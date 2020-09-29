@@ -51,7 +51,7 @@ declare namespace Parser {
     },
     link?: string;
     title?: string;
-    items?: (U & Item)[];
+    items: (U & Item)[];
     feedUrl?: string;
     description?: string;
     itunes?: {
