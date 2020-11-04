@@ -692,6 +692,16 @@
       "categories": [
         "Music"
       ],
+      "categoriesWithSubs": [
+        {
+          "name": "Music",
+          "subs": [
+            {
+              "name": "Music Interviews"
+            }
+          ]
+        }
+      ],
       "keywords": [
         "Moderatoren"
       ],
