@@ -60,7 +60,7 @@ const parser: Parser<CustomFeed, CustomItem> = new Parser({
 
 (async () => {
 
-  const feed = await parser.parseUrl('https://www.reddit.com/.rss');
+  const feed = await parser.parseURL('https://www.reddit.com/.rss');
   console.log(feed.title); // feed will have a `foo` property, type as a string
 
   feed.items.forEach(item => {
