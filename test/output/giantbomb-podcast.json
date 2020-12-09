@@ -16816,6 +16816,32 @@
         "Technology",
         "Games & Hobbies"
       ],
+      "categoriesWithSubs": [
+        {
+          "name": "Games & Hobbies",
+          "subs": [
+            {
+              "name": "Video Games"
+            }
+          ]
+        },
+        {
+          "name": "Technology",
+          "subs": [
+            {
+              "name": "Gadgets"
+            }
+          ]
+        },
+        {
+          "name": "Games & Hobbies",
+          "subs": [
+            {
+              "name": "Other Games"
+            }
+          ]
+        }
+      ],
       "keywords": [
         "GiantBomb",
         " Giant Bomb",

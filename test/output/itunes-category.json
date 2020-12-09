@@ -57,6 +57,20 @@
         "Society & Culture",
         "Games & Hobbies"
       ],
+      "categoriesWithSubs": [
+        {
+          "name": "Society & Culture",
+          "subs": null
+        },
+        {
+          "name": "Games & Hobbies",
+          "subs": [
+            {
+              "name": "Hobbies"
+            }
+          ]
+        }
+      ],
       "author": "Bryce Erwin, Bill Ticknor, Michelle O'Neill, Mike Monan, Aric Watson, Jennifer Albrecht, Lauren Hoban and Derek Chew",
       "subtitle": "Beer - Talk - Fun.  It's Happy Hour in Your Head!",
       "summary": "Order a beer, pull up a seat and join your friends at Taverncast for our patented un-scripted roundtable discussions, covering a wide range of topics with a unique wit and inviting style - all blended together, it's Happy Hour in Your Head!",
