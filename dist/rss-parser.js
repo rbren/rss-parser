@@ -293,31 +293,36 @@ var Parser = function () {
       if (xmlObj.feed.updated) {
         feed.lastBuildDate = xmlObj.feed.updated[0];
       }
-      (xmlObj.feed.entry || []).forEach(function (entry) {
-        var item = {};
-        utils.copyFromXML(entry, item, _this3.options.customFields.item);
-        if (entry.title) {
-          var _title = entry.title[0] || '';
-          if (_title._) _title = _title._;
-          if (_title) item.title = _title;
-        }
-        if (entry.link && entry.link.length) {
-          item.link = utils.getLink(entry.link, 'alternate', 0);
-        }
-        if (entry.published && entry.published.length && entry.published[0].length) item.pubDate = new Date(entry.published[0]).toISOString();
-        if (!item.pubDate && entry.updated && entry.updated.length && entry.updated[0].length) item.pubDate = new Date(entry.updated[0]).toISOString();
-        if (entry.author && entry.author.length && entry.author[0].name && entry.author[0].name.length) item.author = entry.author[0].name[0];
-        if (entry.content && entry.content.length) {
-          item.content = utils.getContent(entry.content[0]);
-          item.contentSnippet = utils.getSnippet(item.content);
-        }
-        if (entry.id) {
-          item.id = entry.id[0];
-        }
-        _this3.setISODate(item);
-        feed.items.push(item);
+      feed.items = (xmlObj.feed.entry || []).map(function (entry) {
+        return _this3.parseItemAtom(entry);
       });
       return feed;
+    }
+  }, {
+    key: 'parseItemAtom',
+    value: function parseItemAtom(entry) {
+      var item = {};
+      utils.copyFromXML(entry, item, this.options.customFields.item);
+      if (entry.title) {
+        var title = entry.title[0] || '';
+        if (title._) title = title._;
+        if (title) item.title = title;
+      }
+      if (entry.link && entry.link.length) {
+        item.link = utils.getLink(entry.link, 'alternate', 0);
+      }
+      if (entry.published && entry.published.length && entry.published[0].length) item.pubDate = new Date(entry.published[0]).toISOString();
+      if (!item.pubDate && entry.updated && entry.updated.length && entry.updated[0].length) item.pubDate = new Date(entry.updated[0]).toISOString();
+      if (entry.author && entry.author.length && entry.author[0].name && entry.author[0].name.length) item.author = entry.author[0].name[0];
+      if (entry.content && entry.content.length) {
+        item.content = utils.getContent(entry.content[0]);
+        item.contentSnippet = utils.getSnippet(item.content);
+      }
+      if (entry.id) {
+        item.id = entry.id[0];
+      }
+      this.setISODate(item);
+      return item;
     }
   }, {
     key: 'buildRSS0_9',
@@ -367,25 +372,30 @@ var Parser = function () {
         if (image.height) feed.image.height = image.height[0];
       }
       utils.copyFromXML(channel, feed, feedFields);
-      items.forEach(function (xmlItem) {
-        var item = {};
-        utils.copyFromXML(xmlItem, item, itemFields);
-        if (xmlItem.enclosure) {
-          item.enclosure = xmlItem.enclosure[0].$;
-        }
-        if (xmlItem.description) {
-          item.content = utils.getContent(xmlItem.description[0]);
-          item.contentSnippet = utils.getSnippet(item.content);
-        }
-        if (xmlItem.guid) {
-          item.guid = xmlItem.guid[0];
-          if (item.guid._) item.guid = item.guid._;
-        }
-        if (xmlItem.category) item.categories = xmlItem.category;
-        _this4.setISODate(item);
-        feed.items.push(item);
+      feed.items = items.map(function (xmlItem) {
+        return _this4.parseItemRss(xmlItem, itemFields);
       });
       return feed;
+    }
+  }, {
+    key: 'parseItemRss',
+    value: function parseItemRss(xmlItem, itemFields) {
+      var item = {};
+      utils.copyFromXML(xmlItem, item, itemFields);
+      if (xmlItem.enclosure) {
+        item.enclosure = xmlItem.enclosure[0].$;
+      }
+      if (xmlItem.description) {
+        item.content = utils.getContent(xmlItem.description[0]);
+        item.contentSnippet = utils.getSnippet(item.content);
+      }
+      if (xmlItem.guid) {
+        item.guid = xmlItem.guid[0];
+        if (item.guid._) item.guid = item.guid._;
+      }
+      if (xmlItem.category) item.categories = xmlItem.category;
+      this.setISODate(item);
+      return item;
     }
 
     /**
@@ -425,10 +435,19 @@ var Parser = function () {
       }
 
       if (channel['itunes:category']) {
-        channel['itunes:category'].forEach(function (category) {
-          categories.push(category.$.text);
+        var categoriesWithSubs = channel['itunes:category'].map(function (category) {
+          return {
+            name: category.$.text,
+            subs: category['itunes:category'] ? category['itunes:category'].map(function (subcategory) {
+              return { name: subcategory.$.text };
+            }) : null
+          };
         });
-        feed.itunes.categories = categories;
+
+        feed.itunes.categories = categoriesWithSubs.map(function (category) {
+          return category.name;
+        });
+        feed.itunes.categoriesWithSubs = categoriesWithSubs;
       }
 
       if (channel['itunes:keywords']) {
@@ -441,7 +460,12 @@ var Parser = function () {
           if (keywords && typeof keywords._ === 'string') {
             keywords = keywords._;
           }
-          if (keywords) feed.itunes.keywords = keywords.split(',');
+
+          if (keywords && keywords.$ && keywords.$.text) {
+            feed.itunes.keywords = keywords.$.text.split(',');
+          } else if (typeof keywords === "string") {
+            feed.itunes.keywords = keywords.split(',');
+          }
         }
       }
 
