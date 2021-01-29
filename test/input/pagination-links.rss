@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+		<title>New Show - With Episode Block</title>
+        <atom:link href="http://example.org/index.atom?page=3" rel="self" type="application/rss+xml"/>
+        <atom:link rel="first" href="http://example.org/index.atom"/>
+		<atom:link rel="next" href="http://example.org/index.atom?page=4"/>
+		<atom:link rel="prev" href="http://example.org/index.atom?page=2"/>
+        <atom:link rel="last" href="http://example.org/index.atom?page=5"/>
+        <link>https://example.test/shows/new-show-1</link>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 31 Mar 2020 05:19:30 +0000</lastBuildDate>
+        <itunes:subtitle>New Show</itunes:subtitle>
+        <itunes:author>Steve Thompson</itunes:author>
+        <itunes:summary>New Show</itunes:summary>
+        <description><![CDATA[New Show]]></description>
+        <itunes:explicit>No</itunes:explicit>
+        <itunes:type>episodic</itunes:type>
+        <itunes:owner>
+            <itunes:name>Steve Thompson</itunes:name>
+            <itunes:email>steve.t@gmail.com</itunes:email>
+        </itunes:owner>
+        <itunes:image href="https://example.test/test-image.jpg"/>
+        <itunes:category text="Arts"/>
+        <image>
+            <url>https://example.test/test-image.jpg</url>
+            <title>New Show</title>
+            <link>https://example.test/shows/new-show-1</link>
+            <description>New Show</description>
+        </image>
+        <itunes:block>Yes</itunes:block>
+		<item>
+			<title>The First Episode</title>
+            <link>https://example.test/episode?id=283843</link>
+			<pubDate>Thu, 21 Jan 2021 18:58:00 +1100</pubDate>
+			<itunes:author>Steve Thompson</itunes:author>
+            <itunes:summary>The First Episode</itunes:summary>
+            <description><![CDATA[<div>The First Episode</div>]]></description>
+            <itunes:subtitle>The First Episode...</itunes:subtitle>
+			<itunes:image href="https://example.test/test-image.jpg"/>
+            <enclosure url="https://example.test/test-audio.mp3" length="38068096" type="audio/mpeg"/>
+            <itunes:duration>39:27</itunes:duration>
+			<guid isPermaLink="false">a6f22abe-be5c-4a37-8f4b-8be3d69b0235</guid>
+            <itunes:explicit>No</itunes:explicit>
+		</item>
+    </channel>
+</rss>

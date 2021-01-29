@@ -276,4 +276,8 @@ describe('Parser', function() {
   it('should parse content:encoded', function(done) {
     testParseForFile('content-encoded', 'rss', done);
   });
+
+  it('should parse atom:link pagination links', function (done) {
+    testParseForFile('pagination-links', 'rss', done);
+  });
 })
