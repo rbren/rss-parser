@@ -371,6 +371,10 @@ var Parser = function () {
         if (image.width) feed.image.width = image.width[0];
         if (image.height) feed.image.height = image.height[0];
       }
+      var paginationLinks = this.generatePaginationLinks(channel);
+      if (Object.keys(paginationLinks).length) {
+        feed.paginationLinks = paginationLinks;
+      }
       utils.copyFromXML(channel, feed, feedFields);
       feed.items = items.map(function (xmlItem) {
         return _this4.parseItemRss(xmlItem, itemFields);
@@ -491,6 +495,32 @@ var Parser = function () {
           // Ignore bad date format
         }
       }
+    }
+
+    /**
+     * Generates a pagination object where the rel attribute is the key and href attribute is the value
+     *  { self: 'self-url', first: 'first-url', ...  }
+     *
+     * @access private
+     * @param {Object} channel parsed XML
+     * @returns {Object}
+     */
+
+  }, {
+    key: 'generatePaginationLinks',
+    value: function generatePaginationLinks(channel) {
+      if (!channel['atom:link']) {
+        return {};
+      }
+      var paginationRelAttributes = ['self', 'first', 'next', 'prev', 'last'];
+
+      return channel['atom:link'].reduce(function (paginationLinks, link) {
+        if (!link.$ || !paginationRelAttributes.includes(link.$.rel)) {
+          return paginationLinks;
+        }
+        paginationLinks[link.$.rel] = link.$.href;
+        return paginationLinks;
+      }, {});
     }
   }]);
 
