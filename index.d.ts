@@ -43,12 +43,21 @@ declare namespace Parser {
     enclosure?: Enclosure;
   }
 
+  export interface PaginationLinks {
+    self?: string;
+    first?: string;
+    next?: string;
+    last?: string;
+    prev?: string;
+  }
+
   export interface Output<U> {
     image?: {
       link?: string;
       url: string;
       title?: string;
     },
+    paginationLinks?: PaginationLinks;
     link?: string;
     title?: string;
     items: (U & Item)[];
