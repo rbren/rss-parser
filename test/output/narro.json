@@ -27,6 +27,9 @@
       }
     ],
     "feedUrl": "http://on.narro.co/f",
+    "paginationLinks": {
+      "self": "http://on.narro.co/f"
+    },
     "title": "foobar on Narro",
     "description": "foobar uses Narro to create a podcast of articles transcribed to audio.",
     "pubDate": "Fri, 08 Jul 2016 13:40:00 UTC",

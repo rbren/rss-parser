@@ -677,6 +677,9 @@
       "url": "https://www.dasding.de/podcasts/1590648935875,endorphine-fuer-delfine-thumbnail-100~_logo-dasding@2dlogo@2d100_v-16x9@2dS_-278f7c321da1eb2d03730e27f1e14a4056a0d1fb.jpg",
       "title": "Endorphine für Delfine"
     },
+    "paginationLinks": {
+      "self": "https://www.dasding.de/~podcast/podcasts/endorphine-fuer-delfine-100.xml"
+    },
     "title": "Endorphine für Delfine",
     "description": "Auf einer Skala von 1 bis glücklicher Delfin – wie geil ist es wirklich, dauernd Stars zu treffen und ihnen Fragen zu stellen? Walerija und Johannes nehmen dich mit in ihre Welt vor und hinter der Kamera. Auf dem YouTube-Kanal von DASDING sprechen sie in ihren Formaten Scratched und Song-Tindern mit den Billie Eilishs, Kontra Ks und Jujus dieser Welt. Hier im Podcast gibt es alles zu hören, was die Kamera nicht sehen konnte.",
     "pubDate": "Tue, 29 Sep 2020 13:14:21 +0200",

@@ -1,0 +1,66 @@
+{
+  "feed": {
+    "items": [
+      {
+        "content": "<div>The First Episode</div>",
+        "contentSnippet": "The First Episode",
+        "enclosure": {
+          "length": "38068096",
+          "type": "audio/mpeg",
+          "url": "https://example.test/test-audio.mp3"
+        },
+        "guid": "a6f22abe-be5c-4a37-8f4b-8be3d69b0235",
+        "isoDate": "2021-01-21T07:58:00.000Z",
+        "itunes": {
+          "author": "Steve Thompson",
+          "duration": "39:27",
+          "explicit": "No",
+          "image": "https://example.test/test-image.jpg",
+          "subtitle": "The First Episode...",
+          "summary": "The First Episode"
+        },
+        "link": "https://example.test/episode?id=283843",
+        "pubDate": "Thu, 21 Jan 2021 18:58:00 +1100",
+        "title": "The First Episode"
+      }
+    ],
+    "feedUrl": "http://example.org/index.atom?page=3",
+    "image": {
+      "link": "https://example.test/shows/new-show-1",
+      "url": "https://example.test/test-image.jpg",
+      "title": "New Show"
+    },
+    "paginationLinks": {
+      "self": "http://example.org/index.atom?page=3",
+      "first": "http://example.org/index.atom",
+      "next": "http://example.org/index.atom?page=4",
+      "prev": "http://example.org/index.atom?page=2",
+      "last": "http://example.org/index.atom?page=5"
+    },
+    "title": "New Show - With Episode Block",
+    "description": "New Show",
+    "link": "https://example.test/shows/new-show-1",
+    "language": "en-us",
+    "lastBuildDate": "Tue, 31 Mar 2020 05:19:30 +0000",
+    "itunes": {
+      "owner": {
+        "name": "Steve Thompson",
+        "email": "steve.t@gmail.com"
+      },
+      "image": "https://example.test/test-image.jpg",
+      "categories": [
+        "Arts"
+      ],
+      "categoriesWithSubs": [
+        {
+          "name": "Arts",
+          "subs": null
+        }
+      ],
+      "author": "Steve Thompson",
+      "subtitle": "New Show",
+      "summary": "New Show",
+      "explicit": "No"
+    }
+  }
+}

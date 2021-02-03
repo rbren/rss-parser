@@ -16800,6 +16800,9 @@
       "width": "144",
       "height": "144"
     },
+    "paginationLinks": {
+      "self": "https://www.giantbomb.com"
+    },
     "title": "Giant Bombcast",
     "description": "Giant Bomb discusses the latest video game news and new releases, taste-test questionable beverages, and get wildly off-topic in this weekly podcast.",
     "link": "https://www.giantbomb.com",
