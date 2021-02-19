@@ -36,6 +36,7 @@ declare namespace Parser {
     title?: string;
     pubDate?: string;
     creator?: string;
+    summary?: string;
     content?: string;
     isoDate?: string;
     categories?: string[];
