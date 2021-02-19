@@ -124,7 +124,7 @@ var fields = module.exports = {};
 
 fields.feed = [['author', 'creator'], ['dc:publisher', 'publisher'], ['dc:creator', 'creator'], ['dc:source', 'source'], ['dc:title', 'title'], ['dc:type', 'type'], 'title', 'description', 'author', 'pubDate', 'webMaster', 'managingEditor', 'generator', 'link', 'language', 'copyright', 'lastBuildDate', 'docs', 'generator', 'ttl', 'rating', 'skipHours', 'skipDays'];
 
-fields.item = [['author', 'creator'], ['dc:creator', 'creator'], ['dc:date', 'date'], ['dc:language', 'language'], ['dc:rights', 'rights'], ['dc:source', 'source'], ['dc:title', 'title'], 'title', 'link', 'pubDate', 'author', ['content:encoded', 'content:encoded', { includeSnippet: true }], 'enclosure', 'dc:creator', 'dc:date', 'comments'];
+fields.item = [['author', 'creator'], ['dc:creator', 'creator'], ['dc:date', 'date'], ['dc:language', 'language'], ['dc:rights', 'rights'], ['dc:source', 'source'], ['dc:title', 'title'], 'title', 'link', 'pubDate', 'author', 'summary', ['content:encoded', 'content:encoded', { includeSnippet: true }], 'enclosure', 'dc:creator', 'dc:date', 'comments'];
 
 var mapItunesField = function mapItunesField(f) {
   return ['itunes:' + f, f];
@@ -317,6 +317,9 @@ var Parser = function () {
       if (entry.content && entry.content.length) {
         item.content = utils.getContent(entry.content[0]);
         item.contentSnippet = utils.getSnippet(item.content);
+      }
+      if (entry.summary && entry.summary.length) {
+        item.summary = utils.getContent(entry.summary[0]);
       }
       if (entry.id) {
         item.id = entry.id[0];
