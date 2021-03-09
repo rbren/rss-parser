@@ -12,7 +12,7 @@ declare namespace Parser {
   export interface ParserOptions<T, U> {
     readonly xml2js?: Options;
     readonly requestOptions?: RequestOptions;
-    readonly headers?: { [key: string]: string; };
+    readonly headers?: Record<string, string>;
     readonly defaultRSS?: number;
     readonly maxRedirects?: number;
     readonly customFields?: CustomFields<T, U>;
