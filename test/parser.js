@@ -108,6 +108,10 @@ describe('Parser', function() {
     testParseForFile('xml2js-options', 'rss', {xml2js: {emptyTag: 'EMPTY'}}, done);
   });
 
+  it('should parse multiple links in atom feed', function(done) {
+    testParseForFile('multiple-links', 'atom', done);
+  })
+
   it('should throw error for unrecognized', function(done) {
     let parser = new Parser();
     let xml = fs.readFileSync(__dirname + '/input/unrecognized.rss', 'utf8');

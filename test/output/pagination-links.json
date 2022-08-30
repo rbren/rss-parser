@@ -2,26 +2,26 @@
   "feed": {
     "items": [
       {
+        "title": "The First Episode",
+        "link": "https://example.test/episode?id=283843",
+        "pubDate": "Thu, 21 Jan 2021 18:58:00 +1100",
+        "enclosure": {
+          "url": "https://example.test/test-audio.mp3",
+          "length": "38068096",
+          "type": "audio/mpeg"
+        },
         "content": "<div>The First Episode</div>",
         "contentSnippet": "The First Episode",
-        "enclosure": {
-          "length": "38068096",
-          "type": "audio/mpeg",
-          "url": "https://example.test/test-audio.mp3"
-        },
         "guid": "a6f22abe-be5c-4a37-8f4b-8be3d69b0235",
         "isoDate": "2021-01-21T07:58:00.000Z",
         "itunes": {
           "author": "Steve Thompson",
-          "duration": "39:27",
-          "explicit": "No",
-          "image": "https://example.test/test-image.jpg",
           "subtitle": "The First Episode...",
-          "summary": "The First Episode"
-        },
-        "link": "https://example.test/episode?id=283843",
-        "pubDate": "Thu, 21 Jan 2021 18:58:00 +1100",
-        "title": "The First Episode"
+          "summary": "The First Episode",
+          "explicit": "No",
+          "duration": "39:27",
+          "image": "https://example.test/test-image.jpg"
+        }
       }
     ],
     "feedUrl": "http://example.org/index.atom?page=3",

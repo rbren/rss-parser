@@ -3,7 +3,7 @@ import { RequestOptions } from 'https';
 
 declare namespace Parser {
   type CustomFieldItem<U> = keyof U | (string | { keepArray: boolean })[]
-    
+
   export interface CustomFields<T, U> {
     readonly feed?: Array<keyof T>;
     readonly item?: CustomFieldItem<U>[] | CustomFieldItem<U>[][];
@@ -19,6 +19,15 @@ declare namespace Parser {
     readonly timeout?: number;
   }
 
+  export interface Link {
+    href: string;
+    rel?: string;
+    type?: string;
+    hreflang?: string;
+    title?: string;
+    length?: string;
+  }
+
   export interface Enclosure {
     url: string;
     length?: number;
@@ -27,6 +36,7 @@ declare namespace Parser {
 
   export interface Item {
     link?: string;
+    links?: Link[];
     guid?: string;
     title?: string;
     pubDate?: string;
@@ -78,7 +88,7 @@ declare namespace Parser {
 /**
  * Class that handles all parsing or URL, or even XML, RSS feed to JSON.
  */
-declare class Parser<T = {[key: string]: any}, U = {[key: string]: any}> {
+declare class Parser<T = { [key: string]: any }, U = { [key: string]: any }> {
   /**
    * @param options - Parser options.
    */

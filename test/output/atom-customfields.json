@@ -52,6 +52,12 @@
         },
         "title": "Buy Now, Bitches*",
         "link": "https://www.youtube.com/watch?v=lR-w1h5ONOY",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=lR-w1h5ONOY",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-09-14T18:03:34.000Z",
         "author": "L2inc",
         "id": "yt:video:lR-w1h5ONOY",
@@ -108,6 +114,12 @@
         },
         "title": "What Happens in an Internet Minute?",
         "link": "https://www.youtube.com/watch?v=2DALPtbpZZo",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=2DALPtbpZZo",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-09-07T14:42:36.000Z",
         "author": "L2inc",
         "id": "yt:video:2DALPtbpZZo",
@@ -164,6 +176,12 @@
         },
         "title": "L2 Digital IQ Index: Top Specialty Retail Brands in Digital 2017",
         "link": "https://www.youtube.com/watch?v=lyH7REviqqM",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=lyH7REviqqM",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-08-31T21:11:39.000Z",
         "author": "L2inc",
         "id": "yt:video:lyH7REviqqM",
@@ -220,6 +238,12 @@
         },
         "title": "Prof Galloway's Career Advice",
         "link": "https://www.youtube.com/watch?v=1T22QxTkPoM",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=1T22QxTkPoM",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-08-31T16:00:42.000Z",
         "author": "L2inc",
         "id": "yt:video:1T22QxTkPoM",
@@ -276,6 +300,12 @@
         },
         "title": "Gather for Goats",
         "link": "https://www.youtube.com/watch?v=ZkuQNZ2km5I",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=ZkuQNZ2km5I",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-08-24T14:25:29.000Z",
         "author": "L2inc",
         "id": "yt:video:ZkuQNZ2km5I",
@@ -332,6 +362,12 @@
         },
         "title": "A Primer on Cryptocurrency",
         "link": "https://www.youtube.com/watch?v=UKUz0hf2uBs",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=UKUz0hf2uBs",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-08-17T16:45:46.000Z",
         "author": "L2inc",
         "id": "yt:video:UKUz0hf2uBs",
@@ -388,6 +424,12 @@
         },
         "title": "L2 Digital IQ Index: Top Food Brands in Digital 2017",
         "link": "https://www.youtube.com/watch?v=ICGkLGt_bC8",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=ICGkLGt_bC8",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-08-11T20:36:25.000Z",
         "author": "L2inc",
         "id": "yt:video:ICGkLGt_bC8",
@@ -444,6 +486,12 @@
         },
         "title": "iPhone Generation: Lonely & Depressed",
         "link": "https://www.youtube.com/watch?v=llRHp5DBqIs",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=llRHp5DBqIs",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-08-10T17:30:59.000Z",
         "author": "L2inc",
         "id": "yt:video:llRHp5DBqIs",
@@ -500,6 +548,12 @@
         },
         "title": "Tech Giants: Above the Law",
         "link": "https://www.youtube.com/watch?v=auydnF-Qu_w",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=auydnF-Qu_w",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-08-03T17:30:59.000Z",
         "author": "L2inc",
         "id": "yt:video:auydnF-Qu_w",
@@ -556,6 +610,12 @@
         },
         "title": "Valuing Tech's Titans",
         "link": "https://www.youtube.com/watch?v=4CLEuPfwVBo",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=4CLEuPfwVBo",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-07-27T20:19:37.000Z",
         "author": "L2inc",
         "id": "yt:video:4CLEuPfwVBo",
@@ -612,6 +672,12 @@
         },
         "title": "Scott Galloway - The Four - What To Do",
         "link": "https://www.youtube.com/watch?v=GWBjUsmO-Lw",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=GWBjUsmO-Lw",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-07-26T18:16:59.000Z",
         "author": "L2inc",
         "id": "yt:video:GWBjUsmO-Lw",
@@ -668,6 +734,12 @@
         },
         "title": "Aswath Damodaran - The Value of a User",
         "link": "https://www.youtube.com/watch?v=VlcmHhbYeNY",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=VlcmHhbYeNY",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-07-26T18:16:05.000Z",
         "author": "L2inc",
         "id": "yt:video:VlcmHhbYeNY",
@@ -724,6 +796,12 @@
         },
         "title": "Maureen Mullen - The Innovation Class",
         "link": "https://www.youtube.com/watch?v=k59jPtE92Wo",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=k59jPtE92Wo",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-07-26T18:13:59.000Z",
         "author": "L2inc",
         "id": "yt:video:k59jPtE92Wo",
@@ -780,6 +858,12 @@
         },
         "title": "Sonia Marciano - Bigger Isn't Always Better",
         "link": "https://www.youtube.com/watch?v=7Q5u4yNs_w8",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=7Q5u4yNs_w8",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-07-26T18:13:26.000Z",
         "author": "L2inc",
         "id": "yt:video:7Q5u4yNs_w8",
@@ -836,6 +920,12 @@
         },
         "title": "Scott Galloway: Asshole ≠ Innovative",
         "link": "https://www.youtube.com/watch?v=s6qHAJm7ZEk",
+        "links": [
+          {
+            "href": "https://www.youtube.com/watch?v=s6qHAJm7ZEk",
+            "rel": "alternate"
+          }
+        ],
         "pubDate": "2017-07-20T19:40:55.000Z",
         "author": "L2inc",
         "id": "yt:video:s6qHAJm7ZEk",

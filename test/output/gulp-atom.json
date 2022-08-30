@@ -4,6 +4,13 @@
       {
         "title": "v3.9.0",
         "link": "/gulpjs/gulp/releases/tag/v3.9.0",
+        "links": [
+          {
+            "href": "/gulpjs/gulp/releases/tag/v3.9.0",
+            "rel": "alternate",
+            "type": "text/html"
+          }
+        ],
         "pubDate": "2015-06-01T21:49:41.000Z",
         "author": "contra",
         "content": "<p>3.9.0</p>",
@@ -14,6 +21,13 @@
       {
         "title": "v3.8.11",
         "link": "/gulpjs/gulp/releases/tag/v3.8.11",
+        "links": [
+          {
+            "href": "/gulpjs/gulp/releases/tag/v3.8.11",
+            "rel": "alternate",
+            "type": "text/html"
+          }
+        ],
         "pubDate": "2015-02-09T20:37:28.000Z",
         "author": "contra",
         "content": "<p>3.8.11</p>",
@@ -24,6 +38,13 @@
       {
         "title": "v3.8.10",
         "link": "/gulpjs/gulp/releases/tag/v3.8.10",
+        "links": [
+          {
+            "href": "/gulpjs/gulp/releases/tag/v3.8.10",
+            "rel": "alternate",
+            "type": "text/html"
+          }
+        ],
         "pubDate": "2014-11-04T00:11:30.000Z",
         "author": "contra",
         "content": "<p>3.8.10</p>",
@@ -34,6 +55,13 @@
       {
         "title": "v3.8.9",
         "link": "/gulpjs/gulp/releases/tag/v3.8.9",
+        "links": [
+          {
+            "href": "/gulpjs/gulp/releases/tag/v3.8.9",
+            "rel": "alternate",
+            "type": "text/html"
+          }
+        ],
         "pubDate": "2014-10-22T06:55:20.000Z",
         "author": "contra",
         "content": "<p>3.8.9</p>",
@@ -44,6 +72,13 @@
       {
         "title": "v3.8.8",
         "link": "/gulpjs/gulp/releases/tag/v3.8.8",
+        "links": [
+          {
+            "href": "/gulpjs/gulp/releases/tag/v3.8.8",
+            "rel": "alternate",
+            "type": "text/html"
+          }
+        ],
         "pubDate": "2014-09-07T20:20:11.000Z",
         "author": "contra",
         "content": "<p>3.8.8</p>",
@@ -54,6 +89,13 @@
       {
         "title": "v3.8.7",
         "link": "/gulpjs/gulp/releases/tag/v3.8.7",
+        "links": [
+          {
+            "href": "/gulpjs/gulp/releases/tag/v3.8.7",
+            "rel": "alternate",
+            "type": "text/html"
+          }
+        ],
         "pubDate": "2014-08-02T04:58:19.000Z",
         "author": "contra",
         "content": "<p>3.8.7</p>",
@@ -64,6 +106,13 @@
       {
         "title": "v3.8.6",
         "link": "/gulpjs/gulp/releases/tag/v3.8.6",
+        "links": [
+          {
+            "href": "/gulpjs/gulp/releases/tag/v3.8.6",
+            "rel": "alternate",
+            "type": "text/html"
+          }
+        ],
         "pubDate": "2014-07-09T22:06:50.000Z",
         "author": "contra",
         "content": "<p>3.8.6</p>",
@@ -74,6 +123,13 @@
       {
         "title": "v3.8.5",
         "link": "/gulpjs/gulp/releases/tag/v3.8.5",
+        "links": [
+          {
+            "href": "/gulpjs/gulp/releases/tag/v3.8.5",
+            "rel": "alternate",
+            "type": "text/html"
+          }
+        ],
         "pubDate": "2014-06-27T06:53:54.000Z",
         "author": "contra",
         "content": "<p>3.8.5</p>",
@@ -84,6 +140,13 @@
       {
         "title": "v3.8.4",
         "link": "/gulpjs/gulp/releases/tag/v3.8.4",
+        "links": [
+          {
+            "href": "/gulpjs/gulp/releases/tag/v3.8.4",
+            "rel": "alternate",
+            "type": "text/html"
+          }
+        ],
         "pubDate": "2014-06-27T06:38:43.000Z",
         "author": "contra",
         "content": "<p>3.8.4</p>",
@@ -94,6 +157,13 @@
       {
         "title": "v3.8.3",
         "link": "/gulpjs/gulp/releases/tag/v3.8.3",
+        "links": [
+          {
+            "href": "/gulpjs/gulp/releases/tag/v3.8.3",
+            "rel": "alternate",
+            "type": "text/html"
+          }
+        ],
         "pubDate": "2014-06-26T21:17:51.000Z",
         "author": "contra",
         "content": "<p>3.8.3</p>",
