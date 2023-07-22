@@ -59,7 +59,7 @@ const parser: Parser<CustomFeed, CustomItem> = new Parser({
 });
 
 (async () => {
-
+  const parser = new Parser();
   const feed = await parser.parseURL('https://www.reddit.com/.rss');
   console.log(feed.title); // feed will have a `foo` property, type as a string
 
