@@ -13,6 +13,9 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x, 16.x, 18.x]
+    env:
+      # FIXME
+      NODE_OPTIONS: --openssl-legacy-provider
 
     steps:
     - uses: actions/checkout@v3
@@ -22,4 +25,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm test
-    - run: npm build
+    - run: npm run build
