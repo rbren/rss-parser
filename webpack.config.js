@@ -17,13 +17,23 @@ module.exports = {
   module: {
     rules: [{
       test: /\.js$/,
-      loader: 'babel-loader?presets[]=@babel/preset-env',
+      use: [{
+        loader: 'babel-loader',
+        options: {presets: ['@babel/preset-env']},
+      }],
     }]
   },
   externals: {
     xmlbuilder:'xmlbuilder'
   },
-  node: {
-    fs: "empty"
+  resolve: {
+    fallback: {
+      "https": false,
+      "http": false,
+      "url": false,
+      "stream": false,
+      "fs": false,
+      "timers": false,
+    }
   }
 }
