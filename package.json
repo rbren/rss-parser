@@ -1,11 +1,11 @@
 {
   "name": "rss-parser",
-  "version": "3.13.0",
+  "version": "3.13.1",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "test": "mocha --reporter-option maxDiffSize=0 --exit",
-    "build": "./scripts/build.sh"
+    "test": "mocha --reporter-option maxDiffSize=0 --exit test/*.test.js",
+    "build": "webpack && ./scripts/build.sh"
   },
   "author": "Bobby Brennan",
   "license": "MIT",
@@ -16,15 +16,19 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
+    "buffer": "^6.0.3",
     "chai": "^3.4.1",
     "express": "^4.16.3",
     "mocha": "^10.2.0",
-    "puppeteer": "^5.5.0"
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "string_decoder": "^1.3.0",
+    "timers-browserify": "^2.0.12",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "entities": "^2.0.3",
-    "webpack": "^5.90.1",
-    "webpack-cli": "^5.1.4",
     "xml2js": "^0.5.0"
   },
   "directories": {
@@ -46,5 +50,6 @@
     "RSS parser",
     "RSS to JS",
     "Feed reader"
-  ]
+  ],
+  "browser": "./dist/browser-bundle.js"
 }

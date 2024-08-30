@@ -269,3 +269,28 @@ npm version minor # or major/patch
 npm publish
 git push --follow-tags
 ```
+
+
+## Browser Compatibility
+
+As of version 3.13.1, rss-parser is now fully compatible with browser environments, including SvelteKit and other modern web frameworks. The library automatically detects the environment and uses the appropriate parser implementation.
+
+When using rss-parser in a browser environment, make sure to use a bundler like webpack, rollup, or vite to properly include the library in your project.
+
+Example usage in a browser environment:
+
+```javascript
+import RSSParser from 'rss-parser';
+
+const parser = new RSSParser();
+
+(async () => {
+  const feed = await parser.parseURL('https://example.com/rss-feed.xml');
+  console.log(feed.title);
+  feed.items.forEach(item => {
+    console.log(item.title + ':' + item.link)
+  });
+})();
+```
+
+Note: When using rss-parser in a browser environment, be aware of potential CORS issues when fetching RSS feeds from different domains. You may need to use a proxy server or CORS-enabled RSS feed to overcome this limitation.

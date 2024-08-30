@@ -1,39 +1,44 @@
-var webpack = require("webpack");
+
+const path = require('path');
+const webpack = require('webpack');
+
 module.exports = {
-  entry: {
-    "rss-parser": "./index.js"
-  },
+  entry: './lib/browser-parser.js',
   output: {
-    path: __dirname,
-    filename: "dist/[name].js",
+    filename: 'browser-bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    library: 'RSSParser',
     libraryTarget: 'umd',
-    globalObject: 'this',
-    library: 'RSSParser'
+    globalObject: 'this'
   },
-  resolve: {
-    extensions: ['.js']
-  },
-  devtool: 'source-map',
+  mode: 'production',
+  target: 'web',
   module: {
-    rules: [{
-      test: /\.js$/,
-      use: [{
-        loader: 'babel-loader',
-        options: {presets: ['@babel/preset-env']},
-      }],
-    }]
-  },
-  externals: {
-    xmlbuilder:'xmlbuilder'
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
+    ]
   },
   resolve: {
     fallback: {
-      "https": false,
-      "http": false,
-      "url": false,
-      "stream": false,
-      "fs": false,
-      "timers": false,
+      "stream": require.resolve("stream-browserify"),
+      "string_decoder": require.resolve("string_decoder/"),
+      "timers": require.resolve("timers-browserify"),
+      "buffer": require.resolve("buffer/")
     }
-  }
-}
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+      Buffer: ['buffer', 'Buffer']
+    }),
+  ]
+};
