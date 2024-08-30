@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>NHS North West News Feed</title>
+    <link>https://www.england.nhs.uk/north-west/about/news/feed/</link>
+    <description>NHS North West News Feed</description>
+    <item>
+      <title>As measles cases continue to rise, NHS North West invites thousands of school children to catch up with life-saving MMR</title>
+      <link>https://www.england.nhs.uk/north-west/?p=6133</link>
+      <pubDate>Mon, 18 Mar 2024 10:00:00 +0000</pubDate>
+      <guid isPermaLink="false">https://www.england.nhs.uk/north-west/?p=6133</guid>
+      <description>Sample description</description>
+    </item>
+    <item>
+      <title>Second item title</title>
+      <link>https://www.england.nhs.uk/north-west/?p=6134</link>
+      <pubDate>Tue, 19 Mar 2024 10:00:00 +0000</pubDate>
+      <guid isPermaLink="false">https://www.england.nhs.uk/north-west/?p=6134</guid>
+      <description>Second item description</description>
+    </item>
+  </channel>
+</rss>
