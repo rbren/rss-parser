@@ -1,6 +1,6 @@
 {
   "name": "rss-parser-with-maxsize",
-  "version": "3.13.2",
+  "version": "3.13.3",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
