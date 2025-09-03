@@ -1,0 +1,35 @@
+name: PR-Arena with OpenHands
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        required: true
+        type: number
+      llm_models:
+        required: true
+        type: string
+      base_url:
+        required: true
+        type: string
+      pat_token:
+        required: true
+        type: string
+      pat_username:
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  call-pr-arena-resolver:
+    uses: neulab/pr-arena/.github/workflows/pr-arena-resolver.yml@main
+    with:
+      issue_number: ${{ fromJson(inputs.issue_number) }}
+      llm_models: ${{ inputs.llm_models }}
+      base_url: ${{ inputs.base_url }}
+      pat_token: ${{ inputs.pat_token }}
+      pat_username: ${{ inputs.pat_username }}
