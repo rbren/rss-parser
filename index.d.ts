@@ -59,7 +59,7 @@ declare namespace Parser {
     items: (U & Item)[];
     feedUrl?: string;
     description?: string;
-    subtitle?: string;
+    subtitle?: string; // Atom feeds use <subtitle> as a secondary description/tagline for the feed
     itunes?: {
       [key: string]: any;
       image?: string;
