@@ -3,6 +3,9 @@
   "version": "3.13.0",
   "main": "index.js",
   "types": "index.d.ts",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "test": "mocha --reporter-option maxDiffSize=0 --exit",
     "build": "./scripts/build.sh"
