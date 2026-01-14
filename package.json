@@ -16,7 +16,7 @@
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
     "@types/xml2js": "^0.4.3",
-    "babel-core": "^6.26.3",
+    "@babel/traverse": "^7.23.2",
     "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
     "chai": "^3.4.1",
