@@ -248,7 +248,7 @@ let parser = new Parser({
 ```
 
 ## Contributing
-Contributions are welcome! If you are adding a feature or fixing a bug, please be sure to add a [test case](https://github.com/bobby-brennan/rss-parser/tree/master/test/input)
+Contributions are welcome! If you are adding a feature or fixing a bug, please be sure to add a [test case](https://github.com/rbren/rss-parser/tree/master/test/input)
 
 ### Running Tests
 The tests run the RSS parser for several sample RSS feeds in `test/input` and outputs the resulting JSON into `test/output`. If there are any changes to the output files the tests will fail.
