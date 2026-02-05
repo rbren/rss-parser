@@ -10,7 +10,7 @@
     "test": "mocha --reporter-option maxDiffSize=0 --exit",
     "build": "./scripts/build.sh"
   },
-  "author": "Bobby Brennan",
+  "author": "Robert Brennan",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.21.4",
@@ -35,12 +35,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bobby-brennan/rss-parser.git"
+    "url": "git+https://github.com/rbren/rss-parser.git"
   },
   "bugs": {
-    "url": "https://github.com/bobby-brennan/rss-parser/issues"
+    "url": "https://github.com/rbren/rss-parser/issues"
   },
-  "homepage": "https://github.com/bobby-brennan/rss-parser#readme",
+  "homepage": "https://github.com/rbren/rss-parser#readme",
   "description": "A lightweight RSS parser, for Node and the browser",
   "keywords": [
     "RSS",
