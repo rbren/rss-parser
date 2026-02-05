@@ -1,0 +1,26 @@
+{
+  "feed": {
+    "items": [
+      {
+        "title": "Test Item 1",
+        "link": "http://example.com/item1",
+        "pubDate": "Mon, 01 Jan 2024 12:00:00 GMT",
+        "content": "Description of item 1",
+        "contentSnippet": "Description of item 1",
+        "isoDate": "2024-01-01T12:00:00.000Z"
+      },
+      {
+        "title": "Test Item 2",
+        "link": "http://example.com/item2",
+        "pubDate": "Tue, 02 Jan 2024 12:00:00 GMT",
+        "content": "Description of item 2",
+        "contentSnippet": "Description of item 2",
+        "isoDate": "2024-01-02T12:00:00.000Z"
+      }
+    ],
+    "title": "Test RSS Feed with Subtitle",
+    "description": "Main description of the feed",
+    "subtitle": "A secondary description for the RSS feed",
+    "link": "http://example.com"
+  }
+}

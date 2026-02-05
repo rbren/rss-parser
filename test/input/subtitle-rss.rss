@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Test RSS Feed with Subtitle</title>
+    <subtitle>A secondary description for the RSS feed</subtitle>
+    <description>Main description of the feed</description>
+    <link>http://example.com</link>
+    <item>
+      <title>Test Item 1</title>
+      <link>http://example.com/item1</link>
+      <description>Description of item 1</description>
+      <pubDate>Mon, 01 Jan 2024 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Test Item 2</title>
+      <link>http://example.com/item2</link>
+      <description>Description of item 2</description>
+      <pubDate>Tue, 02 Jan 2024 12:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
