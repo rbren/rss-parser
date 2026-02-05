@@ -1,0 +1,18 @@
+{
+  "feed": {
+    "items": [
+      {
+        "title": "Test Entry",
+        "link": "http://example.com/entry1",
+        "pubDate": "Mon, 01 Jan 2024 00:00:00 GMT",
+        "content": "This is a test entry",
+        "contentSnippet": "This is a test entry",
+        "isoDate": "2024-01-01T00:00:00.000Z"
+      }
+    ],
+    "title": "Test Feed with Subtitle",
+    "description": "This is the feed description",
+    "subtitle": "This is the feed subtitle",
+    "link": "http://example.com"
+  }
+}

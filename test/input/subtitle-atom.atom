@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:uuid:test-feed-subtitle</id>
+  <title>Test Feed with Subtitle</title>
+  <subtitle>This is the feed subtitle</subtitle>
+  <updated>2024-01-01T00:00:00Z</updated>
+  <link href="http://example.com/feed" rel="self" type="application/atom+xml"/>
+  <link href="http://example.com" rel="alternate" type="text/html"/>
+  <author>
+    <name>Test Author</name>
+  </author>
+  <entry>
+    <id>urn:uuid:test-entry-1</id>
+    <title>Test Entry</title>
+    <link href="http://example.com/entry1" rel="alternate" type="text/html"/>
+    <updated>2024-01-01T00:00:00Z</updated>
+    <summary>This is a test entry</summary>
+  </entry>
+</feed>

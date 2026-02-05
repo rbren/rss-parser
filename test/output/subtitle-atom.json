@@ -1,0 +1,19 @@
+{
+  "feed": {
+    "items": [
+      {
+        "title": "Test Entry",
+        "link": "http://example.com/entry1",
+        "pubDate": "2024-01-01T00:00:00.000Z",
+        "summary": "This is a test entry",
+        "id": "urn:uuid:test-entry-1",
+        "isoDate": "2024-01-01T00:00:00.000Z"
+      }
+    ],
+    "link": "http://example.com",
+    "feedUrl": "http://example.com/feed",
+    "title": "Test Feed with Subtitle",
+    "subtitle": "This is the feed subtitle",
+    "lastBuildDate": "2024-01-01T00:00:00Z"
+  }
+}
