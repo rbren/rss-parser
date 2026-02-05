@@ -10,7 +10,7 @@
     "test": "mocha --reporter-option maxDiffSize=0 --exit",
     "build": "./scripts/build.sh"
   },
-  "author": "robert Brennan",
+  "author": "Robert Brennan",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.21.4",
