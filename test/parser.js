@@ -284,4 +284,7 @@ describe('Parser', function() {
   it('should parse atom:link pagination links', function (done) {
     testParseForFile('pagination-links', 'rss', done);
   });
+  it('should preserve XHTML content order', function(done) {
+    testParseForFile('xhtml-content-order', 'rss', done);
+  });
 })
