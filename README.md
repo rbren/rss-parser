@@ -113,9 +113,11 @@ Check out the full output format in [test/output/reddit.json](test/output/reddit
 feedUrl: 'https://www.reddit.com/.rss'
 title: 'reddit: the front page of the internet'
 description: ""
+subtitle: 'Front page highlights'
 link: 'https://www.reddit.com/'
 items:
     - title: 'The water is too deep, so he improvises'
+      subtitle: 'A quick summary of the post'
       link: 'https://www.reddit.com/r/funny/comments/3skxqc/the_water_is_too_deep_so_he_improvises/'
       pubDate: 'Thu, 12 Nov 2015 21:16:39 +0000'
       creator: "John Doe"
@@ -129,6 +131,7 @@ items:
 
 ##### Notes:
 * The `contentSnippet` field strips out HTML tags and unescapes HTML entities
+* `subtitle` is returned for both feeds and items when the source XML includes it (for example, Atom `<subtitle>` or RSS `<subtitle>` elements)
 * The `dc:` prefix will be removed from all fields
 * Both `dc:date` and `pubDate` will be available in ISO 8601 format as `isoDate`
 * If `author` is specified, but not `dc:creator`, `creator` will be set to `author` ([see article](http://www.lowter.com/blogs/2008/2/9/rss-dccreator-author))
@@ -137,21 +140,23 @@ items:
 ## XML Options
 
 ### Custom Fields
-If your RSS feed contains fields that aren't currently returned, you can access them using the `customFields` option.
+If your RSS feed contains fields that aren't currently returned, you can access them using the `customFields` option. Built-in fields such as `title`, `description`, and `subtitle` do not need to be listed here.
 
 ```js
 let parser = new Parser({
   customFields: {
     feed: ['otherTitle', 'extendedDescription'],
-    item: ['coAuthor','subtitle'],
+    item: ['coAuthor', 'readingTime'],
   }
 });
 
 parser.parseURL('https://www.reddit.com/.rss', function(err, feed) {
   console.log(feed.extendedDescription);
+  console.log(feed.subtitle); // built-in when present
 
   feed.items.forEach(function(entry) {
-    console.log(entry.coAuthor + ':' + entry.subtitle);
+    console.log(entry.coAuthor + ':' + entry.readingTime);
+    console.log(entry.subtitle); // built-in when present
   })
 })
 ```

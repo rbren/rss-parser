@@ -29,6 +29,7 @@ declare namespace Parser {
     link?: string;
     guid?: string;
     title?: string;
+    subtitle?: string;
     pubDate?: string;
     creator?: string;
     summary?: string;
@@ -59,6 +60,7 @@ declare namespace Parser {
     items: (U & Item)[];
     feedUrl?: string;
     description?: string;
+    subtitle?: string;
     itunes?: {
       [key: string]: any;
       image?: string;
