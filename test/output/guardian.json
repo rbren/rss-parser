@@ -43,48 +43,13 @@
         "contentSnippet": "The president’s ‘new American moment’ speech stirred Republican applause while Democrats showed thinly disguised contempt\nDonald Trump has promised a “new American moment” in a State of the Union address that sought harmony but succeeded only in underlining the deep discord at the heart of the country’s politics.\n Related: Fact check: Donald Trump's State of the Union address analyzed \n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/2018/jan/31/donald-trump-state-of-the-union-address-unity-discord",
         "categories": [
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "State of the Union address",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/state-of-the-union-address"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "US politics",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-politics"
-            }
-          },
-          {
-            "_": "Democrats",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/democrats"
-            }
-          },
-          {
-            "_": "Republicans",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/republicans"
-            }
-          },
-          {
-            "_": "US Congress",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-congress"
-            }
-          }
+          "Donald Trump",
+          "State of the Union address",
+          "US news",
+          "US politics",
+          "Democrats",
+          "Republicans",
+          "US Congress"
         ],
         "mediaContent": {
           "width": "140",
@@ -134,36 +99,11 @@
         "contentSnippet": "Even Donald Trump’s more extreme supporters did not seem to mind that he sounded almost like a traditional Republican\nThose expecting that Donald Trump’s first State of the Union address would be remarkable, for better or worse, were disappointed last night. It was mostly a rehearsal of by-now familiar Trumpian talking points, and some disingenuous “reaching out” on immigration policy, all delivered with workmanlike oratorial competence. For the president, of course, it was yet another opportunity for grandstanding. \nAn unexpectedly normal speech meshed well with a new imperative among conservatives to normalize the speaker. In 2018, Trump’s campaign rhetoric around economic populism has come to nothing. His talk on immigration – still punitive and restrictionist – hews much closer to the GOP’s standard line. The populist-nationalist interlopers have been flushed out of the White House. All this means that more traditional Republican conservatives have less to object to. \n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/2018/jan/31/so-how-did-conservatives-like-the-state-of-the-union",
         "categories": [
-          {
-            "_": "State of the Union address",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/state-of-the-union-address"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "US politics",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-politics"
-            }
-          },
-          {
-            "_": "Republicans",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/republicans"
-            }
-          }
+          "State of the Union address",
+          "US news",
+          "Donald Trump",
+          "US politics",
+          "Republicans"
         ],
         "mediaContent": {
           "width": "140",
@@ -213,36 +153,11 @@
         "contentSnippet": "In statement attributable to FBI director – appointed by Trump – agency raises concerns about ‘material omissions of fact’ in document\nThe FBI said on Wednesday it had “grave concerns” about Donald Trump’s apparent intention to release a memo said to contain classified information about the bureau’s investigation into one of the president’s campaign aides. \nAfter both Trump and the House speaker, Paul Ryan, made public statements supporting the so-called Nunes memo’s release, the fight over its fate took an extraordinary twist with the FBI’s highly unusual statement, which was ultimately attributable to the bureau director, Christopher Wray, Trump’s own appointee. \n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/2018/jan/31/fbi-nunes-memo-release-donald-trump",
         "categories": [
-          {
-            "_": "FBI",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/fbi"
-            }
-          },
-          {
-            "_": "Republicans",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/republicans"
-            }
-          },
-          {
-            "_": "Paul Ryan",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/paul-ryan"
-            }
-          },
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          }
+          "FBI",
+          "Republicans",
+          "Paul Ryan",
+          "Donald Trump",
+          "US news"
         ],
         "mediaContent": {
           "width": "140",
@@ -292,36 +207,11 @@
         "contentSnippet": "A cross-border meeting place for divided families was the site of a plot to bring dozens of firearms from Vermont to Quebec\nIt was built deliberately to straddle the frontier between the two countries – a symbol of cooperation and friendship between Canada and the US. \n\nMore than a century later, the Haskell Free Library and Opera House continues to allow residents of both countries to mingle without having to cross a border.\n Continue reading...",
         "guid": "https://www.theguardian.com/world/2018/jan/31/canada-border-library-gun-smuggling-case",
         "categories": [
-          {
-            "_": "Canada",
-            "$": {
-              "domain": "https://www.theguardian.com/world/canada"
-            }
-          },
-          {
-            "_": "Libraries",
-            "$": {
-              "domain": "https://www.theguardian.com/books/libraries"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Americas",
-            "$": {
-              "domain": "https://www.theguardian.com/world/americas"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          }
+          "Canada",
+          "Libraries",
+          "US news",
+          "Americas",
+          "World news"
         ],
         "mediaContent": {
           "width": "140",
@@ -371,36 +261,11 @@
         "contentSnippet": "One person who was not aboard the train was killed\nTwo crew members and two passengers were taken to a local hospital with minor injuries \n\nA chartered train carrying dozens of GOP lawmakers to a Republican retreat in West Virginia struck a garbage truck south of Charlottesville, Virginia, on Wednesday, lawmakers said.\nOne person who was not aboard the train was killed, according to authorities and witness reports, and there were several injuries.\n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/2018/jan/31/train-carrying-dozens-of-gop-lawmakers-hit-truck-virginia",
         "categories": [
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Train crashes",
-            "$": {
-              "domain": "https://www.theguardian.com/world/train-crashes"
-            }
-          },
-          {
-            "_": "Republicans",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/republicans"
-            }
-          },
-          {
-            "_": "Virginia",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/virginia"
-            }
-          },
-          {
-            "_": "US Congress",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-congress"
-            }
-          }
+          "US news",
+          "Train crashes",
+          "Republicans",
+          "Virginia",
+          "US Congress"
         ],
         "mediaContent": {
           "width": "140",
@@ -450,42 +315,12 @@
         "contentSnippet": "Campaign group launches financial secrecy index and warns UK is still protecting overseas territories\nThe United Nations has been urged by the Tax Justice Network to coordinate a global effort to end offshore tax evasion and corruption, amid warnings that the UK is continuing to insulate its overseas territories from financial transparency.\nCommenting on the launch of the TJN’s Financial Secrecy Index 2018, which ranks countries on the size and secretiveness of their offshore sectors, its chief executive, Alex Cobham, said big financial centres had proven unwilling to reform voluntarily. \n Continue reading...",
         "guid": "https://www.theguardian.com/business/2018/jan/30/un-urged-to-launch-global-effort-to-end-offshore-tax-evasion",
         "categories": [
-          {
-            "_": "Tax avoidance",
-            "$": {
-              "domain": "https://www.theguardian.com/business/taxavoidance"
-            }
-          },
-          {
-            "_": "Business",
-            "$": {
-              "domain": "https://www.theguardian.com/business/business"
-            }
-          },
-          {
-            "_": "Corporate governance",
-            "$": {
-              "domain": "https://www.theguardian.com/business/corporate-governance"
-            }
-          },
-          {
-            "_": "United Nations",
-            "$": {
-              "domain": "https://www.theguardian.com/world/unitednations"
-            }
-          },
-          {
-            "_": "UK news",
-            "$": {
-              "domain": "https://www.theguardian.com/uk/uk"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          }
+          "Tax avoidance",
+          "Business",
+          "Corporate governance",
+          "United Nations",
+          "UK news",
+          "World news"
         ],
         "mediaContent": {
           "width": "140",
@@ -535,30 +370,10 @@
         "contentSnippet": "Defense department says wild weather could endanger 1,700 sites\nFindings run counter to White House views on climate\n\nNearly half of US military sites are threatened by wild weather linked to climate change, according to a new Pentagon study whose findings run contrary to White House views on global warming.\n Drought, wind and flooding that occurs due to reasons other than storms topped the list of natural disasters that endanger 1,700 military sites worldwide, from large bases to outposts, said the US Department of Defense (DoD).\n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/2018/jan/31/climate-change-threatens-us-military-bases-pentagon",
         "categories": [
-          {
-            "_": "US military",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-military"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Climate change",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/climate-change"
-            }
-          },
-          {
-            "_": "Environment",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/environment"
-            }
-          }
+          "US military",
+          "US news",
+          "Climate change",
+          "Environment"
         ],
         "mediaContent": {
           "width": "140",
@@ -608,42 +423,12 @@
         "contentSnippet": "Douglas Haig named as ‘person of interest’ in court documents\nArizona gun dealer says he met Stephen Paddock only once\n\nAn Arizona man named in court documents as a “person of interest” during the investigation of the deadliest mass shooting in modern US history said he had met the gunman one time and sold ammunition to him.\n Related: Las Vegas shooting followed a depressingly familiar routine \n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/2018/jan/31/las-vegas-shooting-person-of-interest-douglas-haig",
         "categories": [
-          {
-            "_": "Las Vegas shooting",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/las-vegas-shooting"
-            }
-          },
-          {
-            "_": "Las Vegas",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/las-vegas"
-            }
-          },
-          {
-            "_": "Nevada",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/nevada"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Gun crime",
-            "$": {
-              "domain": "https://www.theguardian.com/world/gun-crime"
-            }
-          },
-          {
-            "_": "US crime",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-crime"
-            }
-          }
+          "Las Vegas shooting",
+          "Las Vegas",
+          "Nevada",
+          "US news",
+          "Gun crime",
+          "US crime"
         ],
         "mediaContent": {
           "width": "140",
@@ -693,42 +478,12 @@
         "contentSnippet": "Police decided not to prosecute abuse allegation after disgraced doctor said he was conducting legitimate medical procedures\nPolice dropped an investigation into disgraced former gymnastics doctor Larry Nassar in 2004 after he told them he was conducting legitimate medical treatment, according to documents released on Wednesday.\nBrianne Randall-Gay was 17 when she was treated for scoliosis by Nassar, who massaged her breasts and attempted to put his fingers in her vagina. Randall-Gay’s mother subsequently complained to Meridian Township police department. However, Nassar said the treatment was part of “a medical technique known as Sacrotuberous Ligament Release” and gave police a PowerPoint presentation on the subject. \n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/2018/jan/31/larry-nassar-sexual-abuse-sentencing-hearing",
         "categories": [
-          {
-            "_": "Gymnastics",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/gymnastics"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "US sports",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/us-sport"
-            }
-          },
-          {
-            "_": "Sport",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/sport"
-            }
-          },
-          {
-            "_": "Michigan",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/michigan"
-            }
-          },
-          {
-            "_": "Rape and sexual assault",
-            "$": {
-              "domain": "https://www.theguardian.com/society/rape"
-            }
-          }
+          "Gymnastics",
+          "US news",
+          "US sports",
+          "Sport",
+          "Michigan",
+          "Rape and sexual assault"
         ],
         "mediaContent": {
           "width": "140",
@@ -778,18 +533,8 @@
         "contentSnippet": "Dr Brenda Fitzgerald’s financial interests had caused conflicts of interest that made it difficult to do her job, a statement said\nThe director of US Centers for Disease Control and Prevention has resigned because of financial conflicts of interest, government officials announced on Wednesday. \n Related: CDC banned words include 'diversity', 'transgender' and 'fetus' – report \n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/2018/jan/31/brenda-fitzgerald-director-of-centers-for-disease-control-and-prevention-resigns",
         "categories": [
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "New York",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/new-york"
-            }
-          }
+          "US news",
+          "New York"
         ],
         "mediaContent": {
           "width": "140",
@@ -839,36 +584,11 @@
         "contentSnippet": "Ousted president’s private messages caught on TV cameras reveal admission of defeat\n\nThe ousted Catalan president, Carles Puigdemont, has admitted privately that his attempt to secure regional independence is over and claims he has been sacrificed by his own side, according to messages sent to a colleague and captured by TV cameras.\n\nOn Wednesday, a Spanish TV show published messages that Puigdemont had sent to his former health minister Toni Comín while the latter was at an event in Leuven, Belgium, the previous evening.\n Continue reading...",
         "guid": "https://www.theguardian.com/world/2018/jan/31/this-is-over-puigdemonts-catalan-independence-doubts-caught-on-camera",
         "categories": [
-          {
-            "_": "Carles Puigdemont",
-            "$": {
-              "domain": "https://www.theguardian.com/world/carles-puigdemont"
-            }
-          },
-          {
-            "_": "Catalonia",
-            "$": {
-              "domain": "https://www.theguardian.com/world/catalonia"
-            }
-          },
-          {
-            "_": "Spain",
-            "$": {
-              "domain": "https://www.theguardian.com/world/spain"
-            }
-          },
-          {
-            "_": "Europe",
-            "$": {
-              "domain": "https://www.theguardian.com/world/europe-news"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          }
+          "Carles Puigdemont",
+          "Catalonia",
+          "Spain",
+          "Europe",
+          "World news"
         ],
         "mediaContent": {
           "width": "140",
@@ -918,60 +638,15 @@
         "contentSnippet": "Capra? Coppola? Bigelow? Our chief film critic crowns one of five nominees the Oscar of Oscars champion – and reveals who you picked as your winner\nAfter announcing the nominees last week, we begin our Oscar of Oscars all-time list with best director. In no other category has this choice been more painful, because, rightly or wrongly, the director is often seen as a film’s all-powerful creator: a film director’s authorial rights are even enshrined in EU law. The director liaises with the casting director and works with the actors, rehearsing them, shaping their performances. The director consults with the cinematographer, framing shots, and decides which take to use. The director makes decisions under pressure on set and on location about the look and feel of what is being shot. And of course the director accumulates prestige and respect — part of what an Oscar is there to offer. \nSo to the contenders. Frank Capra’s legendary lightness of touch was never more exquisitely judged than in his great early picture It Happened One Night from 1934. In its pre-Hays Code sexual daring and droll repartee, It Happened One Night set a rarely reached gold standard for romantic comedy – with a great script by Robert Riskin. It is not simply the dash and sweep with which Capra takes us from the initial, hilarious yacht escape to the intimate encounters in buses and motels, and then the extraordinary wedding finale; it’s his handling of the actors, too. When Clark Gable and Claudette Colbert fake being quarrelling marrieds in front of the detectives and burst out laughing when they’re gone, you can’t help but laugh with them, as if you have witnessed a real miracle: the icy heiress turns out to be a great actress, gamely going along with the gag. Then there’s the melting of the meet-cute ice and the growing love between them. Capra orchestrates these two alpha-stars with masterly flair.\n Continue reading...",
         "guid": "https://www.theguardian.com/film/2018/jan/31/greatest-oscar-winners-best-director-of-all-time-francis-ford-coppola-kathryn-bigelow-frank-capra",
         "categories": [
-          {
-            "_": "Greatest Oscar winners ever",
-            "$": {
-              "domain": "https://www.theguardian.com/film/greatest-oscars-winners-ever"
-            }
-          },
-          {
-            "_": "Film",
-            "$": {
-              "domain": "https://www.theguardian.com/film/film"
-            }
-          },
-          {
-            "_": "Culture",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/culture"
-            }
-          },
-          {
-            "_": "Oscars",
-            "$": {
-              "domain": "https://www.theguardian.com/film/oscars"
-            }
-          },
-          {
-            "_": "Oscars 2018",
-            "$": {
-              "domain": "https://www.theguardian.com/film/oscars-2018"
-            }
-          },
-          {
-            "_": "Awards and prizes",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/awards-and-prizes"
-            }
-          },
-          {
-            "_": "Frank Capra",
-            "$": {
-              "domain": "https://www.theguardian.com/film/frank-capra"
-            }
-          },
-          {
-            "_": "Kathryn Bigelow",
-            "$": {
-              "domain": "https://www.theguardian.com/film/kathryn-bigelow"
-            }
-          },
-          {
-            "_": "Francis Ford  Coppola",
-            "$": {
-              "domain": "https://www.theguardian.com/film/francis-ford-coppola"
-            }
-          }
+          "Greatest Oscar winners ever",
+          "Film",
+          "Culture",
+          "Oscars",
+          "Oscars 2018",
+          "Awards and prizes",
+          "Frank Capra",
+          "Kathryn Bigelow",
+          "Francis Ford  Coppola"
         ],
         "mediaContent": {
           "width": "140",
@@ -1021,36 +696,11 @@
         "contentSnippet": "Everything you need to know about the inquiry into Russian hacking, alleged collusion and Donald Trump, plus the latest news\n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/ng-interactive/2017/dec/08/donald-trump-russia-investigation-key-questions-latest-news-collusion-timeline",
         "categories": [
-          {
-            "_": "Trump-Russia investigation",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/trump-russia-inquiry"
-            }
-          },
-          {
-            "_": "Russia",
-            "$": {
-              "domain": "https://www.theguardian.com/world/russia"
-            }
-          },
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          }
+          "Trump-Russia investigation",
+          "Russia",
+          "Donald Trump",
+          "US news",
+          "World news"
         ],
         "mediaContent": {
           "width": "140",
@@ -1100,18 +750,8 @@
         "contentSnippet": "Author Paul Shapiro tried the first foie gras made in a laboratory – it was rich, buttery, savory, and very decadent, just as one would expect\nAs I sit in the Hampton Creek kitchen in January 2017, a team of scientists is hard at work behind me making the world’s first clean foie gras, while developing cell lines of various other species.\nOne of those scientists is Aparna Subramanian. A stem cell biologist with fifteen years of experience, Subramanian commutes to San Francisco every week from LA, where her husband and children live, to spend her time growing and feeding farm animal cell lines. \n Continue reading...",
         "guid": "https://www.theguardian.com/lifeandstyle/2018/jan/31/eat-it-without-the-guilt-the-story-of-the-worlds-first-clean-foie-gras",
         "categories": [
-          {
-            "_": "Food & drink",
-            "$": {
-              "domain": "https://www.theguardian.com/lifeandstyle/food-and-drink"
-            }
-          },
-          {
-            "_": "Life and style",
-            "$": {
-              "domain": "https://www.theguardian.com/lifeandstyle/lifeandstyle"
-            }
-          }
+          "Food & drink",
+          "Life and style"
         ],
         "mediaContent": {
           "width": "140",
@@ -1161,90 +801,20 @@
         "contentSnippet": "Comics, including Stephen Colbert, Trevor Noah and Jimmy Kimmel, reacted to Trump’s first State of the Union address\nLate-night hosts on Tuesday addressed Donald Trump’s first official State of the Union address.\n“We are live right now, and barely conscious following a 90-minute speech,” said Stephen Colbert, whose show aired directly following Trump’s speech. “There were some bright spots. There were some really heartwarming moments. Some amazing people were there in the gallery.”\n Continue reading...",
         "guid": "https://www.theguardian.com/culture/2018/jan/31/late-night-hosts-on-state-of-the-union",
         "categories": [
-          {
-            "_": "Late-night TV roundup",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/late-night-tv-roundup"
-            }
-          },
-          {
-            "_": "Stephen Colbert",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/stephen-colbert"
-            }
-          },
-          {
-            "_": "Trevor Noah",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/trevor-noah"
-            }
-          },
-          {
-            "_": "Jimmy Kimmel",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/jimmy-kimmel"
-            }
-          },
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "State of the Union address",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/state-of-the-union-address"
-            }
-          },
-          {
-            "_": "Culture",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/culture"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Television & radio",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/tv-and-radio"
-            }
-          },
-          {
-            "_": "US television",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/us-television"
-            }
-          },
-          {
-            "_": "Melania Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/melania-trump"
-            }
-          },
-          {
-            "_": "Television",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/television"
-            }
-          },
-          {
-            "_": "Comedy",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/comedy"
-            }
-          },
-          {
-            "_": "Comedy",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/comedy"
-            }
-          }
+          "Late-night TV roundup",
+          "Stephen Colbert",
+          "Trevor Noah",
+          "Jimmy Kimmel",
+          "Donald Trump",
+          "State of the Union address",
+          "Culture",
+          "US news",
+          "Television & radio",
+          "US television",
+          "Melania Trump",
+          "Television",
+          "Comedy",
+          "Comedy"
         ],
         "mediaContent": {
           "width": "140",
@@ -1294,54 +864,14 @@
         "contentSnippet": "The Trade is a new docu-series focused on the stories of addicts, their families and the law enforcement officials trying to curb the epidemic that kills 91 Americans a day \nFifteen minutes into The Trade, a new docu-series about the US opioid crisis, a woman is seen injecting heroin in a dingy Atlanta hotel room.\n“I hate this shit,” she mumbles as the drug takes hold. \n Continue reading...",
         "guid": "https://www.theguardian.com/tv-and-radio/2018/jan/31/it-needs-to-make-you-uncomfortable-the-opioid-documentary-set-to-shock-america",
         "categories": [
-          {
-            "_": "Documentary",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/documentary"
-            }
-          },
-          {
-            "_": "Opioids",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/opioids"
-            }
-          },
-          {
-            "_": "US television",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/us-television"
-            }
-          },
-          {
-            "_": "Factual TV",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/factual-tv"
-            }
-          },
-          {
-            "_": "Television",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/television"
-            }
-          },
-          {
-            "_": "Television & radio",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/tv-and-radio"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Culture",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/culture"
-            }
-          }
+          "Documentary",
+          "Opioids",
+          "US television",
+          "Factual TV",
+          "Television",
+          "Television & radio",
+          "US news",
+          "Culture"
         ],
         "mediaContent": {
           "width": "140",
@@ -1391,48 +921,13 @@
         "contentSnippet": "Researchers have made remarkable finds at sites such as Grand Staircase-Escalante, which the administration has shrunk\nThe palaeontologist Rob Gay wasn’t expecting to find anything significant that day. He and a few of his students were scouting in the south-east Utah badlands in summer 2016 when they came across a hillside littered with hundreds of bones. Scattered haphazardly and protruding from the earth, they were the remains of prehistoric reptiles that lived 220m years ago, at the same time as the earliest dinosaurs.\n Continue reading...",
         "guid": "https://www.theguardian.com/environment/2018/jan/30/public-lands-dinosaurs-trump",
         "categories": [
-          {
-            "_": "Public lands",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/public-lands"
-            }
-          },
-          {
-            "_": "Dinosaurs",
-            "$": {
-              "domain": "https://www.theguardian.com/science/dinosaurs"
-            }
-          },
-          {
-            "_": "Trump administration",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/trump-administration"
-            }
-          },
-          {
-            "_": "Fossils",
-            "$": {
-              "domain": "https://www.theguardian.com/science/fossils"
-            }
-          },
-          {
-            "_": "Environment",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/environment"
-            }
-          },
-          {
-            "_": "Science",
-            "$": {
-              "domain": "https://www.theguardian.com/science/science"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          }
+          "Public lands",
+          "Dinosaurs",
+          "Trump administration",
+          "Fossils",
+          "Environment",
+          "Science",
+          "US news"
         ],
         "mediaContent": {
           "width": "140",
@@ -1482,30 +977,10 @@
         "contentSnippet": "We Americans can do better in the fight to protect our threatened heritage, writes Theodore Roosevelt IV, a descendant of the ‘conservation president’\nA truly noble idea – one deeply democratic in its inspiration and one that honors the human need to be in relationship to awe and majesty.\nAmerica’s public lands.\n Continue reading...",
         "guid": "https://www.theguardian.com/environment/2018/jan/29/this-land-is-your-land-public-theodore-roosevelt-iv",
         "categories": [
-          {
-            "_": "Public lands",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/public-lands"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Environment",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/environment"
-            }
-          },
-          {
-            "_": "Conservation",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/conservation"
-            }
-          }
+          "Public lands",
+          "US news",
+          "Environment",
+          "Conservation"
         ],
         "mediaContent": {
           "width": "140",
@@ -1555,42 +1030,12 @@
         "contentSnippet": "The Democratic party showed it had learned nothing from the 2016 defeat and still has no idea how to deal with Trump and the Republican hegemony\nDuring the State of the Union speech on Tuesday evening, the American people saw a boisterous, self-confident, united Republican party rally around its president, while a defeated, grim, and moping Democratic party looked on powerlessly.\nAs soon as the rather long State of the Union speech was over, liberal pundits and Democratic operatives started to attack it. Some focused on the lack of concrete policies or the nativist content of the immigration sections; others pointed out the lack of energy of the speech. They had seen a “low-energy” Trump and assumed the base would be left uninspired and wondering. It again showed their complete lack of understanding of the Trump-Republican party dynamic.\n Continue reading...",
         "guid": "https://www.theguardian.com/commentisfree/2018/jan/31/trumps-speech-miserable-democrats-response-to-it",
         "categories": [
-          {
-            "_": "State of the Union address",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/state-of-the-union-address"
-            }
-          },
-          {
-            "_": "US politics",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-politics"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Trump administration",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/trump-administration"
-            }
-          },
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "Democrats",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/democrats"
-            }
-          }
+          "State of the Union address",
+          "US politics",
+          "US news",
+          "Trump administration",
+          "Donald Trump",
+          "Democrats"
         ],
         "mediaContent": {
           "width": "140",
@@ -1640,30 +1085,10 @@
         "contentSnippet": "At the State of the Union, Trump could pretend to be the president he never is, and accept support from a Congress that ridicules him\nIt was so heart-warming to hear about Donald Trump’s love of America and the American dream in his first official State of the Union address.\nJust one day after he decided to go easy on Russia for manipulating American democracy, our “America first” president declared that “Americans love their country. And they deserve a government that shows them the same love and loyalty in return.”\n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/commentisfree/2018/jan/30/the-kind-of-night-donald-trump-loves-best-when-he-can-applaud-himself",
         "categories": [
-          {
-            "_": "State of the Union address",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/state-of-the-union-address"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "US politics",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-politics"
-            }
-          }
+          "State of the Union address",
+          "US news",
+          "Donald Trump",
+          "US politics"
         ],
         "mediaContent": {
           "width": "140",
@@ -1713,24 +1138,9 @@
         "contentSnippet": "People upset with #MeToo should consider whether they’re comfortable with norms that say anything short of rape is OK\nThere’s a modern feminist adage that women need to “ask for more”. We’ve been taught to underestimate our value – whether in salary negotiations or personal relationships – and if women just demanded what we’re really worth, we’re told, we might just get it.\nBut if the backlash to #MeToo has shown us anything, it’s that people don’t much like it when women refuse to settle for the bare minimum. The current criticism of the movement – sparked in earnest by accusations against Aziz Ansari – really comes down to outrage that women would dare ask for more.\n Continue reading...",
         "guid": "https://www.theguardian.com/commentisfree/2018/jan/31/me-too-we-demand-more-jessica-valenti",
         "categories": [
-          {
-            "_": "Women",
-            "$": {
-              "domain": "https://www.theguardian.com/lifeandstyle/women"
-            }
-          },
-          {
-            "_": "Feminism",
-            "$": {
-              "domain": "https://www.theguardian.com/world/feminism"
-            }
-          },
-          {
-            "_": "Sex",
-            "$": {
-              "domain": "https://www.theguardian.com/lifeandstyle/sex"
-            }
-          }
+          "Women",
+          "Feminism",
+          "Sex"
         ],
         "mediaContent": {
           "width": "140",
@@ -1780,36 +1190,11 @@
         "contentSnippet": "Donald Trump came to power on the heels of a rightwing movement rooted in the Tea Party protests. The Women’s March could pull off a similar feat\n\nOn 20 and 21 January 2018, hundreds of progressive groups organized another Women’s March. In the United States alone, between 1,856,683 and 2,637,214 people in at least 407 locations marched, held rallies and protested. There were marches in all 50 states and the District of Columbia, including in 38 state capitals. Although the number of participants declined from the massive march in 2017, this is a very significant show of strength. \nProgressive movements are not the only ones that have turned to mass mobilization to build power from below. Donald Trump himself came to power on the heels of a rightwing populist movement that had its origins in the Tea Party protests of 2009. \n Continue reading...",
         "guid": "https://www.theguardian.com/commentisfree/2018/jan/31/womens-march-politics-tea-party",
         "categories": [
-          {
-            "_": "Protest",
-            "$": {
-              "domain": "https://www.theguardian.com/world/protest"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Democrats",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/democrats"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          },
-          {
-            "_": "Gender",
-            "$": {
-              "domain": "https://www.theguardian.com/world/gender"
-            }
-          }
+          "Protest",
+          "US news",
+          "Democrats",
+          "World news",
+          "Gender"
         ],
         "mediaContent": {
           "width": "140",
@@ -1859,36 +1244,11 @@
         "contentSnippet": "Latest updates from the 8pm kick-off at Wembley\nClockwatch: keep up with all tonight’s other matches – live!\nTransfer deadline day – live!\nScott’s book, The Title, containing hot Chas & Dave action\nAnd email Scott here\n\n 8.13pm GMT \n13 min: The impressive Lingard bursts down the inside-left channel. Spurs are light at the back, with Sanchez, Martial and Lukaku in close attendance. Dembele drags Lingard back. The danger’s over, but at the cost of a booking.\n 8.12pm GMT \n12 min: Kane gloriously traps a ball in the centre circle and sends it down the right for Son, who earns a throw. From that, there’s more space in the right-hand side of the United box, and Alli is given time to shoot. He looks for the Eriksen Corner, but Jones comes in, sliding and blocking. The resulting corner comes to nothing.\n Continue reading...",
         "guid": "https://www.theguardian.com/football/live/2018/jan/31/tottenham-hotspur-v-manchester-united-premier-league-live",
         "categories": [
-          {
-            "_": "Premier League",
-            "$": {
-              "domain": "https://www.theguardian.com/football/premierleague"
-            }
-          },
-          {
-            "_": "Tottenham Hotspur",
-            "$": {
-              "domain": "https://www.theguardian.com/football/tottenham-hotspur"
-            }
-          },
-          {
-            "_": "Manchester United",
-            "$": {
-              "domain": "https://www.theguardian.com/football/manchester-united"
-            }
-          },
-          {
-            "_": "Football",
-            "$": {
-              "domain": "https://www.theguardian.com/football/football"
-            }
-          },
-          {
-            "_": "Sport",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/sport"
-            }
-          }
+          "Premier League",
+          "Tottenham Hotspur",
+          "Manchester United",
+          "Football",
+          "Sport"
         ],
         "mediaContent": {
           "width": "140",
@@ -1938,36 +1298,11 @@
         "contentSnippet": "Former Miami Heat player died in crash in Los Angeles on Wednesday\nFormer teams and team-mates pay tribute to hard-working veteran\n\nThe 13-year NBA veteran Rasual Butler has died in a car crash in Los Angeles. He was 38.\nAccording to Los Angeles County coroner’s department, Butler lost control of his Range Rover in the early hours of Wednesday morning. The vehicle then hit a wall before rolling over. A passenger also died. She was later named as his wife, Leah LaBelle, by Butler’s former team the Miami Heat. \n Continue reading...",
         "guid": "https://www.theguardian.com/sport/2018/jan/31/rasual-butler-killed-car-crash-miami-heat-nba",
         "categories": [
-          {
-            "_": "NBA",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/nba"
-            }
-          },
-          {
-            "_": "Miami Heat",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/miami-heat"
-            }
-          },
-          {
-            "_": "Basketball",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/basketball"
-            }
-          },
-          {
-            "_": "US sports",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/us-sport"
-            }
-          },
-          {
-            "_": "Sport",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/sport"
-            }
-          }
+          "NBA",
+          "Miami Heat",
+          "Basketball",
+          "US sports",
+          "Sport"
         ],
         "mediaContent": {
           "width": "140",
@@ -2017,30 +1352,10 @@
         "contentSnippet": "Amid a renaissance of athlete activism, the NFC champions rate among the league leaders of the new social awareness\nThe questions were good.\nThat’s what top Philadelphia civil rights attorney David Rudovsky thought as he listened to Philadelphia Eagles players Malcolm Jenkins, Chris Long, Torrey Smith and Rodney McLeod interrogate city leaders. This was late last September and Rudovsky had been invited to a meeting with Philadelphia’s police commissioner, local activists and NFL commissioner Roger Goodell to discuss the racial inequality issues raised when former NFL quarterback Colin Kaepernick refused to stand for the national anthem in 2016.\n Continue reading...",
         "guid": "https://www.theguardian.com/sport/2018/jan/31/philadelphia-eagles-socially-conscious-woke-team",
         "categories": [
-          {
-            "_": "Philadelphia Eagles",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/philadelphia-eagles"
-            }
-          },
-          {
-            "_": "Super Bowl LI",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/super-bowl-li"
-            }
-          },
-          {
-            "_": "Sport",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/sport"
-            }
-          },
-          {
-            "_": "Colin Kaepernick",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/colin-kaepernick"
-            }
-          }
+          "Philadelphia Eagles",
+          "Super Bowl LI",
+          "Sport",
+          "Colin Kaepernick"
         ],
         "mediaContent": {
           "width": "140",
@@ -2090,36 +1405,11 @@
         "contentSnippet": "Latest transfer deals in Europe’s top five leagues\n\nManchester City end interest in Mahrez over £95m price tag\nFull story on Aubameyang, Giroud and Batshuayi moves\nEmail Nick with any tip-offs or tweet: @NickAmes82\n\n 8.12pm GMT \n✍️ | Town have completed the signing of Barry Cotter from League of Ireland club Limerick for an undisclosed fee on a deal until 2021 #itfc\n https://t.co/BAwgd5VZEY pic.twitter.com/tCdMxZX78i\nCotter hit the headlines in Ireland a year or two back for being a Neymar lookalike, which was plausible at the time, but these shots suggest he’s reined that in – perhaps for the best when Mick McCarthy is your new boss.\n 8.04pm GMT \nSimon McMahon provides a Scottish update. A world-weary update, but still an update:\n“Just in case you missed it, Scottish Championship also rans Dundee United have signed Grant Gillespie from Hamilton, to add to their already bloated, over paid and under achieving squad. To be honest, they’d have been as well signing Gary Gillespie. Deadline Day? Dead loss day, more like.”\n Continue reading...",
         "guid": "https://www.theguardian.com/football/live/2018/jan/31/transfer-deadline-day-aubameyang-giroud-batshuayi-mahrez-latest-live",
         "categories": [
-          {
-            "_": "Transfer window",
-            "$": {
-              "domain": "https://www.theguardian.com/football/transfer-window"
-            }
-          },
-          {
-            "_": "Football",
-            "$": {
-              "domain": "https://www.theguardian.com/football/football"
-            }
-          },
-          {
-            "_": "Sport",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/sport"
-            }
-          },
-          {
-            "_": "European club football",
-            "$": {
-              "domain": "https://www.theguardian.com/football/europeanfootball"
-            }
-          },
-          {
-            "_": "Olivier Giroud",
-            "$": {
-              "domain": "https://www.theguardian.com/football/olivier-giroud"
-            }
-          }
+          "Transfer window",
+          "Football",
+          "Sport",
+          "European club football",
+          "Olivier Giroud"
         ],
         "mediaContent": {
           "width": "140",
@@ -2169,30 +1459,10 @@
         "contentSnippet": "The league this season sometimes appears to be fighting and arguments with a few games thrown in. And that makes the players all the more relatable\nThe NBA is in the midst of a season in which TV ratings are up double digit percentage points, young and exciting teams like the Philadelphia 76ers and Minnesota Timberwolves are arriving as contenders and, night after night – from LeBron James to Kevin Durant, Russell Westbrook to Giannis Antetokuonmpo – fans can enjoy a depth of skill and athleticism that has never before been seen in the sport. While the talk around the NFL is how that league is past its peak in popularity, the narrative on the NBA’s future is nothing but positivity and light. It’s easy to make the argument that there has never been a better time for the NBA. Now someone just needs to let the NBA’s players in on the news.\nWhile NBA fans swoon over pretty much everything about the league in 2018 – dip a toe into NBA Twitter on a random Tuesday and you’ll see it hype a game between the Grizzlies and Suns like its Game 7 of the Finals – the players themselves apparently don’t feel the same way. Just in the past seven days, we saw a player angrily score 46 points on an opponent after mistakenly thinking he was picked last for the All-Star teams and then, three days later, a player dismissively stared down the opposing bench while dribbling out the final seconds of the clock in a victory. OK, so both of those were produced by Russell Westbrook, already the NBA’s all-time career leader in completely invented indignation. But it’s not just Westbrook who is made out of mad anymore. The whole league seems pissed off. \n Continue reading...",
         "guid": "https://www.theguardian.com/sport/2018/jan/31/nba-angry-fights-basketball",
         "categories": [
-          {
-            "_": "NBA",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/nba"
-            }
-          },
-          {
-            "_": "Basketball",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/basketball"
-            }
-          },
-          {
-            "_": "US sports",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/us-sport"
-            }
-          },
-          {
-            "_": "Sport",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/sport"
-            }
-          }
+          "NBA",
+          "Basketball",
+          "US sports",
+          "Sport"
         ],
         "mediaContent": {
           "width": "140",
@@ -2242,36 +1512,11 @@
         "contentSnippet": "While Republicans responded to Trump's speech with ecstatic applause, Democrats used the opportunity to protest. The minority leader Nancy Pelosi wore black in solidarity with #MeToo and members of the Congressional Black Caucus wore kente cloth in reference to Trump's 'shithole countries' comments\n\nTrump State of the Union address promised unity but emphasized discord\n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/video/2018/jan/31/moments-protest-trump-state-of-the-union-address-video",
         "categories": [
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "State of the Union address",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/state-of-the-union-address"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Nancy Pelosi",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/nancy-pelosi"
-            }
-          },
-          {
-            "_": "US politics",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-politics"
-            }
-          }
+          "Donald Trump",
+          "State of the Union address",
+          "US news",
+          "Nancy Pelosi",
+          "US politics"
         ],
         "mediaContent": {
           "width": "140",
@@ -2321,36 +1566,11 @@
         "contentSnippet": "Speaking on Jimmy Kimmel Live! the adult film star Stormy Daniels appears to question the authenticity of a statement denying her affair with the US president, Donald Trump, only for her lawyer to insist it is real. \n'Did you sign this letter that was released today?' Kimmel asked.\n'I don’t know, did I?' Daniels said, refusing to answer directly.\n\nPorn actor Stormy Daniels casts doubt on denial of affair with Trump\n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/video/2018/jan/31/stormy-daniels-jimmy-kimmel-porn-actor-doubt-denial-trump-affair-video",
         "categories": [
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Pornography",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/pornography"
-            }
-          },
-          {
-            "_": "Jimmy Kimmel",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/jimmy-kimmel"
-            }
-          },
-          {
-            "_": "Television",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/television"
-            }
-          }
+          "Donald Trump",
+          "US news",
+          "Pornography",
+          "Jimmy Kimmel",
+          "Television"
         ],
         "mediaContent": {
           "width": "140",
@@ -2400,36 +1620,11 @@
         "contentSnippet": "In his first address, the US president  says his administration embarked on a 'righteous mission' to 'make America great again for all Americans'. Reflecting on the past year, Donald Trump says: 'We have endured floods and fires and storms, but through it all we have seen the beauty of America's soul and the steel in America's spine'\n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/video/2018/jan/31/state-of-the-union-trump-claims-extraordinary-success-in-first-year-video",
         "categories": [
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "US politics",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-politics"
-            }
-          },
-          {
-            "_": "Trump administration",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/trump-administration"
-            }
-          },
-          {
-            "_": "Republicans",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/republicans"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          }
+          "Donald Trump",
+          "US politics",
+          "Trump administration",
+          "Republicans",
+          "US news"
         ],
         "mediaContent": {
           "width": "140",
@@ -2479,48 +1674,13 @@
         "contentSnippet": "Salling, who played Puck on the hit series, was facing up to seven years in prison after pleading guilty to possession of child abuse images\nMark Salling, the actor best known for his role in Glee, has died at the age of 35.\nHis attorney confirmed the news in a statement. The cause of death has not yet been verified.\n Continue reading...",
         "guid": "https://www.theguardian.com/tv-and-radio/2018/jan/30/glee-actor-mark-salling-dies-35",
         "categories": [
-          {
-            "_": "Television",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/television"
-            }
-          },
-          {
-            "_": "Glee",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/glee"
-            }
-          },
-          {
-            "_": "Culture",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/culture"
-            }
-          },
-          {
-            "_": "Television & radio",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/tv-and-radio"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "US television",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/us-television"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          }
+          "Television",
+          "Glee",
+          "Culture",
+          "Television & radio",
+          "US news",
+          "US television",
+          "World news"
         ],
         "mediaContent": {
           "width": "140",
@@ -2570,84 +1730,19 @@
         "contentSnippet": "David Mueller previously lost his countersuit accusing Swift of ruining his career\nDavid Mueller, the DJ sacked after Taylor Swift complained he had groped her at a 2013 meet-and-greet, has been hired by a Mississippi radio station. \nMueller lost his job at Denver’s KYGO-FM after Swift’s management and security team told him he would no longer be welcome at the star’s concerts following the incident. He subsequently sued Swift for $3m (£2.1m) in damages, claiming he had been falsely accused and that she had ruined his career. She countersued, claiming that Mueller had assaulted her, and a jury ruled in favour of her. Mueller’s case against the pop star was dismissed.\n Continue reading...",
         "guid": "https://www.theguardian.com/music/2018/jan/31/dj-who-groped-taylor-swift-hired-by-mississippi-radio-station-david-mueller",
         "categories": [
-          {
-            "_": "Taylor Swift",
-            "$": {
-              "domain": "https://www.theguardian.com/music/taylor-swift"
-            }
-          },
-          {
-            "_": "Music",
-            "$": {
-              "domain": "https://www.theguardian.com/music/music"
-            }
-          },
-          {
-            "_": "Sexual harassment",
-            "$": {
-              "domain": "https://www.theguardian.com/world/sexual-harassment"
-            }
-          },
-          {
-            "_": "Rape and sexual assault",
-            "$": {
-              "domain": "https://www.theguardian.com/society/rape"
-            }
-          },
-          {
-            "_": "Pop and rock",
-            "$": {
-              "domain": "https://www.theguardian.com/music/popandrock"
-            }
-          },
-          {
-            "_": "Culture",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/culture"
-            }
-          },
-          {
-            "_": "Women",
-            "$": {
-              "domain": "https://www.theguardian.com/lifeandstyle/women"
-            }
-          },
-          {
-            "_": "Radio",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/radio"
-            }
-          },
-          {
-            "_": "Country",
-            "$": {
-              "domain": "https://www.theguardian.com/music/country"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Mississippi",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/mississippi"
-            }
-          },
-          {
-            "_": "Radio industry",
-            "$": {
-              "domain": "https://www.theguardian.com/media/radio"
-            }
-          },
-          {
-            "_": "Television & radio",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/tv-and-radio"
-            }
-          }
+          "Taylor Swift",
+          "Music",
+          "Sexual harassment",
+          "Rape and sexual assault",
+          "Pop and rock",
+          "Culture",
+          "Women",
+          "Radio",
+          "Country",
+          "US news",
+          "Mississippi",
+          "Radio industry",
+          "Television & radio"
         ],
         "mediaContent": {
           "width": "140",
@@ -2697,30 +1792,10 @@
         "contentSnippet": "On Jimmy Kimmel Live! Daniels appears to question the authenticity of a statement denying the affair, only for her lawyer to insist it is real\n \nThe allegations that Donald Trump paid hush money to hide an affair with adult film star Stormy Daniels took another bizarre twist on Tuesday night during an interview with late-night host Jimmy Kimmel that followed the president’s first State of the Union address. \n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/2018/jan/30/adult-film-star-stormy-daniels-issues-new-denial-of-affair-with-trump",
         "categories": [
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "Pornography",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/pornography"
-            }
-          },
-          {
-            "_": "Culture",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/culture"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          }
+          "Donald Trump",
+          "Pornography",
+          "Culture",
+          "US news"
         ],
         "mediaContent": {
           "width": "140",
@@ -2770,36 +1845,11 @@
         "contentSnippet": "Trump says the golf course is worth more than $50m but the Palm Beach County property tax appraiser says it is actually worth $19m\nDonald Trump says the Trump National Golf Club in Florida is worth more than $50m. Palm Beach County property tax appraiser Dorothy Jacks disagrees, saying the Jupiter course, where Trump plays when he visits nearby Mar-a-Lago, is actually worth $19m. \n Related: How Trump’s $50m golf club became $1.4m when it came time to pay tax \n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/2018/jan/30/trump-national-golf-club-florida",
         "categories": [
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "US politics",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-politics"
-            }
-          },
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "Mar-a-Lago",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/mar-a-lago"
-            }
-          },
-          {
-            "_": "Florida",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/florida"
-            }
-          }
+          "US news",
+          "US politics",
+          "Donald Trump",
+          "Mar-a-Lago",
+          "Florida"
         ],
         "mediaContent": {
           "width": "140",
@@ -2849,42 +1899,12 @@
         "contentSnippet": "After being overlooked at the awards, the New Zealand star thanks supporters for ‘believing in female musicians’\nNew Zealand singer Lorde has taken out a full-page advert in her home country’s largest newspaper thanking readers for “believing in female musicians” after she was overlooked at this week’s Grammys awards. \nFull-page letter from @lorde in today's @nzherald: 'Thank you, also, for believing in female musicians' pic.twitter.com/Z86VXCCpvl\n Continue reading...",
         "guid": "https://www.theguardian.com/music/2018/jan/31/lorde-newspaper-advert-grammys-snub-women",
         "categories": [
-          {
-            "_": "Lorde",
-            "$": {
-              "domain": "https://www.theguardian.com/music/lorde"
-            }
-          },
-          {
-            "_": "Grammys",
-            "$": {
-              "domain": "https://www.theguardian.com/music/grammys"
-            }
-          },
-          {
-            "_": "Music",
-            "$": {
-              "domain": "https://www.theguardian.com/music/music"
-            }
-          },
-          {
-            "_": "New Zealand",
-            "$": {
-              "domain": "https://www.theguardian.com/world/newzealand"
-            }
-          },
-          {
-            "_": "Culture",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/culture"
-            }
-          },
-          {
-            "_": "Asia Pacific",
-            "$": {
-              "domain": "https://www.theguardian.com/world/asia-pacific"
-            }
-          }
+          "Lorde",
+          "Grammys",
+          "Music",
+          "New Zealand",
+          "Culture",
+          "Asia Pacific"
         ],
         "mediaContent": {
           "width": "140",
@@ -2934,54 +1954,14 @@
         "contentSnippet": "Study warns that use of anti-malarial nets may reduce people’s protection and affect fish stocks, and calls for urgent research into potential impacts\nAnti-malarial mosquito nets are being used to catch fish around the world, according to the first global survey, risking harm to people and fish stocks.\nMore research is urgently needed to assess these impacts, say the scientists, but they also caution that the draconian bans on mosquito net fishing seen in some countries may cause more harm than good, particularly where people rely on the fish caught to survive.\n Continue reading...",
         "guid": "https://www.theguardian.com/environment/2018/jan/31/global-use-of-mosquito-nets-for-fishing-endangering-humans-and-wildlife",
         "categories": [
-          {
-            "_": "Fishing",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/fishing"
-            }
-          },
-          {
-            "_": "Food",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/food"
-            }
-          },
-          {
-            "_": "Malaria",
-            "$": {
-              "domain": "https://www.theguardian.com/world/malaria"
-            }
-          },
-          {
-            "_": "Global development",
-            "$": {
-              "domain": "https://www.theguardian.com/global-development/global-development"
-            }
-          },
-          {
-            "_": "Conservation",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/conservation"
-            }
-          },
-          {
-            "_": "Environment",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/environment"
-            }
-          },
-          {
-            "_": "Marine life",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/marine-life"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          }
+          "Fishing",
+          "Food",
+          "Malaria",
+          "Global development",
+          "Conservation",
+          "Environment",
+          "Marine life",
+          "World news"
         ],
         "mediaContent": {
           "width": "140",
@@ -3031,48 +2011,13 @@
         "contentSnippet": "Social network blocks initial coin offering ads as they are ‘frequently associated with misleading or deceptive promotional practices’\nFacebook has banned all advertising for cryptocurrencies because they are “frequently associated with misleading or deceptive promotional practices”.\nThe company added the rule to its advertising policies on Tuesday, in an update to its list of “prohibited content”. \n Continue reading...",
         "guid": "https://www.theguardian.com/technology/2018/jan/31/facebook-bans-ads-cryptocurrencies-scams",
         "categories": [
-          {
-            "_": "Cryptocurrencies",
-            "$": {
-              "domain": "https://www.theguardian.com/technology/cryptocurrencies"
-            }
-          },
-          {
-            "_": "Facebook",
-            "$": {
-              "domain": "https://www.theguardian.com/technology/facebook"
-            }
-          },
-          {
-            "_": "Social networking",
-            "$": {
-              "domain": "https://www.theguardian.com/media/socialnetworking"
-            }
-          },
-          {
-            "_": "Technology",
-            "$": {
-              "domain": "https://www.theguardian.com/technology/technology"
-            }
-          },
-          {
-            "_": "E-commerce",
-            "$": {
-              "domain": "https://www.theguardian.com/technology/efinance"
-            }
-          },
-          {
-            "_": "Internet",
-            "$": {
-              "domain": "https://www.theguardian.com/technology/internet"
-            }
-          },
-          {
-            "_": "Media",
-            "$": {
-              "domain": "https://www.theguardian.com/media/media"
-            }
-          }
+          "Cryptocurrencies",
+          "Facebook",
+          "Social networking",
+          "Technology",
+          "E-commerce",
+          "Internet",
+          "Media"
         ],
         "mediaContent": {
           "width": "140",
@@ -3122,84 +2067,19 @@
         "contentSnippet": "More than 70 of 113 countries surveyed for latest Rule of Law Index report their fundamental human rights are being eroded\nFundamental human rights are reported to have diminished in almost two-thirds of the 113 countries surveyed for the 2018 Rule of Law Index, amid concerns over a worldwide surge in authoritarian nationalism and a retreat from international legal obligations.\n“All signs point to a crisis not just for human rights, but for the human rights movement,” said Professor Samuel Moyn of Yale University. “Within many nations, these fundamental rights are falling prey to the backlash against a globalising economy in which the rich are winning. But human rights movements have not historically set out to name or shame inequality.”\n Continue reading...",
         "guid": "https://www.theguardian.com/inequality/2018/jan/31/human-rights-new-rule-of-law-index-reveals-global-fall-basic-justice",
         "categories": [
-          {
-            "_": "Inequality",
-            "$": {
-              "domain": "https://www.theguardian.com/inequality/inequality"
-            }
-          },
-          {
-            "_": "Human rights",
-            "$": {
-              "domain": "https://www.theguardian.com/law/human-rights"
-            }
-          },
-          {
-            "_": "Law",
-            "$": {
-              "domain": "https://www.theguardian.com/law/law"
-            }
-          },
-          {
-            "_": "Corruption index and barometer",
-            "$": {
-              "domain": "https://www.theguardian.com/world/corruption-index"
-            }
-          },
-          {
-            "_": "Prisons",
-            "$": {
-              "domain": "https://www.theguardian.com/australia-news/prisons"
-            }
-          },
-          {
-            "_": "US prisons",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-prisons"
-            }
-          },
-          {
-            "_": "Prisons and probation",
-            "$": {
-              "domain": "https://www.theguardian.com/society/prisons-and-probation"
-            }
-          },
-          {
-            "_": "UK criminal justice",
-            "$": {
-              "domain": "https://www.theguardian.com/law/criminal-justice"
-            }
-          },
-          {
-            "_": "Society",
-            "$": {
-              "domain": "https://www.theguardian.com/society/society"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          },
-          {
-            "_": "Australia news",
-            "$": {
-              "domain": "https://www.theguardian.com/australia-news/australia-news"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Life and style",
-            "$": {
-              "domain": "https://www.theguardian.com/lifeandstyle/lifeandstyle"
-            }
-          }
+          "Inequality",
+          "Human rights",
+          "Law",
+          "Corruption index and barometer",
+          "Prisons",
+          "US prisons",
+          "Prisons and probation",
+          "UK criminal justice",
+          "Society",
+          "World news",
+          "Australia news",
+          "US news",
+          "Life and style"
         ],
         "mediaContent": {
           "width": "140",
@@ -3249,42 +2129,12 @@
         "contentSnippet": "UN special envoy defends presence at Sochi talks after criticism from Syrian opposition\nA 50-strong commission representing most strands of Syrian society will draft a new constitution for the country, the UN and Russia have agreed at the end of a peace conference put together by Vladimir Putin in the Russian Black Sea resort of Sochi.\n\nThe UN special envoy Staffan de Mistura faced intense criticism from the Syrian opposition for attending the conference, which the opposition boycotted on the basis that it was an attempt to supplant the UN peace process and marginalise their role in ending Syria’s seven-year civil war.\n Continue reading...",
         "guid": "https://www.theguardian.com/world/2018/jan/31/russia-backed-syrian-peace-talks-deal-constitution-un",
         "categories": [
-          {
-            "_": "Syria",
-            "$": {
-              "domain": "https://www.theguardian.com/world/syria"
-            }
-          },
-          {
-            "_": "Russia",
-            "$": {
-              "domain": "https://www.theguardian.com/world/russia"
-            }
-          },
-          {
-            "_": "United Nations",
-            "$": {
-              "domain": "https://www.theguardian.com/world/unitednations"
-            }
-          },
-          {
-            "_": "Middle East and North Africa",
-            "$": {
-              "domain": "https://www.theguardian.com/world/middleeast"
-            }
-          },
-          {
-            "_": "Europe",
-            "$": {
-              "domain": "https://www.theguardian.com/world/europe-news"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          }
+          "Syria",
+          "Russia",
+          "United Nations",
+          "Middle East and North Africa",
+          "Europe",
+          "World news"
         ],
         "mediaContent": {
           "width": "140",
@@ -3334,36 +2184,11 @@
         "contentSnippet": "Austrian confirms he is working on Kelvin’s Book, an English language dystopian drama\nMichael Haneke has become the latest high-profile film director to turn his hand to the small screen after revealing he is working on a 10-part English language TV series.\nThe Austrian director, who won the Palme d’Or at Cannes and best foreign language Oscar in 2012 for his film Amour, confirmed he is working on Kelvin’s Book, a dystopian story set in the near future.\n Continue reading...",
         "guid": "https://www.theguardian.com/film/2018/jan/31/michael-haneke-kelvins-book-10-part-english-language-tv-series",
         "categories": [
-          {
-            "_": "Michael Haneke",
-            "$": {
-              "domain": "https://www.theguardian.com/film/michael-haneke"
-            }
-          },
-          {
-            "_": "Television & radio",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/tv-and-radio"
-            }
-          },
-          {
-            "_": "Television",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/television"
-            }
-          },
-          {
-            "_": "Culture",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/culture"
-            }
-          },
-          {
-            "_": "Film",
-            "$": {
-              "domain": "https://www.theguardian.com/film/film"
-            }
-          }
+          "Michael Haneke",
+          "Television & radio",
+          "Television",
+          "Culture",
+          "Film"
         ],
         "mediaContent": {
           "width": "140",
@@ -3413,24 +2238,9 @@
         "contentSnippet": "Kalonzo Musyoka, a former vice-president, says he was victim of assassination attempt hours after opposition rally\n\n\nA senior opposition leader in Kenya has said unknown gunmen tried to kill him at his home in the early hours of Wednesday, raising the stakes after months of political turmoil.\n Continue reading...",
         "guid": "https://www.theguardian.com/world/2018/jan/31/kenyan-opposition-leader-kalonzo-musyoka-assassination-attempt",
         "categories": [
-          {
-            "_": "Kenya",
-            "$": {
-              "domain": "https://www.theguardian.com/world/kenya"
-            }
-          },
-          {
-            "_": "Africa",
-            "$": {
-              "domain": "https://www.theguardian.com/world/africa"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          }
+          "Kenya",
+          "Africa",
+          "World news"
         ],
         "mediaContent": {
           "width": "140",
@@ -3480,60 +2290,15 @@
         "contentSnippet": "Two New Zealand women face claim for ‘emotional injury’ over singer’s scrapped Tel Aviv show\nThree teenage Israeli fans of the popstar Lorde have filed a lawsuit claiming thousands of pounds in “emotional injury” damages against two New-Zealand-based activists for allegedly convincing her to cancel a performance in Tel Aviv.\n\nThe case, filed by an Israeli legal rights group, appears to be the first use of a controversial law passed in 2011 that allows civil suits to be opened against those calling for a boycott against Israel.\n Continue reading...",
         "guid": "https://www.theguardian.com/world/2018/jan/31/lorde-israeli-fans-sue-activists-over-tour-cancellation",
         "categories": [
-          {
-            "_": "Israel",
-            "$": {
-              "domain": "https://www.theguardian.com/world/israel"
-            }
-          },
-          {
-            "_": "Lorde",
-            "$": {
-              "domain": "https://www.theguardian.com/music/lorde"
-            }
-          },
-          {
-            "_": "Music",
-            "$": {
-              "domain": "https://www.theguardian.com/music/music"
-            }
-          },
-          {
-            "_": "New Zealand",
-            "$": {
-              "domain": "https://www.theguardian.com/world/newzealand"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          },
-          {
-            "_": "Middle East and North Africa",
-            "$": {
-              "domain": "https://www.theguardian.com/world/middleeast"
-            }
-          },
-          {
-            "_": "Asia Pacific",
-            "$": {
-              "domain": "https://www.theguardian.com/world/asia-pacific"
-            }
-          },
-          {
-            "_": "Culture",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/culture"
-            }
-          },
-          {
-            "_": "Pop and rock",
-            "$": {
-              "domain": "https://www.theguardian.com/music/popandrock"
-            }
-          }
+          "Israel",
+          "Lorde",
+          "Music",
+          "New Zealand",
+          "World news",
+          "Middle East and North Africa",
+          "Asia Pacific",
+          "Culture",
+          "Pop and rock"
         ],
         "mediaContent": {
           "width": "140",
@@ -3583,30 +2348,10 @@
         "contentSnippet": "Hundreds of documents were in filing cabinets bought for ‘small change’ because they had no key\n\nFinding and exposing classified government information is a traditionally dangerous occupation – whistleblowers have risked their livelihoods and liberty to bring government secrets into the light, while news organisations have been threatened and chastised.\n Continue reading...",
         "guid": "https://www.theguardian.com/australia-news/2018/jan/31/top-secret-australian-government-files-secondhand-shop",
         "categories": [
-          {
-            "_": "Australian politics",
-            "$": {
-              "domain": "https://www.theguardian.com/australia-news/australian-politics"
-            }
-          },
-          {
-            "_": "Australia news",
-            "$": {
-              "domain": "https://www.theguardian.com/australia-news/australia-news"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          },
-          {
-            "_": "Australian security and counter-terrorism",
-            "$": {
-              "domain": "https://www.theguardian.com/australia-news/australian-security-and-counter-terrorism"
-            }
-          }
+          "Australian politics",
+          "Australia news",
+          "World news",
+          "Australian security and counter-terrorism"
         ],
         "mediaContent": {
           "width": "140",
@@ -3656,48 +2401,13 @@
         "contentSnippet": "Casting glamorous actors as killers, cult leaders and disgraced skaters they do not physically resemble is problematic\nOne of Hollywood’s most time-honored traditions is praising actors in recognition of the physical transformation required for certain roles. The awards come flooding in, as do vague references to Stanislavski’s method, and the clickbaity headlines set the internet ablaze: Matthew McConaughey packs on 40lb for his turn as a gold-miner! Christian Bale ate a single can of tuna a day for The Machinist! Cameron Diaz uglies up in Being John Malkovich! \nWatching the spectacle of celebrity mutation excites us both as gossip-mongers and moviegoers, since we appreciate dedication to craft as much as we do a grainy on-set photo of Matthew McConaughey cradling his pot-belly like a stray dog he’s just encountered.\n Continue reading...",
         "guid": "https://www.theguardian.com/culture/2018/jan/31/just-another-pretty-face-should-hollywood-stop-giving-bad-guys-a-face-lift",
         "categories": [
-          {
-            "_": "Culture",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/culture"
-            }
-          },
-          {
-            "_": "Television & radio",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/tv-and-radio"
-            }
-          },
-          {
-            "_": "Film",
-            "$": {
-              "domain": "https://www.theguardian.com/film/film"
-            }
-          },
-          {
-            "_": "Television",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/television"
-            }
-          },
-          {
-            "_": "Margot Robbie",
-            "$": {
-              "domain": "https://www.theguardian.com/film/margot-robbie"
-            }
-          },
-          {
-            "_": "US television",
-            "$": {
-              "domain": "https://www.theguardian.com/tv-and-radio/us-television"
-            }
-          },
-          {
-            "_": "Zac Efron",
-            "$": {
-              "domain": "https://www.theguardian.com/film/zac-efron"
-            }
-          }
+          "Culture",
+          "Television & radio",
+          "Film",
+          "Television",
+          "Margot Robbie",
+          "US television",
+          "Zac Efron"
         ],
         "mediaContent": {
           "width": "140",
@@ -3747,66 +2457,16 @@
         "contentSnippet": "At 10, ‘Stephen’ was taken from Hanoi to London and then spent four years tending plants for a brutal drug gang. Now awaiting news of an appeal against deportation, he recalls his horrific experience – and his lucky escape\nAnyone who thinks the business of cannabis cultivation in the UK is a friendly, hippyish occupation, imbued with wholesome organic principles, needs to reflect on the experience of Stephen, a vulnerable Vietnamese orphan who was 10 when he was trafficked to the UK to work as an enslaved cannabis farmer.\nStephen arrived in Britain in the back of a freezer lorry, after a long journey on foot and in trucks from Hanoi, where he had been destitute and homeless. In Britain, he was locked up alone in a series of terraced houses that had been converted into cannabis farms, and forced over the course of four years to work as a cannabis gardener by the Vietnamese gang that had smuggled him here.\n Continue reading...",
         "guid": "https://www.theguardian.com/world/2018/jan/31/trafficked-beaten-ensaved-life-of-cannabis-farmer-vietnam",
         "categories": [
-          {
-            "_": "Slavery",
-            "$": {
-              "domain": "https://www.theguardian.com/world/slavery"
-            }
-          },
-          {
-            "_": "Drugs",
-            "$": {
-              "domain": "https://www.theguardian.com/society/drugs"
-            }
-          },
-          {
-            "_": "Human trafficking",
-            "$": {
-              "domain": "https://www.theguardian.com/law/human-trafficking"
-            }
-          },
-          {
-            "_": "Child protection",
-            "$": {
-              "domain": "https://www.theguardian.com/society/childprotection"
-            }
-          },
-          {
-            "_": "Society",
-            "$": {
-              "domain": "https://www.theguardian.com/society/society"
-            }
-          },
-          {
-            "_": "Drugs trade",
-            "$": {
-              "domain": "https://www.theguardian.com/world/drugs-trade"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          },
-          {
-            "_": "Cannabis",
-            "$": {
-              "domain": "https://www.theguardian.com/society/cannabis"
-            }
-          },
-          {
-            "_": "Crime",
-            "$": {
-              "domain": "https://www.theguardian.com/uk/ukcrime"
-            }
-          },
-          {
-            "_": "UK news",
-            "$": {
-              "domain": "https://www.theguardian.com/uk/uk"
-            }
-          }
+          "Slavery",
+          "Drugs",
+          "Human trafficking",
+          "Child protection",
+          "Society",
+          "Drugs trade",
+          "World news",
+          "Cannabis",
+          "Crime",
+          "UK news"
         ],
         "mediaContent": {
           "width": "140",
@@ -3856,30 +2516,10 @@
         "contentSnippet": "The decade was full of contradictions for young women. From Buffy to Sabrina the Teenage Witch, it was also a time of superhumans – all of whom were white\nMore: Frances Ryan on the 2000s | Liv Little on the 2010s\nI began the 1990s doing something very specific at a disco on a highly anticipated end of primary school camp in Cornwall. Wearing leggings and an oversized, DayGlo T-shirt, I was singing Colour Me Badd. “Ooooooooh … I Wanna Sex You Up!”\n\nIf a No 1 song by a boyband from Oklahoma, inappropriately riling prepubescent girls, doesn’t sound like an obvious feminist anthem, that’s because it wasn’t. What it was, though, was an early indication that attitudes towards gender and sexuality were changing.\n Continue reading...",
         "guid": "https://www.theguardian.com/lifeandstyle/2018/jan/31/as-a-1990s-teenager-the-world-gave-us-girl-power-and-pornification",
         "categories": [
-          {
-            "_": "Women",
-            "$": {
-              "domain": "https://www.theguardian.com/lifeandstyle/women"
-            }
-          },
-          {
-            "_": "Women's suffrage",
-            "$": {
-              "domain": "https://www.theguardian.com/politics/womens-suffrage"
-            }
-          },
-          {
-            "_": "Life and style",
-            "$": {
-              "domain": "https://www.theguardian.com/lifeandstyle/lifeandstyle"
-            }
-          },
-          {
-            "_": "Feminism",
-            "$": {
-              "domain": "https://www.theguardian.com/world/feminism"
-            }
-          }
+          "Women",
+          "Women's suffrage",
+          "Life and style",
+          "Feminism"
         ],
         "mediaContent": {
           "width": "140",
@@ -3929,30 +2569,10 @@
         "contentSnippet": "Professor spread philosophy of non-violent resistance around the world in works including From Dictatorship to Democracy\nGene Sharp, an obscure American political scientist whose writing on non-violent political resistance ended up being an inspiring influence on the Arab Spring, has died peacefully at home at the age of 90.\nSharp distilled the wisdom of icons of non-violent struggle against oppression down the ages, put his own spin on it and disseminated the philosophy around the world, most famously in his seminal work From Dictatorship to Democracy: A Conceptual Framework for Liberation. The book made waves upon publication in the early 1990s and became in effect a handbook for non-violent revolt.\n Continue reading...",
         "guid": "https://www.theguardian.com/world/2018/jan/30/gene-sharp-dead-arab-spring-political-scientist",
         "categories": [
-          {
-            "_": "Activism",
-            "$": {
-              "domain": "https://www.theguardian.com/world/activism"
-            }
-          },
-          {
-            "_": "Protest",
-            "$": {
-              "domain": "https://www.theguardian.com/world/protest"
-            }
-          },
-          {
-            "_": "Massachusetts",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/massachusetts"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          }
+          "Activism",
+          "Protest",
+          "Massachusetts",
+          "US news"
         ],
         "mediaContent": {
           "width": "140",
@@ -4002,54 +2622,14 @@
         "contentSnippet": "Killer whales able to copy words such as ‘hello’ and ‘bye bye’ as well as sounds from other orcas, study shows\nHigh-pitched, eerie and yet distinct, the sound of a voice calling the name “Amy” is unmistakable. But this isn’t a human cry – it’s the voice of a killer whale called Wikie.\nNew research reveals that orcas are able to imitate human speech, in some cases at the first attempt, saying words such as “hello”, “one, two” and “bye bye”.\n Continue reading...",
         "guid": "https://www.theguardian.com/science/2018/jan/31/orcas-killer-whales-can-imitate-human-speech-research-reveals",
         "categories": [
-          {
-            "_": "Animal behaviour",
-            "$": {
-              "domain": "https://www.theguardian.com/science/animalbehaviour"
-            }
-          },
-          {
-            "_": "Language",
-            "$": {
-              "domain": "https://www.theguardian.com/science/language"
-            }
-          },
-          {
-            "_": "Marine life",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/marine-life"
-            }
-          },
-          {
-            "_": "Science",
-            "$": {
-              "domain": "https://www.theguardian.com/science/science"
-            }
-          },
-          {
-            "_": "Wildlife",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/wildlife"
-            }
-          },
-          {
-            "_": "Dolphins",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/dolphins"
-            }
-          },
-          {
-            "_": "Cetaceans",
-            "$": {
-              "domain": "https://www.theguardian.com/environment/cetaceans"
-            }
-          },
-          {
-            "_": "Evolution",
-            "$": {
-              "domain": "https://www.theguardian.com/science/evolution"
-            }
-          }
+          "Animal behaviour",
+          "Language",
+          "Marine life",
+          "Science",
+          "Wildlife",
+          "Dolphins",
+          "Cetaceans",
+          "Evolution"
         ],
         "mediaContent": {
           "width": "140",
@@ -4099,42 +2679,12 @@
         "contentSnippet": "LPGA pro Suzann Pettersen: ‘I just laugh’ at president’s tactics\nTrump is not only US president known for cutting corners on course\n\nSuzann Pettersen, the 15-time LPGA Tour winner and a golfing partner of Donald Trump, says the president “cheats like hell” on the golf course.\nPettersen, who has known Trump for a decade and says she is fond of the president even though she does not agree with his policies, was speaking to the Norwegian newspaper Verdens Gang. \n Continue reading...",
         "guid": "https://www.theguardian.com/sport/2018/jan/30/donald-trump-golf-cheat-suzann-pettersen",
         "categories": [
-          {
-            "_": "Golf",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/golf"
-            }
-          },
-          {
-            "_": "LPGA",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/lpga"
-            }
-          },
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "US sports",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/us-sport"
-            }
-          },
-          {
-            "_": "Sport",
-            "$": {
-              "domain": "https://www.theguardian.com/sport/sport"
-            }
-          }
+          "Golf",
+          "LPGA",
+          "Donald Trump",
+          "US news",
+          "US sports",
+          "Sport"
         ],
         "mediaContent": {
           "width": "140",
@@ -4184,42 +2734,12 @@
         "contentSnippet": "After Isis were driven out of Mosul, traumatised families slowly returned to their devastated neighbourhoods. Over more than two months, they told Mona Mahmood their harrowing stories\nWarning: this report contains distressing details\nOverwhelmed with grief and anger, families have been returning to what is left of their homes in the Old City of Mosul, following its liberation from Isis. \nIn a set of interviews conducted over more than two months, people haunted by the memories of their loved ones gradually opened up about the traumatic experiences they survived, and the uncertain future they now face. \n Continue reading...",
         "guid": "https://www.theguardian.com/cities/2018/jan/31/death-portraits-life-iraq-mosul-old-city",
         "categories": [
-          {
-            "_": "Cities",
-            "$": {
-              "domain": "https://www.theguardian.com/cities/cities"
-            }
-          },
-          {
-            "_": "Iraq",
-            "$": {
-              "domain": "https://www.theguardian.com/world/iraq"
-            }
-          },
-          {
-            "_": "Mosul",
-            "$": {
-              "domain": "https://www.theguardian.com/world/mosul"
-            }
-          },
-          {
-            "_": "Islamic State",
-            "$": {
-              "domain": "https://www.theguardian.com/world/isis"
-            }
-          },
-          {
-            "_": "Middle East and North Africa",
-            "$": {
-              "domain": "https://www.theguardian.com/world/middleeast"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          }
+          "Cities",
+          "Iraq",
+          "Mosul",
+          "Islamic State",
+          "Middle East and North Africa",
+          "World news"
         ],
         "mediaContent": {
           "width": "140",
@@ -4269,42 +2789,12 @@
         "contentSnippet": "Marie Gonzalez moved from Costa Rica with her parents at age five. Her parents worked hard until they were forced to leave. This is their story\nA month after the September 11, 2001, attacks, Marvin Gonzalez , a government mail clerk in Jefferson City, Missouri, was sorting packages for Governor Bob Holden when he came across a package addressed to the governor that included an unmarked envelope and a book about Osama bin Laden. Frightened but remaining calm, he alerted his superiors. The nation was on the lookout for another terrorist attack, after a series of anthrax incidents had killed five people, sickened more than a dozen and left the country once more on edge.\n\nState investigators later determined the package did not contain anything hazardous, but the government took anything that looked like the deadly white powder seriously, and the FBI came to Jefferson City, Missouri, to interview Marvin. He and others in the mail room began wearing protective gloves and masks when they handled the mail and were moved out of the capitol building.\n Continue reading...",
         "guid": "https://www.theguardian.com/us-news/2018/jan/30/a-family-in-missouri-had-a-life-for-15-years-then-they-were-torn-apart",
         "categories": [
-          {
-            "_": "US immigration",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/usimmigration"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          },
-          {
-            "_": "Missouri",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/missouri"
-            }
-          },
-          {
-            "_": "Costa Rica",
-            "$": {
-              "domain": "https://www.theguardian.com/world/costa-rica"
-            }
-          },
-          {
-            "_": "Americas",
-            "$": {
-              "domain": "https://www.theguardian.com/world/americas"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          }
+          "US immigration",
+          "US news",
+          "Missouri",
+          "Costa Rica",
+          "Americas",
+          "World news"
         ],
         "mediaContent": {
           "width": "140",
@@ -4354,24 +2844,9 @@
         "contentSnippet": "Imagine if this was Bernie\n\nSign up here to get an email whenever First Dog cartoons are published\nGet all your needs met at the First Dog shop if what you need is First Dog merchandise and prints\n Continue reading...",
         "guid": "https://www.theguardian.com/commentisfree/2018/jan/31/the-raccoons-of-the-resistance-watch-the-state-of-the-uniom",
         "categories": [
-          {
-            "_": "State of the Union address",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/state-of-the-union-address"
-            }
-          },
-          {
-            "_": "Donald Trump",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/donaldtrump"
-            }
-          },
-          {
-            "_": "US news",
-            "$": {
-              "domain": "https://www.theguardian.com/us-news/us-news"
-            }
-          }
+          "State of the Union address",
+          "Donald Trump",
+          "US news"
         ],
         "mediaContent": {
           "width": "140",
@@ -4421,36 +2896,11 @@
         "contentSnippet": "Many parts of the globe may on Wednesday catch a glimpse of the moon as a giant crimson globe, thanks to a rare lunar trifecta that combines a total eclipse with a blue moon and super moon. The spectacle, which Nasa has coined a “super blue blood moon,” will grace the pre-dawn skies in the western US as the moon crosses into the shadow of the Earth and turns blood red.\n\nWhat is the super blue blood moon? - video\n Continue reading...",
         "guid": "https://www.theguardian.com/science/gallery/2018/jan/31/super-blue-blood-moon-in-pictures",
         "categories": [
-          {
-            "_": "The moon",
-            "$": {
-              "domain": "https://www.theguardian.com/science/moon"
-            }
-          },
-          {
-            "_": "Lunar eclipses",
-            "$": {
-              "domain": "https://www.theguardian.com/science/lunar-eclipse"
-            }
-          },
-          {
-            "_": "Photography",
-            "$": {
-              "domain": "https://www.theguardian.com/artanddesign/photography"
-            }
-          },
-          {
-            "_": "Astronomy",
-            "$": {
-              "domain": "https://www.theguardian.com/science/astronomy"
-            }
-          },
-          {
-            "_": "Science",
-            "$": {
-              "domain": "https://www.theguardian.com/science/science"
-            }
-          }
+          "The moon",
+          "Lunar eclipses",
+          "Photography",
+          "Astronomy",
+          "Science"
         ],
         "mediaContent": {
           "width": "140",
@@ -4500,18 +2950,8 @@
         "contentSnippet": "The Guardian’s picture editors bring you a selection of photo highlights from around the world\n Continue reading...",
         "guid": "https://www.theguardian.com/news/gallery/2018/jan/31/snake-school-and-may-in-china-wednesdays-top-photos",
         "categories": [
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          },
-          {
-            "_": "Photography",
-            "$": {
-              "domain": "https://www.theguardian.com/artanddesign/photography"
-            }
-          }
+          "World news",
+          "Photography"
         ],
         "mediaContent": {
           "width": "140",
@@ -4561,96 +3001,21 @@
         "contentSnippet": "Worried that fitness obsessives were making yoga too commercial, photographer Andy Richter went in search of the true spiritual path – from mass retreats in America to caves in India\n Continue reading...",
         "guid": "https://www.theguardian.com/artanddesign/gallery/2018/jan/31/earths-ultimate-yogis-in-pictures-yoga",
         "categories": [
-          {
-            "_": "Photography",
-            "$": {
-              "domain": "https://www.theguardian.com/artanddesign/photography"
-            }
-          },
-          {
-            "_": "Yoga",
-            "$": {
-              "domain": "https://www.theguardian.com/lifeandstyle/yoga"
-            }
-          },
-          {
-            "_": "Health & wellbeing",
-            "$": {
-              "domain": "https://www.theguardian.com/lifeandstyle/health-and-wellbeing"
-            }
-          },
-          {
-            "_": "Culture",
-            "$": {
-              "domain": "https://www.theguardian.com/culture/culture"
-            }
-          },
-          {
-            "_": "Art and design",
-            "$": {
-              "domain": "https://www.theguardian.com/artanddesign/artanddesign"
-            }
-          },
-          {
-            "_": "Art",
-            "$": {
-              "domain": "https://www.theguardian.com/artanddesign/art"
-            }
-          },
-          {
-            "_": "Art and design",
-            "$": {
-              "domain": "https://www.theguardian.com/books/art"
-            }
-          },
-          {
-            "_": "Books",
-            "$": {
-              "domain": "https://www.theguardian.com/books/books"
-            }
-          },
-          {
-            "_": "Life and style",
-            "$": {
-              "domain": "https://www.theguardian.com/lifeandstyle/lifeandstyle"
-            }
-          },
-          {
-            "_": "Fitness",
-            "$": {
-              "domain": "https://www.theguardian.com/lifeandstyle/fitness"
-            }
-          },
-          {
-            "_": "India",
-            "$": {
-              "domain": "https://www.theguardian.com/world/india"
-            }
-          },
-          {
-            "_": "Hinduism",
-            "$": {
-              "domain": "https://www.theguardian.com/world/hinduism"
-            }
-          },
-          {
-            "_": "Religion",
-            "$": {
-              "domain": "https://www.theguardian.com/world/religion"
-            }
-          },
-          {
-            "_": "World news",
-            "$": {
-              "domain": "https://www.theguardian.com/world/world"
-            }
-          },
-          {
-            "_": "South and Central Asia",
-            "$": {
-              "domain": "https://www.theguardian.com/world/south-and-central-asia"
-            }
-          }
+          "Photography",
+          "Yoga",
+          "Health & wellbeing",
+          "Culture",
+          "Art and design",
+          "Art",
+          "Art and design",
+          "Books",
+          "Life and style",
+          "Fitness",
+          "India",
+          "Hinduism",
+          "Religion",
+          "World news",
+          "South and Central Asia"
         ],
         "mediaContent": {
           "width": "140",

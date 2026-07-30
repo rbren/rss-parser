@@ -12,12 +12,7 @@
         "content": "This is the first item.",
         "contentSnippet": "This is the first item.",
         "categories": [
-          {
-            "_": "Business/Industries/Publishing/Publishers/Nonfiction/",
-            "$": {
-              "domain": "http://www.dmoz.org"
-            }
-          }
+          "Business/Industries/Publishing/Publishers/Nonfiction/"
         ]
       },
       {
@@ -31,12 +26,7 @@
         "content": "This is the second item.",
         "contentSnippet": "This is the second item.",
         "categories": [
-          {
-            "_": "Business/Industries/Publishing/Publishers/Nonfiction/",
-            "$": {
-              "domain": "http://www.dmoz.org"
-            }
-          }
+          "Business/Industries/Publishing/Publishers/Nonfiction/"
         ]
       }
     ],
