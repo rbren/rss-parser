@@ -42,7 +42,8 @@ describe('Utils', function() {
     });
   })
 
-  it('should handle repeated unterminated HTML tags efficiently', () => {
+  it('should handle repeated unterminated HTML tags efficiently', function() {
+    this.timeout(2000);
     var input = 'a<br'.repeat(40000);
     Expect(utils.getSnippet(input)).to.equal(input);
   })
