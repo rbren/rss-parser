@@ -41,5 +41,11 @@ describe('Utils', function() {
       Expect('|' + utils.getSnippet(tc.input) + '|').to.equal('|' + tc.output + '|', tc.input);
     });
   })
+
+  it('should handle repeated unterminated HTML tags efficiently', function() {
+    this.timeout(2000);
+    var input = 'a<br'.repeat(40000);
+    Expect(utils.getSnippet(input)).to.equal(input);
+  })
 });
 
