@@ -1,0 +1,32 @@
+{
+  "feed": {
+    "items": [
+      {
+        "title": "First Post",
+        "subtitle": "An introduction to our blog",
+        "link": "https://example.com/blog/post-1",
+        "pubDate": "Mon, 15 Jan 2024 10:00:00 GMT",
+        "content": "Welcome to our blog!",
+        "contentSnippet": "Welcome to our blog!",
+        "guid": "https://example.com/blog/post-1",
+        "isoDate": "2024-01-15T10:00:00.000Z"
+      },
+      {
+        "title": "Second Post",
+        "subtitle": "More content for readers",
+        "link": "https://example.com/blog/post-2",
+        "pubDate": "Sun, 14 Jan 2024 09:00:00 GMT",
+        "content": "Here is another post.",
+        "contentSnippet": "Here is another post.",
+        "guid": "https://example.com/blog/post-2",
+        "isoDate": "2024-01-14T09:00:00.000Z"
+      }
+    ],
+    "title": "Example Blog",
+    "description": "A blog about technology and programming",
+    "subtitle": "Tech insights and tutorials",
+    "link": "https://example.com/blog",
+    "language": "en-us",
+    "lastBuildDate": "Mon, 15 Jan 2024 10:00:00 GMT"
+  }
+}

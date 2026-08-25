@@ -284,4 +284,8 @@ describe('Parser', function() {
   it('should parse atom:link pagination links', function (done) {
     testParseForFile('pagination-links', 'rss', done);
   });
+
+  it('should parse subtitle field in feed and items', function(done) {
+    testParseForFile('subtitle', 'rss', done);
+  });
 })
