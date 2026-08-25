@@ -1,0 +1,31 @@
+{
+  "feed": {
+    "items": [
+      {
+        "title": "Test Entry 1",
+        "link": "http://example.com/entry1",
+        "pubDate": "2024-01-01T12:00:00.000Z",
+        "content": "Content of entry 1",
+        "contentSnippet": "Content of entry 1",
+        "summary": "Summary of entry 1",
+        "id": "http://example.com/entry1",
+        "isoDate": "2024-01-01T12:00:00.000Z"
+      },
+      {
+        "title": "Test Entry 2",
+        "link": "http://example.com/entry2",
+        "pubDate": "2024-01-02T12:00:00.000Z",
+        "content": "Content of entry 2",
+        "contentSnippet": "Content of entry 2",
+        "summary": "Summary of entry 2",
+        "id": "http://example.com/entry2",
+        "isoDate": "2024-01-02T12:00:00.000Z"
+      }
+    ],
+    "link": "http://example.com",
+    "feedUrl": "http://example.com/feed.atom",
+    "title": "Test Atom Feed with Subtitle",
+    "subtitle": "A secondary description for the Atom feed",
+    "lastBuildDate": "2024-01-02T12:00:00Z"
+  }
+}

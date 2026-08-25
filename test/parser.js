@@ -284,4 +284,12 @@ describe('Parser', function() {
   it('should parse atom:link pagination links', function (done) {
     testParseForFile('pagination-links', 'rss', done);
   });
+
+  it('should parse subtitle field from RSS feed', function(done) {
+    testParseForFile('subtitle-rss', 'rss', done);
+  });
+
+  it('should parse subtitle field from Atom feed', function(done) {
+    testParseForFile('subtitle-atom', 'atom', done);
+  });
 })
