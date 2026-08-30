@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>XHTML Order Test</title>
+    <link>http://example.com</link>
+    <description>Test feed for XHTML content ordering</description>
+    <item>
+      <title>Test Item</title>
+      <link>http://example.com/1</link>
+      <description>
+        <strong>Task_A</strong>
+        <small>2024-08-07T15:33:29+00:00</small>
+        <p>Description for Task A</p>
+        <strong>Task_B</strong>
+        <small>2024-08-06T08:45:27+00:00</small>
+        <p>Description for Task B</p>
+      </description>
+    </item>
+  </channel>
+</rss>

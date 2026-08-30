@@ -1,0 +1,15 @@
+{
+  "feed": {
+    "items": [
+      {
+        "title": "Test Item",
+        "link": "http://example.com/1",
+        "content": "<strong>Task_A</strong><small>2024-08-07T15:33:29+00:00</small><p>Description for Task A</p><strong>Task_B</strong><small>2024-08-06T08:45:27+00:00</small><p>Description for Task B</p>",
+        "contentSnippet": "Task_A2024-08-07T15:33:29+00:00\nDescription for Task A\nTask_B2024-08-06T08:45:27+00:00\nDescription for Task B"
+      }
+    ],
+    "title": "XHTML Order Test",
+    "description": "Test feed for XHTML content ordering",
+    "link": "http://example.com"
+  }
+}
