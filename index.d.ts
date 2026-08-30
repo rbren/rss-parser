@@ -37,6 +37,7 @@ declare namespace Parser {
     categories?: string[];
     contentSnippet?: string;
     enclosure?: Enclosure;
+    enclosures?: Enclosure[];
   }
 
   export interface PaginationLinks {
