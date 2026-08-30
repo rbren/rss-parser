@@ -284,4 +284,8 @@ describe('Parser', function() {
   it('should parse atom:link pagination links', function (done) {
     testParseForFile('pagination-links', 'rss', done);
   });
+
+  it('should parse category elements with attributes as plain strings', function(done) {
+    testParseForFile('item-category-with-attrs', 'rss', done);
+  });
 })

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Category Attrs Test</title>
+    <link>https://example.com/</link>
+    <description>Feed with category elements that have attributes</description>
+    <item>
+      <title>Item with mixed categories</title>
+      <link>https://example.com/item</link>
+      <category domain="changelog-type">Release</category>
+      <category domain="changelog-label">copilot</category>
+      <category>PlainCategory</category>
+    </item>
+  </channel>
+</rss>

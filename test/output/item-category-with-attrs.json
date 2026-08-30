@@ -1,0 +1,18 @@
+{
+  "feed": {
+    "items": [
+      {
+        "title": "Item with mixed categories",
+        "link": "https://example.com/item",
+        "categories": [
+          "Release",
+          "copilot",
+          "PlainCategory"
+        ]
+      }
+    ],
+    "title": "Category Attrs Test",
+    "description": "Feed with category elements that have attributes",
+    "link": "https://example.com/"
+  }
+}
