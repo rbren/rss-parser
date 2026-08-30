@@ -2,6 +2,7 @@
 
 var fs = require('fs');
 var HTTP = require('http');
+var Zlib = require('zlib');
 
 var Parser = require('../index.js');
 
@@ -206,6 +207,28 @@ describe('Parser', function() {
           var expected = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8'));
           Expect({feed: parsed}).to.deep.equal(expected);
         }
+        server.close();
+        done();
+      });
+    });
+  });
+
+  it('should parse URL that returns gzip-compressed data even without an Accept-Encoding request', function(done) {
+    var INPUT_FILE = __dirname + '/input/reddit.rss';
+    var OUTPUT_FILE = __dirname + '/output/reddit.json';
+    var server = HTTP.createServer(function(req, res) {
+      var gzipped = Zlib.gzipSync(fs.readFileSync(INPUT_FILE));
+      res.setHeader('Content-Encoding', 'gzip');
+      res.end(gzipped);
+    });
+    server.listen(function() {
+      var port = server.address().port;
+      var url = 'http://localhost:' + port;
+      let parser = new Parser();
+      parser.parseURL(url, function(err, parsed) {
+        Expect(err).to.equal(null);
+        var expected = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8'));
+        Expect({feed: parsed}).to.deep.equal(expected);
         server.close();
         done();
       });
